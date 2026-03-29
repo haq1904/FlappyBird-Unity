@@ -1,0 +1,1645 @@
+fileFormatVersion: 2
+guid: 7ad8f14d741bd694a8ee815c851565c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9035060896036935522
+    second: MainBird_0
+  - first:
+      213: 448994009798908112
+    second: MainBird_1
+  - first:
+      213: -7487338107387279494
+    second: MainBird_2
+  - first:
+      213: 3896897429029056562
+    second: MainBird_3
+  - first:
+      213: 5443482319825733336
+    second: MainBird_4
+  - first:
+      213: 1528331867860859545
+    second: MainBird_5
+  - first:
+      213: 1107673526174784946
+    second: MainBird_6
+  - first:
+      213: -4821716714867843074
+    second: MainBird_7
+  - first:
+      213: 7529790224733539920
+    second: MainBird_8
+  - first:
+      213: 4222043372970968401
+    second: MainBird_9
+  - first:
+      213: 4172496513766126789
+    second: MainBird_10
+  - first:
+      213: 4360487418475401568
+    second: MainBird_11
+  - first:
+      213: -4441754469865843635
+    second: MainBird_12
+  - first:
+      213: 7811864904676649556
+    second: MainBird_13
+  - first:
+      213: -3454264174185506752
+    second: MainBird_14
+  - first:
+      213: -8201195432656449260
+    second: MainBird_15
+  - first:
+      213: 7009494571249309563
+    second: MainBird_16
+  - first:
+      213: 3850769337545577438
+    second: MainBird_17
+  - first:
+      213: -3221930578973147998
+    second: MainBird_18
+  - first:
+      213: 5089514339311604664
+    second: MainBird_19
+  - first:
+      213: -715015876134302433
+    second: MainBird_20
+  - first:
+      213: -3829182296842441323
+    second: MainBird_21
+  - first:
+      213: -5660857495756124397
+    second: MainBird_22
+  - first:
+      213: 8360111348677131071
+    second: MainBird_23
+  - first:
+      213: 7067442616937868516
+    second: MainBird_24
+  - first:
+      213: 8905628276184838950
+    second: MainBird_25
+  - first:
+      213: -2726552710184252278
+    second: MainBird_26
+  - first:
+      213: -5045796100473257840
+    second: MainBird_27
+  - first:
+      213: -2337624844105817727
+    second: MainBird_28
+  - first:
+      213: 5873580879739152110
+    second: MainBird_29
+  - first:
+      213: 1771042576551460130
+    second: MainBird_30
+  - first:
+      213: 3869942579350565344
+    second: MainBird_31
+  - first:
+      213: -463223622982100560
+    second: MainBird_32
+  - first:
+      213: 8956542494339872620
+    second: MainBird_33
+  - first:
+      213: -1598437606593631750
+    second: MainBird_34
+  - first:
+      213: 8532405040525703598
+    second: MainBird_35
+  - first:
+      213: 7775746264730318915
+    second: MainBird_36
+  - first:
+      213: 3340724345741194406
+    second: MainBird_37
+  - first:
+      213: -2024674192907540374
+    second: MainBird_38
+  - first:
+      213: 6932334303433550104
+    second: MainBird_39
+  - first:
+      213: 6109620852666857997
+    second: MainBird_40
+  - first:
+      213: 8769840285760318316
+    second: MainBird_41
+  - first:
+      213: 3517894072154150330
+    second: MainBird_42
+  - first:
+      213: -561419549572780491
+    second: MainBird_43
+  - first:
+      213: 8644838363358885671
+    second: MainBird_44
+  - first:
+      213: -8175477999525264158
+    second: MainBird_45
+  - first:
+      213: 104339845329589945
+    second: MainBird_46
+  - first:
+      213: -8547039814793115922
+    second: MainBird_47
+  - first:
+      213: -1383622210264242030
+    second: MainBird_48
+  - first:
+      213: -2094306053182268549
+    second: MainBird_49
+  - first:
+      213: 2934123784397215768
+    second: MainBird_50
+  - first:
+      213: -242776821173147819
+    second: MainBird_51
+  - first:
+      213: 2593831736795816405
+    second: MainBird_52
+  - first:
+      213: 7809396990348596701
+    second: MainBird_53
+  - first:
+      213: 5651688386741608187
+    second: MainBird_54
+  - first:
+      213: 2737940704821668362
+    second: MainBird_55
+  - first:
+      213: 2795182626771923545
+    second: MainBird_56
+  - first:
+      213: -10879976592548360
+    second: MainBird_57
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MainBird_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 169
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 267dd40e30cf26d70800000000000000
+      internalID: 9035060896036935522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 169
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d8975c4ca52b3600800000000000000
+      internalID: 448994009798908112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_2
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 169
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a778fe339a1a71890800000000000000
+      internalID: -7487338107387279494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_3
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 148
+        width: 21
+        height: 40
+      alignment: 9
+      pivot: {x: 0.54944175, y: 0.19890213}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 230f867a09f841630800000000000000
+      internalID: 3896897429029056562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_7
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 148
+        width: 21
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5875709, y: 0.3690319}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d6055e34522b8b40800000000000000
+      internalID: 5443482319825733336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 148
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99a71c28cb9b53510800000000000000
+      internalID: 1528331867860859545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_9
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 148
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bd90ce043f3f5f00800000000000000
+      internalID: 1107673526174784946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_10
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 148
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eff1db2c132d51db0800000000000000
+      internalID: -4821716714867843074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_12
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 148
+        width: 21
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5791074, y: 0.17813683}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e837a90503f7860800000000000000
+      internalID: 7529790224733539920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_13
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 148
+        width: 21
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5889951, y: 0.23005028}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1550a301416b79a30800000000000000
+      internalID: 4222043372970968401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_14
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 148
+        width: 21
+        height: 40
+      alignment: 9
+      pivot: {x: 0.56628925, y: 0.40470734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c4f591f87fa7e930800000000000000
+      internalID: 4172496513766126789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_15
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 148
+        width: 21
+        height: 23
+      alignment: 9
+      pivot: {x: 0.6705482, y: 0.33315906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06159c94430938c30800000000000000
+      internalID: 4360487418475401568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_16
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 148
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d449424d7d7bb52c0800000000000000
+      internalID: -4441754469865843635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_17
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 127
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45aa794edb1596c60800000000000000
+      internalID: 7811864904676649556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_18
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 127
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0489059f80dff00d0800000000000000
+      internalID: -3454264174185506752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_19
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 127
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 411d4fea4308f2e80800000000000000
+      internalID: -8201195432656449260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_20
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 127
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b771856bc2ab64160800000000000000
+      internalID: 7009494571249309563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_21
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 106
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed3de5c6f4ea07530800000000000000
+      internalID: 3850769337545577438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_22
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 106
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac365d75376943d0800000000000000
+      internalID: -3221930578973147998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_23
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 106
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b3dce1835691a640800000000000000
+      internalID: 5089514339311604664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_24
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 106
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1d004659d0c316f0800000000000000
+      internalID: -715015876134302433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_25
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 106
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ded782df20cdac0800000000000000
+      internalID: -3829182296842441323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_26
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 106
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31f4951a9189071b0800000000000000
+      internalID: -5660857495756124397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_27
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 106
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3bbc945af4150470800000000000000
+      internalID: 8360111348677131071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_28
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 106
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ece90d7d99941260800000000000000
+      internalID: 7067442616937868516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_29
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 85
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 623fbafabb5279b70800000000000000
+      internalID: 8905628276184838950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_30
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 85
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8cc61881c6592ad0800000000000000
+      internalID: -2726552710184252278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_31
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 85
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0908d3e2e2bb9f9b0800000000000000
+      internalID: -5045796100473257840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_32
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 85
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 181e1fce6961f8fd0800000000000000
+      internalID: -2337624844105817727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_33
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 85
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee6e068c0b6238150800000000000000
+      internalID: 5873580879739152110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_34
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 64
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22d317907d1049810800000000000000
+      internalID: 1771042576551460130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_35
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 64
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e17957a54cc4b530800000000000000
+      internalID: 3869942579350565344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_36
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 64
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b91594b19c4299f0800000000000000
+      internalID: -463223622982100560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_37
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 64
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c67b1ded1f70c4c70800000000000000
+      internalID: 8956542494339872620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_38
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 64
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af96c57377531d9e0800000000000000
+      internalID: -1598437606593631750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_39
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 64
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea979408d21396670800000000000000
+      internalID: 8532405040525703598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_40
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 64
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34832d4b70009eb60800000000000000
+      internalID: 7775746264730318915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_41
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 64
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a43760b713ac5e20800000000000000
+      internalID: 3340724345741194406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_42
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 43
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6868d97c89e6e3e0800000000000000
+      internalID: -2024674192907540374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_43
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 43
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8196964e159943060800000000000000
+      internalID: 6932334303433550104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_44
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 43
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0af68b9bcbb9c450800000000000000
+      internalID: 6109620852666857997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_45
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 43
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6b67a9764bb4b970800000000000000
+      internalID: 8769840285760318316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_46
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 43
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab55330250212d030800000000000000
+      internalID: 3517894072154150330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_47
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 43
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53e21c9e4ef6538f0800000000000000
+      internalID: -561419549572780491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_48
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 43
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 727fcac60b2a8f770800000000000000
+      internalID: 8644838363358885671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_49
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 22
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e48641331eda8e80800000000000000
+      internalID: -8175477999525264158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_50
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 22
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b61ac85980b27100800000000000000
+      internalID: 104339845329589945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_51
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 22
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee6c2269290d26980800000000000000
+      internalID: -8547039814793115922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_52
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 298ebd53ee26ccce0800000000000000
+      internalID: -1383622210264242030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_53
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7bde11adb78fe2e0800000000000000
+      internalID: -2094306053182268549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_54
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 1
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8185508490a18b820800000000000000
+      internalID: 2934123784397215768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_55
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 1
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 557a64674cb71acf0800000000000000
+      internalID: -242776821173147819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_56
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d169dec8342ff320800000000000000
+      internalID: 2593831736795816405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_57
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 1
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd59bbfcf2d806c60800000000000000
+      internalID: 7809396990348596701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_58
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 43
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfe1fe0d4a4de6e40800000000000000
+      internalID: 5651688386741608187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_59
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 43
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0a6af6909e1ff520800000000000000
+      internalID: 2737940704821668362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_60
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 22
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 952751f1acb7ac620800000000000000
+      internalID: 2795182626771923545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainBird_61
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fd590c08b859dff0800000000000000
+      internalID: -10879976592548360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 426b3d22596154847946cc2c29b704cd
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":322.0,"y":191.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      MainBird_0: 9035060896036935522
+      MainBird_1: 448994009798908112
+      MainBird_10: 4172496513766126789
+      MainBird_11: 4360487418475401568
+      MainBird_12: -4441754469865843635
+      MainBird_13: 7811864904676649556
+      MainBird_14: -3454264174185506752
+      MainBird_15: -8201195432656449260
+      MainBird_16: 7009494571249309563
+      MainBird_17: 3850769337545577438
+      MainBird_18: -3221930578973147998
+      MainBird_19: 5089514339311604664
+      MainBird_2: -7487338107387279494
+      MainBird_20: -715015876134302433
+      MainBird_21: -3829182296842441323
+      MainBird_22: -5660857495756124397
+      MainBird_23: 8360111348677131071
+      MainBird_24: 7067442616937868516
+      MainBird_25: 8905628276184838950
+      MainBird_26: -2726552710184252278
+      MainBird_27: -5045796100473257840
+      MainBird_28: -2337624844105817727
+      MainBird_29: 5873580879739152110
+      MainBird_3: 3896897429029056562
+      MainBird_30: 1771042576551460130
+      MainBird_31: 3869942579350565344
+      MainBird_32: -463223622982100560
+      MainBird_33: 8956542494339872620
+      MainBird_34: -1598437606593631750
+      MainBird_35: 8532405040525703598
+      MainBird_36: 7775746264730318915
+      MainBird_37: 3340724345741194406
+      MainBird_38: -2024674192907540374
+      MainBird_39: 6932334303433550104
+      MainBird_4: 5443482319825733336
+      MainBird_40: 6109620852666857997
+      MainBird_41: 8769840285760318316
+      MainBird_42: 3517894072154150330
+      MainBird_43: -561419549572780491
+      MainBird_44: 8644838363358885671
+      MainBird_45: -8175477999525264158
+      MainBird_46: 104339845329589945
+      MainBird_47: -8547039814793115922
+      MainBird_48: -1383622210264242030
+      MainBird_49: -2094306053182268549
+      MainBird_5: 1528331867860859545
+      MainBird_50: 2934123784397215768
+      MainBird_51: -242776821173147819
+      MainBird_52: 2593831736795816405
+      MainBird_53: 7809396990348596701
+      MainBird_54: 5651688386741608187
+      MainBird_55: 2737940704821668362
+      MainBird_56: 2795182626771923545
+      MainBird_57: -10879976592548360
+      MainBird_58: 2146777925
+      MainBird_59: 1464760488
+      MainBird_6: 1107673526174784946
+      MainBird_60: 381156280
+      MainBird_61: -1032128463
+      MainBird_62: -1210819764
+      MainBird_7: -4821716714867843074
+      MainBird_8: 7529790224733539920
+      MainBird_9: 4222043372970968401
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

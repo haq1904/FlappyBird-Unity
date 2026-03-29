@@ -1,0 +1,18 @@
+{
+    "name": "FlappyBird.GamePlay",
+    "rootNamespace": "",
+    "references": [
+        "GUID:9b15007a2ee459746b253a969c77646a",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:311372c0e3f8b964cb081a30917c8214"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
