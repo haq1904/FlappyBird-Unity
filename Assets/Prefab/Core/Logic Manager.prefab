@@ -44,13 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa436629bc1da241860ee7584ef9dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  ScoreText: {fileID: 0}
-  playerScore: 0
-  gameOverScreen: {fileID: 0}
-  soundMenu: {fileID: 0}
-  beginScreen: {fileID: 0}
-  gameScreen: {fileID: 0}
-  pauseScreen: {fileID: 0}
-  pipeSpawner: {fileID: 0}
-  bird: {fileID: 0}
+  MoveToEasyMode: 0
+  GameStatus: 
+  playerHighestScore: 0
   State: 0

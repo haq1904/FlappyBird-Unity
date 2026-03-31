@@ -341,6 +341,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 600568459487973420, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
+      propertyPath: MoveToEasyMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1298758094415478757, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
       propertyPath: m_Name
       value: Logic Manager

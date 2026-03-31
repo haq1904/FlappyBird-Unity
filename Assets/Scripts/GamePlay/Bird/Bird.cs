@@ -43,9 +43,7 @@ public class BirdScript : MonoBehaviour, BirdControls.IBirdActions
 
     
 
-    private void Start()
-    {
-    }
+  
 
     private void Update()
     {
@@ -67,7 +65,7 @@ public class BirdScript : MonoBehaviour, BirdControls.IBirdActions
         controls = new BirdControls();
         controls.Bird.SetCallbacks(this);   // kết nối callback OnJump
         controls.Bird.Enable();
-        LogicManager.OnGameStart += StartFlying;
+        
         LogicManager.OnGameRestart += ResetPos;
         LogicManager.OnGamePause += Pause;
     }
@@ -79,7 +77,7 @@ public class BirdScript : MonoBehaviour, BirdControls.IBirdActions
             controls.Bird.SetCallbacks(null);
             controls.Bird.Disable();
         }
-        LogicManager.OnGameStart -= StartFlying;
+        
         LogicManager.OnGamePause -= Pause;
         LogicManager.OnGameRestart -= ResetPos;
     }

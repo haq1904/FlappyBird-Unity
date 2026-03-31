@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
 using Codice.Client.Common.GameUI;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 public class SceneController : MonoBehaviour
 {
     [SerializeField] private GameObject _loaderCanvas;
     [SerializeField] private Image _progressBar;
+    [SerializeField] private bool IsEnableScript;
     private float _target;
 
     public static SceneController Instance;
@@ -20,6 +22,9 @@ public class SceneController : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            this.enabled=false;
+            IsEnableScript = this.enabled;
+            
         }
         else
         {
@@ -54,8 +59,16 @@ public class SceneController : MonoBehaviour
         scene.allowSceneActivation = true;
 
         _loaderCanvas.SetActive(false);
+        this.enabled = false;
+        IsEnableScript = this.enabled;
     }
 
+    public void EnableScript()
+    {
+        this.enabled = true;
+        IsEnableScript = this.enabled;
+        
+    }
 
     private void Update()
     {

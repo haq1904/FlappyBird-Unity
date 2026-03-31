@@ -20,13 +20,11 @@ public class LobbyUIController : MonoBehaviour
     {
         if (!isTurnOnSoundMenu)
         {
-            Debug.Log("Turn on sound menu.");
             soundMenu.SetActive(true);
             isTurnOnSoundMenu = true;
         }
         else
         {
-            Debug.Log("Turn off sound menu.");
             soundMenu.SetActive(false);
             isTurnOnSoundMenu = false;
         }

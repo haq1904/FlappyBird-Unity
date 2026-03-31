@@ -256,7 +256,7 @@ PrefabInstance:
       objectReference: {fileID: 1590595103}
     - target: {fileID: 8944663750122552442, guid: 7b19caf77a20a1c4d960f10de004a87d, type: 3}
       propertyPath: m_Name
-      value: Level Manager
+      value: Scene Controller
       objectReference: {fileID: 0}
     - target: {fileID: 8944663750122552442, guid: 7b19caf77a20a1c4d960f10de004a87d, type: 3}
       propertyPath: m_IsActive

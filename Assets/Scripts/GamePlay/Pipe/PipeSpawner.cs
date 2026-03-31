@@ -22,7 +22,7 @@ public class PipeSpawnerScirpt : MonoBehaviour
     {
         PipeMoveScript.OnMoveToDeadZone += InActivePipe;
         LogicManager.OnGamePause += PausePipes;
-        LogicManager.OnGameStart += StartPipes;
+      
         LogicManager.OnGameRestart += RestartPipes;
     }
 
@@ -30,7 +30,7 @@ public class PipeSpawnerScirpt : MonoBehaviour
     {
         PipeMoveScript.OnMoveToDeadZone -= InActivePipe;
         LogicManager.OnGamePause -= PausePipes;
-        LogicManager.OnGameStart -= StartPipes;
+        
         LogicManager.OnGameRestart -= RestartPipes;
     }
         

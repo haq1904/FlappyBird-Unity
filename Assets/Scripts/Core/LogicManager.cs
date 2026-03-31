@@ -5,31 +5,60 @@ using UnityEngine.SceneManagement;
 
 public class LogicManager : MonoBehaviour
 {
+
+    [SerializeField] private bool MoveToEasyMode = false;
+
     public int playerHighestScore = 0;
     public static LogicManager Instance;
     public GameState State;
 
     public static event Action<GameState> OnLobby;
     public static event Action<GameState> OnSelectMode;
-    public static event Action<GameState> OnGameStart;
+    public static event Action<GameState> OnEasyMode;
+    public static event Action<GameState> OnHardMode;
     public static event Action<GameState> OnGamePause;
     public static event Action<GameState> OnGameOver;
     public static event Action<GameState> OnGameRestart;
 
     private void Awake()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
         if (Instance == null)
         {
             Instance = this;
             Debug.Log("Logic's instance has been created .  ");
             DontDestroyOnLoad(gameObject);
             if (SceneManager.GetActiveScene().buildIndex == 0)
-                SceneManager.LoadScene("LobbyScene");
+            {
+                if (!MoveToEasyMode)
+                {
+                    SceneManager.LoadScene("LobbyScene");
+                    
+                }
+                else if (MoveToEasyMode)
+                {
+                    SceneManager.LoadScene("EasyModeScene");
+                    
+                }
+
+            }
+
         }
         else
         {
             Destroy(gameObject);
+            
         }
+        
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "EasyModeScene")
+            EasyMode();
+
+        else if (scene.name == "LobbyScene")
+            Lobby();
         
     }
 
@@ -42,7 +71,8 @@ public class LogicManager : MonoBehaviour
     private void ClearAllEvents()
     {
         OnLobby = null;
-        OnGameStart = null;
+        OnEasyMode = null;
+        OnHardMode = null;
         OnGameRestart = null;
         OnGamePause = null;
         OnGameOver = null;
@@ -63,21 +93,21 @@ public class LogicManager : MonoBehaviour
         UpdateGameState(GameState.SelectMode);
     }
 
-    public void StartGame()
+    public void EasyMode()
     {
-        UpdateGameState(GameState.StartGame);
+        UpdateGameState(GameState.EasyMode);
     }
 
+    public void HardMode()
+    {
+        UpdateGameState(GameState.HardMode);
+    }
     public void PauseGame()
     {
         UpdateGameState(GameState.Pause);
     }
 
-    [ContextMenu("Increase score")]
-    public void AddScore(int score)
-    {
-        playerHighestScore += score;
-    }
+    
 
     public void RestartGame()
     {
@@ -105,28 +135,25 @@ public class LogicManager : MonoBehaviour
         switch (newState)
         {
             case GameState.Lobby:
-                OnLobby?.Invoke(newState);
-                Debug.Log("Game state changed : Lobby");
+                OnLobby?.Invoke(newState);              
                 break;
             case GameState.SelectMode:
                 OnSelectMode?.Invoke(newState);
-                Debug.Log("Game State chaged : Select Mode");
                 break;
-            case GameState.StartGame:
-                OnGameStart?.Invoke(newState);
-                Debug.Log("Game state changed : Start Game");
+            case GameState.EasyMode:
+                OnEasyMode?.Invoke(newState);
+                break;
+            case GameState.HardMode:
+                OnHardMode?.Invoke(newState);
                 break;
             case GameState.GameOver:
                 OnGameOver?.Invoke(newState);
-                Debug.Log("Game state changed : Game Over");
                 break;
             case GameState.Pause:
                 OnGamePause?.Invoke(newState);
-                Debug.Log("Game state changed : Pause");
                 break;
             case GameState.Restart:
                 OnGameRestart?.Invoke(newState);
-                Debug.Log("Game state changed : Restart");
                 break;
         }
 
@@ -136,7 +163,8 @@ public class LogicManager : MonoBehaviour
     {
         Lobby,
         SelectMode,
-        StartGame,
+        EasyMode,
+        HardMode,
         GameOver,
         Pause,
         Restart

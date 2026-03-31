@@ -20,7 +20,7 @@ public class PipeMiddleScript : MonoBehaviour
     {
         if (collision.gameObject.layer == 3 )
         {
-            LogicManager.Instance.AddScore(1);
+            //LogicManager.Instance.AddScore(1);
         }
     }
 
