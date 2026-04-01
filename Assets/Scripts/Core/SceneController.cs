@@ -58,6 +58,11 @@ public class SceneController : MonoBehaviour
 
         scene.allowSceneActivation = true;
 
+        while (!scene.isDone)
+        {
+            await Task.Yield();
+        }
+
         _loaderCanvas.SetActive(false);
         this.enabled = false;
         IsEnableScript = this.enabled;

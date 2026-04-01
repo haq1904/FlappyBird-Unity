@@ -350,13 +350,14 @@ GameObject:
   - component: {fileID: 929397734}
   - component: {fileID: 929397733}
   - component: {fileID: 929397732}
+  - component: {fileID: 929397735}
   m_Layer: 5
   m_Name: 'Timer '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &929397731
 RectTransform:
   m_ObjectHideFlags: 0
@@ -440,6 +441,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &929397735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929397730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebeee61bbb8890349a243cb8dfb53319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Timer
+  panel: {fileID: 2107813177}
+  birds:
+  - {fileID: 1341794918}
+  - {fileID: 1409775408}
+  - {fileID: 1464074176}
+  duration: 2
 --- !u!1 &1207003335
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,9 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f11a28a399c63c439b42466f5468592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EasyModeUIController
-  _Timer: {fileID: 0}
-  timer: {fileID: 2107813176}
-  duration: 2
+  _timerPanel: {fileID: 929397730}
 --- !u!4 &1477898209
 Transform:
   m_ObjectHideFlags: 0
@@ -1353,7 +1370,6 @@ GameObject:
   - component: {fileID: 2107813177}
   - component: {fileID: 2107813179}
   - component: {fileID: 2107813178}
-  - component: {fileID: 2107813180}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1421,22 +1437,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107813176}
   m_CullTransparentMesh: 1
---- !u!114 &2107813180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107813176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebeee61bbb8890349a243cb8dfb53319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Timer
-  birds:
-  - {fileID: 1341794918}
-  - {fileID: 1409775408}
-  - {fileID: 1464074176}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

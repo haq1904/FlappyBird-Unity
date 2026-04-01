@@ -26,12 +26,7 @@ public class EasyModeManager : MonoBehaviour
         OnStartGame?.Invoke();
     }
 
-    private void Update()
-    {
-        
-
-
-    }
+   
 
 
 

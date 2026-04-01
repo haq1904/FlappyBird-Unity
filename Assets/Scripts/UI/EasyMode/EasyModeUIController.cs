@@ -7,38 +7,25 @@ using UnityEditor;
 
 public class EasyModeUIController : MonoBehaviour
 {
-    [SerializeField] private Canvas _Timer;
-    [SerializeField] private GameObject timer;
-    [SerializeField] private float duration = 2;
-    private Ease moveEase = Ease.OutQuart;
-    private RectTransform timerRect;
-    private Timer timerScript;
+    [SerializeField] private GameObject _timerPanel;
+    public static event Action OnStartGame;
+    
     public void OnEnable()
     {
-        timerRect = timer.GetComponent<RectTransform>();
-        timerScript = timer.GetComponent<Timer>();
-        EasyModeManager.OnStartGame += StartGame;
+        
+        LogicManager.OnEasyMode += StartGame;
     }
 
     public void OnDisable()
     {
-        EasyModeManager.OnStartGame -= StartGame;
+        OnStartGame = null;
+        LogicManager.OnEasyMode -= StartGame;
     }
 
-    public void StartGame()
+    public void StartGame(LogicManager.GameState gameState)
     {
-
-        timerScript.enabled = true;
-        timerRect.DOAnchorPos(new Vector2(0, 307), duration).SetEase(moveEase).SetLink(gameObject);
-        var sequence = DOTween.Sequence();
-        sequence.AppendInterval(3.5f);
-        sequence.AppendCallback(() =>
-        {
-            timerScript.enabled = false;
-            timerRect.DOAnchorPos(new Vector2(0, 724), duration).SetEase(moveEase).SetLink(gameObject);
-        });
-        sequence.SetLink(gameObject);
-
-
+        _timerPanel.SetActive(true);
+        OnStartGame?.Invoke();
+        
     }
 }

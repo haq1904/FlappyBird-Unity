@@ -26,7 +26,6 @@ public class LogicManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            Debug.Log("Logic's instance has been created .  ");
             DontDestroyOnLoad(gameObject);
             if (SceneManager.GetActiveScene().buildIndex == 0)
             {
