@@ -15,9 +15,10 @@ public class BirdScriptMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _chatText;
     [SerializeField] private Image _imageChatText;
     private Rigidbody2D rb;
+     
     private List<string> ListChat = new List<string>();
     private bool didSpeak = false;
-    private bool isOutSideOfScreen = true;
+   
 
 
 
@@ -74,21 +75,7 @@ public class BirdScriptMenu : MonoBehaviour
         });
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Wall"))
-        {
-            if (isOutSideOfScreen)
-            {
-                isOutSideOfScreen = false;
-                Debug.Log("Update : In");
-                return;
-                
-            }
-            isOutSideOfScreen = true;
-            Debug.Log("Update : Out");
-        }
-    }
+    
 
 
     private void HandleCollision()
@@ -121,19 +108,9 @@ public class BirdScriptMenu : MonoBehaviour
         }
         _imageChatText.gameObject.SetActive(false);
         didSpeak = false;
-    }
+    } 
 
-    private void UpdatePosition()
-    {
-        if (!isOutSideOfScreen)
-        {
-            isOutSideOfScreen = true;
-            Debug.Log("Update : " + isOutSideOfScreen);
-            return;
-        }
-        isOutSideOfScreen = false;
-        Debug.Log("Update : " + isOutSideOfScreen);
-    }
+    
 
 
 }

@@ -78,6 +78,7 @@ public class SceneController : MonoBehaviour
     private void Update()
     {
         _progressBar.fillAmount = Mathf.MoveTowards(_progressBar.fillAmount, _target, 3 * Time.deltaTime);
+        
     }
 
     

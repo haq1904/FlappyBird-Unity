@@ -13,8 +13,8 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private RectTransform panel;
     [SerializeField] private GameObject[] birds;
-    public float duration=1.5f;
-    private Ease moveEase = Ease.OutQuart;
+    public float duration=1f;
+    private Ease moveEase = Ease.InOutBack;
     private List<Vector3> resetBirdsPos;
 
     private void Awake()
