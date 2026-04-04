@@ -1,11 +1,10 @@
-﻿using NUnit.Framework;
+﻿
 using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using DG.Tweening;
-using System;
-using System.Xml.Serialization;
+
 
 public class BirdScriptMenu : MonoBehaviour
 {
@@ -15,7 +14,7 @@ public class BirdScriptMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _chatText;
     [SerializeField] private Image _imageChatText;
     private Rigidbody2D rb;
-     
+    private Image gameObjectImage;
     private List<string> ListChat = new List<string>();
     private bool didSpeak = false;
    
@@ -23,40 +22,30 @@ public class BirdScriptMenu : MonoBehaviour
 
 
 
-    private void OnEnable()
-    {
-        
-
-    }
-
-    private void OnDisable()
-    {
-        
-    }
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        ListChat.Add("F*ck u!");
-        ListChat.Add("Do i die again:(");
+        gameObjectImage = GetComponent<Image>();
+        ListChat.Add("Hello my friend...");
+        ListChat.Add("I don't want to die again..:(");
         ListChat.Add("Shhh...");
-        ListChat.Add("You suck");
-        ListChat.Add("Let me relax...");
-
+        ListChat.Add("I am really tired bro...");
+        ListChat.Add("I want to have a vacation...");
 
     }
-    void Update()
-    {
-        
-        if (transform.localPosition.y < -1000)
-        {
+    
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.CompareTag("Wall")){
+            gameObjectImage.enabled = false;
             rb.bodyType = RigidbodyType2D.Kinematic;
-            transform.localPosition = new Vector2(-348f, 1443f);
+            transform.localPosition = new Vector2(0,0);
             rb.linearVelocity = Vector2.zero ;
             rb.angularVelocity = 0f;
             transform.rotation = Quaternion.Euler(0, 0, 0);
             PlayAnimation();
-            
         }
     }
 
@@ -65,10 +54,9 @@ public class BirdScriptMenu : MonoBehaviour
         Sequence s = DOTween.Sequence();
 
         s.AppendInterval(20f);
-
         s.OnComplete(() =>
         {
-            
+            gameObjectImage.enabled=true;
             _animator.enabled = true;
             _animator.Play("Perch", 0, 0f);
             Debug.Log("Play animation clip");

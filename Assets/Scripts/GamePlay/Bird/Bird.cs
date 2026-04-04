@@ -66,8 +66,7 @@ public class BirdScript : MonoBehaviour, BirdControls.IBirdActions
         controls.Bird.SetCallbacks(this);   // kết nối callback OnJump
         controls.Bird.Enable();
         
-        LogicManager.OnGameRestart += ResetPos;
-        LogicManager.OnGamePause += Pause;
+        
     }
 
     private void OnDisable()
@@ -78,8 +77,7 @@ public class BirdScript : MonoBehaviour, BirdControls.IBirdActions
             controls.Bird.Disable();
         }
         
-        LogicManager.OnGamePause -= Pause;
-        LogicManager.OnGameRestart -= ResetPos;
+        
     }
 
     private void StartFlying(LogicManager.GameState state)

@@ -13,12 +13,9 @@ public class LogicManager : MonoBehaviour
     public GameState State;
 
     public static event Action<GameState> OnLobby;
-    public static event Action<GameState> OnSelectMode;
     public static event Action<GameState> OnEasyMode;
     public static event Action<GameState> OnHardMode;
-    public static event Action<GameState> OnGamePause;
-    public static event Action<GameState> OnGameOver;
-    public static event Action<GameState> OnGameRestart;
+    
 
     private void Awake()
     {
@@ -61,9 +58,13 @@ public class LogicManager : MonoBehaviour
         
     }
 
+    private void OnEnable(){
+        
+    }
+
     private void OnDisable()
     {
-       
+       ClearAllEvents();
     }
 
 
@@ -72,10 +73,6 @@ public class LogicManager : MonoBehaviour
         OnLobby = null;
         OnEasyMode = null;
         OnHardMode = null;
-        OnGameRestart = null;
-        OnGamePause = null;
-        OnGameOver = null;
-        OnSelectMode = null;
         Debug.Log("All LogicManager's event have been cleared");
     }
 
@@ -87,10 +84,7 @@ public class LogicManager : MonoBehaviour
     {
         UpdateGameState(GameState.Lobby);
     }
-    public void SelectMode()
-    {
-        UpdateGameState(GameState.SelectMode);
-    }
+    
 
     public void EasyMode()
     {
@@ -136,24 +130,14 @@ public class LogicManager : MonoBehaviour
             case GameState.Lobby:
                 OnLobby?.Invoke(newState);              
                 break;
-            case GameState.SelectMode:
-                OnSelectMode?.Invoke(newState);
-                break;
+            
             case GameState.EasyMode:
                 OnEasyMode?.Invoke(newState);
                 break;
             case GameState.HardMode:
                 OnHardMode?.Invoke(newState);
                 break;
-            case GameState.GameOver:
-                OnGameOver?.Invoke(newState);
-                break;
-            case GameState.Pause:
-                OnGamePause?.Invoke(newState);
-                break;
-            case GameState.Restart:
-                OnGameRestart?.Invoke(newState);
-                break;
+            
         }
 
     }
@@ -161,7 +145,6 @@ public class LogicManager : MonoBehaviour
     public enum GameState
     {
         Lobby,
-        SelectMode,
         EasyMode,
         HardMode,
         GameOver,

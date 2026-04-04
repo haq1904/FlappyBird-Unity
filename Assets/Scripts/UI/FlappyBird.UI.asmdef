@@ -1,7 +1,11 @@
 {
-    "name": "FlappyBird.Core",
+    "name": "FlappyBird.UI",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "DOTween.Modules",
+        "Unity.TextMeshPro",
+        "FlappyBird.Core"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

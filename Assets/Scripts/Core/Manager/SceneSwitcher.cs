@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     public void ChangeScene(int indexScene)
     {
         SceneController.Instance.EnableScript();       

@@ -1,9 +1,7 @@
-using JetBrains.Annotations;
-using Microsoft.Unity.VisualStudio.Editor;
+
 using System;
 using UnityEngine;
-using DG.Tweening;
-using UnityEditor;
+
 
 public class EasyModeUIController : MonoBehaviour
 {

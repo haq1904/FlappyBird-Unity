@@ -21,17 +21,13 @@ public class PipeSpawnerScirpt : MonoBehaviour
     private void OnEnable()
     {
         PipeMoveScript.OnMoveToDeadZone += InActivePipe;
-        LogicManager.OnGamePause += PausePipes;
-      
-        LogicManager.OnGameRestart += RestartPipes;
+        
     }
 
     private void OnDisable()
     {
         PipeMoveScript.OnMoveToDeadZone -= InActivePipe;
-        LogicManager.OnGamePause -= PausePipes;
         
-        LogicManager.OnGameRestart -= RestartPipes;
     }
         
 
