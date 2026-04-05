@@ -10,17 +10,15 @@ public class EasyModeUIController : MonoBehaviour
     
     public void OnEnable()
     {
-        
-        LogicManager.OnEasyMode += StartGame;
+        StartGame();
     }
 
     public void OnDisable()
     {
-        OnStartGame = null;
-        LogicManager.OnEasyMode -= StartGame;
+        OnStartGame = null;      
     }
 
-    public void StartGame(LogicManager.GameState gameState)
+    public void StartGame()
     {
         _timerPanel.SetActive(true);
         OnStartGame?.Invoke();

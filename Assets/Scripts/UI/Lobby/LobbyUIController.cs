@@ -12,11 +12,15 @@ public class LobbyUIController : MonoBehaviour
     [SerializeField] private Button easyModeBtn;
     [SerializeField] private Button hardModeBtn;
     [SerializeField] private Button backToLobbyBtn;
+    [SerializeField] private Button backSoundBtn;
 
     [Header("Panels")]
     [SerializeField] private GameObject soundMenu;
     [SerializeField] private RectTransform menu;
     [SerializeField] private RectTransform selectMode;
+
+    
+    
     private bool isTurnOnSoundMenu = false;
     public float duration = 1;
     private Ease moveEase = Ease.OutQuart;
@@ -31,6 +35,7 @@ public class LobbyUIController : MonoBehaviour
         easyModeBtn.onClick.AddListener(()=>SelectMode(0));
         hardModeBtn.onClick.AddListener(()=>SelectMode(1));
         backToLobbyBtn.onClick.AddListener(BackToMenu);
+        backSoundBtn.onClick.AddListener(TurnOnSoundMenu);
     }
 
     private void OnDisable(){
@@ -62,12 +67,11 @@ public class LobbyUIController : MonoBehaviour
     public void OpenSelectMode()
     {
         menu.DOAnchorPos(new Vector2(0,-1100), duration).SetEase(moveEase).SetLink(gameObject);
-        selectMode.DOAnchorPos(new Vector2(0, -17), duration).SetEase(moveEase).SetLink(gameObject);
+        selectMode.DOAnchorPos(new Vector2(0, -395), duration).SetEase(moveEase).SetLink(gameObject);
     }
 
     public void BackToMenu()
     {
-        LogicManager.Instance.Lobby();
         selectMode.DOAnchorPos(new Vector2(0, 796), duration).SetEase(moveEase).SetLink(gameObject);
         menu.DOAnchorPos(Vector2.zero, duration).SetEase(moveEase).SetLink(gameObject);
     }
@@ -75,11 +79,9 @@ public class LobbyUIController : MonoBehaviour
     private void SelectMode(int i){
         if(i==0){
             OnPlayEasyMode?.Invoke();
-            Debug.Log("Player wanto play easy mode");
         }
         else if(i==1){
             OnPlayHardMode?.Invoke();
-            Debug.Log("Player want to play hard mode");
         }
     }
 

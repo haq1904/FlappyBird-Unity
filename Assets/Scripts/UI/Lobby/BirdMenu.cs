@@ -1,4 +1,4 @@
-﻿
+
 using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
@@ -17,13 +17,7 @@ public class BirdScriptMenu : MonoBehaviour
     private Image gameObjectImage;
     private List<string> ListChat = new List<string>();
     private bool didSpeak = false;
-   
-
-
-
-
     
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

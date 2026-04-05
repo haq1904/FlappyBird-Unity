@@ -50,9 +50,6 @@ public class SceneController : MonoBehaviour
             _target = scene.progress;
         } while (scene.progress < 0.9f);
          
-        
-
-        _progressBar.fillAmount = 1f;
 
         await Task.Delay(1000);
 
@@ -62,7 +59,10 @@ public class SceneController : MonoBehaviour
         {
             await Task.Yield();
         }
+        _progressBar.fillAmount = 1f;
 
+        await Task.Delay(1000);
+        
         _loaderCanvas.SetActive(false);
         this.enabled = false;
         IsEnableScript = this.enabled;

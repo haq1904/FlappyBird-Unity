@@ -729,7 +729,6 @@ GameObject:
   m_Component:
   - component: {fileID: 213532924}
   - component: {fileID: 213532925}
-  - component: {fileID: 213532926}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -810,9 +809,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 213532926}
-        m_TargetAssemblyTypeName: SliderSoundEvent, FlappyBird.UI
-        m_MethodName: ChangeSlideValue
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SoundAudioMixerManager, FlappyBird.Core
+        m_MethodName: SetMusicVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -822,19 +821,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &213532926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213532923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7246c0ae298259048bd9f329fe5b522d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FlappyBird.UI::SliderSoundEvent
-  sliderType: 2
 --- !u!1 &327513570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,7 +1441,6 @@ GameObject:
   m_Component:
   - component: {fileID: 573612319}
   - component: {fileID: 573612320}
-  - component: {fileID: 573612321}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1536,9 +1521,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 573612321}
-        m_TargetAssemblyTypeName: SliderSoundEvent, FlappyBird.UI
-        m_MethodName: ChangeSlideValue
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SoundAudioMixerManager, FlappyBird.Core
+        m_MethodName: SetSoundFXVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1548,19 +1533,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &573612321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573612318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7246c0ae298259048bd9f329fe5b522d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FlappyBird.UI::SliderSoundEvent
-  sliderType: 1
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3475,6 +3447,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590451633}
   m_CullTransparentMesh: 1
+--- !u!1 &1609236803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1609236805}
+  - component: {fileID: 1609236804}
+  m_Layer: 0
+  m_Name: SceneSwitcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1609236804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609236803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94401bd70b2beb4990a1318eceb9f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Core::SceneSwitcher
+--- !u!4 &1609236805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609236803}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.12837, y: 61.87197, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1699340710
 GameObject:
   m_ObjectHideFlags: 0
@@ -4123,7 +4139,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1950646003}
   - component: {fileID: 1950646004}
-  - component: {fileID: 1950646005}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -4204,9 +4219,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1950646005}
-        m_TargetAssemblyTypeName: SliderSoundEvent, FlappyBird.UI
-        m_MethodName: ChangeSlideValue
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SoundAudioMixerManager, FlappyBird.Core
+        m_MethodName: SetMasterVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4216,19 +4231,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1950646005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1950646002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7246c0ae298259048bd9f329fe5b522d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FlappyBird.UI::SliderSoundEvent
-  sliderType: 0
 --- !u!1 &1972866756
 GameObject:
   m_ObjectHideFlags: 0
@@ -4775,7 +4777,6 @@ MonoBehaviour:
   easyModeBtn: {fileID: 798704460}
   hardModeBtn: {fileID: 2049519267}
   backToLobbyBtn: {fileID: 404737939}
-  backSoundBtn: {fileID: 912527334}
   soundMenu: {fileID: 80684242}
   menu: {fileID: 1699340711}
   selectMode: {fileID: 358584528}
@@ -5730,6 +5731,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1029229660}
   - {fileID: 6250344645956620882}
+  - {fileID: 1609236805}
   - {fileID: 989485275}
   - {fileID: 1099875913}
   - {fileID: 2065652216}

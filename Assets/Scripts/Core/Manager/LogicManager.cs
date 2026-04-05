@@ -19,7 +19,7 @@ public class LogicManager : MonoBehaviour
 
     private void Awake()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        
         if (Instance == null)
         {
             Instance = this;
@@ -48,18 +48,11 @@ public class LogicManager : MonoBehaviour
         
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name == "EasyModeScene")
-            EasyMode();
-
-        else if (scene.name == "LobbyScene")
-            Lobby();
-        
-    }
+    
 
     private void OnEnable(){
-        
+        LobbyUIController.OnPlayEasyMode += EasyMode;
+        LobbyUIController.OnPlayHardMode += HardMode;
     }
 
     private void OnDisable()
@@ -73,18 +66,17 @@ public class LogicManager : MonoBehaviour
         OnLobby = null;
         OnEasyMode = null;
         OnHardMode = null;
+        LobbyUIController.OnPlayEasyMode -= EasyMode;
+        LobbyUIController.OnPlayHardMode -= HardMode;
         Debug.Log("All LogicManager's event have been cleared");
     }
 
-    private void Start()
-    {      
-    }
+    
 
-    public void Lobby()
-    {
+    
+    public void Lobby(){
         UpdateGameState(GameState.Lobby);
     }
-    
 
     public void EasyMode()
     {
@@ -95,32 +87,7 @@ public class LogicManager : MonoBehaviour
     {
         UpdateGameState(GameState.HardMode);
     }
-    public void PauseGame()
-    {
-        UpdateGameState(GameState.Pause);
-    }
-
     
-
-    public void RestartGame()
-    {
-      
-        
-    }
-
-    public void ResetGame()
-    {
-        ClearAllEvents();
-    
-        
-    }
-
-    public void GameOver()
-    {
-        UpdateGameState(GameState.GameOver);
-    }
-
- 
 
     public void UpdateGameState(GameState newState)
     {
@@ -128,13 +95,15 @@ public class LogicManager : MonoBehaviour
         switch (newState)
         {
             case GameState.Lobby:
-                OnLobby?.Invoke(newState);              
-                break;
-            
+                SceneController.Instance.LoadScene(1);
+                OnLobby?.Invoke(newState);
+                break; 
             case GameState.EasyMode:
+                SceneController.Instance.LoadScene(2);
                 OnEasyMode?.Invoke(newState);
                 break;
             case GameState.HardMode:
+                SceneController.Instance.LoadScene(2);
                 OnHardMode?.Invoke(newState);
                 break;
             
@@ -147,9 +116,6 @@ public class LogicManager : MonoBehaviour
         Lobby,
         EasyMode,
         HardMode,
-        GameOver,
-        Pause,
-        Restart
     }
 
 }
