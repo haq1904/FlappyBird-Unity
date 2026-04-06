@@ -99,7 +99,7 @@ public class LogicManager : MonoBehaviour
                 OnEasyMode?.Invoke(newState);
                 break;
             case GameState.HardMode:
-                SceneController.Instance.LoadScene(2);
+                SceneController.Instance.LoadScene(3);
                 OnHardMode?.Invoke(newState);
                 break;
             
