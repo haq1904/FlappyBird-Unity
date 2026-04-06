@@ -2,7 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 using System;
-using System.Xml.Serialization;
+using UnityEngine.Events;
 public class LobbyUIController : MonoBehaviour
 {
 
@@ -19,21 +19,22 @@ public class LobbyUIController : MonoBehaviour
     [SerializeField] private RectTransform menu;
     [SerializeField] private RectTransform selectMode;
 
-    
-    
-    private bool isTurnOnSoundMenu = false;
+    [Header("Event")]
+    [SerializeField] private UnityEvent LoadEasySceneEvent;
+    [SerializeField] private UnityEvent LoadHardSceneEvent;
+
+    [Header("Duration of Dotween")]
     public float duration = 1;
+
+    private bool isTurnOnSoundMenu = false;
     private Ease moveEase = Ease.OutQuart;
 
-    public static Action OnPlayEasyMode;
-
-    public static Action OnPlayHardMode;
 
     private void OnEnable(){
         playBtn.onClick.AddListener(OpenSelectMode);
         soundBtn.onClick.AddListener(TurnOnSoundMenu);
-        easyModeBtn.onClick.AddListener(()=>SelectMode(0));
-        hardModeBtn.onClick.AddListener(()=>SelectMode(1));
+        easyModeBtn.onClick.AddListener(()=>SelectMode(1));
+        hardModeBtn.onClick.AddListener(()=>SelectMode(2));
         backToLobbyBtn.onClick.AddListener(BackToMenu);
         backSoundBtn.onClick.AddListener(TurnOnSoundMenu);
     }
@@ -44,8 +45,6 @@ public class LobbyUIController : MonoBehaviour
         easyModeBtn.onClick.RemoveAllListeners();
         hardModeBtn.onClick.RemoveAllListeners();
         backToLobbyBtn.onClick.RemoveAllListeners();
-        OnPlayEasyMode=null;
-        OnPlayHardMode=null;
     }
 
     
@@ -77,11 +76,11 @@ public class LobbyUIController : MonoBehaviour
     }
 
     private void SelectMode(int i){
-        if(i==0){
-            OnPlayEasyMode?.Invoke();
+        if(i==1){
+            LoadEasySceneEvent?.Invoke();
         }
-        else if(i==1){
-            OnPlayHardMode?.Invoke();
+        else if(i==2){
+            LoadHardSceneEvent?.Invoke();
         }
     }
 

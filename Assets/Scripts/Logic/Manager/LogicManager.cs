@@ -50,9 +50,7 @@ public class LogicManager : MonoBehaviour
 
     
 
-    private void OnEnable(){
-        LobbyUIController.OnPlayEasyMode += EasyMode;
-        LobbyUIController.OnPlayHardMode += HardMode;
+    private void OnEnable(){        
     }
 
     private void OnDisable()
@@ -66,8 +64,6 @@ public class LogicManager : MonoBehaviour
         OnLobby = null;
         OnEasyMode = null;
         OnHardMode = null;
-        LobbyUIController.OnPlayEasyMode -= EasyMode;
-        LobbyUIController.OnPlayHardMode -= HardMode;
         Debug.Log("All LogicManager's event have been cleared");
     }
 

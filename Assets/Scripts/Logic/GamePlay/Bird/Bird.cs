@@ -19,7 +19,6 @@ public class BirdScript : MonoBehaviour, BirdControls.IBirdActions
 
     private bool isBirdAlive = false;
 
-    private bool isNotify = false;
 
     [SerializeField] private float jumpForce = 100f;
 
@@ -36,29 +35,14 @@ public class BirdScript : MonoBehaviour, BirdControls.IBirdActions
         rb = GetComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Kinematic;
         startPos = gameObject.transform.position;
-        startRot = gameObject.transform.rotation;
-        Debug.Log("Saved bird's position ");
-        
+        startRot = gameObject.transform.rotation;         
     }
 
     
 
   
 
-    private void Update()
-    {
-        if ((transform.position.y > 33 || transform.position.y < -33) )
-        {
-            if (!isNotify)
-            {
-                OnBirdCrashed?.Invoke();
-                isBirdAlive = false;
-                isNotify = true;
-            }     
-            rb.linearVelocity = Vector2.zero;
-            rb.bodyType = RigidbodyType2D.Kinematic;
-        }
-    }
+    
 
     private void OnEnable()
     {
@@ -83,7 +67,6 @@ public class BirdScript : MonoBehaviour, BirdControls.IBirdActions
     private void StartFlying(LogicManager.GameState state)
     {
         isBirdAlive = true;
-        isNotify = false;
         rb.bodyType = RigidbodyType2D.Dynamic;
         Debug.Log("Bird starts to fly");
     }
@@ -121,7 +104,6 @@ public class BirdScript : MonoBehaviour, BirdControls.IBirdActions
         if (isBirdAlive)
         {
             isBirdAlive = false;
-            isNotify = true;
             OnBirdCrashed?.Invoke();
             BirdCollisionHandle();
             BirdDamageSpawner();

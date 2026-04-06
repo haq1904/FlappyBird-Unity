@@ -3,7 +3,9 @@
     "rootNamespace": "",
     "references": [
         "DOTween.Modules",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "FlappyBird.Core",
+        "FlappyBird.Logic"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

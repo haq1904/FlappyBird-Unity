@@ -1,8 +1,10 @@
 {
-    "name": "FlappyBird.Core",
+    "name": "FlappyBird.Logic",
     "rootNamespace": "",
     "references": [
-        "GUID:1633378e7f58cc7469c304fb02488f76"
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:311372c0e3f8b964cb081a30917c8214",
+        "GUID:2e5d2ed09acccb5419f6d7f80914df02"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

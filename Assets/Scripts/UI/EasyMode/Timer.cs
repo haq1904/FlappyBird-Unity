@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class Timer : MonoBehaviour
     public float duration=1f;
     private Ease moveEase = Ease.InOutBack;
     private List<Vector3> resetBirdsPos;
+    public static Action OnDone;
 
     private void Awake()
     {
@@ -29,6 +31,7 @@ public class Timer : MonoBehaviour
     private void OnDisable()
     {
         EasyModeUIController.OnStartGame -= StartGame;
+        OnDone = null;
     }
 
     private void StartGame()
@@ -49,9 +52,11 @@ public class Timer : MonoBehaviour
                 rb.bodyType = RigidbodyType2D.Dynamic;
                 rb.AddForce(new Vector2(randX, randY), ForceMode2D.Impulse);
                 rb.angularVelocity = 200f;
+
             });
             sequence.AppendInterval(0.8f);
         }
+        sequence.AppendCallback(()=>OnDone?.Invoke());
 
         sequence.Append(panel.DOAnchorPos(new Vector2(0, 724), duration).SetEase(moveEase));
 
