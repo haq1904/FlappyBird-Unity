@@ -119,24 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &234695608 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1926556730683155129, guid: 924569b1f77d4fd4fa2822c6caefe519, type: 3}
-  m_PrefabInstance: {fileID: 536429663}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &234695609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234695608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 229f843607681f14ab53a4209d71e193, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FlappyBird.Core::MusicManager
---- !u!1001 &536429663
+--- !u!1001 &964031108
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -148,17 +131,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2450011261774011024, guid: 924569b1f77d4fd4fa2822c6caefe519, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8386978452301617008, guid: 924569b1f77d4fd4fa2822c6caefe519, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 6.40466
       objectReference: {fileID: 0}
     - target: {fileID: 8386978452301617008, guid: 924569b1f77d4fd4fa2822c6caefe519, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.54673
       objectReference: {fileID: 0}
     - target: {fileID: 8386978452301617008, guid: 924569b1f77d4fd4fa2822c6caefe519, type: 3}
       propertyPath: m_LocalPosition.z
@@ -198,7 +177,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1926556730683155129, guid: 924569b1f77d4fd4fa2822c6caefe519, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 234695609}
+      addedObject: {fileID: 2088163979}
   m_SourcePrefab: {fileID: 100100000, guid: 924569b1f77d4fd4fa2822c6caefe519, type: 3}
 --- !u!1 &1020687124
 GameObject:
@@ -337,7 +316,7 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!1001 &1789400074
+--- !u!1001 &1473768799
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -345,199 +324,76 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 600568459487973420, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
-      propertyPath: MoveToEasyMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1298758094415478757, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
+    - target: {fileID: 8371056787745314687, guid: 944ece4b911a9da49840c397c5de7fa6, type: 3}
       propertyPath: m_Name
       value: Logic Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 2281391477636304841, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
+    - target: {fileID: 8756346943023556435, guid: 944ece4b911a9da49840c397c5de7fa6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.91348
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2281391477636304841, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
+    - target: {fileID: 8756346943023556435, guid: 944ece4b911a9da49840c397c5de7fa6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.52881
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2281391477636304841, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
+    - target: {fileID: 8756346943023556435, guid: 944ece4b911a9da49840c397c5de7fa6, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2281391477636304841, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
+    - target: {fileID: 8756346943023556435, guid: 944ece4b911a9da49840c397c5de7fa6, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2281391477636304841, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
+    - target: {fileID: 8756346943023556435, guid: 944ece4b911a9da49840c397c5de7fa6, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2281391477636304841, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
+    - target: {fileID: 8756346943023556435, guid: 944ece4b911a9da49840c397c5de7fa6, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2281391477636304841, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
+    - target: {fileID: 8756346943023556435, guid: 944ece4b911a9da49840c397c5de7fa6, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2281391477636304841, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
+    - target: {fileID: 8756346943023556435, guid: 944ece4b911a9da49840c397c5de7fa6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2281391477636304841, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
+    - target: {fileID: 8756346943023556435, guid: 944ece4b911a9da49840c397c5de7fa6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2281391477636304841, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
+    - target: {fileID: 8756346943023556435, guid: 944ece4b911a9da49840c397c5de7fa6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1298758094415478757, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1789400076}
-    - targetCorrespondingSourceObject: {fileID: 1298758094415478757, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1789400078}
-  m_SourcePrefab: {fileID: 100100000, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
---- !u!1 &1789400075 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1298758094415478757, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
-  m_PrefabInstance: {fileID: 1789400074}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1789400076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789400075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FlappyBird.Core::GameEventListener
-  Event: {fileID: 11400000, guid: d9400e0efc67d074fb5f0a9cb0cbfb13, type: 2}
-  Respond:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1789400077}
-        m_TargetAssemblyTypeName: LogicManager, FlappyBird.Logic
-        m_MethodName: EasyMode
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1789400077 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 600568459487973420, guid: 04cad02f5f7c87c45b709c6fbc4bd824, type: 3}
-  m_PrefabInstance: {fileID: 1789400074}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789400075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afa436629bc1da241860ee7584ef9dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
---- !u!114 &1789400078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789400075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FlappyBird.Core::GameEventListener
-  Event: {fileID: 11400000, guid: 79bbe2def14ba95499dfbc9c1eb220c9, type: 2}
-  Respond:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1789400077}
-        m_TargetAssemblyTypeName: LogicManager, FlappyBird.Logic
-        m_MethodName: HardMode
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!1001 &1818540586
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5393938888878556049, guid: f258c29d1e8419648aafb7d5877f5da7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.91348
-      objectReference: {fileID: 0}
-    - target: {fileID: 5393938888878556049, guid: f258c29d1e8419648aafb7d5877f5da7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.52881
-      objectReference: {fileID: 0}
-    - target: {fileID: 5393938888878556049, guid: f258c29d1e8419648aafb7d5877f5da7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5393938888878556049, guid: f258c29d1e8419648aafb7d5877f5da7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5393938888878556049, guid: f258c29d1e8419648aafb7d5877f5da7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5393938888878556049, guid: f258c29d1e8419648aafb7d5877f5da7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5393938888878556049, guid: f258c29d1e8419648aafb7d5877f5da7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5393938888878556049, guid: f258c29d1e8419648aafb7d5877f5da7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5393938888878556049, guid: f258c29d1e8419648aafb7d5877f5da7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5393938888878556049, guid: f258c29d1e8419648aafb7d5877f5da7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7319399400721577893, guid: f258c29d1e8419648aafb7d5877f5da7, type: 3}
-      propertyPath: m_Name
-      value: Pooler
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f258c29d1e8419648aafb7d5877f5da7, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 944ece4b911a9da49840c397c5de7fa6, type: 3}
+--- !u!1 &2088163976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1926556730683155129, guid: 924569b1f77d4fd4fa2822c6caefe519, type: 3}
+  m_PrefabInstance: {fileID: 964031108}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2088163979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088163976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229f843607681f14ab53a4209d71e193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Logic::MusicManager
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1020687127}
-  - {fileID: 1789400074}
-  - {fileID: 1818540586}
-  - {fileID: 536429663}
+  - {fileID: 964031108}
+  - {fileID: 1473768799}

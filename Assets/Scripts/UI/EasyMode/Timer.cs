@@ -1,17 +1,22 @@
 using DG.Tweening;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class Timer : MonoBehaviour
 {
+    [Header("Events")]
+    [SerializeField] private UnityEvent OnTimerDoneEvent; 
+
+    [Header("Game objects")]
     [SerializeField] private RectTransform panel;
     [SerializeField] private GameObject[] birds;
+    [SerializeField] private CanvasGroup canvasGroupTimer;
     public float duration=1f;
     private Ease moveEase = Ease.InOutBack;
     private List<Vector3> resetBirdsPos;
-    public static Action OnDone;
+    
 
     private void Awake()
     {
@@ -21,24 +26,13 @@ public class Timer : MonoBehaviour
             resetBirdsPos.Add(birds[i].transform.localPosition);
         }
     }
-    public void OnEnable()
-    {
-        StartGame();
-        EasyModeUIController.OnStartGame += StartGame;
 
-    }
-
-    private void OnDisable()
+    public void StartCountDown()
     {
-        EasyModeUIController.OnStartGame -= StartGame;
-        OnDone = null;
-    }
-
-    private void StartGame()
-    {
+        canvasGroupTimer.alpha = 1;
         ResetBirds();
         var sequence = DOTween.Sequence();
-        sequence.Append(panel.DOAnchorPos(new Vector2(0, 307), duration).SetEase(moveEase));
+        sequence.Append(panel.DOAnchorPos(new Vector2(0, -248), duration).SetEase(moveEase));
 
 
         for (int i = 0; i < birds.Length; i++)
@@ -53,28 +47,32 @@ public class Timer : MonoBehaviour
                 rb.AddForce(new Vector2(randX, randY), ForceMode2D.Impulse);
                 rb.angularVelocity = 200f;
 
+
             });
             sequence.AppendInterval(0.8f);
         }
-        sequence.AppendCallback(()=>OnDone?.Invoke());
+        sequence.AppendCallback(() => {
+            Debug.Log("Timer notified : OnTimerDone event is raised. ");
+            OnTimerDoneEvent?.Invoke();          
+            }
+        );
 
-        sequence.Append(panel.DOAnchorPos(new Vector2(0, 724), duration).SetEase(moveEase));
+        sequence.Append(panel.DOAnchorPos(new Vector2(0, 184), duration).SetEase(moveEase));
 
         sequence.SetLink(gameObject,LinkBehaviour.KillOnDisable);
 
-        sequence.AppendCallback(()=> {
-            gameObject.SetActive(false);
-         });
+        sequence.AppendCallback(()=>canvasGroupTimer.alpha = 0);
 
     }
 
     private void ResetBirds()
     {
-       for(int i = 0; i< birds.Length; i++)
+        for (int i = 0; i < birds.Length; i++)
         {
             birds[i].transform.localPosition = resetBirdsPos[i];
             Rigidbody2D rb = birds[i].GetComponent<Rigidbody2D>();
-            birds[i].transform.eulerAngles= Vector3.zero;
+            birds[i].transform.eulerAngles = Vector3.zero;
+            rb.angularVelocity = 0f;
             rb.bodyType = RigidbodyType2D.Kinematic;
             rb.linearVelocity = Vector2.zero;
         }

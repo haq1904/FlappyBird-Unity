@@ -1,36 +1,27 @@
 
-using Codice.Client.Common.GameUI;
 using System;
-using System.Timers;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 public class EasyModeUIController : MonoBehaviour
 {
-    [SerializeField] private GameObject _timerPanel;
-    public static Action OnStartGame;
+    public enum EasyModeGameState
+    {
+        OnStartGame,
+        OnPlayAgain,
+    }
+
     
-    public void OnEnable()
+
+    [Header("Panels")]
+    [SerializeField] private Timer _timer;
+    
+    public void OnStartGame()
     {
-        StartCountDown();
-        Timer.OnDone += FinishedCountDown;
+        Debug.Log("EasyModeUIController received OnStartEasyMode event and start countdown.");
+        _timer.StartCountDown();
     }
 
-    public void OnDisable()
-    {
-        OnStartGame = null;
-        Timer.OnDone -= FinishedCountDown;
-    }
-    public void StartCountDown()
-    {
-        _timerPanel.SetActive(true);
-        Debug.Log("Set active Timer panel.");
 
-    }
-
-    public void FinishedCountDown()
-    {
-        OnStartGame?.Invoke();
-        Debug.Log("Finished count down.");
-    }
+    
 }

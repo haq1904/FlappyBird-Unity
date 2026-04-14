@@ -7,14 +7,9 @@ public class LogicManager : MonoBehaviour
 {
 
     [SerializeField] private bool MoveToEasyMode = false;
-
-    public int playerHighestScore = 0;
     public static LogicManager Instance;
     public GameState State;
 
-    public static event Action<GameState> OnLobby;
-    public static event Action<GameState> OnEasyMode;
-    public static event Action<GameState> OnHardMode;
     
 
     private void Awake()
@@ -29,12 +24,12 @@ public class LogicManager : MonoBehaviour
                 if (!MoveToEasyMode)
                 {
                     SceneManager.LoadScene("LobbyScene");
-                    
+                    State = GameState.Lobby;
                 }
                 else if (MoveToEasyMode)
                 {
                     SceneManager.LoadScene("EasyModeScene");
-                    
+                    State = GameState.EasyMode;
                 }
 
             }
@@ -61,9 +56,6 @@ public class LogicManager : MonoBehaviour
 
     private void ClearAllEvents()
     {
-        OnLobby = null;
-        OnEasyMode = null;
-        OnHardMode = null;
         Debug.Log("All LogicManager's event have been cleared");
     }
 
@@ -92,15 +84,12 @@ public class LogicManager : MonoBehaviour
         {
             case GameState.Lobby:
                 SceneController.Instance.LoadScene(1);
-                OnLobby?.Invoke(newState);
                 break; 
             case GameState.EasyMode:
                 SceneController.Instance.LoadScene(2);
-                OnEasyMode?.Invoke(newState);
                 break;
             case GameState.HardMode:
                 SceneController.Instance.LoadScene(3);
-                OnHardMode?.Invoke(newState);
                 break;
             
         }
@@ -115,3 +104,5 @@ public class LogicManager : MonoBehaviour
     }
 
 }
+
+

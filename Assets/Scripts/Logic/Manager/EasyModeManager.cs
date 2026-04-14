@@ -1,30 +1,59 @@
-using JetBrains.Annotations;
-using log4net;
-using System;
-using System.Runtime.CompilerServices;
-using System.Threading;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class EasyModeManager : MonoBehaviour
 {
-    public static event Action OnStartGame;
-    public void OnEnable()
+
+    public enum GameState
     {
-        LogicManager.OnEasyMode += StartGame;
+        GameStart,
+        GamePause,
+        GameOver,
     }
 
-    public void OnDisable()
+
+    [Header("Events")]
+    [SerializeField] private UnityEvent OnStartGame;
+
+
+    [Header("Game State")]
+    [SerializeField] private GameState gameState;
+
+
+    public void Awake()
     {
         
-        LogicManager.OnEasyMode -= StartGame;
-        OnStartGame = null;
     }
 
+    public void Start()
+    { 
+        UpdateGameState(GameState.GameStart);
+    }
 
-    private void StartGame(LogicManager.GameState state)
+    public void UpdateGameState(GameState newState)
     {
-        OnStartGame?.Invoke();
+        gameState = newState;
+        switch (newState)
+        {
+            case GameState.GameStart:
+                OnStartGame?.Invoke();
+                Debug.Log("EasyMode's logic notified -> OnStartEasyMode event is raised");
+                break;
+            case GameState.GamePause:
+                break;
+            case GameState.GameOver:
+                break;
+        }
     }
+
+    public void StartFlying()
+    {
+        Debug.Log("EasyMode's logic received OnTimeDone event and start flying");
+        Debug.Log("Bird is allowed to fly");
+    }
+
+    
+
+    
 
    
 
