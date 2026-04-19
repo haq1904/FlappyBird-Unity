@@ -18,7 +18,6 @@ public class EasyModeUIController : MonoBehaviour
     
     public void OnStartGame()
     {
-        Debug.Log("EasyModeUIController received OnStartEasyMode event and start countdown.");
         _timer.StartCountDown();
     }
 

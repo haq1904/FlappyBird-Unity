@@ -52,7 +52,6 @@ public class Timer : MonoBehaviour
             sequence.AppendInterval(0.8f);
         }
         sequence.AppendCallback(() => {
-            Debug.Log("Timer notified : OnTimerDone event is raised. ");
             OnTimerDoneEvent?.Invoke();          
             }
         );

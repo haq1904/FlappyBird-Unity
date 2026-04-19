@@ -13,6 +13,7 @@ public class EasyModeManager : MonoBehaviour
 
     [Header("Events")]
     [SerializeField] private UnityEvent OnStartGame;
+    [SerializeField] private UnityEvent OnStartFlying;
 
 
     [Header("Game State")]
@@ -35,8 +36,7 @@ public class EasyModeManager : MonoBehaviour
         switch (newState)
         {
             case GameState.GameStart:
-                OnStartGame?.Invoke();
-                Debug.Log("EasyMode's logic notified -> OnStartEasyMode event is raised");
+                OnStartGame?.Invoke();            
                 break;
             case GameState.GamePause:
                 break;
@@ -47,8 +47,8 @@ public class EasyModeManager : MonoBehaviour
 
     public void StartFlying()
     {
-        Debug.Log("EasyMode's logic received OnTimeDone event and start flying");
-        Debug.Log("Bird is allowed to fly");
+        Debug.Log("EasyModeManager raised OnStartFlying event");
+        OnStartFlying?.Invoke();
     }
 
     

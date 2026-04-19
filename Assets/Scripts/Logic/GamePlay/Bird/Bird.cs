@@ -12,12 +12,9 @@ public class BirdScript : MonoBehaviour, BirdControls.IBirdActions
 
     private ParticleSystem birdDamageParticleInstance;
 
-
     private Vector3 startPos;
 
     private Quaternion startRot;
-
-    private bool isBirdAlive = false;
 
 
     [SerializeField] private float jumpForce = 100f;
@@ -26,9 +23,7 @@ public class BirdScript : MonoBehaviour, BirdControls.IBirdActions
 
     [SerializeField] private AudioClip flapAudioClip;
 
-    public static event Action OnBirdCrashed;
-
-
+    
 
     private void Awake()
     {
@@ -37,49 +32,30 @@ public class BirdScript : MonoBehaviour, BirdControls.IBirdActions
         startPos = gameObject.transform.position;
         startRot = gameObject.transform.rotation;         
     }
-
-    
-
   
-
-    
 
     private void OnEnable()
     {
         controls = new BirdControls();
-        controls.Bird.SetCallbacks(this);   // kết nối callback OnJump
-        controls.Bird.Enable();
-        
-        
+        controls.Bird.SetCallbacks(this);
     }
 
     private void OnDisable()
     {
         if (controls != null)
-        {
-            controls.Bird.SetCallbacks(null);
-            controls.Bird.Disable();
-        }
-        
-        
+            controls.Bird.SetCallbacks(null);          
     }
 
-    private void StartFlying(LogicManager.GameState state)
+    public void StartFlying()
     {
-        isBirdAlive = true;
+        Debug.Log("Main bird received OnStartFlying event");
+        ResetPos();
         rb.bodyType = RigidbodyType2D.Dynamic;
-        Debug.Log("Bird starts to fly");
+        controls.Bird.Enable();
+
     }
 
-    private void Pause(LogicManager.GameState state)
-    {
-        isBirdAlive = false;
-        rb.linearVelocity = Vector2.zero;
-        rb.bodyType = RigidbodyType2D.Kinematic;
-        Debug.Log("Bird stopped");
-    }
-
-    private void ResetPos (LogicManager.GameState state)
+    private void ResetPos ()
     {
         
         gameObject.transform.position = startPos;
@@ -91,25 +67,23 @@ public class BirdScript : MonoBehaviour, BirdControls.IBirdActions
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && isBirdAlive )
+        if (context.started)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             SoundFXManager.Instance.PlayAudioClip(flapAudioClip, transform, 1f);
-            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.linearVelocity = Vector2.zero;
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            //rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isBirdAlive)
-        {
-            isBirdAlive = false;
-            OnBirdCrashed?.Invoke();
-            BirdCollisionHandle();
-            BirdDamageSpawner();
-            rb.linearVelocityX = -20;
-            Debug.Log("Bird crashed");
-        }
+        controls.Bird.Disable();
+        BirdCollisionHandle();
+        BirdDamageSpawner();
+        rb.linearVelocityX = -20;
+        Debug.Log("Bird crashed");
     }
 
     private void BirdCollisionHandle()
@@ -121,7 +95,8 @@ public class BirdScript : MonoBehaviour, BirdControls.IBirdActions
 
     private void BirdDamageSpawner()
     {
-        birdDamageParticleInstance = Instantiate(birdDamageParticle, transform.position, Quaternion.identity);
+        if(birdDamageParticleInstance!= null)
+            birdDamageParticleInstance = Instantiate(birdDamageParticle, transform.position, Quaternion.identity);
     }
 
 }
