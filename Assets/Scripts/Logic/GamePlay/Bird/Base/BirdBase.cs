@@ -1,13 +1,16 @@
+using Codice.Client.BaseCommands;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BirdBase : MonoBehaviour, IDamageable, IMoveable
+public class BirdBase : MonoBehaviour, IDamageable
 {
-    [field:SerializeField] public float Force { get; set; }
+    [field:SerializeField] public float JumpForce { get; set; }
     public Rigidbody2D RB { get; set; }
 
-    private BirdControls Controls;
+    public BirdControls Controls;
+
+    public DeathType LastDeathType { get; set; }
 
     #region State Machine Variables
     public BirdStateMachine StateMachine { get; set; }
@@ -17,6 +20,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IMoveable
     public BirdDieState DieState { get; set; }
     #endregion
 
+    #region Mono behavior function
     private void Awake()
     {
         StateMachine = new BirdStateMachine();
@@ -25,20 +29,18 @@ public class BirdBase : MonoBehaviour, IDamageable, IMoveable
         PauseState = new BirdPauseState(this, StateMachine);
         DieState = new BirdDieState(this, StateMachine);
         Controls = new BirdControls();
-        
+
     }
 
     private void OnEnable()
     {
-        Controls.Enable();
-        Controls.Bird.Jump.started += OnFlapStarted;
+       
     }
-
-   
 
     private void OnDisable()
     {
-        Controls.Disable();
+        if (StateMachine.CurrentBirdState != null)
+            StateMachine.CurrentBirdState.ExitState();
     }
 
     private void Start()
@@ -47,16 +49,17 @@ public class BirdBase : MonoBehaviour, IDamageable, IMoveable
         StateMachine.Initialize(IdleState);
     }
 
-    public void HandleFlying()
+    #endregion
+
+    #region Received Event Function
+    public void HandleFlying() //Receive OnStartFlying event from EasyModeManager
     {
-        Debug.Log("MainBird received OnStartFlying event");
-        Debug.Log("Change state : Idle - > Flying");
         StateMachine.ChangeState(FlyingState);
     }
+    #endregion
 
-
-    #region Die function
-    public void Die()
+    #region IDamageable function
+    public void OnHitSomething()
     {
         
     }
@@ -65,17 +68,27 @@ public class BirdBase : MonoBehaviour, IDamageable, IMoveable
     #region Control function
     private void OnFlapStarted(InputAction.CallbackContext context)
     {
-        Flap();
-    }
-    public void Flap()
-    {
-        Debug.Log("Player pressed space button.");
     }
 
     public void ResetVelocity()
     {
         
     }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.TryGetComponent<IDeadly>(out IDeadly ideadly))
+        { 
+            LastDeathType = ideadly.GetDeathType();
+            StateMachine.ChangeState(DieState);
+        }
+        else
+        {
+            Debug.Log("Game object's interface is not a type in DeathType ");
+        }
+    }
+
+    
     #endregion
 
     #region Animation Trigger

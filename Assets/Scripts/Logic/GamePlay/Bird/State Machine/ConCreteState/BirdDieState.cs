@@ -14,6 +14,15 @@ public class BirdDieState : BirdState
     public override void EnterState()
     {
         base.EnterState();
+        switch (bird.LastDeathType)
+        {
+            case DeathType.PipeHit:
+                break;
+            case DeathType.CeilingHit:
+                break;
+            case DeathType.GroundHit:
+                break;
+        }
     }
 
     public override void ExitState()
