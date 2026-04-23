@@ -50,16 +50,8 @@ public class LogicManager : MonoBehaviour
 
     private void OnDisable()
     {
-       ClearAllEvents();
     }
 
-
-    private void ClearAllEvents()
-    {
-        Debug.Log("All LogicManager's event have been cleared");
-    }
-
-    
 
     
     public void Lobby(){

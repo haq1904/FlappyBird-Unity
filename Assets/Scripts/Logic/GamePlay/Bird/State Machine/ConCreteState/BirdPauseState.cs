@@ -4,6 +4,7 @@ public class BirdPauseState : BirdState
 {
     public BirdPauseState(BirdBase bird, BirdStateMachine birdStateMachine) : base(bird, birdStateMachine)
     {
+        nameState = "Pause state";
     }
 
     public override void AnimationTriggerEvent(BirdBase.AnimationTriggerType triggerType)
@@ -14,6 +15,7 @@ public class BirdPauseState : BirdState
     public override void EnterState()
     {
         base.EnterState();
+        GetState();
     }
 
     public override void ExitState()

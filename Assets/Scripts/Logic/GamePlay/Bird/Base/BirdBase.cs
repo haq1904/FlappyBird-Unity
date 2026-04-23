@@ -6,11 +6,12 @@ using UnityEngine.InputSystem;
 public class BirdBase : MonoBehaviour, IDamageable
 {
     [field:SerializeField] public float JumpForce { get; set; }
+     public string BirdState;
     public Rigidbody2D RB { get; set; }
 
     public BirdControls Controls;
 
-    public DeathType LastDeathType { get; set; }
+    
 
     #region State Machine Variables
     public BirdStateMachine StateMachine { get; set; }
@@ -59,46 +60,28 @@ public class BirdBase : MonoBehaviour, IDamageable
     #endregion
 
     #region IDamageable function
-    public void OnHitSomething()
+    public void PlayAnimation(AnimationStandard animation)
     {
         
     }
+
+    public void TakeDamage(Vector2 direction,float impactForce, float gravityScale)
+    {
+        StateMachine.CurrentBirdState.HandleCollision(direction, impactForce, gravityScale);
+    }
+
     #endregion
 
     #region Control function
-    private void OnFlapStarted(InputAction.CallbackContext context)
-    {
-    }
 
-    public void ResetVelocity()
-    {
-        
-    }
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.TryGetComponent<IDeadly>(out IDeadly ideadly))
-        { 
-            LastDeathType = ideadly.GetDeathType();
-            StateMachine.ChangeState(DieState);
-        }
-        else
-        {
-            Debug.Log("Game object's interface is not a type in DeathType ");
-        }
-    }
 
-    
+
     #endregion
 
     #region Animation Trigger
     public void AnimationTriggerEvent(AnimationTriggerType triggerType) {
         StateMachine.CurrentBirdState.AnimationTriggerEvent(triggerType);
-    }
-
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        throw new System.NotImplementedException();
     }
 
     public enum AnimationTriggerType

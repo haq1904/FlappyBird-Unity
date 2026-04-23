@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f7db6fb00f4be4cb6abe1f6e646d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::CeilingWall
+  force: 4.87
+  gravity: 0.1
 --- !u!61 &5659202064915682958
 BoxCollider2D:
   m_ObjectHideFlags: 0

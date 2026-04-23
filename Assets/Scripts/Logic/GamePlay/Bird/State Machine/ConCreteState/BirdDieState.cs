@@ -4,6 +4,7 @@ public class BirdDieState : BirdState
 {
     public BirdDieState(BirdBase bird, BirdStateMachine birdStateMachine) : base(bird, birdStateMachine)
     {
+        nameState="Die state";
     }
 
     public override void AnimationTriggerEvent(BirdBase.AnimationTriggerType triggerType)
@@ -14,18 +15,11 @@ public class BirdDieState : BirdState
     public override void EnterState()
     {
         base.EnterState();
-        switch (bird.LastDeathType)
-        {
-            case DeathType.PipeHit:
-                break;
-            case DeathType.CeilingHit:
-                break;
-            case DeathType.GroundHit:
-                break;
-        }
+        GetState();
+        
     }
 
-    public override void ExitState()
+    public override void ExitState()  
     {
         base.ExitState();
     }
@@ -33,6 +27,12 @@ public class BirdDieState : BirdState
     public override void FrameUpdate()
     {
         base.FrameUpdate();
+    }
+
+    public override void GetState()
+    {
+        base.GetState();
+        bird.BirdState = nameState;
     }
 
     public override void PhysicUpdate()

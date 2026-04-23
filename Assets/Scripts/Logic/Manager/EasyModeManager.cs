@@ -47,7 +47,6 @@ public class EasyModeManager : MonoBehaviour
 
     public void StartFlying()
     {
-        Debug.Log("EasyModeManager raised OnStartFlying event");
         OnStartFlying?.Invoke();
     }
 

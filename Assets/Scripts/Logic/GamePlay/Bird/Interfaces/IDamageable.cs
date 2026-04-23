@@ -1,6 +1,17 @@
 using UnityEngine;
 
-public interface IDamageable 
+public enum AnimationStandard
 {
-    void OnHitSomething();
+    HitTopGroud,
+    HitBotGround,
+    HitPipe,
+}
+
+public interface IDamageable
+{ 
+    void PlayAnimation(AnimationStandard animation);//Play animation
+
+    void TakeDamage(Vector2 vector2,float impactForce,float gravityScale);
+
+
 }

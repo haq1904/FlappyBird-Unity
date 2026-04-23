@@ -4,6 +4,7 @@ public class BirdState
 {
     protected BirdBase bird;
     protected BirdStateMachine birdStateMachine;
+    protected string nameState;
 
     protected BirdState(BirdBase bird, BirdStateMachine birdStateMachine)
     {
@@ -11,6 +12,9 @@ public class BirdState
         this.birdStateMachine = birdStateMachine;
     }
 
+    public virtual void GetState()
+    {
+    }
     public virtual void EnterState()
     {
 
@@ -32,6 +36,11 @@ public class BirdState
     }
 
     public virtual void AnimationTriggerEvent(BirdBase.AnimationTriggerType triggerType)
+    {
+
+    }
+
+    public virtual void HandleCollision(Vector2 direction,float impactForce,float gravityScale)
     {
 
     }

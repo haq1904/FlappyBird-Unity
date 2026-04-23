@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class BirdIdleState : BirdState
 {
+    
     public BirdIdleState(BirdBase bird, BirdStateMachine birdStateMachine) : base(bird, birdStateMachine)
     {
+        nameState = "Idle state";
     }
 
     public override void AnimationTriggerEvent(BirdBase.AnimationTriggerType triggerType)
@@ -14,6 +16,7 @@ public class BirdIdleState : BirdState
     public override void EnterState()
     {
         base.EnterState();
+        GetState();
         bird.RB.bodyType = RigidbodyType2D.Kinematic;
         
     }
@@ -31,5 +34,11 @@ public class BirdIdleState : BirdState
     public override void PhysicUpdate()
     {
         base.PhysicUpdate();
+    }
+
+    public override void GetState()
+    {
+        base.GetState();
+        bird.BirdState = nameState;
     }
 }
