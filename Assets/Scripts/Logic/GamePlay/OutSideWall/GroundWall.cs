@@ -1,12 +1,10 @@
 using UnityEngine;
 
-public class GroundWall : MonoBehaviour, IAttackable
+public class GroundWall : MonoBehaviour
 {
     [SerializeField] float force = 1;
     [SerializeField] float gravity = 1;
-    public void Attack()
-    {
-    }
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

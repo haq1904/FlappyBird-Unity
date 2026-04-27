@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BirdBase : MonoBehaviour, IDamageable
+public class BirdBase : MonoBehaviour, IDamageable, IReceivable
 {
     [field:SerializeField] public float JumpForce { get; set; }
      public string BirdState;
@@ -60,7 +60,7 @@ public class BirdBase : MonoBehaviour, IDamageable
     #endregion
 
     #region IDamageable function
-    public void PlayAnimation(AnimationStandard animation)
+    public void PlayAnimation(DamageableAnimationStandard animation)
     {
         
     }
@@ -70,6 +70,18 @@ public class BirdBase : MonoBehaviour, IDamageable
         StateMachine.CurrentBirdState.HandleCollision(direction, impactForce, gravityScale);
     }
 
+    #endregion
+
+    #region IReceivable function
+    public void PlayAnimation(ReceivableAnimationStandart animationName)
+    {
+        
+    }
+
+    public void ApplyEffect(float point)
+    {
+        Debug.Log("Bird take 10 points");
+    }
     #endregion
 
     #region Control function
@@ -83,6 +95,8 @@ public class BirdBase : MonoBehaviour, IDamageable
     public void AnimationTriggerEvent(AnimationTriggerType triggerType) {
         StateMachine.CurrentBirdState.AnimationTriggerEvent(triggerType);
     }
+
+    
 
     public enum AnimationTriggerType
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum AnimationStandard
+public enum DamageableAnimationStandard
 {
     HitTopGroud,
     HitBotGround,
@@ -9,7 +9,7 @@ public enum AnimationStandard
 
 public interface IDamageable
 { 
-    void PlayAnimation(AnimationStandard animation);//Play animation
+    void PlayAnimation(DamageableAnimationStandard animationName);
 
     void TakeDamage(Vector2 vector2,float impactForce,float gravityScale);
 

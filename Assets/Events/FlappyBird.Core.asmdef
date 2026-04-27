@@ -1,3 +1,16 @@
 {
-	"name": "FlappyBird.Core"
+    "name": "FlappyBird.Core",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ca1d6274bb5dad6409569f55f07b23b9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

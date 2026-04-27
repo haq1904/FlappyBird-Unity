@@ -107,7 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d866a945d7e004496268f802cf5c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::MainBird
-  <JumpForce>k__BackingField: 8
+  <JumpForce>k__BackingField: 5.11
+  BirdState: 
 --- !u!61 &8410513978905256462
 BoxCollider2D:
   m_ObjectHideFlags: 0
