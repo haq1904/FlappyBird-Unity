@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 9066470291773131653}
   - component: {fileID: 6588376019793008317}
   - component: {fileID: 8888712288308939179}
-  - component: {fileID: 5852717984569714755}
+  - component: {fileID: 4939771001371276053}
   m_Layer: 0
   m_Name: Midle
   m_TagString: PointTrigger
@@ -292,7 +292,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5852717984569714755
+--- !u!114 &4939771001371276053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -301,9 +301,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1737856928649437444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37bb416326d29a14985e5b823f14aa9c, type: 3}
+  m_Script: {fileID: 11500000, guid: d84063d9bad92fe49b6afb66cea19b15, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: FlappyBird.Logic::Midle
+  m_EditorClassIdentifier: FlappyBird.Logic::Item
+  effect: {fileID: 11400000, guid: f4f49c8232c24f44bb61a29ce47736a5, type: 2}
 --- !u!1 &7657412668363265912
 GameObject:
   m_ObjectHideFlags: 0

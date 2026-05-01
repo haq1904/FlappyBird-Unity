@@ -1,0 +1,16 @@
+{
+    "name": "FlappyBird",
+    "rootNamespace": "",
+    "references": [
+        "GUID:56443083fa3b7374aa0e729a91c257f6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

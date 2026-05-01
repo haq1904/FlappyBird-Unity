@@ -44,4 +44,9 @@ public class BirdState
     {
 
     }
+
+    public virtual void HandleAddPoint(float point)
+    {
+
+    }
 }

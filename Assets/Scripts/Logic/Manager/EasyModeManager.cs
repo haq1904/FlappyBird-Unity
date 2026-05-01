@@ -36,7 +36,7 @@ public class EasyModeManager : MonoBehaviour
         switch (newState)
         {
             case GameState.GameStart:
-                OnStartGame?.Invoke();            
+                OnStartGame?.Invoke();
                 break;
             case GameState.GamePause:
                 break;

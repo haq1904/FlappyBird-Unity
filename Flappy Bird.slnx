@@ -5,6 +5,8 @@
   <Project Path="FlappyBird.Audio.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="FlappyBird.UI.csproj" />
+  <Project Path="FlappyBird.csproj" />
+  <Project Path="Flappy.Interface.csproj" />
   <Project Path="FlappyBird.Controls.csproj" />
   <Project Path="FlappyBird.Editor.csproj" />
 </Solution>

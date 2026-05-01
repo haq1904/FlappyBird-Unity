@@ -24,13 +24,14 @@ public class Timer : MonoBehaviour
         for(int i = 0; i < birds.Length; i++)
         {
             resetBirdsPos.Add(birds[i].transform.localPosition);
+            Debug.Log($"Position : x-{resetBirdsPos[i].x} y-{resetBirdsPos[i].y}");
         }
     }
 
     public void StartCountDown()
     {
         canvasGroupTimer.alpha = 1;
-        ResetBirds();
+        //ResetBirds();
         var sequence = DOTween.Sequence();
         sequence.Append(panel.DOAnchorPos(new Vector2(0, -248), duration).SetEase(moveEase));
 

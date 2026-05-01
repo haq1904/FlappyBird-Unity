@@ -1,16 +1,23 @@
-using Codice.Client.BaseCommands;
-using System;
+
+using Codice.Client.Common.GameUI;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.Events;
+
 
 public class BirdBase : MonoBehaviour, IDamageable, IReceivable
 {
     [field:SerializeField] public float JumpForce { get; set; }
-     public string BirdState;
+
+    [SerializeField] private SoundTypeGameEvent OnBirdRaiseSoundEvent;
+    [SerializeField] private FloatGameEvent OnBirdRaisePoint;
+    
+    public string BirdState;
+
     public Rigidbody2D RB { get; set; }
 
     public BirdControls Controls;
 
+    
     
 
     #region State Machine Variables
@@ -73,20 +80,29 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     #endregion
 
     #region IReceivable function
-    public void PlayAnimation(ReceivableAnimationStandart animationName)
+    public void PlayAnimation(ReceivableAnimationStandard animationName)
     {
         
     }
 
-    public void ApplyEffect(float point)
+    public void AddPoint(float point)
     {
-        Debug.Log("Bird take 10 points");
+        StateMachine.CurrentBirdState.HandleAddPoint(point);
     }
     #endregion
 
     #region Control function
 
+    public void Flap()
+    {
+        OnBirdRaiseSoundEvent.Raise(SoundType.Flap);
+    }
 
+    public void RaiseAddPointEvent(float point)
+    {
+        OnBirdRaiseSoundEvent.Raise(SoundType.TakePoint);
+        OnBirdRaisePoint.Raise(point);
+    }
 
 
     #endregion
@@ -95,8 +111,6 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     public void AnimationTriggerEvent(AnimationTriggerType triggerType) {
         StateMachine.CurrentBirdState.AnimationTriggerEvent(triggerType);
     }
-
-    
 
     public enum AnimationTriggerType
     {

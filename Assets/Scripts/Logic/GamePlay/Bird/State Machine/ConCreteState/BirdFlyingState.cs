@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -55,8 +56,15 @@ public class BirdFlyingState : BirdState
         birdStateMachine.ChangeState(bird.DieState);
     }
 
+    public override void HandleAddPoint(float point)
+    {
+        base.HandleAddPoint(point);
+        bird.RaiseAddPointEvent(point);
+    }
+
     private void OnFlapStarted(InputAction.CallbackContext context)
     {
+        bird.Flap();
         bird.RB.linearVelocity = Vector2.zero;
         bird.RB.AddForce(Vector2.up * bird.JumpForce, ForceMode2D.Impulse);
     }

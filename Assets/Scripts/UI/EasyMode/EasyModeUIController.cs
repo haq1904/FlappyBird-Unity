@@ -18,6 +18,7 @@ public class EasyModeUIController : MonoBehaviour
     
     public void OnStartGame()
     {
+        
         _timer.StartCountDown();
     }
 
