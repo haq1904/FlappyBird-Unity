@@ -1,4 +1,5 @@
 
+using Codice.Client.Common.GameUI;
 using System;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,15 +12,14 @@ public class EasyModeUIController : MonoBehaviour
         OnPlayAgain,
     }
 
-    
 
-    [Header("Panels")]
-    [SerializeField] private Timer _timer;
+
+    [Header("Event")]
+    [SerializeField] private UnityEvent OnCountDown;
     
-    public void OnStartGame()
+    public void OnStartGame() //Receive OnStartEasyMode event from EasyModeManager
     {
-        
-        _timer.StartCountDown();
+        OnCountDown?.Invoke();
     }
 
 

@@ -1,15 +1,14 @@
 
-using Codice.Client.Common.GameUI;
 using UnityEngine;
-using UnityEngine.Events;
 
 
 public class BirdBase : MonoBehaviour, IDamageable, IReceivable
 {
     [field:SerializeField] public float JumpForce { get; set; }
-
     [SerializeField] private SoundTypeGameEvent OnBirdRaiseSoundEvent;
     [SerializeField] private FloatGameEvent OnBirdRaisePoint;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip audioClip;
     
     public string BirdState;
 
@@ -57,6 +56,11 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
         StateMachine.Initialize(IdleState);
     }
 
+    private void Update()
+    {
+        StateMachine.CurrentBirdState.FrameUpdate();
+    }
+
     #endregion
 
     #region Received Event Function
@@ -96,7 +100,9 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     public void Flap()
     {
         OnBirdRaiseSoundEvent.Raise(SoundType.Flap);
+         
     }
+
 
     public void RaiseAddPointEvent(float point)
     {
@@ -117,4 +123,6 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
         Example
     }
     #endregion
+
+    
 }

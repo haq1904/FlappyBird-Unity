@@ -49,7 +49,6 @@ public class SoundFXManager_Advance : MonoBehaviour
 
     public static void PlaySound(SoundType soundType)
     {
-        Debug.Log($"Play sound : {soundType.ToString()}");
         float volume = 1;
         AudioClip[] clips = Instance.soundList[(int)soundType].Sounds;
         AudioClip randClip = clips[UnityEngine.Random.Range(0, clips.Length)];

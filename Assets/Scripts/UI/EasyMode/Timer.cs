@@ -24,7 +24,6 @@ public class Timer : MonoBehaviour
         for(int i = 0; i < birds.Length; i++)
         {
             resetBirdsPos.Add(birds[i].transform.localPosition);
-            Debug.Log($"Position : x-{resetBirdsPos[i].x} y-{resetBirdsPos[i].y}");
         }
     }
 

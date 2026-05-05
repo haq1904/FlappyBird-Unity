@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5483855226019530573
+--- !u!1 &6090679507648257271
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1442197461623233493}
-  - component: {fileID: 6633233432709129290}
-  - component: {fileID: 1894527559215218651}
-  - component: {fileID: 8410513978905256462}
-  - component: {fileID: 1266179911599800760}
-  - component: {fileID: -4750665944483461942}
+  - component: {fileID: 6545050232666059898}
+  - component: {fileID: 3518169815143146407}
+  - component: {fileID: 5364713261553677289}
+  - component: {fileID: 7616020513092773260}
   m_Layer: 0
-  m_Name: MainBird
+  m_Name: BotPipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1442197461623233493
+--- !u!4 &6545050232666059898
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5483855226019530573}
+  m_GameObject: {fileID: 6090679507648257271}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.03, y: 0.21, z: 0}
-  m_LocalScale: {x: 4.78, y: 4.2450233, z: 1}
+  m_LocalPosition: {x: -0.1053, y: -6.2557, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6633233432709129290
+--- !u!212 &3518169815143146407
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5483855226019530573}
+  m_GameObject: {fileID: 6090679507648257271}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -85,39 +83,23 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1771042576551460130, guid: 7ad8f14d741bd694a8ee815c851565c6, type: 3}
+  m_Sprite: {fileID: 843629608526838009, guid: f60b1ca28020ceb4190783ca4ce4ab1b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_DrawMode: 1
+  m_Size: {x: 1.498619, y: 14.392075}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &1894527559215218651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5483855226019530573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7d866a945d7e004496268f802cf5c13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FlappyBird.Logic::MainBird
-  <JumpForce>k__BackingField: 5.11
-  OnBirdRaiseSoundEvent: {fileID: 11400000, guid: 57592ef266f661549af639484d543369, type: 2}
-  OnBirdRaisePoint: {fileID: 11400000, guid: b461976d6d02e434fbee207c841b57b0, type: 2}
-  BirdState: 
---- !u!61 &8410513978905256462
+--- !u!61 &5364713261553677289
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5483855226019530573}
+  m_GameObject: {fileID: 6090679507648257271}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -145,70 +127,29 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0046595335, y: -0.089826584}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0, y: 0, z: 0, w: 1}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.27, y: 0.21}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1.498619, y: 14.392075}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.27, y: 0.21}
+  m_Size: {x: 1.1567862, y: 14.170082}
   m_EdgeRadius: 0
---- !u!50 &1266179911599800760
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5483855226019530573}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 2.02
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &-4750665944483461942
+--- !u!114 &7616020513092773260
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5483855226019530573}
+  m_GameObject: {fileID: 6090679507648257271}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bc88eb6062e1d54cb57ae05b734b7bf, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: FlappyBird.Core::GameEventListener
-  Event: {fileID: 11400000, guid: 0043c850a08364047893f2f8c13b7b17, type: 2}
-  Respond:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1894527559215218651}
-        m_TargetAssemblyTypeName: MainBird, FlappyBird.Logic
-        m_MethodName: HandleFlying
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_EditorClassIdentifier: FlappyBird.Logic::PartOfPipe
+  impactForce: 1
+  gravityScale: 1
