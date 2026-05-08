@@ -345,7 +345,8 @@ MonoBehaviour:
   - {fileID: 7279134352519737488}
   - {fileID: 317448417588055691}
   canvasGroupTimer: {fileID: 6087967964883371855}
-  duration: 2
+  duration: 1.5
+  timeToCountdown: 0.3
 --- !u!225 &6087967964883371855
 CanvasGroup:
   m_ObjectHideFlags: 0

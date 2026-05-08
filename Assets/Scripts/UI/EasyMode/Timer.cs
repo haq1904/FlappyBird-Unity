@@ -13,7 +13,13 @@ public class Timer : MonoBehaviour
     [SerializeField] private RectTransform panel;
     [SerializeField] private GameObject[] birds;
     [SerializeField] private CanvasGroup canvasGroupTimer;
-    public float duration=1f;
+
+    [Header("Fields")]
+    [SerializeField] private float duration=1f;
+    [SerializeField] private float timeToCountdown = 1;
+    
+
+
     private Ease moveEase = Ease.InOutBack;
     private List<Vector3> resetBirdsPos;
     
@@ -30,7 +36,7 @@ public class Timer : MonoBehaviour
     public void StartCountDown()
     {
         canvasGroupTimer.alpha = 1;
-        //ResetBirds();
+        ResetBirds();
         var sequence = DOTween.Sequence();
         sequence.Append(panel.DOAnchorPos(new Vector2(0, -248), duration).SetEase(moveEase));
 
@@ -49,12 +55,13 @@ public class Timer : MonoBehaviour
 
 
             });
-            sequence.AppendInterval(0.8f);
+            sequence.AppendInterval(timeToCountdown);
         }
         sequence.AppendCallback(() => {
             OnTimerDoneEvent?.Invoke();          
             }
         );
+        sequence.AppendInterval(0.8f);
 
         sequence.Append(panel.DOAnchorPos(new Vector2(0, 184), duration).SetEase(moveEase));
 

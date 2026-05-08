@@ -7,12 +7,10 @@ public class OneWayMovePipe : BasePipe
     [SerializeField] private float timeToMove = 1;
     [SerializeField] private float distanceToMove = 1;
     private float yToMove;
-    private void OnEnable()
+    protected override void OnEnable()
     {
-        float randSpawnHeight= UnityEngine.Random.Range(heightRangeBot, heightRangeTop);
-        transform.position = new Vector3(transform.position.x, randSpawnHeight, transform.position.z);
-        do
-        {
+        base.OnEnable();
+        do{
             yToMove = UnityEngine.Random.Range(heightRangeBot, heightRangeTop);
         } while (Mathf.Abs(yToMove - randSpawnHeight) < distanceToMove);
     }
@@ -29,6 +27,6 @@ public class OneWayMovePipe : BasePipe
 
     private void MoveUpDown()
     {
-        transform.DOMoveY(yToMove, timeToMove).SetEase(Ease.OutElastic);
+        transform.DOMoveY(yToMove, timeToMove).SetEase(Ease.OutBounce).SetLink(gameObject);
     }
 }

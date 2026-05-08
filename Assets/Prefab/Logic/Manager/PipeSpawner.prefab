@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67747adadddf0243b069dfb567c11c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  pipe: {fileID: -475402021913430006, guid: 0f3d34feaf0d59d4281302c58810408e, type: 3}
+  basicPipe: {fileID: 5477230037227906513, guid: ba02586b4a15b2d4fb338f4440b9f9e3, type: 3}
+  oneWayMovePipe: {fileID: -475402021913430006, guid: 0f3d34feaf0d59d4281302c58810408e, type: 3}
+  twoWayMovePipe: {fileID: 6158084852549707665, guid: e88c015f26d09724eb64bec899d5a481, type: 3}
   timeToSpawn: 3

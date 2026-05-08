@@ -5,6 +5,7 @@ public class PipeSpawner : MonoBehaviour
 {
     [SerializeField] private BasicPipe basicPipe;
     [SerializeField] private OneWayMovePipe oneWayMovePipe;
+    [SerializeField] private TwoWayMovePipe twoWayMovePipe;
     [SerializeField] private float timeToSpawn=2;
 
     private float remainingTime=0;
@@ -23,6 +24,6 @@ public class PipeSpawner : MonoBehaviour
 
     private void SpawnPipe()
     {
-        Instantiate(oneWayMovePipe, transform.position,Quaternion.identity);
+        Instantiate(twoWayMovePipe, transform.position,Quaternion.identity);
     }
 }
