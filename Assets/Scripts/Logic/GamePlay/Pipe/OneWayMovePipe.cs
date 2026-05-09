@@ -27,6 +27,6 @@ public class OneWayMovePipe : BasePipe
 
     private void MoveUpDown()
     {
-        transform.DOMoveY(yToMove, timeToMove).SetEase(Ease.OutBounce).SetLink(gameObject);
+        transform.DOMoveY(yToMove, timeToMove).SetEase(Ease.OutCubic).SetLink(gameObject);
     }
 }

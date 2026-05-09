@@ -161,10 +161,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8796278437174122646}
-  - component: {fileID: 5477230037227906513}
   - component: {fileID: 4423231139751515961}
+  - component: {fileID: 3053719392400987826}
   m_Layer: 0
-  m_Name: BasicPipe
+  m_Name: NitroPipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,23 +188,6 @@ Transform:
   - {fileID: 9066470291773131653}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5477230037227906513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8857216727986773534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d0f219064f8c8440bf43f6e4628ef2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FlappyBird.Logic::Pipe
-  duration: 13.2
-  heightRangeTop: 0.5
-  heightRangeBot: -5
-  ease: 3
-  targetX: -25.7
 --- !u!50 &4423231139751515961
 Rigidbody2D:
   serializedVersion: 5
@@ -232,6 +215,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3053719392400987826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857216727986773534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274852f4b0edcd248a2781b3d0b9ee5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Logic::NitroPipe
+  moveSpeed: 3
+  heightRangeTop: 0.5
+  heightRangeBot: -5
 --- !u!1001 &4668743602049921434
 PrefabInstance:
   m_ObjectHideFlags: 0

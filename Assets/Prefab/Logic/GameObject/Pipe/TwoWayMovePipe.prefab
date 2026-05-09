@@ -230,8 +230,7 @@ MonoBehaviour:
   moveSpeed: 3.25
   heightRangeTop: 0.5
   heightRangeBot: -5
-  timeToMove: 3.21
-  isUp: 1
+  timeToMove: 5.4
 --- !u!1001 &2046514839242634599
 PrefabInstance:
   m_ObjectHideFlags: 0

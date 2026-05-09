@@ -3,12 +3,24 @@ using UnityEngine;
 
 public class PipeSpawner : MonoBehaviour
 {
-    [SerializeField] private BasicPipe basicPipe;
-    [SerializeField] private OneWayMovePipe oneWayMovePipe;
-    [SerializeField] private TwoWayMovePipe twoWayMovePipe;
+    [SerializeField] private BasePipe basicPipe;   
+    [SerializeField] private BasePipe pipeToTest;
+    [SerializeField] private bool isTest = true; 
     [SerializeField] private float timeToSpawn=2;
 
     private float remainingTime=0;
+    private BasePipe currPipe;
+
+    private void OnEnable()
+    {
+        if (isTest)
+        {
+            currPipe = pipeToTest;
+            return;
+        }
+        currPipe = basicPipe;
+
+    }
     private void Update()
     {
         if (remainingTime < timeToSpawn)
@@ -24,6 +36,6 @@ public class PipeSpawner : MonoBehaviour
 
     private void SpawnPipe()
     {
-        Instantiate(twoWayMovePipe, transform.position,Quaternion.identity);
+        Instantiate(currPipe, transform.position,Quaternion.identity);
     }
 }

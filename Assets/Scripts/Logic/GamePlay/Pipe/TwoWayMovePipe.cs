@@ -5,7 +5,7 @@ using UnityEngine;
 public class TwoWayMovePipe : BasicPipe
 {
     [SerializeField] private float timeToMove = 1;
-    [SerializeField] private bool isUp;
+    private bool isUp;
 
     protected override void OnEnable()
     {
@@ -18,11 +18,11 @@ public class TwoWayMovePipe : BasicPipe
     {
         if (isUp)
         {
-            transform.DOMoveY(heightRangeTop, timeToMove).SetEase(Ease.InQuad).SetLink(gameObject);
+            transform.DOMoveY(heightRangeTop, timeToMove).SetEase(Ease.OutCubic).SetLink(gameObject);
             isUp = false;
             return;
         }
-        transform.DOMoveY(heightRangeBot, timeToMove).SetEase(Ease.InQuad).SetLink(gameObject);
+        transform.DOMoveY(heightRangeBot, timeToMove).SetEase(Ease.OutCubic).SetLink(gameObject);
         isUp = true;
     }
 
