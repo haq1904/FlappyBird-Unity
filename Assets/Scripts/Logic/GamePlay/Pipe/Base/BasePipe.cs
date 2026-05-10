@@ -4,12 +4,13 @@ using DG.Tweening;
 public abstract class BasePipe : MonoBehaviour
 {
     [SerializeField] protected float duration = 3;
-    [SerializeField] protected float heightRangeTop = 0.5f;
-    [SerializeField] protected float heightRangeBot = -5f;
-    [SerializeField] protected Ease ease;
+    [SerializeField] protected float heightRangeTop = 1.5f;
+    [SerializeField] protected float heightRangeBot = -3.65f;
+    [SerializeField] protected Ease ease = Ease.OutQuad;
     [SerializeField] protected float targetX = -30;
 
     protected float randSpawnHeight;
+    public float GetRandSpawnHeight { get => randSpawnHeight; }
     
     protected Rigidbody2D rb;
     private void Awake()

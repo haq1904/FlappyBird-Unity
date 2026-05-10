@@ -200,11 +200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d0f219064f8c8440bf43f6e4628ef2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::Pipe
-  duration: 13.2
+  duration: 14.6
   heightRangeTop: 0.5
   heightRangeBot: -5
-  ease: 3
-  targetX: -25.7
+  ease: 6
+  targetX: -38.9
 --- !u!50 &4423231139751515961
 Rigidbody2D:
   serializedVersion: 5

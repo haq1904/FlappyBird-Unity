@@ -227,10 +227,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a015d99eef8868f48a1f2db73225fcd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::TwoWayMovePipe
-  moveSpeed: 3.25
+  duration: 3
   heightRangeTop: 0.5
   heightRangeBot: -5
-  timeToMove: 5.4
+  ease: 6
+  targetX: -30
+  timeToMove: 1
 --- !u!1001 &2046514839242634599
 PrefabInstance:
   m_ObjectHideFlags: 0
