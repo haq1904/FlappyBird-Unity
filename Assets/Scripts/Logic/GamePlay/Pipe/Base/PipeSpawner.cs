@@ -14,11 +14,10 @@ public class PipeSpawner : MonoBehaviour
     private void OnEnable()
     {
         if (isTest)
-        {
             currPipe = pipeToTest;
-            return;
-        }
-        currPipe = basicPipe;
+        else 
+            currPipe = basicPipe;
+        SpawnPipe();
 
     }
     private void Update()

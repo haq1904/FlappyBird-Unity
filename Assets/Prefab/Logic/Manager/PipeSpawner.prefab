@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   basicPipe: {fileID: 5477230037227906513, guid: ba02586b4a15b2d4fb338f4440b9f9e3, type: 3}
-  pipeToTest: {fileID: -475402021913430006, guid: 0f3d34feaf0d59d4281302c58810408e, type: 3}
+  pipeToTest: {fileID: 8348489220079675091, guid: bec8c622f762e2746beaa1b61446aff2, type: 3}
   isTest: 1
-  timeToSpawn: 1.58
+  timeToSpawn: 3.07
