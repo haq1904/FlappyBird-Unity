@@ -4,29 +4,40 @@ using UnityEngine;
 public class ChildOneWay : MonoBehaviour
 {
     [Header("Fields")]
-    [SerializeField] private BasePipe parentPipe;
-    [SerializeField] private float heightRangeTop = 3f;
-    [SerializeField] private float heightRangeBot = -2.5f;
+    [SerializeField] private OneWayMovePipe parentPipe;
     [SerializeField] private float timeToMove = 1f;
-    [SerializeField] private float distanceToMove = 1f;
     private float targetY;
 
     private void OnEnable()
-    { 
-        do
+    {
+        float startRange = 0;
+        float endRange = 0;
+
+        if (parentPipe.GetRandSpawnHeight>=0)
         {
-            targetY = UnityEngine.Random.Range(heightRangeBot, heightRangeTop);
-        } while ((Mathf.Abs(targetY) < distanceToMove));
+            startRange = -parentPipe.GetHeightRange - parentPipe.GetRandSpawnHeight;
+            endRange = parentPipe.GetRandSpawnHeight - parentPipe.GetUnitToMove;
+        }
+        else
+        {
+            startRange = parentPipe.GetRandSpawnHeight + parentPipe.GetUnitToMove;
+            endRange = parentPipe.GetHeightRange - parentPipe.GetRandSpawnHeight;
+        }
+        
+        targetY = UnityEngine.Random.Range(startRange, endRange);
+        //Debug.Log($@"Inf
+        //- Rand spawn hieght: {parentPipe.GetRandSpawnHeight}
+        //- Start range : {startRange}
+        //- End range : {endRange}
+        //- Target Y : {targetY}
+        //");
     }
 
 
     public void MoveUpDown()
-    { 
+    {
+        transform.DOKill();
         transform.DOLocalMoveY(targetY, timeToMove).SetUpdate(UpdateType.Fixed).SetEase(Ease.OutCubic).SetLink(gameObject);
     }
 
-    public void Stop()
-    {
-        transform.DOKill(false);
-    }
 }

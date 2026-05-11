@@ -1,28 +1,32 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEditor;
 
 public abstract class BasePipe : MonoBehaviour
 {
-    [SerializeField] protected float duration = 3;
-    [SerializeField] protected float heightRangeTop = 1.5f;
-    [SerializeField] protected float heightRangeBot = -3.65f;
-    [SerializeField] protected Ease ease = Ease.OutQuad;
-    [SerializeField] protected float targetX = -30;
-
+    [SerializeField] protected float moveSpeed = 3;
+    protected float heightRangeTop = 2.6f;
+    protected float heightRangeBot = -2.6f;
     protected float randSpawnHeight;
     public float GetRandSpawnHeight { get => randSpawnHeight; }
+    public float GetHeightRange { get => heightRangeTop; }
     
+
     protected Rigidbody2D rb;
     private void Awake()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
+        rb = gameObject.GetComponent<Rigidbody2D>();       
     }
 
     protected virtual void OnEnable()
     {
         randSpawnHeight = UnityEngine.Random.Range(heightRangeBot, heightRangeTop);
-        transform.position = new Vector3(transform.position.x, randSpawnHeight, transform.position.z);
-        rb.DOMoveX(targetX, duration).SetEase(ease).SetUpdate(UpdateType.Fixed).SetLink(gameObject);
+        transform.position = new Vector3(transform.position.x, randSpawnHeight, transform.position.z);   
+    }
+
+    protected virtual void FixedUpdate()
+    {
+        rb.linearVelocity = Vector2.left * moveSpeed;
     }
 
 
