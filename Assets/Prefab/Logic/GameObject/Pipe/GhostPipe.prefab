@@ -162,9 +162,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8796278437174122646}
   - component: {fileID: 4423231139751515961}
-  - component: {fileID: 8348489220079675091}
+  - component: {fileID: -1078811788383825029}
   m_Layer: 0
-  m_Name: NitroPipe
+  m_Name: GhostPipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,7 +215,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8348489220079675091
+--- !u!114 &-1078811788383825029
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,15 +224,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8857216727986773534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 274852f4b0edcd248a2781b3d0b9ee5e, type: 3}
+  m_Script: {fileID: 11500000, guid: 729a0cd15c2492441b8b7cb5e228a07d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: FlappyBird.Logic::NitroPipe
+  m_EditorClassIdentifier: FlappyBird.Logic::GhostPipe
   moveSpeed: 3
-  moveSpeedForBoot: 7.79
-  durationForBacking: 1.6
-  timeSlowDown: 0.2
-  backDistance: 0.3
-  easeForBacking: 6
+  timeToFade: 1.63
+  timeToAppear: 0.72
+  easeToFade: 30
+  easeToAppear: 26
+  spriteTopPipe: {fileID: 1483585900411774489}
+  spriteBotPipe: {fileID: 5162130008853810456}
 --- !u!1001 &8606551692106165951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -295,6 +296,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6545050232666059898, guid: 046137828d3d05b4ea9a35728f7e4695, type: 3}
   m_PrefabInstance: {fileID: 8606551692106165951}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &5162130008853810456 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3518169815143146407, guid: 046137828d3d05b4ea9a35728f7e4695, type: 3}
+  m_PrefabInstance: {fileID: 8606551692106165951}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8702817314275580630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -352,6 +358,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5bb7adf46824c648ac53d7fbf0ac17d, type: 3}
+--- !u!212 &1483585900411774489 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7804843402294574287, guid: d5bb7adf46824c648ac53d7fbf0ac17d, type: 3}
+  m_PrefabInstance: {fileID: 8702817314275580630}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2011589802230617063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7146091624475576625, guid: d5bb7adf46824c648ac53d7fbf0ac17d, type: 3}

@@ -16,7 +16,7 @@ public class OneWayMovePipe : BasePipe
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if (collision.CompareTag("ActionTriggerPipe"))
+        if (collision.CompareTag("ActionTriggerEnd"))
         {
             child.MoveUpDown();
         }

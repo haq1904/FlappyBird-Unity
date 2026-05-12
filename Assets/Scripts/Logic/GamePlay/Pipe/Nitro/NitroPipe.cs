@@ -16,7 +16,7 @@ public class NitroPipe : BasePipe
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
-        if (collision.CompareTag("ActionTriggerPipe") && !isTrigger)
+        if (collision.CompareTag("ActionTriggerEnd") && !isTrigger)
         {
             isTrigger = true;
             Sequence s = DOTween.Sequence();
