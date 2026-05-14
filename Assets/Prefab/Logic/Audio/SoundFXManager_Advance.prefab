@@ -147,7 +147,7 @@ MonoBehaviour:
   Respond:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7856133299013959898}
         m_TargetAssemblyTypeName: SoundFXManager_Advance, FlappyBird.Audio
         m_MethodName: PlaySound
         m_Mode: 0

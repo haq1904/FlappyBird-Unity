@@ -1,21 +1,22 @@
 
+
+using Cinemachine;
 using UnityEngine;
-using UnityEngine.Events;
+
 
 
 public class BirdBase : MonoBehaviour, IDamageable, IReceivable
 {
     [Header("Fields")]
     [field:SerializeField] public float JumpForce { get; set; }
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip audioClip;
+    [SerializeField] private CinemachineImpulseSource impulseSource;
+    
 
     [Header("Events")]
     [SerializeField] private SoundTypeGameEvent OnBirdRaiseSoundEvent;
     [SerializeField] private FloatGameEvent OnBirdRaisePoint;
     [SerializeField] private GameEvent OnBirdDead;
-
-    [Header("Listeners")]
+    [SerializeField] private CineMachineImpulseSourceEvent OnBirdRaiseImpulseSource;
 
 
     
@@ -123,6 +124,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     public void BirdDead()
     {
         OnBirdDead.Raise();
+        OnBirdRaiseImpulseSource.Raise(impulseSource);
     }
     #endregion
 

@@ -24,10 +24,6 @@ public class EasyModeManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera Vcam1;
 
 
-    public void Awake()
-    {
-        
-    }
 
     public void Start()
     { 

@@ -1822,6 +1822,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EasyModeManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3083995761529677086, guid: 1ae09c42ea7276f4598beaf767ec144a, type: 3}
+      propertyPath: Respond.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083995761529677086, guid: 1ae09c42ea7276f4598beaf767ec144a, type: 3}
+      propertyPath: Respond.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8309657924885880509, guid: 1ae09c42ea7276f4598beaf767ec144a, type: 3}
       propertyPath: Vcam1
       value: 
