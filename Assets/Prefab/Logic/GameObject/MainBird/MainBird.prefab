@@ -108,11 +108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d866a945d7e004496268f802cf5c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::MainBird
-  <JumpForce>k__BackingField: 5.11
-  OnBirdRaiseSoundEvent: {fileID: 11400000, guid: 57592ef266f661549af639484d543369, type: 2}
-  OnBirdRaisePoint: {fileID: 11400000, guid: b461976d6d02e434fbee207c841b57b0, type: 2}
+  <JumpForce>k__BackingField: 9.73
   audioSource: {fileID: 6492116591944116204}
   audioClip: {fileID: 8300000, guid: 64e8e49c61e916b43b2ad5dacb126845, type: 3}
+  OnBirdRaiseSoundEvent: {fileID: 11400000, guid: 57592ef266f661549af639484d543369, type: 2}
+  OnBirdRaisePoint: {fileID: 11400000, guid: b461976d6d02e434fbee207c841b57b0, type: 2}
+  OnBirdDead: {fileID: 11400000, guid: d714c0767cc8a5040a941051ffd71f54, type: 2}
   BirdState: 
 --- !u!61 &8410513978905256462
 BoxCollider2D:

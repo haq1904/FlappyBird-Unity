@@ -1,14 +1,24 @@
 
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class BirdBase : MonoBehaviour, IDamageable, IReceivable
 {
+    [Header("Fields")]
     [field:SerializeField] public float JumpForce { get; set; }
-    [SerializeField] private SoundTypeGameEvent OnBirdRaiseSoundEvent;
-    [SerializeField] private FloatGameEvent OnBirdRaisePoint;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip audioClip;
+
+    [Header("Events")]
+    [SerializeField] private SoundTypeGameEvent OnBirdRaiseSoundEvent;
+    [SerializeField] private FloatGameEvent OnBirdRaisePoint;
+    [SerializeField] private GameEvent OnBirdDead;
+
+    [Header("Listeners")]
+
+
+    
     
     public string BirdState;
 
@@ -110,7 +120,10 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
         OnBirdRaisePoint.Raise(point);
     }
 
-
+    public void BirdDead()
+    {
+        OnBirdDead.Raise();
+    }
     #endregion
 
     #region Animation Trigger

@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 public class EasyModeManager : MonoBehaviour
@@ -18,6 +19,9 @@ public class EasyModeManager : MonoBehaviour
 
     [Header("Game State")]
     [SerializeField] private GameState gameState;
+
+    [Header("Camera")]
+    [SerializeField] private CinemachineVirtualCamera Vcam1;
 
 
     public void Awake()
@@ -48,6 +52,11 @@ public class EasyModeManager : MonoBehaviour
     public void StartFlying()
     {
         OnStartFlying?.Invoke();
+    }
+
+    public void OnBirdDead()
+    {
+        Vcam1.Follow = null;
     }
 
     

@@ -151,5 +151,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc88eb6062e1d54cb57ae05b734b7bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::PartOfPipe
-  impactForce: 1
+  impactForce: 4.11
   gravityScale: 1

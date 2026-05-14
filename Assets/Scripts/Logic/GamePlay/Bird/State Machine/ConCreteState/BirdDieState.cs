@@ -16,6 +16,7 @@ public class BirdDieState : BirdState
     {
         base.EnterState();
         GetState();
+        bird.BirdDead();
         
     }
 

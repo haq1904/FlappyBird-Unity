@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 682729214774518550}
   - component: {fileID: 8309657924885880509}
   - component: {fileID: 8412002032501522645}
+  - component: {fileID: 3083995761529677086}
   m_Layer: 0
   m_Name: EasyModeManager
   m_TagString: Untagged
@@ -76,6 +77,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   gameState: 0
+  Vcam1: {fileID: 0}
 --- !u!114 &8412002032501522645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,6 +97,34 @@ MonoBehaviour:
       - m_Target: {fileID: 8309657924885880509}
         m_TargetAssemblyTypeName: EasyModeManager, FlappyBird.Logic
         m_MethodName: StartFlying
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3083995761529677086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2890179471789161231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Core::GameEventListener
+  Event: {fileID: 11400000, guid: d714c0767cc8a5040a941051ffd71f54, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8309657924885880509}
+        m_TargetAssemblyTypeName: EasyModeManager, FlappyBird.Logic
+        m_MethodName: OnBirdDead
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
