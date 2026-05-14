@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2579114465965263406}
   - component: {fileID: 2658701414377463948}
   m_Layer: 0
-  m_Name: CloundParticle(Behind)
+  m_Name: CloudParticle(Behind)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
