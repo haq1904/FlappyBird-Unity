@@ -3,13 +3,18 @@
 using Cinemachine;
 using UnityEngine;
 
-
+public enum AnimationClip
+{
+    Idle,
+    Flap
+}
 
 public class BirdBase : MonoBehaviour, IDamageable, IReceivable
 {
     [Header("Fields")]
     [field:SerializeField] public float JumpForce { get; set; }
     [SerializeField] private CinemachineImpulseSource impulseSource;
+    [SerializeField] public Animator animator;
     
 
     [Header("Events")]
@@ -52,7 +57,6 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
 
     private void OnEnable()
     {
-       
     }
 
     private void OnDisable()
@@ -67,10 +71,10 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
         StateMachine.Initialize(IdleState);
     }
 
-    private void Update()
-    {
-        StateMachine.CurrentBirdState.FrameUpdate();
-    }
+    //private void Update()
+    //{
+    //    StateMachine.CurrentBirdState.FrameUpdate();
+    //}
 
     #endregion
 
@@ -111,7 +115,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     public void Flap()
     {
         OnBirdRaiseSoundEvent.Raise(SoundType.Flap);
-         
+
     }
 
 

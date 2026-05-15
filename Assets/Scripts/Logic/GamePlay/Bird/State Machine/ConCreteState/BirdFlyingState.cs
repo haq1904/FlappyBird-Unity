@@ -64,6 +64,7 @@ public class BirdFlyingState : BirdState
 
     private void OnFlapStarted(InputAction.CallbackContext context)
     {
+        bird.animator.Play("Flap");
         bird.Flap();
         bird.RB.linearVelocity = Vector2.zero;
         bird.RB.AddForce(Vector2.up * bird.JumpForce, ForceMode2D.Impulse);

@@ -309,6 +309,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 35395097012131628, guid: e5d390a0e90d0894ba723430189815a5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 35395097012131628, guid: e5d390a0e90d0894ba723430189815a5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -188435169
+      objectReference: {fileID: 0}
     - target: {fileID: 3392825917964624739, guid: e5d390a0e90d0894ba723430189815a5, type: 3}
       propertyPath: m_Name
       value: CloudBoundary (1)
@@ -323,7 +331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3856812476688222107, guid: e5d390a0e90d0894ba723430189815a5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: -6.26
       objectReference: {fileID: 0}
     - target: {fileID: 3856812476688222107, guid: e5d390a0e90d0894ba723430189815a5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -507,7 +515,7 @@ Canvas:
   m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -188435169
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &276735277
@@ -623,6 +631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 351976940}
   - component: {fileID: 351976939}
+  - component: {fileID: 351976941}
   m_Layer: 0
   m_Name: Background4
   m_TagString: Untagged
@@ -675,8 +684,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1346062375
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1042382002, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
@@ -698,12 +707,26 @@ Transform:
   m_GameObject: {fileID: 351976938}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -2.66, z: 0}
+  m_LocalScale: {x: 1.53, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &351976941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351976938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221f50158ca02104d8924879df5241df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Logic::BackGroundManager
+  Vcam: {fileID: 77437036}
+  parallaxEffect: 0.35
 --- !u!1 &462662860
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 692397455}
   - component: {fileID: 692397454}
+  - component: {fileID: 692397456}
   m_Layer: 0
   m_Name: Background5
   m_TagString: Untagged
@@ -894,8 +918,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1764936465
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -44259460, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
@@ -917,12 +941,26 @@ Transform:
   m_GameObject: {fileID: 692397453}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.0326, z: 0}
+  m_LocalScale: {x: 1.53, y: 0.82144994, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &692397456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692397453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221f50158ca02104d8924879df5241df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Logic::BackGroundManager
+  Vcam: {fileID: 77437036}
+  parallaxEffect: 0.4
 --- !u!1 &719688567
 GameObject:
   m_ObjectHideFlags: 3
@@ -1080,6 +1118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1115614375}
   - component: {fileID: 1115614374}
+  - component: {fileID: 1115614376}
   m_Layer: 0
   m_Name: Background1
   m_TagString: Untagged
@@ -1132,8 +1171,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 60931067
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1306090582, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
@@ -1155,12 +1194,26 @@ Transform:
   m_GameObject: {fileID: 1115614373}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -4.69, z: 0}
+  m_LocalScale: {x: 1.53, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1115614376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115614373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221f50158ca02104d8924879df5241df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Logic::BackGroundManager
+  Vcam: {fileID: 77437036}
+  parallaxEffect: 0
 --- !u!1 &1117241399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,6 +1224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1117241401}
   - component: {fileID: 1117241400}
+  - component: {fileID: 1117241402}
   m_Layer: 0
   m_Name: Background2
   m_TagString: Untagged
@@ -1223,8 +1277,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1198216285
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 899480125, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
@@ -1246,12 +1300,26 @@ Transform:
   m_GameObject: {fileID: 1117241399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.95, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -4.3, z: 0}
+  m_LocalScale: {x: 1.53, y: 0.53, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1117241402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117241399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221f50158ca02104d8924879df5241df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Logic::BackGroundManager
+  Vcam: {fileID: 77437036}
+  parallaxEffect: 0.2
 --- !u!1 &1207003335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,6 +2008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1937245818}
   - component: {fileID: 1937245817}
+  - component: {fileID: 1937245819}
   m_Layer: 0
   m_Name: Background3
   m_TagString: Untagged
@@ -1992,8 +2061,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1945055957
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1096680104, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
@@ -2015,12 +2084,26 @@ Transform:
   m_GameObject: {fileID: 1937245816}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.09, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -3.31, z: 0}
+  m_LocalScale: {x: 1.53, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1937245819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937245816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221f50158ca02104d8924879df5241df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Logic::BackGroundManager
+  Vcam: {fileID: 77437036}
+  parallaxEffect: 0.3
 --- !u!1001 &1968980708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2043,7 +2126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7992251405416134691, guid: 1a98a695fd52486418db87824f46ecb7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.86
+      value: -8.77
       objectReference: {fileID: 0}
     - target: {fileID: 7992251405416134691, guid: 1a98a695fd52486418db87824f46ecb7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2096,7 +2179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 184056810483459704, guid: 1e219f09f57710647b5db04191127662, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.31
+      value: 7.55
       objectReference: {fileID: 0}
     - target: {fileID: 184056810483459704, guid: 1e219f09f57710647b5db04191127662, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2360,7 +2443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3856812476688222107, guid: e5d390a0e90d0894ba723430189815a5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: -4.32
       objectReference: {fileID: 0}
     - target: {fileID: 3856812476688222107, guid: e5d390a0e90d0894ba723430189815a5, type: 3}
       propertyPath: m_LocalRotation.w

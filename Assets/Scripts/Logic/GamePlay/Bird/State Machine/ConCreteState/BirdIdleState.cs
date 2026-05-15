@@ -18,6 +18,7 @@ public class BirdIdleState : BirdState
         base.EnterState();
         GetState();
         bird.RB.bodyType = RigidbodyType2D.Kinematic;
+        bird.animator.Play("Idle");
         
     }
 
