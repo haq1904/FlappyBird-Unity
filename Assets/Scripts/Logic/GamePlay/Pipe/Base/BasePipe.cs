@@ -27,12 +27,17 @@ public abstract class BasePipe : MonoBehaviour
         transform.position = new Vector3(transform.position.x, randSpawnHeight, transform.position.z);   
     }
 
+    protected virtual void OnDisable()
+    {
+
+    }
+
     protected virtual void FixedUpdate()
     {
         rb.linearVelocity = Vector2.left * moveSpeed;
     }
 
-    public virtual void StopMoving()
+    protected virtual void StopMoving()
     {
         rb.linearVelocity = Vector2.zero;
         this.enabled = false;

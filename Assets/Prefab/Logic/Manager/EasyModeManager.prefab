@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa512b55496d98f4a8a0bdd30b268d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Core::EasyModeManager
+  timeForHitStop: 0.2
   OnStartGame:
     m_PersistentCalls:
       m_Calls:

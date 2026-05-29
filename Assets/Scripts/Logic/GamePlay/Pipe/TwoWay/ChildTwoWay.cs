@@ -7,10 +7,14 @@ public class ChildTwoWay : MonoBehaviour
     private bool isUp;
 
     private void OnEnable()
-    {
-        
+    {       
         isUp = UnityEngine.Random.value > 0.5f;
         RevertDirection();
+    }
+
+    private void OnDisable()
+    {
+        transform.DOKill();
     }
 
     public void RevertDirection()

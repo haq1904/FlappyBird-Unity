@@ -277,6 +277,7 @@ MonoBehaviour:
   moveSpeed: 3
   timeToMove: 6.58
   unitYToMove: 6.12
+  child: {fileID: 5542198786890474628}
 --- !u!114 &8570763931543351480
 MonoBehaviour:
   m_ObjectHideFlags: 0

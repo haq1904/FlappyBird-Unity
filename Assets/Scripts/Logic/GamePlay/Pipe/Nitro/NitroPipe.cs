@@ -9,17 +9,22 @@ public class NitroPipe : BasePipe
     [SerializeField] private float timeSlowDown = 0.3f;
     [SerializeField] private float backDistance = 2;
     [SerializeField] private Ease easeForBacking = Ease.Linear;
-    //[SerializeField] private float overShot = 2;
-    //[SerializeField] private Ease easeForForward = Ease.Linear;
-
+    private Sequence s;
     private bool isTrigger = false;
+
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        s.Kill();
+    }
+
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
         if (collision.CompareTag("ActionTriggerEnd") && !isTrigger)
         {
             isTrigger = true;
-            Sequence s = DOTween.Sequence();
+            s = DOTween.Sequence();
             s.AppendCallback(()=>{moveSpeed = 2.5f;});
             s.AppendInterval(timeSlowDown);
             s.AppendCallback(() => { moveSpeed = 2; });

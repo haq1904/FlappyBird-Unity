@@ -1,5 +1,7 @@
 using DG.Tweening;
 using JetBrains.Annotations;
+using Unity.VectorGraphics;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class OneWayMovePipe : BasePipe
@@ -21,5 +23,13 @@ public class OneWayMovePipe : BasePipe
             child.MoveUpDown();
         }
         base.OnTriggerEnter2D(collision);
+    }
+
+    protected override void StopMoving()
+    {
+        base.StopMoving();
+
+        child.enabled = false;
+
     }
 }

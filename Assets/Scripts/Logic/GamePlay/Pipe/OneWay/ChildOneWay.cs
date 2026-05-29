@@ -25,12 +25,11 @@ public class ChildOneWay : MonoBehaviour
         }
         
         targetY = UnityEngine.Random.Range(startRange, endRange);
-        //Debug.Log($@"Inf
-        //- Rand spawn hieght: {parentPipe.GetRandSpawnHeight}
-        //- Start range : {startRange}
-        //- End range : {endRange}
-        //- Target Y : {targetY}
-        //");
+    }
+
+    private void OnDisable()
+    {
+        transform.DOKill();
     }
 
 
