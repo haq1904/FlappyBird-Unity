@@ -1,3 +1,4 @@
+using GluonGui.WorkspaceWindow.Views;
 using UnityEngine;
 
 public class BirdDieState : BirdState
@@ -18,6 +19,7 @@ public class BirdDieState : BirdState
         GetState();
         bird.BirdDead();
         bird.animator.Play("Die", -1, 0f);
+        bird.Col.isTrigger = true;
     }
 
     public override void ExitState()  
@@ -40,4 +42,12 @@ public class BirdDieState : BirdState
     {
         base.PhysicUpdate();
     }
+
+    public override void HandleTrigger()
+    {
+        base.HandleTrigger();
+        bird.gameObject.SetActive(false);
+    }
+
+
 }

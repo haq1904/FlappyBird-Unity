@@ -1,3 +1,4 @@
+using Codice.Client.BaseCommands;
 using UnityEngine;
 
 public class BirdState
@@ -41,6 +42,11 @@ public class BirdState
     }
 
     public virtual void HandleCollision(Vector2 direction,float impactForce,float gravityScale)
+    {
+
+    }
+
+    public virtual void HandleTrigger()
     {
 
     }

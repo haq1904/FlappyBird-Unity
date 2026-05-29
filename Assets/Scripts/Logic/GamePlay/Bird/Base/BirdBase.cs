@@ -23,15 +23,14 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     [SerializeField] private GameEvent OnBirdDead;
     [SerializeField] private CineMachineImpulseSourceEvent OnBirdRaiseImpulseSource;
 
-
-    
-    
+   
     public string BirdState;
 
     public Rigidbody2D RB { get; set; }
 
-    public BirdControls Controls;
+    public Collider2D Col { get; set; }
 
+    public BirdControls Controls;
     
     
 
@@ -68,6 +67,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     private void Start()
     {
         RB = gameObject.GetComponent<Rigidbody2D>();
+        Col = gameObject.GetComponent<CircleCollider2D>();
         StateMachine.Initialize(IdleState);
     }
 
@@ -119,7 +119,6 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
 
     }
 
-
     public void RaiseAddPointEvent(float point)
     {
         OnBirdRaiseSoundEvent.Raise(SoundType.TakePoint);
@@ -131,6 +130,16 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
         OnBirdDead.Raise();
         OnBirdRaiseImpulseSource.Raise(impulseSource);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ground"))
+            StateMachine.CurrentBirdState.HandleTrigger();
+    }
+
+
+
+
     #endregion
 
     #region Animation Trigger
