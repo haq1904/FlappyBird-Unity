@@ -1,4 +1,4 @@
-using System;
+ using System;
 using UnityEngine;
 
 public class PipeSpawner : MonoBehaviour
@@ -36,5 +36,10 @@ public class PipeSpawner : MonoBehaviour
     private void SpawnPipe()
     {
         Instantiate(currPipe, transform.position,Quaternion.identity);
+    }
+
+    public void StopSpawning()
+    {
+        enabled = false;
     }
 }

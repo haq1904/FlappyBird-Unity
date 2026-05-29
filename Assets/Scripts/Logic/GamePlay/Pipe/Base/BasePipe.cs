@@ -4,10 +4,13 @@ using UnityEditor;
 
 public abstract class BasePipe : MonoBehaviour
 {
+    [Header("Fields")]
     [SerializeField] protected float moveSpeed = 3;
     protected float heightRangeTop = 2.6f;
     protected float heightRangeBot = -2.6f;
     protected float randSpawnHeight;
+
+
     public float GetRandSpawnHeight { get => randSpawnHeight; }
     public float GetHeightRange { get => heightRangeTop; }
     
@@ -29,6 +32,11 @@ public abstract class BasePipe : MonoBehaviour
         rb.linearVelocity = Vector2.left * moveSpeed;
     }
 
+    public virtual void StopMoving()
+    {
+        rb.linearVelocity = Vector2.zero;
+        this.enabled = false;
+    }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {

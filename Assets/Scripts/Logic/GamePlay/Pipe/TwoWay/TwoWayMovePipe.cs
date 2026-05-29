@@ -8,6 +8,5 @@ public class TwoWayMovePipe : BasicPipe
     [SerializeField] private float unitYToMove = 10;
     public float GetTimeToMove { get => timeToMove; }
     public float GetUnitYToMove { get => unitYToMove; }
-    
 
 }

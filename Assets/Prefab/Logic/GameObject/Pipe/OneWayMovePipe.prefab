@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 8796278437174122646}
   - component: {fileID: 4423231139751515961}
   - component: {fileID: -475402021913430006}
+  - component: {fileID: 6353344535898336067}
   m_Layer: 0
   m_Name: OneWayMovePipe
   m_TagString: Untagged
@@ -275,10 +276,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::OneWayMovePipe
   moveSpeed: 5.07
-  heightRangeTop: 2.6
-  heightRangeBot: -2.6
-  unitToMove: 2
   child: {fileID: 5387277828867074470}
+  unitToMove: 2
+--- !u!114 &6353344535898336067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857216727986773534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Core::GameEventListener
+  Event: {fileID: 11400000, guid: d714c0767cc8a5040a941051ffd71f54, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -475402021913430006}
+        m_TargetAssemblyTypeName: OneWayMovePipe, FlappyBird.Logic
+        m_MethodName: StopMoving
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &8606551692106165951
 PrefabInstance:
   m_ObjectHideFlags: 0
