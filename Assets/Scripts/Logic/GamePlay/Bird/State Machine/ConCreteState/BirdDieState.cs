@@ -1,5 +1,4 @@
-using GluonGui.WorkspaceWindow.Views;
-using UnityEngine;
+using System.Collections;
 
 public class BirdDieState : BirdState
 {
@@ -19,7 +18,6 @@ public class BirdDieState : BirdState
         GetState();
         bird.BirdDead();
         bird.animator.Play("Die", -1, 0f);
-        bird.Col.isTrigger = true;
     }
 
     public override void ExitState()  

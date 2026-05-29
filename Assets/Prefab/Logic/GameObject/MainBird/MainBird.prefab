@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::MainBird
   <JumpForce>k__BackingField: 6
+  timeToSetActive: 7
   impulseSource: {fileID: 4129600868175332928}
   animator: {fileID: 4234967112153723315}
   OnBirdRaiseSoundEvent: {fileID: 11400000, guid: 57592ef266f661549af639484d543369, type: 2}

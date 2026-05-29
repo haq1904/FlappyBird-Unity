@@ -2,7 +2,7 @@
 
 using Cinemachine;
 using UnityEngine;
-
+using System.Collections;
 public enum AnimationClip
 {
     Idle,
@@ -13,6 +13,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
 {
     [Header("Fields")]
     [field:SerializeField] public float JumpForce { get; set; }
+    [SerializeField] private float timeToSetActive = 4f;
     [SerializeField] private CinemachineImpulseSource impulseSource;
     [SerializeField] public Animator animator;
     
@@ -27,8 +28,6 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     public string BirdState;
 
     public Rigidbody2D RB { get; set; }
-
-    public Collider2D Col { get; set; }
 
     public BirdControls Controls;
     
@@ -67,7 +66,6 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     private void Start()
     {
         RB = gameObject.GetComponent<Rigidbody2D>();
-        Col = gameObject.GetComponent<CircleCollider2D>();
         StateMachine.Initialize(IdleState);
     }
 
@@ -129,16 +127,14 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     {
         OnBirdDead.Raise();
         OnBirdRaiseImpulseSource.Raise(impulseSource);
+        StartCoroutine(setActive(false, timeToSetActive));
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private IEnumerator setActive(bool isActive,float delay)
     {
-        if (collision.CompareTag("Ground"))
-            StateMachine.CurrentBirdState.HandleTrigger();
+        yield return new WaitForSeconds(delay);
+        gameObject.SetActive(isActive);
     }
-
-
-
 
     #endregion
 
