@@ -17,7 +17,7 @@ public class BirdDieState : BirdState
         base.EnterState();
         GetState();
         bird.BirdDead();
-        
+        bird.animator.Play("Die", -1, 0f);
     }
 
     public override void ExitState()  

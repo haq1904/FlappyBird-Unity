@@ -85,7 +85,8 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     }
     #endregion
 
-    #region IDamageable function
+    //Be called by pipe
+    #region IDamageable function 
     public void PlayAnimation(DamageableAnimationStandard animation)
     {
         

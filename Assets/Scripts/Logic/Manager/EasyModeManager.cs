@@ -53,6 +53,7 @@ public class EasyModeManager : MonoBehaviour
     public void OnBirdDead()
     {
         Vcam1.Follow = null;
+
     }
 
     
