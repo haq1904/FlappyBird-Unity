@@ -1,4 +1,5 @@
 using Cinemachine;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 public class EasyModeManager : MonoBehaviour
@@ -11,11 +12,12 @@ public class EasyModeManager : MonoBehaviour
         GameOver,
     }
 
-
+    [Header("Fields")]
+    [SerializeField] private float timeForHitStop=1;
+    
     [Header("Events")]
     [SerializeField] private UnityEvent OnStartGame;
     [SerializeField] private UnityEvent OnStartFlying;
-
 
     [Header("Game State")]
     [SerializeField] private GameState gameState;
@@ -53,10 +55,16 @@ public class EasyModeManager : MonoBehaviour
     public void OnBirdDead()
     {
         Vcam1.Follow = null;
-
+        StartCoroutine(HitStop(timeForHitStop));
     }
 
     
+    private IEnumerator HitStop(float duration)
+    {
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(duration);
+        Time.timeScale = 1f;
+    }
 
     
 
