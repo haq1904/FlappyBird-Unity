@@ -3,11 +3,7 @@
 using Cinemachine;
 using UnityEngine;
 using System.Collections;
-public enum AnimationClip
-{
-    Idle,
-    Flap
-}
+
 
 public class BirdBase : MonoBehaviour, IDamageable, IReceivable
 {
@@ -16,6 +12,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     [SerializeField] private float timeToSetActive = 4f;
     [SerializeField] private CinemachineImpulseSource impulseSource;
     [SerializeField] public Animator animator;
+    [SerializeField] private ParticleSystem dustPS;
     
 
     [Header("Events")]
@@ -134,6 +131,11 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     {
         yield return new WaitForSeconds(delay);
         gameObject.SetActive(isActive);
+    }
+
+    public void PlayDustPS()
+    {
+        dustPS.Play();
     }
 
     #endregion
