@@ -13,6 +13,9 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     [SerializeField] private CinemachineImpulseSource impulseSource;
     [SerializeField] public Animator animator;
     [SerializeField] private ParticleSystem dustPS;
+    [SerializeField] public float maxUpAngle = 18;
+    [SerializeField] public float matxDownAngle = -40;
+    [SerializeField] public float rotationSpeed = 15f;
     
 
     [Header("Events")]
@@ -66,10 +69,10 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
         StateMachine.Initialize(IdleState);
     }
 
-    //private void Update()
-    //{
-    //    StateMachine.CurrentBirdState.FrameUpdate();
-    //}
+    private void Update()
+    {
+        StateMachine.CurrentBirdState.FrameUpdate();
+    }
 
     #endregion
 

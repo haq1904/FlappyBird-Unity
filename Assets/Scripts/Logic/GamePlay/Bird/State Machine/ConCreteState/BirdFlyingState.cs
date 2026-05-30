@@ -1,3 +1,4 @@
+using GluonGui.WorkspaceWindow.Views;
 using System;
 using UnityEditor;
 using UnityEngine;
@@ -37,6 +38,7 @@ public class BirdFlyingState : BirdState
     public override void FrameUpdate()
     {
         base.FrameUpdate();
+        HandleRotation();
     }
 
     public override void PhysicUpdate()
@@ -69,7 +71,20 @@ public class BirdFlyingState : BirdState
         bird.Flap();
         bird.RB.linearVelocity = Vector2.zero;
         bird.RB.AddForce(Vector2.up * bird.JumpForce, ForceMode2D.Impulse);
-        
+        bird.transform.rotation = Quaternion.Euler(0, 0, bird.maxUpAngle);
+    }
+
+    private void HandleRotation()
+    {
+        if (bird.RB.linearVelocityY < 0)
+        {
+            Quaternion targetRot = Quaternion.Euler(0, 0, bird.matxDownAngle);
+
+            bird.transform.rotation = Quaternion.RotateTowards(
+                bird.transform.rotation,
+                targetRot,
+                bird.rotationSpeed * Time.deltaTime);
+        }
     }
 
 
