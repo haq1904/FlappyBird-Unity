@@ -1045,10 +1045,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5507098311790331017, guid: e39f16a4503814d4c9f15e385f73824a, type: 3}
     - target: {fileID: 4985468846451972267, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4985468846451972267, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: pipeToTest
       value: 
       objectReference: {fileID: -1078811788383825029, guid: eb5bd3bed384faa44bdf979e073ee43b, type: 3}
@@ -1940,6 +1936,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3398998541770136618, guid: 7be26af27c9fb6f47bcec0ef263954c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4201027510459523564, guid: 7be26af27c9fb6f47bcec0ef263954c0, type: 3}
       propertyPath: Vcam
       value: 
@@ -2059,7 +2059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5838900403701394219, guid: 6633c2e31069df04cadd8bcc3434157a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 184.00092
+      value: 184.0009
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
