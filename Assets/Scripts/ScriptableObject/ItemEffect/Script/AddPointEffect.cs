@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "AddPointEffect",menuName = "ScriptableObject/Items")]
-public class AddPointEffect : ItemEffectStrategy
+[CreateAssetMenu(fileName = "Add Point Effect",menuName = "Scriptable Objects/Item Effects/Add Point Effect")]
+public class AddPointEffect : ItemEffectStrategy, IEffect
 {
     [SerializeField] private float pointToAdd = 1;
     public override void ApplyEffect(IReceivable gameObject)

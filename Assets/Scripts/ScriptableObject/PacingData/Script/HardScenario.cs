@@ -1,0 +1,7 @@
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "Hard Scenario", menuName = "Scriptable Objects/Pacing Scenario/Hard Scenario")]
+public class HardScenario : ScriptableObject
+{
+    
+}
