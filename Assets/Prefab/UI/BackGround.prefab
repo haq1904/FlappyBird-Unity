@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::BackGroundManager
   Vcam: {fileID: 0}
-  parallaxEffect: 0.06
+  parallaxEffect: 0.2
   moveSpeed: 1
   xCoordinateToReset: -22.5
 --- !u!1 &4413672816605700480
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::BackGroundManager
   Vcam: {fileID: 0}
-  parallaxEffect: 0.35
+  parallaxEffect: 0.23
   moveSpeed: 0.2
   xCoordinateToReset: -24
 --- !u!1 &4625554533106212021
@@ -924,7 +924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::BackGroundManager
   Vcam: {fileID: 0}
-  parallaxEffect: 0.4
+  parallaxEffect: 0.25
   moveSpeed: 0.01
   xCoordinateToReset: -24
 --- !u!1 &9200391712795732414
@@ -1033,6 +1033,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::BackGroundManager
   Vcam: {fileID: 0}
-  parallaxEffect: 0.09
+  parallaxEffect: 0.1
   moveSpeed: 4.5
   xCoordinateToReset: -24
