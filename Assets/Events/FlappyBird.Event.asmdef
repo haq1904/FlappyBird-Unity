@@ -1,5 +1,5 @@
 {
-    "name": "FlappyBird.Core",
+    "name": "FlappyBird.Event",
     "rootNamespace": "",
     "references": [
         "GUID:ca1d6274bb5dad6409569f55f07b23b9",
