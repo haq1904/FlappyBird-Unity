@@ -1046,7 +1046,7 @@ PrefabInstance:
       objectReference: {fileID: 5507098311790331017, guid: e39f16a4503814d4c9f15e385f73824a, type: 3}
     - target: {fileID: 4985468846451972267, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4985468846451972267, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: pipeToTest

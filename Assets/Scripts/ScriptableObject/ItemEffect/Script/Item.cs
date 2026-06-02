@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] private IEffect effect;
+    [SerializeField] private ItemEffect effect;
 
     private void OnTriggerExit2D(Collider2D collision)
     {

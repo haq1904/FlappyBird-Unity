@@ -12,6 +12,7 @@ public class PacingScenario: ScriptableObject
     public float duration = 10;
     public float moveSpeed = 2;
     public float timeToSpawn = 2;
-    public string difficultyTag;
+    public DifficultyTag difficultyTag;
+    public BasePipe[] allowedPipe;
     
 }

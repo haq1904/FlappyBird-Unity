@@ -1,7 +1,10 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Easy Scenario", menuName = "Scriptable Objects/Pacing Scenario/Easy Scenario")]
-public class EasyScenario : ScriptableObject
+public class EasyScenario : PacingScenario
 {
-    
+    private void OnEnable()
+    {
+        difficultyTag = DifficultyTag.Easy;
+    }
 }
