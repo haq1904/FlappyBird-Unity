@@ -1,8 +1,8 @@
 ﻿<Solution>
   <Project Path="FlappyBird.Logic.csproj" />
-  <Project Path="FlappyBird.Core.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="DOTween.Modules.csproj" />
-  <Project Path="Flappy.Interface.csproj" />
+  <Project Path="FlappyBird.Core.csproj" />
   <Project Path="FlappyBird.Audio.csproj" />
   <Project Path="FlappyBird.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
