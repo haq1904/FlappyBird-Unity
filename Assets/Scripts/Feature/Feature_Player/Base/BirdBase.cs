@@ -95,6 +95,8 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
         StateMachine.CurrentBirdState.HandleCollision(direction, impactForce, gravityScale);
     }
 
+    
+
     #endregion
 
     #region IReceivable function

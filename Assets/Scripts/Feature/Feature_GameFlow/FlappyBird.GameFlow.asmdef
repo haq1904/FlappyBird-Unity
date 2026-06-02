@@ -1,3 +1,17 @@
 {
-	"name": "FlappyBird.GameFlow"
+    "name": "FlappyBird.GameFlow",
+    "rootNamespace": "",
+    "references": [
+        "GUID:bbaf12589dbb60f48b69d1e11616d28d",
+        "GUID:4307f53044263cf4b835bd812fc161a4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

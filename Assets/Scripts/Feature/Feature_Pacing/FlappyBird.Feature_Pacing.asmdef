@@ -1,5 +1,5 @@
 {
-    "name": "FlappyBird.Feature_Item",
+    "name": "FlappyBird.Feature_Pacing",
     "rootNamespace": "",
     "references": [
         "GUID:bbaf12589dbb60f48b69d1e11616d28d"
