@@ -1,7 +1,5 @@
 using DG.Tweening;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Xml.Serialization;
 using UnityEngine;
 
 public class PacingDesign : MonoBehaviour
@@ -24,18 +22,18 @@ public class PacingDesign : MonoBehaviour
     private void PlayScenarios()
     {
         //Get scenarioes
-        PacingScenario randEasyScena = easyScenario[UnityEngine.Random.Range(0, easyScenario.Count())];
-        PacingScenario randNormalScena = easyScenario[UnityEngine.Random.Range(0, normalScenario.Count())];
-        PacingScenario randHardScena = easyScenario[UnityEngine.Random.Range(0, hardScenario.Count())];
+        PacingScenario randEasyScena = easyScenario[UnityEngine.Random.Range(0, easyScenario.Length)];
+        PacingScenario randNormalScena = normalScenario[UnityEngine.Random.Range(0, normalScenario.Length)];
+        PacingScenario randHardScena = hardScenario[UnityEngine.Random.Range(0, hardScenario.Length)];
 
-        GameObject obstacle;
+        Obstacle obstacle;
 
         easySequence = DOTween.Sequence();
         easySequence.AppendCallback(() =>
         {
             //get random allowed pipe from scenario
             obstacle = randEasyScena.allowedPipe[UnityEngine.Random.Range(0, randEasyScena.allowedPipe.Count())];
-            SpawnPipe(obstacle, transform.position, Quaternion.identity);
+            SpawnPipe(obstacle, transform.position, Quaternion.identity,randEasyScena.moveSpeed);
         });
         //Set time to spawn
         easySequence.AppendInterval(randEasyScena.timeToSpawn);
@@ -44,9 +42,10 @@ public class PacingDesign : MonoBehaviour
         
     }
 
-    private void SpawnPipe(GameObject obstacle, Vector3 position, Quaternion quaternion)
+    private void SpawnPipe(Obstacle obstacle, Vector3 position, Quaternion quaternion, float moveSpeed)
     {
-        Instantiate(obstacle, position, quaternion);
+        Obstacle cloneObstacle = Instantiate(obstacle, position, quaternion);
+        cloneObstacle.SetSpeed(moveSpeed);
     }
 }
 
