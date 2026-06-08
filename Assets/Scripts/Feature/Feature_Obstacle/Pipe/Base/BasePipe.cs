@@ -2,7 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEditor;
 
-public abstract class BasePipe : MonoBehaviour, IObstacle
+public abstract class BasePipe : Obstacle
 {
     [Header("Fields")]
     [SerializeField] protected float moveSpeed = 3;
@@ -51,7 +51,7 @@ public abstract class BasePipe : MonoBehaviour, IObstacle
         } 
     }
 
-    public void SetSpeed(float moveSpeed)//Implemet interface IObstacle
+    public override void SetSpeed(float moveSpeed)//Implemet interface IObstacle
     {
         this.moveSpeed = moveSpeed;
     }

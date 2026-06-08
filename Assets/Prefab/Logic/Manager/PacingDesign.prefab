@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 281f41ecacf7cd246ad444abea4c24d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Feature_Pacing::PacingDesign
-  easeScenario:
+  easyScenario:
   - {fileID: 11400000, guid: 381838a25fcd4c5449ab48cfcef69d93, type: 2}
   - {fileID: 11400000, guid: 4995f36c2f67bd844872dbd5d37180af, type: 2}
   - {fileID: 11400000, guid: 1f7f04167cf2a084295d0c2bf57c01e1, type: 2}
