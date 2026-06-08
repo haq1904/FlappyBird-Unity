@@ -23,7 +23,8 @@ public class PacingDesign : MonoBehaviour
     {
         //Get scenarioes
         PacingScenario randEasyScena = easyScenario[UnityEngine.Random.Range(0, easyScenario.Length)];
-        PacingScenario randNormalScena = normalScenario[UnityEngine.Random.Range(0, normalScenario.Length)];
+        //PacingScenario randNormalScena = normalScenario[UnityEngine.Random.Range(0, normalScenario.Length)];
+        PacingScenario randNormalScena = normalScenario[0];
         PacingScenario randHardScena = hardScenario[UnityEngine.Random.Range(0, hardScenario.Length)];
 
         Obstacle obstacle;
@@ -33,13 +34,15 @@ public class PacingDesign : MonoBehaviour
         {
             //get random allowed pipe from scenario
             obstacle = randEasyScena.allowedPipe[UnityEngine.Random.Range(0, randEasyScena.allowedPipe.Count())];
-            SpawnPipe(obstacle, transform.position, Quaternion.identity,randEasyScena.moveSpeed);
+            SpawnPipe(obstacle, transform.position, Quaternion.identity, randEasyScena.moveSpeed);
         });
         //Set time to spawn
         easySequence.AppendInterval(randEasyScena.timeToSpawn);
-        easySequence.SetLoops(10);
+        easySequence.SetLoops(6);
 
-        
+
+
+
     }
 
     private void SpawnPipe(Obstacle obstacle, Vector3 position, Quaternion quaternion, float moveSpeed)
