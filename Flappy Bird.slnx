@@ -1,11 +1,12 @@
 ﻿<Solution>
   <Project Path="FlappyBird.Feature_Player.csproj" />
   <Project Path="FlappyBird.GameFlow.csproj" />
-  <Project Path="FlappyBird.Feature_Pipe.csproj" />
   <Project Path="FlappyBird.Event.csproj" />
+  <Project Path="FlappyBird.Feature_Obstacle.csproj" />
   <Project Path="DOTween.Modules.csproj" />
   <Project Path="FlappyBird.Core.csproj" />
   <Project Path="FlappyBird.Audio.csproj" />
+  <Project Path="FlappyBird.Feature_Pacing.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="FlappyBird.UI.csproj" />
   <Project Path="FlappyBird.Feature_Item.csproj" />

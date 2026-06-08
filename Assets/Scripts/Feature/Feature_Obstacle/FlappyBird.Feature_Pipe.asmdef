@@ -1,5 +1,5 @@
 {
-    "name": "FlappyBird.Feature_Pipe",
+    "name": "FlappyBird.Feature_Obstacle",
     "rootNamespace": "",
     "references": [
         "GUID:bbaf12589dbb60f48b69d1e11616d28d",

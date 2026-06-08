@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1122600913447070357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6540389588206286636}
+  - component: {fileID: 4375144097674066273}
+  - component: {fileID: -8440143170346303019}
+  m_Layer: 0
+  m_Name: PacingDesign
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6540389588206286636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122600913447070357}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.04454, y: 16.89833, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4375144097674066273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122600913447070357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281f41ecacf7cd246ad444abea4c24d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Feature_Pacing::PacingDesign
+  easeScenario:
+  - {fileID: 11400000, guid: 381838a25fcd4c5449ab48cfcef69d93, type: 2}
+  - {fileID: 11400000, guid: 4995f36c2f67bd844872dbd5d37180af, type: 2}
+  - {fileID: 11400000, guid: 1f7f04167cf2a084295d0c2bf57c01e1, type: 2}
+  normalScenario:
+  - {fileID: 11400000, guid: 1258c20212851d1409fe9af527f3b168, type: 2}
+  - {fileID: 11400000, guid: 6cb8a2e402512f444a489b11e7952a69, type: 2}
+  - {fileID: 11400000, guid: 83c515b688020954db10b1f72b5681b6, type: 2}
+  hardScenario:
+  - {fileID: 11400000, guid: 930d7c82907cb324aaa16ce2037c72e8, type: 2}
+  - {fileID: 11400000, guid: a71793ef387cc0a45abe75b91f2e222c, type: 2}
+  - {fileID: 11400000, guid: 99da80e9486c93a4195a32f90d8253bc, type: 2}
+--- !u!114 &-8440143170346303019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122600913447070357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: 0043c850a08364047893f2f8c13b7b17, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4375144097674066273}
+        m_TargetAssemblyTypeName: PacingDesign, FlappyBird.Feature_Pacing
+        m_MethodName: OnStartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
