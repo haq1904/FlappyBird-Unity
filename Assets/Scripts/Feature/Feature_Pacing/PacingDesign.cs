@@ -10,8 +10,6 @@ public class PacingDesign : MonoBehaviour
     [SerializeField] private PacingScenario[] normalScenario;
 
     [SerializeField] private PacingScenario[] hardScenario;
-
-    private Sequence activeSequence;
    
     public void OnStartGame()//Receives event from EasyModeManager
     {
@@ -27,8 +25,11 @@ public class PacingDesign : MonoBehaviour
         //PacingScenario randHardScena = hardScenario[UnityEngine.Random.Range(0, hardScenario.Length)];
         PacingScenario randHardScena = hardScenario[0];
 
-        BuildScenario(activeSequence, randEasyScena,20);
-        
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(BuildScenario(randEasyScena,10));
+        sequence.AppendInterval(2f);
+        sequence.Append(BuildScenario(randHardScena, 20));
+
 
 
 
@@ -36,14 +37,14 @@ public class PacingDesign : MonoBehaviour
 
     }
 
-    private void BuildScenario(Sequence currSequence, PacingScenario currScenario, float duration )
+    private Sequence BuildScenario(PacingScenario currScenario, float duration )
     {
         
         Obstacle obstacle;
         //Get time to loop by separate time to spawn with duration
         int timeToLoop = Mathf.RoundToInt(duration / currScenario.timeToSpawn);
 
-        currSequence = DOTween.Sequence();
+        Sequence currSequence = DOTween.Sequence();
         currSequence.AppendCallback(() =>
         {
             //get random allowed pipe from scenario
@@ -53,6 +54,8 @@ public class PacingDesign : MonoBehaviour
         //Set time to spawn
         currSequence.AppendInterval(currScenario.timeToSpawn);
         currSequence.SetLoops(timeToLoop);
+
+        return currSequence;
     }
 
     private void SpawnPipe(Obstacle obstacle, Vector3 position, Quaternion quaternion, float moveSpeed)
