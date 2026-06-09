@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -10,6 +11,16 @@ public class PacingDesign : MonoBehaviour
     [SerializeField] private PacingScenario[] normalScenario;
 
     [SerializeField] private PacingScenario[] hardScenario;
+
+    [SerializeField] private Boolean isTest;
+
+    [SerializeField] private Mode modeIsTest;
+    public enum Mode
+    {
+        Easy,
+        Normal,
+        Hard
+    }
 
     private Sequence mainSequence,childSequence;
    
@@ -32,11 +43,28 @@ public class PacingDesign : MonoBehaviour
         PacingScenario randNormalScena = normalScenario[0];
         //PacingScenario randHardScena = hardScenario[UnityEngine.Random.Range(0, hardScenario.Length)];
         PacingScenario randHardScena = hardScenario[0];
-
         mainSequence = DOTween.Sequence();
-        mainSequence.Append(BuildScenario(randHardScena, 30));
-        //mainSequence.AppendInterval(2f);
-        //mainSequence.Append(BuildScenario(randHardScena, 20));
+        if (!isTest)
+        {           
+            mainSequence.Append(BuildScenario(randEasyScena, 30));
+            mainSequence.AppendInterval(2f);
+            mainSequence.Append(BuildScenario(randHardScena, 20));
+        }
+        else
+        {
+            switch (modeIsTest)
+            {
+                case Mode.Easy:
+                    mainSequence.Append(BuildScenario(randEasyScena, 30));
+                    break;
+                case Mode.Normal:
+                    mainSequence.Append(BuildScenario(randNormalScena, 30));
+                    break;
+                case Mode.Hard:
+                    mainSequence.Append(BuildScenario(randHardScena, 30));
+                    break;
+            }
+        }
 
     }
 

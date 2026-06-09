@@ -58,6 +58,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 930d7c82907cb324aaa16ce2037c72e8, type: 2}
   - {fileID: 11400000, guid: a71793ef387cc0a45abe75b91f2e222c, type: 2}
   - {fileID: 11400000, guid: 99da80e9486c93a4195a32f90d8253bc, type: 2}
+  isTest: 1
+  modeIsTest: 2
 --- !u!114 &-8440143170346303019
 MonoBehaviour:
   m_ObjectHideFlags: 0
