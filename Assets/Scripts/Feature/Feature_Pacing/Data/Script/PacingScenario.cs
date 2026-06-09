@@ -9,7 +9,6 @@ public enum DifficultyTag
 
 public class PacingScenario: ScriptableObject
 {
-    public float duration = 10;
     public float moveSpeed = 2;
     public float timeToSpawn = 2;
     public DifficultyTag difficultyTag;
