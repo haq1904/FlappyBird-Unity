@@ -15,11 +15,19 @@ public class PacingDesign : MonoBehaviour
     [SerializeField] private Boolean isTest;
 
     [SerializeField] private Mode modeIsTest;
+
+    [SerializeField] private TypeMode typeMode;
     public enum Mode
     {
         Easy,
         Normal,
         Hard
+    }
+
+    public enum TypeMode
+    {
+        One,
+        Two
     }
 
     private Sequence mainSequence,childSequence;
@@ -37,31 +45,43 @@ public class PacingDesign : MonoBehaviour
 
     private void PlayScenarios()
     {
-        //Get scenarioes
-        PacingScenario randEasyScena = easyScenario[UnityEngine.Random.Range(0, easyScenario.Length)];
-        //PacingScenario randNormalScena = normalScenario[UnityEngine.Random.Range(0, normalScenario.Length)];
-        PacingScenario randNormalScena = normalScenario[0];
-        //PacingScenario randHardScena = hardScenario[UnityEngine.Random.Range(0, hardScenario.Length)];
-        PacingScenario randHardScena = hardScenario[0];
         mainSequence = DOTween.Sequence();
         if (!isTest)
-        {           
-            mainSequence.Append(BuildScenario(randEasyScena, 30));
-            mainSequence.AppendInterval(2f);
-            mainSequence.Append(BuildScenario(randHardScena, 20));
+        {   //Main scenario
+            mainSequence.Append(BuildScenario(easyScenario[0],15));
+            mainSequence.AppendInterval(3.5f);
+            mainSequence.Append(BuildScenario(normalScenario[0], 25));
+            mainSequence.AppendInterval(1f);
+            mainSequence.Append(BuildScenario(easyScenario[1], 15));
+            mainSequence.AppendInterval(3.5f);
+            mainSequence.Append(BuildScenario(hardScenario[0], 20));
+            mainSequence.AppendInterval(1f);
+            mainSequence.Append(BuildScenario(normalScenario[1], 15));
+            mainSequence.AppendInterval(3.5f);
+            mainSequence.Append(BuildScenario(hardScenario[1], 20));
+
         }
         else
         {
-            switch (modeIsTest)
+            switch (modeIsTest,typeMode)
             {
-                case Mode.Easy:
-                    mainSequence.Append(BuildScenario(randEasyScena, 30));
+                case (Mode.Easy,TypeMode.One):
+                    mainSequence.Append(BuildScenario(easyScenario[0], 30));
                     break;
-                case Mode.Normal:
-                    mainSequence.Append(BuildScenario(randNormalScena, 30));
+                case (Mode.Easy, TypeMode.Two):
+                    mainSequence.Append(BuildScenario(easyScenario[1], 30));
                     break;
-                case Mode.Hard:
-                    mainSequence.Append(BuildScenario(randHardScena, 30));
+                case (Mode.Normal, TypeMode.One):
+                    mainSequence.Append(BuildScenario(normalScenario[0], 30));
+                    break;
+                case (Mode.Normal, TypeMode.Two):
+                    mainSequence.Append(BuildScenario(normalScenario[1], 30));
+                    break;
+                case (Mode.Hard, TypeMode.One):
+                    mainSequence.Append(BuildScenario(normalScenario[0], 30));
+                    break;
+                case (Mode.Hard, TypeMode.Two):
+                    mainSequence.Append(BuildScenario(normalScenario[1], 30));
                     break;
             }
         }
@@ -72,8 +92,10 @@ public class PacingDesign : MonoBehaviour
     {
         
         Obstacle obstacle;
+        int timeToLoop;
+         
         //Get time to loop by separate time to spawn with duration
-        int timeToLoop = Mathf.RoundToInt(duration / currScenario.timeToSpawn);
+       timeToLoop= Mathf.RoundToInt(duration / currScenario.timeToSpawn);
 
         childSequence = DOTween.Sequence();
         childSequence.AppendCallback(() =>

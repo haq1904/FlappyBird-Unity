@@ -4946,7 +4946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d866a945d7e004496268f802cf5c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::MainBird
-  <JumpForce>k__BackingField: 6
+  <JumpForce>k__BackingField: 7
   timeToSetActive: 7
   impulseSource: {fileID: 4129600868175332928}
   animator: {fileID: 4234967112153723315}

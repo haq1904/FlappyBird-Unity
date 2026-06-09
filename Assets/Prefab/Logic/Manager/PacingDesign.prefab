@@ -49,16 +49,13 @@ MonoBehaviour:
   easyScenario:
   - {fileID: 11400000, guid: 381838a25fcd4c5449ab48cfcef69d93, type: 2}
   - {fileID: 11400000, guid: 4995f36c2f67bd844872dbd5d37180af, type: 2}
-  - {fileID: 11400000, guid: 1f7f04167cf2a084295d0c2bf57c01e1, type: 2}
   normalScenario:
   - {fileID: 11400000, guid: 1258c20212851d1409fe9af527f3b168, type: 2}
   - {fileID: 11400000, guid: 6cb8a2e402512f444a489b11e7952a69, type: 2}
-  - {fileID: 11400000, guid: 83c515b688020954db10b1f72b5681b6, type: 2}
   hardScenario:
   - {fileID: 11400000, guid: 930d7c82907cb324aaa16ce2037c72e8, type: 2}
   - {fileID: 11400000, guid: a71793ef387cc0a45abe75b91f2e222c, type: 2}
-  - {fileID: 11400000, guid: 99da80e9486c93a4195a32f90d8253bc, type: 2}
-  isTest: 1
+  isTest: 0
   modeIsTest: 2
 --- !u!114 &-8440143170346303019
 MonoBehaviour:

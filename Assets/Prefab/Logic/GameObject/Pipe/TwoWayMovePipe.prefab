@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::TwoWayMovePipe
   moveSpeed: 3
-  timeToMove: 6.58
+  timeToMove: 12
   unitYToMove: 6.12
   child: {fileID: 5542198786890474628}
 --- !u!114 &8570763931543351480

@@ -229,8 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::NitroPipe
   moveSpeed: 3
-  durationForBacking: 0.92
-  timeSlowDown: 0.15
+  durationForBacking: 0.5
+  timeSlowDown: 0.1
   backDistance: 1.8
   speedForBooting: 3
   easeForBacking: 6
