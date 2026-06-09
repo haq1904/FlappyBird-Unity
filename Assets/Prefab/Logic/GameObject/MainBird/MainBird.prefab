@@ -4851,7 +4851,7 @@ GameObject:
   - component: {fileID: -4750665944483461942}
   - component: {fileID: 4129600868175332928}
   - component: {fileID: 4234967112153723315}
-  - component: {fileID: 6543715109886521831}
+  - component: {fileID: 2213924311155382981}
   m_Layer: 0
   m_Name: MainBird
   m_TagString: Untagged
@@ -4867,14 +4867,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5483855226019530573}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.34750843, w: 0.93767685}
-  m_LocalPosition: {x: -5.03, y: 0.21, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.78, y: 4.2450233, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1891379005801484289}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -40.67}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6633233432709129290
 SpriteRenderer:
   serializedVersion: 2
@@ -5089,8 +5089,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!58 &6543715109886521831
-CircleCollider2D:
+--- !u!60 &2213924311155382981
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5123,5 +5123,21 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.01, y: 0}
-  m_Radius: 0.09
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.29, y: 0.21}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.07785745, y: 0.056676596}
+      - {x: -0.07992786, y: 0.012510531}
+      - {x: 0.06083229, y: -0.013846859}
+      - {x: 0.12775236, y: 0.050314832}
+      - {x: 0.068984345, y: 0.07378725}
+  m_UseDelaunayMesh: 1

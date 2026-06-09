@@ -13,8 +13,6 @@ public class PacingDesign : MonoBehaviour
 
     private Sequence mainSequence,childSequence;
    
-
-
     public void OnStartGame()//Receives event from EasyModeManager
     {
         PlayScenarios();
@@ -36,14 +34,9 @@ public class PacingDesign : MonoBehaviour
         PacingScenario randHardScena = hardScenario[0];
 
         mainSequence = DOTween.Sequence();
-        mainSequence.Append(BuildScenario(randEasyScena,10));
-        mainSequence.AppendInterval(2f);
-        mainSequence.Append(BuildScenario(randHardScena, 20));
-
-
-
-
-
+        mainSequence.Append(BuildScenario(randHardScena, 30));
+        //mainSequence.AppendInterval(2f);
+        //mainSequence.Append(BuildScenario(randHardScena, 20));
 
     }
 
