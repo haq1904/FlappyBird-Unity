@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::GhostPipe
   moveSpeed: 3
-  timeToFade: 1.63
+  timeToFade: 1.2
   timeToAppear: 0.72
   easeToFade: 30
   easeToAppear: 26
