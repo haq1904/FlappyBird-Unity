@@ -10,10 +10,20 @@ public class PacingDesign : MonoBehaviour
     [SerializeField] private PacingScenario[] normalScenario;
 
     [SerializeField] private PacingScenario[] hardScenario;
+
+    private Sequence mainSequence,childSequence;
    
+
+
     public void OnStartGame()//Receives event from EasyModeManager
     {
         PlayScenarios();
+    }
+
+    public void OnGameOver()
+    {
+        mainSequence.Kill();
+        childSequence.Kill();
     }
 
     private void PlayScenarios()
@@ -25,10 +35,10 @@ public class PacingDesign : MonoBehaviour
         //PacingScenario randHardScena = hardScenario[UnityEngine.Random.Range(0, hardScenario.Length)];
         PacingScenario randHardScena = hardScenario[0];
 
-        Sequence sequence = DOTween.Sequence();
-        sequence.Append(BuildScenario(randEasyScena,10));
-        sequence.AppendInterval(2f);
-        sequence.Append(BuildScenario(randHardScena, 20));
+        mainSequence = DOTween.Sequence();
+        mainSequence.Append(BuildScenario(randEasyScena,10));
+        mainSequence.AppendInterval(2f);
+        mainSequence.Append(BuildScenario(randHardScena, 20));
 
 
 
@@ -44,18 +54,18 @@ public class PacingDesign : MonoBehaviour
         //Get time to loop by separate time to spawn with duration
         int timeToLoop = Mathf.RoundToInt(duration / currScenario.timeToSpawn);
 
-        Sequence currSequence = DOTween.Sequence();
-        currSequence.AppendCallback(() =>
+        childSequence = DOTween.Sequence();
+        childSequence.AppendCallback(() =>
         {
             //get random allowed pipe from scenario
             obstacle = currScenario.allowedPipe[UnityEngine.Random.Range(0, currScenario.allowedPipe.Count())];
             SpawnPipe(obstacle, transform.position, Quaternion.identity, currScenario.moveSpeed);
         });
         //Set time to spawn
-        currSequence.AppendInterval(currScenario.timeToSpawn);
-        currSequence.SetLoops(timeToLoop);
+        childSequence.AppendInterval(currScenario.timeToSpawn);
+        childSequence.SetLoops(timeToLoop);
 
-        return currSequence;
+        return childSequence;
     }
 
     private void SpawnPipe(Obstacle obstacle, Vector3 position, Quaternion quaternion, float moveSpeed)
@@ -63,6 +73,8 @@ public class PacingDesign : MonoBehaviour
         Obstacle cloneObstacle = Instantiate(obstacle, position, quaternion);
         cloneObstacle.SetSpeed(moveSpeed);
     }
+
+    
 }
 
 
