@@ -30,7 +30,7 @@ public class PacingDesign : MonoBehaviour
         Two
     }
 
-    private Sequence mainSequence,childSequence;
+    private Sequence mainSequence,childSequence,finalSequence;
    
     public void OnStartGame()//Receives event from EasyModeManager
     {
@@ -46,6 +46,11 @@ public class PacingDesign : MonoBehaviour
     private void PlayScenarios()
     {
         mainSequence = DOTween.Sequence();
+
+        finalSequence = DOTween.Sequence();
+        CreateFinalSequence();
+       
+        
         if (!isTest)
         {   //Main scenario
             mainSequence.Append(BuildScenario(easyScenario[0],15));
@@ -54,11 +59,14 @@ public class PacingDesign : MonoBehaviour
             mainSequence.AppendInterval(1f);
             mainSequence.Append(BuildScenario(easyScenario[1], 15));
             mainSequence.AppendInterval(3.5f);
-            mainSequence.Append(BuildScenario(hardScenario[0], 20));
+            mainSequence.Append(BuildScenario(hardScenario[0], 30));
             mainSequence.AppendInterval(1f);
-            mainSequence.Append(BuildScenario(normalScenario[1], 15));
+            mainSequence.Append(BuildScenario(normalScenario[1], 10));
             mainSequence.AppendInterval(3.5f);
-            mainSequence.Append(BuildScenario(hardScenario[1], 20));
+            mainSequence.AppendCallback(() =>
+            {
+                finalSequence.Restart();
+            });
 
         }
         else
@@ -92,10 +100,11 @@ public class PacingDesign : MonoBehaviour
     {
         
         Obstacle obstacle;
-        int timeToLoop;
-         
-        //Get time to loop by separate time to spawn with duration
-       timeToLoop= Mathf.RoundToInt(duration / currScenario.timeToSpawn);
+        int loopCount;
+        if (duration == -1)
+            loopCount = -1;//for infinity loop
+        else
+            loopCount = Mathf.RoundToInt(duration / currScenario.timeToSpawn);//Get number of loop by separate time to spawn with duration
 
         childSequence = DOTween.Sequence();
         childSequence.AppendCallback(() =>
@@ -106,9 +115,24 @@ public class PacingDesign : MonoBehaviour
         });
         //Set time to spawn
         childSequence.AppendInterval(currScenario.timeToSpawn);
-        childSequence.SetLoops(timeToLoop);
+        childSequence.SetLoops(loopCount);
 
         return childSequence;
+    }
+
+    private void CreateFinalSequence()
+    {
+        Obstacle obstacle;
+        finalSequence.Pause();
+        finalSequence.AppendCallback(() =>
+        {
+            //get random allowed pipe from scenario
+            obstacle = hardScenario[1].allowedPipe[UnityEngine.Random.Range(0, hardScenario[1].allowedPipe.Count())];
+            SpawnPipe(obstacle, transform.position, Quaternion.identity, hardScenario[1].moveSpeed);
+        });
+        //Set time to spawn
+        finalSequence.AppendInterval(hardScenario[1].timeToSpawn);
+        finalSequence.SetLoops(-1);
     }
 
     private void SpawnPipe(Obstacle obstacle, Vector3 position, Quaternion quaternion, float moveSpeed)

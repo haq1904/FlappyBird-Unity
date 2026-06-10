@@ -55,8 +55,9 @@ MonoBehaviour:
   hardScenario:
   - {fileID: 11400000, guid: 930d7c82907cb324aaa16ce2037c72e8, type: 2}
   - {fileID: 11400000, guid: a71793ef387cc0a45abe75b91f2e222c, type: 2}
-  isTest: 0
-  modeIsTest: 2
+  isTest: 1
+  modeIsTest: 0
+  typeMode: 0
 --- !u!114 &-8440143170346303019
 MonoBehaviour:
   m_ObjectHideFlags: 0
