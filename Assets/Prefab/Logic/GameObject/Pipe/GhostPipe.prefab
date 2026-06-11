@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Core::GameEventListener
-  Event: {fileID: 11400000, guid: d714c0767cc8a5040a941051ffd71f54, type: 2}
+  Event: {fileID: 11400000, guid: 88c3eb58560e7dd459408714edf28dd5, type: 2}
   Respond:
     m_PersistentCalls:
       m_Calls:

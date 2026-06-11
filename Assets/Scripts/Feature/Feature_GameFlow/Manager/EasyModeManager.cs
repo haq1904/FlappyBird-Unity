@@ -14,10 +14,12 @@ public class EasyModeManager : MonoBehaviour
 
     [Header("Fields")]
     [SerializeField] private float timeForHitStop=1;
+    [SerializeField] private CinemachineImpulseSource impulseSource;
     
     [Header("Events")]
     [SerializeField] private UnityEvent OnStartGame;
     [SerializeField] private UnityEvent OnStartFlying;
+    [SerializeField] private UnityEvent OnGameOver;
 
     [Header("Game State")]
     [SerializeField] private GameState gameState;
@@ -52,10 +54,11 @@ public class EasyModeManager : MonoBehaviour
         OnStartFlying?.Invoke();
     }
 
-    public void OnBirdDead()
+    public void GameOver()
     {
         Vcam1.Follow = null;
         StartCoroutine(HitStop(timeForHitStop));
+        OnGameOver?.Invoke();
     }
 
     
