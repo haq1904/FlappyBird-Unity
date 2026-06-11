@@ -6,13 +6,14 @@ public class HUD_Controller : MonoBehaviour
 {
     [SerializeField] private Button pauseBtn;
     [SerializeField] private GameObject pauseMenu;
+
     private void Start()
     {
-        pauseBtn.onClick.AddListener(TurnOnPauseMenu);
+        pauseBtn.onClick.AddListener(TogglePauseMenu);
     }
 
-    private void TurnOnPauseMenu()
+    private void TogglePauseMenu()
     {
-        pauseMenu.SetActive(true);
+        pauseMenu.SetActive(!pauseMenu.activeSelf);
     }
 }
