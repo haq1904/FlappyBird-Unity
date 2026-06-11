@@ -1,5 +1,4 @@
 
-
 using Cinemachine;
 using UnityEngine;
 using System.Collections;
@@ -19,7 +18,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     
 
     [Header("Events")]
-    [SerializeField] private SoundTypeGameEvent OnBirdRaiseSoundEvent;
+    [SerializeField] private SoundTypeGameEvent OnBirdRaiseSoundEvent; 
     [SerializeField] private FloatGameEvent OnBirdRaisePoint;
     [SerializeField] private GameEvent OnBirdDead;
     [SerializeField] private CineMachineImpulseSourceEvent OnBirdRaiseImpulseSource;
