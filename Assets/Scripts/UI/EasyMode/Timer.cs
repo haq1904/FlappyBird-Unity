@@ -1,5 +1,7 @@
+using Codice.Client.Common.GameUI;
 using DG.Tweening;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -22,7 +24,8 @@ public class Timer : MonoBehaviour
 
     private Ease moveEase = Ease.InOutBack;
     private List<Vector3> resetBirdsPos;
-    
+    private Vector3 resetPanelPos;
+    private Sequence mainSequence;
 
     private void Awake()
     {
@@ -31,22 +34,36 @@ public class Timer : MonoBehaviour
         {
             resetBirdsPos.Add(birds[i].transform.localPosition);
         }
+        resetPanelPos = panel.transform.position;
+    }
+    
+
+    private void OnEnable()
+    {
+        Play();
     }
 
-    public void StartCountDown()
+    private void OnDisable()
+    {
+        panel.transform.position = resetPanelPos;
+        mainSequence.Kill();
+    }
+
+
+    private void Play()
     {
         canvasGroupTimer.alpha = 1;
         ResetBirds();
-        var sequence = DOTween.Sequence();
-        sequence.Append(panel.DOAnchorPos(new Vector2(0, -248), duration).SetEase(moveEase));
+        mainSequence = DOTween.Sequence();
+        mainSequence.Append(panel.DOAnchorPos(new Vector2(0, -248), duration).SetEase(moveEase));
 
 
         for (int i = 0; i < birds.Length; i++)
         {
             int index = i;
-            sequence.AppendCallback(() =>
+            mainSequence.AppendCallback(() =>
             {
-                float randX = UnityEngine.Random.Range(-2,2);
+                float randX = UnityEngine.Random.Range(-2, 2);
                 float randY = UnityEngine.Random.Range(2, 4);
                 Rigidbody2D rb = birds[index].GetComponent<Rigidbody2D>();
                 rb.bodyType = RigidbodyType2D.Dynamic;
@@ -55,20 +72,17 @@ public class Timer : MonoBehaviour
 
 
             });
-            sequence.AppendInterval(timeToCountdown);
+            mainSequence.AppendInterval(timeToCountdown);
         }
-        sequence.AppendCallback(() => {
-            OnTimerDoneEvent?.Invoke();          
-            }
+        mainSequence.AppendCallback(() => {
+            OnTimerDoneEvent?.Invoke();
+        }
         );
-        sequence.AppendInterval(0.8f);
+        mainSequence.AppendInterval(0.8f);
 
-        sequence.Append(panel.DOAnchorPos(new Vector2(0, 184), duration).SetEase(moveEase));
+        mainSequence.Append(panel.DOAnchorPos(new Vector2(0, 184), duration).SetEase(moveEase));
 
-        sequence.SetLink(gameObject,LinkBehaviour.KillOnDisable);
-
-        sequence.AppendCallback(()=>canvasGroupTimer.alpha = 0);
-
+        mainSequence.AppendCallback(() => canvasGroupTimer.alpha = 0);
     }
 
     private void ResetBirds()

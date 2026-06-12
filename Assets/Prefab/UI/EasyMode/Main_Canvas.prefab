@@ -230,7 +230,6 @@ GameObject:
   - component: {fileID: 7886836856582029227}
   - component: {fileID: 6225225335150245931}
   - component: {fileID: 6630839025797463610}
-  - component: {fileID: 2480993528650715966}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -305,34 +304,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 1
---- !u!114 &2480993528650715966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125323512969802235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FlappyBird.Core::GameEventListener
-  Event: {fileID: 11400000, guid: 9572ac56a49366549bfe89921e148ad1, type: 2}
-  Respond:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6225225335150245931}
-        m_TargetAssemblyTypeName: Timer, FlappyBird.UI
-        m_MethodName: StartCountDown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1136148781993541517
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 608371934745348446}
   - component: {fileID: 8219322402713370399}
+  - component: {fileID: 5389262985956389156}
   m_Layer: 5
   m_Name: HUD_Panel
   m_TagString: Untagged
@@ -653,6 +625,35 @@ MonoBehaviour:
         m_CallState: 2
   pauseBtn: {fileID: 7870881495312580351}
   pausePanel: {fileID: 3843843626879296293}
+  timer: {fileID: 1125323512969802235}
+--- !u!114 &5389262985956389156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134707759946718454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: 9572ac56a49366549bfe89921e148ad1, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8219322402713370399}
+        m_TargetAssemblyTypeName: HUD_Controller, FlappyBird.UI
+        m_MethodName: StartCountDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3161672307618110453
 GameObject:
   m_ObjectHideFlags: 0
