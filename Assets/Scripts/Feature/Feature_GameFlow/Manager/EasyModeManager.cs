@@ -60,9 +60,9 @@ public class EasyModeManager : MonoBehaviour
         }
     }
 
-    public void StartFlying()
+    public void StartGame()
     {
-        OnStartFlying?.Invoke();
+        UpdateGameState(GameState.GameStart);
     }
 
     public void GameOver()
@@ -80,6 +80,15 @@ public class EasyModeManager : MonoBehaviour
     public void GameResume()
     {
         UpdateGameState(GameState.GameResume);
+    }
+    public void StartFlying()
+    {
+        OnStartFlying?.Invoke();
+    }
+
+    public void BackHome()
+    {
+        Debug.Log("Back to loppy");
     }
     
     private IEnumerator HitStop(float duration)
