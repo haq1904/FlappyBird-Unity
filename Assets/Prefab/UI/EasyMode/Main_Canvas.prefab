@@ -869,6 +869,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c290e1167bfc3804e96a075c8ffc1027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.UI::Pause_Panel
+  OnResume:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 8e5919cf94c1c594ba14f938040e0862, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, FlappyBird.Event
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   blocker: {fileID: 2831460933805306738}
   pauseMenu: {fileID: 6514094292996402843}
   resume: {fileID: 2570984208277930158}

@@ -707,6 +707,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1171406148 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8309657924885880509, guid: 1ae09c42ea7276f4598beaf767ec144a, type: 3}
+  m_PrefabInstance: {fileID: 5052977270955314821}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa512b55496d98f4a8a0bdd30b268d48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Core::EasyModeManager
 --- !u!1 &1207003335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1524,6 +1535,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5207089650149220697, guid: 1ae09c42ea7276f4598beaf767ec144a, type: 3}
+      propertyPath: Respond.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5207089650149220697, guid: 1ae09c42ea7276f4598beaf767ec144a, type: 3}
+      propertyPath: Respond.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1171406148}
+    - target: {fileID: -5207089650149220697, guid: 1ae09c42ea7276f4598beaf767ec144a, type: 3}
+      propertyPath: Respond.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GamePause
+      objectReference: {fileID: 0}
+    - target: {fileID: -5207089650149220697, guid: 1ae09c42ea7276f4598beaf767ec144a, type: 3}
+      propertyPath: Respond.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EasyModeManager, FlappyBird.GameFlow
+      objectReference: {fileID: 0}
+    - target: {fileID: -5207089650149220697, guid: 1ae09c42ea7276f4598beaf767ec144a, type: 3}
+      propertyPath: Respond.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 132788544829132333, guid: 1ae09c42ea7276f4598beaf767ec144a, type: 3}
       propertyPath: m_DefaultVelocity.x
       value: -1
@@ -1977,10 +2008,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3730400608454717795, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -43.339005
+      objectReference: {fileID: 0}
     - target: {fileID: 6184677052186162658, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1770055996}
+    - target: {fileID: 9127976522361862016, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 184.00092
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

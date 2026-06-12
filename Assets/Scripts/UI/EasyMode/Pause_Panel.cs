@@ -1,10 +1,13 @@
 using DG.Tweening;
-using Unity.Plastic.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Pause_Panel : MonoBehaviour
 {
+    [Header("Events")]
+    [SerializeField] UnityEvent OnResume;
+
     [SerializeField] private GameObject blocker;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private Button resume;
@@ -18,6 +21,7 @@ public class Pause_Panel : MonoBehaviour
     {
         pauseMenu.transform.localPosition = new Vector3(0, -1100, 0);
         gameObject.SetActive(false);
+        OnResume?.Invoke();
     }
 
     private void OnEnable()

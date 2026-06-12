@@ -8,6 +8,7 @@ public class EasyModeManager : MonoBehaviour
     public enum GameState
     {
         GameStart,
+        GameResume,
         GamePause,
         GameOver,
     }
@@ -15,18 +16,22 @@ public class EasyModeManager : MonoBehaviour
     [Header("Fields")]
     [SerializeField] private float timeForHitStop=1;
     [SerializeField] private CinemachineImpulseSource impulseSource;
-    
-    [Header("Events")]
-    [SerializeField] private UnityEvent OnStartGame;
-    [SerializeField] private UnityEvent OnStartFlying;
-    [SerializeField] private UnityEvent OnGameOver;
-    [SerializeField] private UnityEvent OnGamePause;
 
     [Header("Game State")]
     [SerializeField] private GameState gameState;
 
     [Header("Camera")]
     [SerializeField] private CinemachineVirtualCamera Vcam1;
+
+    [Header("Events")]
+    [SerializeField] private UnityEvent OnStartGame;
+    [SerializeField] private UnityEvent OnGameResume;
+    [SerializeField] private UnityEvent OnStartFlying;
+    [SerializeField] private UnityEvent OnGameOver;
+    [SerializeField] private UnityEvent OnGamePause;
+
+    
+
 
 
 
@@ -42,6 +47,9 @@ public class EasyModeManager : MonoBehaviour
         {
             case GameState.GameStart:
                 OnStartGame?.Invoke();
+                break;
+            case GameState.GameResume:
+                OnGameResume?.Invoke();
                 break;
             case GameState.GamePause:
                 OnGamePause?.Invoke();
@@ -67,6 +75,11 @@ public class EasyModeManager : MonoBehaviour
     public void GamePause()
     {
         UpdateGameState(GameState.GamePause);
+    }
+
+    public void GameResume()
+    {
+        UpdateGameState(GameState.GameResume);
     }
     
     private IEnumerator HitStop(float duration)
