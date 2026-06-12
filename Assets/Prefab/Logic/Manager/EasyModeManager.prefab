@@ -70,6 +70,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnStartFlying:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 0043c850a08364047893f2f8c13b7b17, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, FlappyBird.Core
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnGameResume:
     m_PersistentCalls:
       m_Calls:
@@ -85,11 +100,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnStartFlying:
+  OnGameRestart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 0043c850a08364047893f2f8c13b7b17, type: 2}
-        m_TargetAssemblyTypeName: GameEvent, FlappyBird.Core
+      - m_Target: {fileID: 11400000, guid: b42a08be963cff548b5fc9b7dc1a1ac3, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, FlappyBird.Event
         m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
@@ -182,7 +197,7 @@ MonoBehaviour:
     m_DissipationMode: 2
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
-  m_DefaultVelocity: {x: 0, y: -1, z: 0}
+  m_DefaultVelocity: {x: -1, y: -0.5, z: 0}
 --- !u!114 &8412002032501522645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +328,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8309657924885880509}
         m_TargetAssemblyTypeName: EasyModeManager, FlappyBird.GameFlow
-        m_MethodName: StartGame
+        m_MethodName: GameRestart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

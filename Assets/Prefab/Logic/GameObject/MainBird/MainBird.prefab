@@ -4848,10 +4848,11 @@ GameObject:
   - component: {fileID: 6633233432709129290}
   - component: {fileID: 1894527559215218651}
   - component: {fileID: 1266179911599800760}
-  - component: {fileID: -4750665944483461942}
   - component: {fileID: 4129600868175332928}
   - component: {fileID: 4234967112153723315}
   - component: {fileID: 2213924311155382981}
+  - component: {fileID: -4750665944483461942}
+  - component: {fileID: 3081084036069867358}
   m_Layer: 0
   m_Name: MainBird
   m_TagString: Untagged
@@ -4959,6 +4960,7 @@ MonoBehaviour:
   OnBirdDead: {fileID: 11400000, guid: d714c0767cc8a5040a941051ffd71f54, type: 2}
   OnBirdRaiseImpulseSource: {fileID: 11400000, guid: fc017cc1fbc27b044a77f15e56c0179e, type: 2}
   BirdState: 
+  resetPos: {x: 0, y: 0, z: 0}
 --- !u!50 &1266179911599800760
 Rigidbody2D:
   serializedVersion: 5
@@ -4986,34 +4988,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-4750665944483461942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5483855226019530573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FlappyBird.Core::GameEventListener
-  Event: {fileID: 11400000, guid: 0043c850a08364047893f2f8c13b7b17, type: 2}
-  Respond:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1894527559215218651}
-        m_TargetAssemblyTypeName: MainBird, FlappyBird.Logic
-        m_MethodName: HandleFlying
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &4129600868175332928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5141,3 +5115,59 @@ PolygonCollider2D:
       - {x: 0.12775236, y: 0.050314832}
       - {x: 0.068984345, y: 0.07378725}
   m_UseDelaunayMesh: 1
+--- !u!114 &-4750665944483461942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483855226019530573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Core::GameEventListener
+  Event: {fileID: 11400000, guid: 0043c850a08364047893f2f8c13b7b17, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1894527559215218651}
+        m_TargetAssemblyTypeName: MainBird, FlappyBird.Logic
+        m_MethodName: HandleFlying
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3081084036069867358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483855226019530573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: b42a08be963cff548b5fc9b7dc1a1ac3, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1894527559215218651}
+        m_TargetAssemblyTypeName: MainBird, FlappyBird.Feature_Player
+        m_MethodName: HandleReset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

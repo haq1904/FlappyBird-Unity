@@ -12,7 +12,8 @@ public class BirdStateMachine
 
     public void ChangeState(BirdState birdState)
     {
-        CurrentBirdState.ExitState();
+        if(CurrentBirdState!=null)
+            CurrentBirdState.ExitState();
         CurrentBirdState = birdState;
         CurrentBirdState.EnterState();
     }

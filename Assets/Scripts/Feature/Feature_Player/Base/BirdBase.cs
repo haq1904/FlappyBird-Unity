@@ -26,6 +26,8 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
    
     public string BirdState;
 
+    public Vector3 resetPos;
+
     public Rigidbody2D RB { get; set; }
 
     public BirdControls Controls;
@@ -50,6 +52,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
         DieState = new BirdDieState(this, StateMachine);
         Controls = new BirdControls();
 
+
     }
 
     private void OnEnable()
@@ -65,7 +68,10 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     private void Start()
     {
         RB = gameObject.GetComponent<Rigidbody2D>();
+        resetPos = transform.position;
         StateMachine.Initialize(IdleState);
+
+
     }
 
     private void Update()
@@ -76,6 +82,11 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     #endregion
 
     #region Received Event Function
+    public void HandleReset()//Receive OnRestart event from EasyModeManager
+    {
+        StateMachine.ChangeState(IdleState);
+    }
+
     public void HandleFlying() //Receive OnStartFlying event from EasyModeManager
     {
         StateMachine.ChangeState(FlyingState);
@@ -134,7 +145,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     private IEnumerator setActive(bool isActive,float delay)
     {
         yield return new WaitForSeconds(delay);
-        gameObject.SetActive(isActive);
+        RB.bodyType = RigidbodyType2D.Kinematic;
     }
 
     public void PlayDustPS()
