@@ -20,6 +20,7 @@ public class EasyModeManager : MonoBehaviour
     [SerializeField] private UnityEvent OnStartGame;
     [SerializeField] private UnityEvent OnStartFlying;
     [SerializeField] private UnityEvent OnGameOver;
+    [SerializeField] private UnityEvent OnGamePause;
 
     [Header("Game State")]
     [SerializeField] private GameState gameState;
@@ -43,8 +44,10 @@ public class EasyModeManager : MonoBehaviour
                 OnStartGame?.Invoke();
                 break;
             case GameState.GamePause:
+                OnGamePause?.Invoke();
                 break;
             case GameState.GameOver:
+                OnGameOver?.Invoke();
                 break;
         }
     }
@@ -58,9 +61,13 @@ public class EasyModeManager : MonoBehaviour
     {
         Vcam1.Follow = null;
         StartCoroutine(HitStop(timeForHitStop));
-        OnGameOver?.Invoke();
+        UpdateGameState(GameState.GameOver);
     }
 
+    public void GamePause()
+    {
+        UpdateGameState(GameState.GamePause);
+    }
     
     private IEnumerator HitStop(float duration)
     {

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8309657924885880509}
   - component: {fileID: 8412002032501522645}
   - component: {fileID: 3083995761529677086}
+  - component: {fileID: -5207089650149220697}
   - component: {fileID: 132788544829132333}
   m_Layer: 0
   m_Name: EasyModeManager
@@ -48,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Core::EasyModeManager
   timeForHitStop: 0.2
+  impulseSource: {fileID: 0}
   OnStartGame:
     m_PersistentCalls:
       m_Calls:
@@ -82,6 +84,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 88c3eb58560e7dd459408714edf28dd5, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, FlappyBird.Event
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnGamePause:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: e80b4572dfca19542ad0b7ae5bfd2116, type: 2}
         m_TargetAssemblyTypeName: GameEvent, FlappyBird.Event
         m_MethodName: Raise
         m_Mode: 1
@@ -146,6 +163,34 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-5207089650149220697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2890179471789161231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: 09bc7009ece8f4b49ba8e6a7997ed55b, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2890179471789161231}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

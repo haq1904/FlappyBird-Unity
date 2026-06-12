@@ -7,14 +7,14 @@ public class Pause_Panel : MonoBehaviour
 {
     [SerializeField] private GameObject blocker;
     [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private Button back;
+    [SerializeField] private Button resume;
 
     private void Start()
     {
-        back.onClick.AddListener(TurnOff);
+        resume.onClick.AddListener(Resume);
     }
 
-    public void TurnOff()
+    public void Resume()
     {
         pauseMenu.transform.localPosition = new Vector3(0, -1100, 0);
         gameObject.SetActive(false);
