@@ -14,8 +14,11 @@ public abstract class BasePipe : Obstacle
     public float GetRandSpawnHeight { get => randSpawnHeight; }
     public float GetHeightRange { get => heightRangeTop; }
     
-
     protected Rigidbody2D rb;
+
+    protected float currSpeed;
+
+    #region MonoBehavior function
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();       
@@ -37,22 +40,27 @@ public abstract class BasePipe : Obstacle
         rb.linearVelocity = Vector2.left * moveSpeed;
     }
 
-    protected virtual void StopMoving()
-    {
-        rb.linearVelocity = Vector2.zero;
-        this.enabled = false;
-    }
-
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PipeTrigger"))
         {
             Destroy(gameObject);
-        } 
+        }
     }
+    #endregion
 
-    public override void SetSpeed(float moveSpeed)//Implemet interface IObstacle
+    #region Implement interface IObstacle
+    public override void SetSpeed(float moveSpeed = 0)//Implement interface IObstacle
     {
         this.moveSpeed = moveSpeed;
     }
+    #endregion
+
+    #region State
+    protected virtual void GameOver()
+    {
+        rb.linearVelocity = Vector2.zero;
+        this.enabled = false;
+    }
+    #endregion
 }

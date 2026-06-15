@@ -27,10 +27,8 @@ public class EasyModeManager : MonoBehaviour
     [Header("Events")]
     [SerializeField] private UnityEvent OnStartGame;
     [SerializeField] private UnityEvent OnStartFlying;
-    [SerializeField] private UnityEvent OnGameResume;
     [SerializeField] private UnityEvent OnGameRestart;
     [SerializeField] private UnityEvent OnGameOver;
-    [SerializeField] private UnityEvent OnGamePause;
 
     
 
@@ -51,13 +49,11 @@ public class EasyModeManager : MonoBehaviour
                 OnStartGame?.Invoke();
                 break;
             case GameState.GameResume:
-                OnGameResume?.Invoke();
                 break;
             case GameState.GameRestart:
                 OnGameRestart?.Invoke();
                 break;
             case GameState.GamePause:
-                OnGamePause?.Invoke();
                 break;
             case GameState.GameOver:
                 OnGameOver?.Invoke();
@@ -80,16 +76,19 @@ public class EasyModeManager : MonoBehaviour
     public void GamePause()
     {
         UpdateGameState(GameState.GamePause);
+        Time.timeScale = 0f;
     }
 
     public void GameResume()
     {
         UpdateGameState(GameState.GameResume);
+        Time.timeScale = 1f;
     }
 
     public void GameRestart()
     {
         UpdateGameState(GameState.GameRestart);
+        Time.timeScale = 1f;
     }
 
     public void StartFlying()

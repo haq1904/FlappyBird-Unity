@@ -44,7 +44,7 @@ public class Pause_Panel : MonoBehaviour
 
     private void OnEnable()
     {
-        pauseMenu.transform.DOLocalMoveY(0, 1f).SetEase(Ease.OutCirc).SetLink(gameObject);
+        pauseMenu.transform.DOLocalMoveY(0, 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
         blocker.SetActive(true);
     }
 }

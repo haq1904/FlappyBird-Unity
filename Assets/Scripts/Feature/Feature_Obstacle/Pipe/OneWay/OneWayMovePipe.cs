@@ -25,11 +25,11 @@ public class OneWayMovePipe : BasePipe
         base.OnTriggerEnter2D(collision);
     }
 
-    protected override void StopMoving()
+    protected override void GameOver()
     {
-        base.StopMoving();
-
+        base.GameOver();
         child.enabled = false;
 
     }
+
 }
