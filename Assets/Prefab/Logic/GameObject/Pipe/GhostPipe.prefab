@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 4423231139751515961}
   - component: {fileID: -1078811788383825029}
   - component: {fileID: 190131117362807445}
+  - component: {fileID: 1160089786416237443}
   m_Layer: 0
   m_Name: GhostPipe
   m_TagString: Untagged
@@ -252,8 +253,36 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -1078811788383825029}
-        m_TargetAssemblyTypeName: GhostPipe, FlappyBird.Logic
-        m_MethodName: StopMoving
+        m_TargetAssemblyTypeName: GhostPipe, FlappyBird.Feature_Obstacle
+        m_MethodName: GameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1160089786416237443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857216727986773534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: b42a08be963cff548b5fc9b7dc1a1ac3, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1078811788383825029}
+        m_TargetAssemblyTypeName: GhostPipe, FlappyBird.Feature_Obstacle
+        m_MethodName: GameRestart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

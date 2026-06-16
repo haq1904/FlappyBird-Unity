@@ -9,7 +9,7 @@ public class TwoWayMovePipe : BasicPipe
     public float GetTimeToMove { get => timeToMove; }
     public float GetUnitYToMove { get => unitYToMove; }
 
-    protected override void GameOver()
+    public override void GameOver()
     {
         base.GameOver();
         child.enabled = false;

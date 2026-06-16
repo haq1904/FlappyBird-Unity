@@ -57,10 +57,15 @@ public abstract class BasePipe : Obstacle
     #endregion
 
     #region State
-    protected virtual void GameOver()
+    public virtual void GameOver()
     {
         rb.linearVelocity = Vector2.zero;
         this.enabled = false;
+    }
+
+    public virtual void GameRestart()
+    {
+        Destroy(gameObject);
     }
     #endregion
 }
