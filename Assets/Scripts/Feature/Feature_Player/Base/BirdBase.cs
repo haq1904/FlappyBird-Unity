@@ -8,7 +8,6 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
 {
     [Header("Fields")]
     [field:SerializeField] public float JumpForce { get; set; }
-    [SerializeField] private float timeToSetActive = 4f;
     [SerializeField] private CinemachineImpulseSource impulseSource;
     [SerializeField] public Animator animator;
     [SerializeField] private ParticleSystem dustPS;
@@ -141,14 +140,8 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     {
         OnBirdDead.Raise();
         OnBirdRaiseImpulseSource.Raise(impulseSource);
-        StartCoroutine(setActive(false, timeToSetActive));
     }
 
-    private IEnumerator setActive(bool isActive,float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        RB.bodyType = RigidbodyType2D.Kinematic;
-    }
 
     public void PlayDustPS()
     {
