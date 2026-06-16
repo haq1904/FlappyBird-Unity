@@ -23,10 +23,11 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     [SerializeField] private GameEvent OnBirdDead;
     [SerializeField] private CineMachineImpulseSourceEvent OnBirdRaiseImpulseSource;
 
-   
+    [HideInInspector]
     public string BirdState;
-
     public Vector3 resetPos;
+    public float resetGravity;
+
 
     public Rigidbody2D RB { get; set; }
 
@@ -69,6 +70,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     {
         RB = gameObject.GetComponent<Rigidbody2D>();
         resetPos = transform.position;
+        resetGravity = RB.gravityScale;
         StateMachine.Initialize(IdleState);
 
 
