@@ -28,8 +28,7 @@ public class Game_Over_Panel : MonoBehaviour
         s.SetUpdate(true);
         s.AppendInterval(0.15f);
         s.AppendCallback(() => {
-            gameOverMenu.transform.localPosition = new Vector3(0, -1100, 0);
-            gameObject.SetActive(false);
+            TurnOff();
             OnRestart?.Invoke();
         }
         );
@@ -40,9 +39,16 @@ public class Game_Over_Panel : MonoBehaviour
         OnBackHome?.Invoke();
     }
 
-    private void OnEnable()
+    public void TurnOn()
     {
+        gameObject.SetActive(true);
         gameOverMenu.transform.DOLocalMoveY(0, 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
         blocker.SetActive(true);
+    }
+
+    public void TurnOff()
+    {
+        gameOverMenu.transform.localPosition = new Vector3(0, -1100, 0);
+        gameObject.SetActive(false);
     }
 }

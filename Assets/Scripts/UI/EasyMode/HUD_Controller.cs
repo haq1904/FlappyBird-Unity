@@ -10,6 +10,7 @@ public class HUD_Controller : MonoBehaviour
     [Header("Events")]
     [SerializeField] private UnityEvent OnGamePause;
 
+    [Header("Game objects")]
     [SerializeField] private Button pauseBtn;
     [SerializeField] private Pause_Panel pausePanel;
  

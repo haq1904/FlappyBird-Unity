@@ -775,7 +775,6 @@ GameObject:
   - component: {fileID: 7911736465741761418}
   - component: {fileID: 837838454428372414}
   - component: {fileID: 6699772899527104275}
-  - component: {fileID: 5831970624501698306}
   m_Layer: 5
   m_Name: Game_Over_Panel
   m_TagString: Untagged
@@ -858,34 +857,6 @@ MonoBehaviour:
   gameOverMenu: {fileID: 7022892147947899261}
   restart: {fileID: 745997679441955872}
   backHome: {fileID: 4058631138980097452}
---- !u!114 &5831970624501698306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2365192245365824532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
-  Event: {fileID: 11400000, guid: 88c3eb58560e7dd459408714edf28dd5, type: 2}
-  Respond:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &2831460933805306738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,6 +1680,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8157278166992048762}
+  - component: {fileID: 8554775479288717364}
+  - component: {fileID: 7269356171375066495}
   m_Layer: 5
   m_Name: PopUp_Panel
   m_TagString: Untagged
@@ -1737,6 +1710,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0.00024414, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8554775479288717364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4907972548604354870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e9a743d2ba004445abaf784cdcdc8b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.UI::PopUp_Controller
+  OnGamePause:
+    m_PersistentCalls:
+      m_Calls: []
+  gameOverPanel: {fileID: 6699772899527104275}
+--- !u!114 &7269356171375066495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4907972548604354870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: 88c3eb58560e7dd459408714edf28dd5, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8554775479288717364}
+        m_TargetAssemblyTypeName: PopUp_Controller, FlappyBird.UI
+        m_MethodName: GameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4941170788007572626
 GameObject:
   m_ObjectHideFlags: 0
