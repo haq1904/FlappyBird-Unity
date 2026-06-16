@@ -1,4 +1,5 @@
 
+using DG.Tweening;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -20,8 +21,11 @@ public class HUD_Controller : MonoBehaviour
 
     private void TogglePauseMenu()
     {
-        pausePanel.SetActive(true);
-        OnGamePause?.Invoke();
+        Sequence s = DOTween.Sequence();
+        s.AppendCallback(() => pausePanel.SetActive(true));
+        s.AppendInterval(0.15f);
+        s.AppendCallback(()=>OnGamePause?.Invoke());
+        Debug.Log("hehee");
     }
 
     public void StartCountDown()
