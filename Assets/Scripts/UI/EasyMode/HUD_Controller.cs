@@ -25,7 +25,6 @@ public class HUD_Controller : MonoBehaviour
         s.AppendCallback(() => pausePanel.SetActive(true));
         s.AppendInterval(0.15f);
         s.AppendCallback(()=>OnGamePause?.Invoke());
-        Debug.Log("hehee");
     }
 
     public void StartCountDown()

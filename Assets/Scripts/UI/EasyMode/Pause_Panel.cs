@@ -25,16 +25,29 @@ public class Pause_Panel : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenu.transform.localPosition = new Vector3(0, -1100, 0);
-        gameObject.SetActive(false);
-        OnResume?.Invoke();
+        Sequence s = DOTween.Sequence();
+        s.SetUpdate(true);
+        s.AppendInterval(0.15f);
+        s.AppendCallback(() => {
+            pauseMenu.transform.localPosition = new Vector3(0, -1100, 0);
+            gameObject.SetActive(false);
+            OnResume?.Invoke();
+        }
+        );
+        
     }
 
     public void Restart()
     {
-        pauseMenu.transform.localPosition = new Vector3(0, -1100, 0);
-        gameObject.SetActive(false);
-        OnRestart?.Invoke();
+        Sequence s = DOTween.Sequence();
+        s.SetUpdate(true);
+        s.AppendInterval(0.15f);
+        s.AppendCallback(() => {
+            pauseMenu.transform.localPosition = new Vector3(0, -1100, 0);
+            gameObject.SetActive(false);
+            OnRestart?.Invoke();
+        }
+        );
     }
 
     public void BackHome()
