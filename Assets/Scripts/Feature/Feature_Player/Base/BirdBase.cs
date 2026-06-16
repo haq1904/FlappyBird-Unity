@@ -92,6 +92,12 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     {
         StateMachine.ChangeState(FlyingState);
     }
+
+    public void HandlePause() //Receive OnGamePause event from EasyModeManager
+    {
+        StateMachine.ChangeState(PauseState);
+    }
+
     #endregion
 
     //Be called by pipe

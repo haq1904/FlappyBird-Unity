@@ -4850,9 +4850,11 @@ GameObject:
   - component: {fileID: 1266179911599800760}
   - component: {fileID: 4129600868175332928}
   - component: {fileID: 4234967112153723315}
+  - component: {fileID: 880715409415790167}
   - component: {fileID: -4750665944483461942}
   - component: {fileID: 3081084036069867358}
-  - component: {fileID: 880715409415790167}
+  - component: {fileID: 6847864192579687560}
+  - component: {fileID: 8598911179858852808}
   m_Layer: 0
   m_Name: MainBird
   m_TagString: Untagged
@@ -4948,7 +4950,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::MainBird
   <JumpForce>k__BackingField: 7
-  timeToSetActive: 7
   impulseSource: {fileID: 4129600868175332928}
   animator: {fileID: 4234967112153723315}
   dustPS: {fileID: 7311420460666136400}
@@ -4961,6 +4962,7 @@ MonoBehaviour:
   OnBirdRaiseImpulseSource: {fileID: 11400000, guid: fc017cc1fbc27b044a77f15e56c0179e, type: 2}
   BirdState: 
   resetPos: {x: 0, y: 0, z: 0}
+  resetGravity: 0
 --- !u!50 &1266179911599800760
 Rigidbody2D:
   serializedVersion: 5
@@ -5063,6 +5065,43 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &880715409415790167
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483855226019530573}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.01, y: 0.03}
+  m_Size: {x: 0.19, y: 0.11}
+  m_Direction: 1
 --- !u!114 &-4750665944483461942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5119,40 +5158,59 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!70 &880715409415790167
-CapsuleCollider2D:
+--- !u!114 &6847864192579687560
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5483855226019530573}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.01, y: 0.03}
-  m_Size: {x: 0.19, y: 0.11}
-  m_Direction: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: 8febbbb4879344246a65a7aeb3387f81, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1894527559215218651}
+        m_TargetAssemblyTypeName: MainBird, FlappyBird.Feature_Player
+        m_MethodName: HandleFlying
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8598911179858852808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483855226019530573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: e80b4572dfca19542ad0b7ae5bfd2116, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1894527559215218651}
+        m_TargetAssemblyTypeName: MainBird, FlappyBird.Feature_Player
+        m_MethodName: HandlePause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
