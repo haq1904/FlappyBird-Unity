@@ -30,24 +30,27 @@ public class PacingDesign : MonoBehaviour
         Two
     }
 
-    private Sequence mainSequence,childSequence,finalSequence;
+    private Sequence mainSequence,finalSequence;
    
-    public void OnStartGame()//Receives event from EasyModeManager
+    public void StartGame()//Receives event from EasyModeManager
     {
         PlayScenarios();
     }
 
-    public void OnGameOver()
+    public void GameOver()
     {
-        mainSequence.Kill();
-        childSequence.Kill();
+        mainSequence?.Kill();
+        finalSequence?.Kill();
+    }
+
+    public void GameRestart()
+    {
+        GameOver();
     }
 
     private void PlayScenarios()
     {
         mainSequence = DOTween.Sequence();
-
-        finalSequence = DOTween.Sequence();
         CreateFinalSequence();
        
         
@@ -86,10 +89,10 @@ public class PacingDesign : MonoBehaviour
                     mainSequence.Append(BuildScenario(normalScenario[1], 30));
                     break;
                 case (Mode.Hard, TypeMode.One):
-                    mainSequence.Append(BuildScenario(normalScenario[0], 30));
+                    mainSequence.Append(BuildScenario(hardScenario[0], 30));
                     break;
                 case (Mode.Hard, TypeMode.Two):
-                    mainSequence.Append(BuildScenario(normalScenario[1], 30));
+                    mainSequence.Append(BuildScenario(hardScenario[1], 30));
                     break;
             }
         }
@@ -100,13 +103,9 @@ public class PacingDesign : MonoBehaviour
     {
         
         Obstacle obstacle;
-        int loopCount;
-        if (duration == -1)
-            loopCount = -1;//for infinity loop
-        else
-            loopCount = Mathf.RoundToInt(duration / currScenario.timeToSpawn);//Get number of loop by separate time to spawn with duration
+        int loopCount = Mathf.RoundToInt(duration / currScenario.timeToSpawn);//Get number of loop by separate time to spawn with duration
 
-        childSequence = DOTween.Sequence();
+        Sequence childSequence = DOTween.Sequence();
         childSequence.AppendCallback(() =>
         {
             //get random allowed pipe from scenario
@@ -123,6 +122,7 @@ public class PacingDesign : MonoBehaviour
     private void CreateFinalSequence()
     {
         Obstacle obstacle;
+        finalSequence = DOTween.Sequence();
         finalSequence.Pause();
         finalSequence.AppendCallback(() =>
         {

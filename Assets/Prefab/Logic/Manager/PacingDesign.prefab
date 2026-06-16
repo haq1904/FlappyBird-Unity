@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4375144097674066273}
   - component: {fileID: -8440143170346303019}
   - component: {fileID: -5546526642666308646}
+  - component: {fileID: 9007127434914023802}
   m_Layer: 0
   m_Name: PacingDesign
   m_TagString: Untagged
@@ -76,7 +77,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4375144097674066273}
         m_TargetAssemblyTypeName: PacingDesign, FlappyBird.Feature_Pacing
-        m_MethodName: OnStartGame
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -104,7 +105,35 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4375144097674066273}
         m_TargetAssemblyTypeName: PacingDesign, FlappyBird.Feature_Pacing
-        m_MethodName: OnGameOver
+        m_MethodName: GameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9007127434914023802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122600913447070357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: b42a08be963cff548b5fc9b7dc1a1ac3, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4375144097674066273}
+        m_TargetAssemblyTypeName: PacingDesign, FlappyBird.Feature_Pacing
+        m_MethodName: GameRestart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
