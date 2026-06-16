@@ -11,7 +11,8 @@ public class HUD_Controller : MonoBehaviour
     [SerializeField] private UnityEvent OnGamePause;
 
     [SerializeField] private Button pauseBtn;
-    [SerializeField] private GameObject pausePanel;
+    [SerializeField] private Pause_Panel pausePanel;
+ 
     [SerializeField] private GameObject timer;
     private void Start()
     {
@@ -22,7 +23,7 @@ public class HUD_Controller : MonoBehaviour
     private void TogglePauseMenu()
     {
         Sequence s = DOTween.Sequence();
-        s.AppendCallback(() => pausePanel.SetActive(true));
+        s.AppendCallback(() => pausePanel.TurnOn());
         s.AppendInterval(0.15f);
         s.AppendCallback(()=>OnGamePause?.Invoke());
     }

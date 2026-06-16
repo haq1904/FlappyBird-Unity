@@ -3,38 +3,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class Pause_Panel : MonoBehaviour
+public class Game_Over_Panel : MonoBehaviour
 {
     [Header("Events")]
-    [SerializeField] UnityEvent OnResume;
     [SerializeField] UnityEvent OnRestart;
     [SerializeField] UnityEvent OnBackHome;
 
     [SerializeField] private GameObject blocker;
-    [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private Button resume;
+    [SerializeField] private GameObject gameOverMenu;
     [SerializeField] private Button restart;
     [SerializeField] private Button backHome;
 
     private void Start()
     {
-        resume.onClick.AddListener(Resume);
+
         restart.onClick.AddListener(Restart);
         backHome.onClick.AddListener(BackHome);
     }
 
-    public void Resume()
-    {
-        Sequence s = DOTween.Sequence();
-        s.SetUpdate(true);
-        s.AppendInterval(0.15f);
-        s.AppendCallback(() => {
-            TurnOff();
-            OnResume?.Invoke();
-        }
-        );
-        
-    }
 
     public void Restart()
     {
@@ -42,7 +28,8 @@ public class Pause_Panel : MonoBehaviour
         s.SetUpdate(true);
         s.AppendInterval(0.15f);
         s.AppendCallback(() => {
-            TurnOff();
+            gameOverMenu.transform.localPosition = new Vector3(0, -1100, 0);
+            gameObject.SetActive(false);
             OnRestart?.Invoke();
         }
         );
@@ -53,16 +40,9 @@ public class Pause_Panel : MonoBehaviour
         OnBackHome?.Invoke();
     }
 
-    public void TurnOn()
+    private void OnEnable()
     {
-        gameObject.SetActive(true);
-        pauseMenu.transform.DOLocalMoveY(0, 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
+        gameOverMenu.transform.DOLocalMoveY(0, 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
         blocker.SetActive(true);
-    }
-
-    public void TurnOff()
-    {
-        pauseMenu.transform.localPosition = new Vector3(0, -1100, 0);
-        gameObject.SetActive(false);
     }
 }
