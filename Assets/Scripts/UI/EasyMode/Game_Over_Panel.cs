@@ -41,9 +41,18 @@ public class Game_Over_Panel : MonoBehaviour
 
     public void TurnOn()
     {
-        gameObject.SetActive(true);
-        gameOverMenu.transform.DOLocalMoveY(0, 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
-        blocker.SetActive(true);
+        Sequence s = DOTween.Sequence();
+        s.SetUpdate(true);
+        s.AppendCallback(() =>
+        {
+            gameObject.SetActive(true);
+            blocker.SetActive(true);
+        });
+        s.AppendInterval(1f);
+        s.AppendCallback(() =>
+        {
+            gameOverMenu.transform.DOLocalMoveY(0, 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
+        });
     }
 
     public void TurnOff()

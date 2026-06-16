@@ -13,9 +13,6 @@ public class PopUp_Controller : MonoBehaviour
 
     public void GameOver()
     {
-        Sequence s = DOTween.Sequence();
-        s.SetUpdate(true);
-        s.AppendInterval(1f);
-        s.AppendCallback(() => { gameOverPanel.TurnOn(); });
+        gameOverPanel.TurnOn();
     }
 }
