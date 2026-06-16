@@ -30,14 +30,11 @@ public class EasyModeManager : MonoBehaviour
     [SerializeField] private UnityEvent OnGameRestart;
     [SerializeField] private UnityEvent OnGameOver;
 
-    
-
-
-
-
+    private Transform followTransform;
     public void Start()
     { 
         UpdateGameState(GameState.GameStart);
+        followTransform = Vcam1.Follow;
     }
 
     public void UpdateGameState(GameState newState)
@@ -88,6 +85,7 @@ public class EasyModeManager : MonoBehaviour
     public void GameRestart()
     {
         UpdateGameState(GameState.GameRestart);
+        Vcam1.Follow = followTransform;
         Time.timeScale = 1f;
     }
 
