@@ -993,6 +993,7 @@ MonoBehaviour:
         m_CallState: 2
   blocker: {fileID: 8633822111947959374}
   gameOverMenu: {fileID: 7022892147947899261}
+  pausePanel: {fileID: 3843843626879296293}
   restart: {fileID: 745997679441955872}
   backHome: {fileID: 4058631138980097452}
 --- !u!1 &2831460933805306738

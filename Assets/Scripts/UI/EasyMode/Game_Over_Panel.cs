@@ -9,8 +9,10 @@ public class Game_Over_Panel : MonoBehaviour
     [SerializeField] UnityEvent OnRestart;
     [SerializeField] UnityEvent OnBackHome;
 
+    [Header("Game objects")]
     [SerializeField] private GameObject blocker;
     [SerializeField] private GameObject gameOverMenu;
+    [SerializeField] private GameObject pausePanel;
     [SerializeField] private Button restart;
     [SerializeField] private Button backHome;
 
@@ -45,6 +47,7 @@ public class Game_Over_Panel : MonoBehaviour
         s.SetUpdate(true);
         s.AppendCallback(() =>
         {
+            if (pausePanel.activeSelf) pausePanel.SetActive(false);
             gameObject.SetActive(true);
             blocker.SetActive(true);
         });
