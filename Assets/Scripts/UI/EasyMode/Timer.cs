@@ -38,15 +38,17 @@ public class Timer : MonoBehaviour
     }
     
 
-    private void OnEnable()
+    public void TurnOn()
     {
+        gameObject.SetActive(true);
         Play();
     }
 
-    private void OnDisable()
+    public void TurnOff()
     {
         panel.transform.position = resetPanelPos;
         mainSequence.Kill();
+        gameObject.SetActive(false);
     }
 
 
@@ -82,7 +84,10 @@ public class Timer : MonoBehaviour
 
         mainSequence.Append(panel.DOAnchorPos(new Vector2(0, 184), duration).SetEase(moveEase));
 
-        mainSequence.AppendCallback(() => canvasGroupTimer.alpha = 0);
+        mainSequence.AppendCallback(() => {
+            canvasGroupTimer.alpha = 0;
+            TurnOff();
+            });
     }
 
     private void ResetBirds()

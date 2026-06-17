@@ -14,8 +14,7 @@ public class HUD_Controller : MonoBehaviour
     [SerializeField] private Button pauseBtn;
     [SerializeField] private Pause_Panel pausePanel;
     [SerializeField] private Score_Panel scorePanel;
- 
-    [SerializeField] private GameObject timer;
+    [SerializeField] private Timer timer;
     private void Start()
     {
         pauseBtn.onClick.AddListener(TogglePauseMenu);
@@ -30,17 +29,19 @@ public class HUD_Controller : MonoBehaviour
         s.AppendCallback(()=>OnGamePause?.Invoke());
     }
 
-    public void StartCountDown()
+    public void HandleCountDown()
     {
-        if (timer.activeSelf)
-        {
-            timer.SetActive(false);
-        }
-        timer.SetActive(true);
+        timer.TurnOn();
     }
 
     public void HandleChangePoint(float point)
     {
         scorePanel.HandleChangePoint(point);
+    }
+
+    public void HandleRestart()
+    {
+        timer.TurnOff();
+        HandleCountDown();
     }
 }

@@ -772,7 +772,7 @@ Canvas:
   m_GameObject: {fileID: 1136148781993541517}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1080,8 +1080,9 @@ GameObject:
   m_Component:
   - component: {fileID: 608371934745348446}
   - component: {fileID: 8219322402713370399}
-  - component: {fileID: 5389262985956389156}
   - component: {fileID: 4396132200986054750}
+  - component: {fileID: 4239629235464844948}
+  - component: {fileID: 6914897806969739785}
   m_Layer: 5
   m_Name: HUD_Panel
   m_TagString: Untagged
@@ -1139,35 +1140,7 @@ MonoBehaviour:
   pauseBtn: {fileID: 7870881495312580351}
   pausePanel: {fileID: 5007583896083789810}
   scorePanel: {fileID: 6296555705892608257}
-  timer: {fileID: 1125323512969802235}
---- !u!114 &5389262985956389156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3134707759946718454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
-  Event: {fileID: 11400000, guid: 9572ac56a49366549bfe89921e148ad1, type: 2}
-  Respond:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8219322402713370399}
-        m_TargetAssemblyTypeName: HUD_Controller, FlappyBird.UI
-        m_MethodName: StartCountDown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  timer: {fileID: 6225225335150245931}
 --- !u!114 &4396132200986054750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,6 +1161,62 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: HUD_Controller, FlappyBird.UI
         m_MethodName: HandleChangePoint
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4239629235464844948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134707759946718454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: ffd1b5d124010e04bb56e10e35debfcb, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8219322402713370399}
+        m_TargetAssemblyTypeName: HUD_Controller, FlappyBird.UI
+        m_MethodName: HandleCountDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6914897806969739785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134707759946718454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: b42a08be963cff548b5fc9b7dc1a1ac3, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8219322402713370399}
+        m_TargetAssemblyTypeName: HUD_Controller, FlappyBird.UI
+        m_MethodName: HandleRestart
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

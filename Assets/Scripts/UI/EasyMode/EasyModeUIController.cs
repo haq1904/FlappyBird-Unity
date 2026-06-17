@@ -15,10 +15,10 @@ public class EasyModeUIController : MonoBehaviour
     [Header("Event")]
     [SerializeField] private UnityEvent OnCountDown;
     
-    public void OnStartGame() //Receive OnStartEasyMode event from EasyModeManager
-    {
-        OnCountDown?.Invoke();
-    }
+    //public void OnStartGame() //Receive OnStartEasyMode event from EasyModeManager
+    //{
+    //    OnCountDown?.Invoke();
+    //}
 
 
     
