@@ -11,7 +11,7 @@ public class Game_Over_Panel : MonoBehaviour
 
     [Header("Game objects")]
     [SerializeField] private GameObject blocker;
-    [SerializeField] private GameObject gameOverMenu;
+    [SerializeField] private RectTransform gameOverMenu;
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private Button restart;
     [SerializeField] private Button backHome;
@@ -54,13 +54,13 @@ public class Game_Over_Panel : MonoBehaviour
         s.AppendInterval(1f);
         s.AppendCallback(() =>
         {
-            gameOverMenu.transform.DOLocalMoveY(0, 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
+            gameOverMenu.DOAnchorPos(new Vector2(0,500), 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
         });
     }
 
     public void TurnOff()
     {
-        gameOverMenu.transform.localPosition = new Vector3(0, -1100, 0);
+        gameOverMenu.anchoredPosition = new Vector3(0, -500, 0);
         gameObject.SetActive(false);
     }
 }
