@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa512b55496d98f4a8a0bdd30b268d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Core::EasyModeManager
+  currPoint: 0
   timeForHitStop: 0.2
   impulseSource: {fileID: 0}
   gameState: 0
@@ -146,7 +147,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAddPoint: {fileID: 0}
+  OnChangePoint: {fileID: 0}
 --- !u!114 &132788544829132333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,7 +387,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8309657924885880509}
         m_TargetAssemblyTypeName: EasyModeManager, FlappyBird.GameFlow
-        m_MethodName: HandleAddPoint
+        m_MethodName: HandleChangePoint
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

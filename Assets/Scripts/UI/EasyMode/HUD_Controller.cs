@@ -13,6 +13,7 @@ public class HUD_Controller : MonoBehaviour
     [Header("Game objects")]
     [SerializeField] private Button pauseBtn;
     [SerializeField] private Pause_Panel pausePanel;
+    [SerializeField] private Score_Panel scorePanel;
  
     [SerializeField] private GameObject timer;
     private void Start()
@@ -36,5 +37,10 @@ public class HUD_Controller : MonoBehaviour
             timer.SetActive(false);
         }
         timer.SetActive(true);
+    }
+
+    public void HandleChangePoint(float point)
+    {
+        scorePanel.HandleChangePoint(point);
     }
 }

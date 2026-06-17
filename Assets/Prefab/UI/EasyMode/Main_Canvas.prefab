@@ -1081,6 +1081,7 @@ GameObject:
   - component: {fileID: 608371934745348446}
   - component: {fileID: 8219322402713370399}
   - component: {fileID: 5389262985956389156}
+  - component: {fileID: 4396132200986054750}
   m_Layer: 5
   m_Name: HUD_Panel
   m_TagString: Untagged
@@ -1137,6 +1138,7 @@ MonoBehaviour:
         m_CallState: 2
   pauseBtn: {fileID: 7870881495312580351}
   pausePanel: {fileID: 5007583896083789810}
+  scorePanel: {fileID: 6296555705892608257}
   timer: {fileID: 1125323512969802235}
 --- !u!114 &5389262985956389156
 MonoBehaviour:
@@ -1158,6 +1160,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: HUD_Controller, FlappyBird.UI
         m_MethodName: StartCountDown
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4396132200986054750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134707759946718454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a7f7b02c5738d645a961785a9b17cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::FloatGameEventListener
+  Event: {fileID: 11400000, guid: 33109b2c1fb890d4d84c2021dbb4db1a, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8219322402713370399}
+        m_TargetAssemblyTypeName: HUD_Controller, FlappyBird.UI
+        m_MethodName: HandleChangePoint
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2691,6 +2721,7 @@ GameObject:
   - component: {fileID: 6065966995460051424}
   - component: {fileID: 5518399287182484262}
   - component: {fileID: 8644221588876908013}
+  - component: {fileID: 6296555705892608257}
   m_Layer: 0
   m_Name: Score
   m_TagString: Untagged
@@ -2778,6 +2809,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6296555705892608257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6907626846720721259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9671c529ec208d049a040c91b111f480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.UI::Score_Panel
+  animator: {fileID: 8644221588876908013}
+  scoreText: {fileID: 5557468141918589288}
 --- !u!1 &7022892147947899261
 GameObject:
   m_ObjectHideFlags: 0
