@@ -15,6 +15,7 @@ public class EasyModeManager : MonoBehaviour
     }
 
     [Header("Fields")]
+    [SerializeField] private float currPoint = 0;
     [SerializeField] private float timeForHitStop=1;
     [SerializeField] private CinemachineImpulseSource impulseSource;
 
@@ -31,6 +32,7 @@ public class EasyModeManager : MonoBehaviour
     [SerializeField] private UnityEvent OnGameOver;
     [SerializeField] private UnityEvent OnGamePause;
     [SerializeField] private UnityEvent OnResume;
+    [SerializeField] private FloatGameEvent OnChangePoint;
 
     private Transform followTransform;
     public void Start()
@@ -90,6 +92,8 @@ public class EasyModeManager : MonoBehaviour
     {
         UpdateGameState(GameState.GameRestart);
         Vcam1.Follow = followTransform;
+        currPoint = 0;
+        HandleChangePoint(0f);
         Time.timeScale = 1f;
     }
 
@@ -110,6 +114,12 @@ public class EasyModeManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+
+    public void HandleChangePoint(float point)
+    {
+        currPoint += point;
+        OnChangePoint?.Raise(currPoint);
+    }
     
 
    
