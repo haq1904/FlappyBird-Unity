@@ -2851,6 +2851,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9671c529ec208d049a040c91b111f480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.UI::Score_Panel
+  duration: 0.5
+  strength: {x: 5, y: 5, z: 0}
+  vibrato: 7
+  randomness: 180
+  snapping: 0
+  fadeOut: 1
   animator: {fileID: 8644221588876908013}
   scoreText: {fileID: 5557468141918589288}
 --- !u!1 &7022892147947899261
