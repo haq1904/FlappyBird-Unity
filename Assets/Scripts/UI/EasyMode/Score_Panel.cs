@@ -10,6 +10,7 @@ public class Score_Panel : MonoBehaviour
 
     public void HandleChangePoint(float point)
     {
+        animator.Play("AddPoint",-1,0f);
         scoreText.text = point.ToString();
     }
 }

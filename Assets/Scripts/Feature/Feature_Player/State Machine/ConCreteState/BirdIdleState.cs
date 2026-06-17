@@ -23,7 +23,7 @@ public class BirdIdleState : BirdState
         bird.RB.linearVelocity = Vector2.zero;
         bird.transform.rotation = Quaternion.identity;
         bird.RB.angularVelocity = 0f;
-        bird.animator.Play("Idle");
+        bird.animator.Play("Idle",-1,0f);
         
     }
 
