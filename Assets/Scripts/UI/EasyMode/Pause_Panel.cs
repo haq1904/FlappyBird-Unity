@@ -11,7 +11,7 @@ public class Pause_Panel : MonoBehaviour
     [SerializeField] UnityEvent OnBackHome;
 
     [SerializeField] private GameObject blocker;
-    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private RectTransform pauseMenu;
     [SerializeField] private Button resume;
     [SerializeField] private Button restart;
     [SerializeField] private Button backHome;
@@ -56,13 +56,13 @@ public class Pause_Panel : MonoBehaviour
     public void TurnOn()
     {
         gameObject.SetActive(true);
-        pauseMenu.transform.DOLocalMoveY(0, 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
+        pauseMenu.DOAnchorPos(new Vector2(0,500), 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
         blocker.SetActive(true);
     }
 
     public void TurnOff()
     {
-        pauseMenu.transform.localPosition = new Vector3(0, -1100, 0);
+        pauseMenu.anchoredPosition = new Vector3(0, -500, 0);
         gameObject.SetActive(false);
     }
 }

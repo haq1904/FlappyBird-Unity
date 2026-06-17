@@ -919,7 +919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7911736465741761418
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1625,7 +1625,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   blocker: {fileID: 2831460933805306738}
-  pauseMenu: {fileID: 6514094292996402843}
+  pauseMenu: {fileID: 4531620018084019565}
   resume: {fileID: 2570984208277930158}
   restart: {fileID: 5363633794754515279}
   backHome: {fileID: 9106534989499710207}
@@ -2618,11 +2618,11 @@ RectTransform:
   - {fileID: 2813264578233082355}
   m_Father: {fileID: 1325901226111271831}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1100}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -500}
   m_SizeDelta: {x: 456.6794, y: 521.3517}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.50000006}
 --- !u!222 &8451839515229362310
 CanvasRenderer:
   m_ObjectHideFlags: 0
