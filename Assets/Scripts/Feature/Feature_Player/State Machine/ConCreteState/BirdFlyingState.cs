@@ -68,7 +68,7 @@ public class BirdFlyingState : BirdState
     public override void HandleAddCoin(float coin)
     {
         base.HandleAddCoin(coin);
-
+        bird.RaiseAddCoinEvent(coin);
     }
 
     private void OnFlapStarted(InputAction.CallbackContext context)

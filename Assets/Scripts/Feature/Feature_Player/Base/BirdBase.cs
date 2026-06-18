@@ -126,6 +126,11 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     {
         StateMachine.CurrentBirdState.HandleAddPoint(point);
     }
+
+    public void AddCoin(float coin)
+    {
+        StateMachine.CurrentBirdState.HandleAddCoin(coin);
+    }
     #endregion
 
     #region Control function
