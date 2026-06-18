@@ -46,7 +46,7 @@ public class Timer : MonoBehaviour
 
     public void TurnOff()
     {
-        panel.transform.position = resetPanelPos;
+        panel.anchoredPosition = new Vector3(0, 200, 0);
         mainSequence.Kill();
         gameObject.SetActive(false);
     }
