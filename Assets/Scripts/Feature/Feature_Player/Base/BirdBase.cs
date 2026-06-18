@@ -152,7 +152,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     public void RaiseAddCoinEvent(float coin)
     {
         OnBirdRaiseSoundEvent.Raise(SoundType.TakePoint);
-        OnBirdRaisePoint.Raise(coin);
+        OnBirdRaiseCoin.Raise(coin);
     }
 
     public void BirdDead()

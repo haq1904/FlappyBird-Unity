@@ -18,7 +18,6 @@ public class EasyModeManager : MonoBehaviour
     [SerializeField] private float currPoint = 0;
     [SerializeField] private float currCoin = 0;
     [SerializeField] private float timeForHitStop=1;
-    [SerializeField] private CinemachineImpulseSource impulseSource;
 
     [Header("Game State")]
     [SerializeField] private GameState gameState;
