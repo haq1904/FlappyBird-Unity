@@ -3,14 +3,19 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] private ItemEffect effect;
+    [SerializeField] protected ItemEffect effect;
 
-    private void OnTriggerExit2D(Collider2D collision)
+    protected virtual void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.TryGetComponent<IReceivable>(out var gameObject))
+        if (collision.TryGetComponent<IReceivable>(out var gameObject))
         {
             effect.ApplyEffect(gameObject);
         }
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+
     }
 
 }

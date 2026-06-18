@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 9018427603331343673}
   - component: {fileID: 446817377790228634}
   - component: {fileID: 5158204193984348798}
-  - component: {fileID: 393296679797142348}
+  - component: {fileID: 2514191663777341194}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -314,7 +314,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.13661295, y: 0.096996665}
   m_EdgeRadius: 0
---- !u!114 &393296679797142348
+--- !u!114 &2514191663777341194
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -323,10 +323,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3822972244348488147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d84063d9bad92fe49b6afb66cea19b15, type: 3}
+  m_Script: {fileID: 11500000, guid: d143720486186204288c4c235efda4d6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: FlappyBird.Feature_Item::Item
+  m_EditorClassIdentifier: FlappyBird.Feature_Item::Coin
   effect: {fileID: 11400000, guid: 8a645009403e3b4479f0618ff709c5f2, type: 2}
+  _animator: {fileID: 446817377790228634}
 --- !u!1 &8857216727986773534
 GameObject:
   m_ObjectHideFlags: 0
