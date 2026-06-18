@@ -13,15 +13,15 @@ public class ChildOneWay : MonoBehaviour
         float startRange = 0;
         float endRange = 0;
 
-        if (parentPipe.GetRandSpawnHeight>=0)
+        if (parentPipe.GetSpawnHeight()>=0)
         {
-            startRange = -parentPipe.GetHeightRange - parentPipe.GetRandSpawnHeight;
-            endRange = parentPipe.GetRandSpawnHeight - parentPipe.GetUnitToMove;
+            startRange = -parentPipe.GetHeightRange - parentPipe.GetSpawnHeight();
+            endRange = parentPipe.GetSpawnHeight() - parentPipe.GetUnitToMove;
         }
         else
         {
-            startRange = parentPipe.GetRandSpawnHeight + parentPipe.GetUnitToMove;
-            endRange = parentPipe.GetHeightRange - parentPipe.GetRandSpawnHeight;
+            startRange = parentPipe.GetSpawnHeight() + parentPipe.GetUnitToMove;
+            endRange = parentPipe.GetHeightRange - parentPipe.GetSpawnHeight();
         }
         
         targetY = UnityEngine.Random.Range(startRange, endRange);

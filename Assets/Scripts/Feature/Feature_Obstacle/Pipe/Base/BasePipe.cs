@@ -11,7 +11,6 @@ public abstract class BasePipe : ObstacleService
     protected float randSpawnHeight;
 
 
-    public float GetRandSpawnHeight { get => randSpawnHeight; }
     public float GetHeightRange { get => heightRangeTop; }
     
     protected Rigidbody2D rb;
