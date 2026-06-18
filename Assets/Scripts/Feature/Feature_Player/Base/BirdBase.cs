@@ -1,7 +1,8 @@
 
 using Cinemachine;
-using UnityEngine;
 using System.Collections;
+using System.Drawing;
+using UnityEngine;
 
 
 public class BirdBase : MonoBehaviour, IDamageable, IReceivable
@@ -150,7 +151,8 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     
     public void RaiseAddCoinEvent(float coin)
     {
-
+        OnBirdRaiseSoundEvent.Raise(SoundType.TakePoint);
+        OnBirdRaisePoint.Raise(coin);
     }
 
     public void BirdDead()
