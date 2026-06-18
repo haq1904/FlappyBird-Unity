@@ -4,33 +4,27 @@ using UnityEngine;
 public class Coin : Item
 {
     [Header("Fields")]
-    
+    [SerializeField] private ObstacleService pipe;
     [SerializeField] private float _force;
     [SerializeField] private float _timeToFade=1;
     [SerializeField] private Ease _easeToFade = Ease.OutElastic;
     [SerializeField] private SpriteRenderer spr;
 
-    private  float _randSpawnHeight;
     private Rigidbody2D _rb;
-    private bool _IsTaken = false;
+    private bool _IsTaken=false;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        float randSpawnY = UnityEngine.Random.Range(-5,5);
+        transform.position = new Vector2(transform.position.x, randSpawnY); 
     }
 
-    protected override void OnTriggerExit2D(Collider2D collision)
-    {
-        if (!_IsTaken)
-        {
-            base.OnTriggerExit2D(collision);
-        }
-           
-    }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent<IReceivable>(out var gameObj) && !_IsTaken)
+        base.OnTriggerEnter2D(collision);
+        if(collision.TryGetComponent<IReceivable>(out var gameObj) && !_IsTaken )
         {
             float finalX = UnityEngine.Random.Range(-0.5f, 0.25f);
             _rb.bodyType = RigidbodyType2D.Dynamic;

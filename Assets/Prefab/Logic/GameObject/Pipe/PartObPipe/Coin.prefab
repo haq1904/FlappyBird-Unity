@@ -176,9 +176,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Feature_Item::Coin
   effect: {fileID: 11400000, guid: 8a645009403e3b4479f0618ff709c5f2, type: 2}
-  force: 6.99
-  timeToFade: 1.18
-  easeToFade: 29
+  pipe: {fileID: 0}
+  _force: 7.35
+  _timeToFade: 1.1
+  _easeToFade: 29
   spr: {fileID: 8908479369780433490}
 --- !u!50 &7137103257297574625
 Rigidbody2D:
