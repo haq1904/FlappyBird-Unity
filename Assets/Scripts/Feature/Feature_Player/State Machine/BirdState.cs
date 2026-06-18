@@ -55,4 +55,9 @@ public class BirdState
     {
 
     }
+
+    public virtual void HandleAddCoin(float point)
+    {
+
+    }
 }

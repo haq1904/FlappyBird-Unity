@@ -7,4 +7,5 @@ public interface IReceivable
 {
     public void PlayAnimation(ReceivableAnimationStandard animationName);
     public void AddPoint(float point);
+    public void AddCoin(float coin);
 }

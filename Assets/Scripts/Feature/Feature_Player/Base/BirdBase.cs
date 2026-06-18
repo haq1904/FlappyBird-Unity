@@ -12,7 +12,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     [SerializeField] public Animator animator;
     [SerializeField] private ParticleSystem dustPS;
     [SerializeField] public float maxUpAngle = 18;
-    [SerializeField] public float matxDownAngle = -40;
+    [SerializeField] public float maxDownAngle = -40;
     [SerializeField] public float rotationSpeed = 15f;
     
 
@@ -140,6 +140,11 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     {
         OnBirdRaiseSoundEvent.Raise(SoundType.TakePoint);
         OnBirdRaisePoint.Raise(point);
+    }
+    
+    public void RaiseAddCoinEvent(float coin)
+    {
+
     }
 
     public void BirdDead()

@@ -65,6 +65,12 @@ public class BirdFlyingState : BirdState
         bird.RaiseAddPointEvent(point);
     }
 
+    public override void HandleAddCoin(float coin)
+    {
+        base.HandleAddCoin(coin);
+
+    }
+
     private void OnFlapStarted(InputAction.CallbackContext context)
     {
         bird.PlayDustPS();
@@ -79,7 +85,7 @@ public class BirdFlyingState : BirdState
     {
         if (bird.RB.linearVelocityY < 0)
         {
-            Quaternion targetRot = Quaternion.Euler(0, 0, bird.matxDownAngle);
+            Quaternion targetRot = Quaternion.Euler(0, 0, bird.maxDownAngle);
 
             bird.transform.rotation = Quaternion.RotateTowards(
                 bird.transform.rotation,
