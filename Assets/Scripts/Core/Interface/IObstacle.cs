@@ -2,5 +2,7 @@ using UnityEngine;
 
 public interface IObstacle
 {
-    public void SetSpeed(float moveSpeed);
+    void SetSpeed(float moveSpeed);
+
+    float GetSpawnHeight();
 }

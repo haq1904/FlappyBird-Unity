@@ -2,7 +2,8 @@
     "name": "FlappyBird.Feature_Item",
     "rootNamespace": "",
     "references": [
-        "GUID:bbaf12589dbb60f48b69d1e11616d28d"
+        "GUID:bbaf12589dbb60f48b69d1e11616d28d",
+        "GUID:6c9c37ff1ef6ea744b026e16753657bf"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -54,6 +54,10 @@ public abstract class BasePipe : ObstacleService
     {
         this.moveSpeed = moveSpeed;
     }
+    public override float GetSpawnHeight()
+    {
+        return randSpawnHeight;
+    }
     #endregion
 
     #region State
@@ -67,5 +71,7 @@ public abstract class BasePipe : ObstacleService
     {
         Destroy(gameObject);
     }
+
+    
     #endregion
 }
