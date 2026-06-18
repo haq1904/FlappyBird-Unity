@@ -20,8 +20,12 @@ public class BackGroundManager : MonoBehaviour
     {
         //Calculate distance for parallax effect
         float distance = Vcam.transform.position.y * parallaxEffect; // 0: won't move , 1: move with camera , 0.5: half;
+
         //Calculate finalX for moving left by x
+        
+        
         float finalX = transform.position.x - (moveSpeed * Time.fixedDeltaTime);
+
         //Calculate finalY for moving background with y ( parallax)
         float finalY = startPosY + distance;
 

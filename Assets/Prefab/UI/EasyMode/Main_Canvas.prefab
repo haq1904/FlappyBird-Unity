@@ -2852,8 +2852,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.UI::Score_Panel
   duration: 0.5
-  strength: {x: 5, y: 5, z: 0}
-  vibrato: 7
+  strength: {x: 10, y: 10, z: 0}
+  vibrato: 22
   randomness: 180
   snapping: 0
   fadeOut: 1
