@@ -1,24 +1,39 @@
 
+using DG.Tweening;
 using UnityEngine;
 
-public class BackGroundManager : MonoBehaviour, IBackgroundService
+public class BackGroundManager : MonoBehaviour
 {
+    [Header("Fields")]
     [SerializeField] private GameObject Vcam;
     [SerializeField] private float parallaxEffect =1;
     [SerializeField] private float moveSpeed=1;
     [SerializeField] private float xCoordinateToReset = -24;
+
+    [Header("Move speed follows pacing")]
+    [SerializeField] private float speed1 = 1;
+    [SerializeField] private float speed2 = 1;
+    [SerializeField] private float speed3 = 1;
+    [SerializeField] private float speed4 = 1;
+    [SerializeField] private float speed5 = 1;
+    [SerializeField] private float speed6 = 1;
+
+
+
     private float startPosY;
     private float startPosX;
+    private Sequence mainSequence;
 
-    public void SetSpeed(float speed)
-    {
-        moveSpeed = speed;
-    }
 
     private void Awake()
     {
         startPosX = transform.position.x;
         startPosY = transform.position.y;
+    }
+
+    private void OnEnable()
+    {
+        HandleChangeMoveSpeed();
     }
 
     private void FixedUpdate()
@@ -27,8 +42,6 @@ public class BackGroundManager : MonoBehaviour, IBackgroundService
         float distance = Vcam.transform.position.y * parallaxEffect; // 0: won't move , 1: move with camera , 0.5: half;
 
         //Calculate finalX for moving left by x
-        
-        
         float finalX = transform.position.x - (moveSpeed * Time.fixedDeltaTime);
 
         //Calculate finalY for moving background with y ( parallax)
@@ -40,6 +53,29 @@ public class BackGroundManager : MonoBehaviour, IBackgroundService
 
         transform.position = new Vector3(finalX, finalY, transform.position.z);
 
+    }
+
+    public void HandleRestart()
+    {      
+        HandleChangeMoveSpeed();
+    }
+
+    
+    private void HandleChangeMoveSpeed()
+    {
+        mainSequence?.Kill();
+        mainSequence = DOTween.Sequence();
+        mainSequence.AppendCallback(() =>moveSpeed = speed1);
+        mainSequence.AppendInterval(15f);
+        mainSequence.AppendCallback(() => moveSpeed = speed2);
+        mainSequence.AppendInterval(28.5f);
+        mainSequence.AppendCallback(() => moveSpeed = speed3);
+        mainSequence.AppendInterval(16f);
+        mainSequence.AppendCallback(() => moveSpeed = speed4);
+        mainSequence.AppendInterval(33.5f);
+        mainSequence.AppendCallback(() => moveSpeed = speed5);
+        mainSequence.AppendInterval(11f);
+        mainSequence.AppendCallback(() => moveSpeed = speed6);
 
     }
 }

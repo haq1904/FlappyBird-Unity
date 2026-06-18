@@ -193,13 +193,14 @@ GameObject:
   - component: {fileID: 238536995333831476}
   - component: {fileID: 813735872579008445}
   - component: {fileID: 182082122936572166}
+  - component: {fileID: 867970104800714955}
   m_Layer: 0
   m_Name: Mountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &238536995333831476
 Transform:
   m_ObjectHideFlags: 0
@@ -291,6 +292,40 @@ MonoBehaviour:
   parallaxEffect: 0.2
   moveSpeed: 1
   xCoordinateToReset: -22.5
+  speed1: 1
+  speed2: 1
+  speed3: 1
+  speed4: 1
+  speed5: 1
+  speed6: 1
+--- !u!114 &867970104800714955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2715897151091056007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: b42a08be963cff548b5fc9b7dc1a1ac3, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 182082122936572166}
+        m_TargetAssemblyTypeName: BackGroundManager, FlappyBird.GameFlow
+        m_MethodName: HandleRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4413672816605700480
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,13 +337,14 @@ GameObject:
   - component: {fileID: 8192611227174976216}
   - component: {fileID: 251508143283281948}
   - component: {fileID: 275567047746423453}
+  - component: {fileID: 8471903570875609012}
   m_Layer: 0
   m_Name: Fog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8192611227174976216
 Transform:
   m_ObjectHideFlags: 0
@@ -400,6 +436,40 @@ MonoBehaviour:
   parallaxEffect: 0.23
   moveSpeed: 0.2
   xCoordinateToReset: -24
+  speed1: 1
+  speed2: 1
+  speed3: 1
+  speed4: 1
+  speed5: 1
+  speed6: 1
+--- !u!114 &8471903570875609012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4413672816605700480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: b42a08be963cff548b5fc9b7dc1a1ac3, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 275567047746423453}
+        m_TargetAssemblyTypeName: BackGroundManager, FlappyBird.GameFlow
+        m_MethodName: HandleRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4625554533106212021
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +481,7 @@ GameObject:
   - component: {fileID: 3398998541770136618}
   - component: {fileID: 618808203342089371}
   - component: {fileID: 4201027510459523564}
+  - component: {fileID: 539536079480492702}
   m_Layer: 0
   m_Name: CloseTree
   m_TagString: Untagged
@@ -509,6 +580,40 @@ MonoBehaviour:
   parallaxEffect: 0
   moveSpeed: 6.5
   xCoordinateToReset: -24
+  speed1: 5
+  speed2: 7
+  speed3: 6
+  speed4: 11
+  speed5: 9
+  speed6: 13
+--- !u!114 &539536079480492702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4625554533106212021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: b42a08be963cff548b5fc9b7dc1a1ac3, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4201027510459523564}
+        m_TargetAssemblyTypeName: BackGroundManager, FlappyBird.GameFlow
+        m_MethodName: HandleRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5396266220961918024
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,13 +934,14 @@ GameObject:
   - component: {fileID: 3170416055728020762}
   - component: {fileID: 388279952431303975}
   - component: {fileID: 7610754873552023775}
+  - component: {fileID: 3462229867064031498}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3170416055728020762
 Transform:
   m_ObjectHideFlags: 0
@@ -927,6 +1033,40 @@ MonoBehaviour:
   parallaxEffect: 0.25
   moveSpeed: 0.01
   xCoordinateToReset: -24
+  speed1: 1
+  speed2: 1
+  speed3: 1
+  speed4: 1
+  speed5: 1
+  speed6: 1
+--- !u!114 &3462229867064031498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8638651485583928673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: b42a08be963cff548b5fc9b7dc1a1ac3, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7610754873552023775}
+        m_TargetAssemblyTypeName: BackGroundManager, FlappyBird.GameFlow
+        m_MethodName: HandleRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9200391712795732414
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,13 +1078,14 @@ GameObject:
   - component: {fileID: 711033957141676875}
   - component: {fileID: 7770000603320204412}
   - component: {fileID: 5806065982989937341}
+  - component: {fileID: 1763229300420460496}
   m_Layer: 0
   m_Name: FarTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &711033957141676875
 Transform:
   m_ObjectHideFlags: 0
@@ -1036,3 +1177,37 @@ MonoBehaviour:
   parallaxEffect: 0.1
   moveSpeed: 4.5
   xCoordinateToReset: -24
+  speed1: 1
+  speed2: 1
+  speed3: 1
+  speed4: 1
+  speed5: 1
+  speed6: 1
+--- !u!114 &1763229300420460496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9200391712795732414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: b42a08be963cff548b5fc9b7dc1a1ac3, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5806065982989937341}
+        m_TargetAssemblyTypeName: BackGroundManager, FlappyBird.GameFlow
+        m_MethodName: HandleRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

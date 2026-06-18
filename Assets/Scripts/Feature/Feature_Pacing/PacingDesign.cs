@@ -12,11 +12,12 @@ public class PacingDesign : MonoBehaviour
 
     [SerializeField] private PacingScenario[] hardScenario;
 
+    [Header("Fields")]
     [SerializeField] private Boolean isTest;
-
     [SerializeField] private Mode modeIsTest;
-
     [SerializeField] private TypeMode typeMode;
+
+
     public enum Mode
     {
         Easy,
