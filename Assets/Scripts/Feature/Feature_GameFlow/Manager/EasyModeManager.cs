@@ -16,6 +16,7 @@ public class EasyModeManager : MonoBehaviour
 
     [Header("Fields")]
     [SerializeField] private float currPoint = 0;
+    [SerializeField] private float currCoin = 0;
     [SerializeField] private float timeForHitStop=1;
     [SerializeField] private CinemachineImpulseSource impulseSource;
 
@@ -33,6 +34,7 @@ public class EasyModeManager : MonoBehaviour
     [SerializeField] private UnityEvent OnGamePause;
     [SerializeField] private UnityEvent OnResume;
     [SerializeField] private FloatGameEvent OnChangePoint;
+    [SerializeField] private FloatGameEvent OnChangeCoin;
 
     private Transform followTransform;
     public void Start()
@@ -121,6 +123,11 @@ public class EasyModeManager : MonoBehaviour
         OnChangePoint?.Raise(currPoint);
     }
     
+    public void HandleChangeCoin(float coin)
+    {
+        currCoin += coin;
+        OnChangeCoin?.Raise(coin);
+    }
 
    
 

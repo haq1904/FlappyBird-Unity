@@ -19,6 +19,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     [Header("Events")]
     [SerializeField] private SoundTypeGameEvent OnBirdRaiseSoundEvent; 
     [SerializeField] private FloatGameEvent OnBirdRaisePoint;
+    [SerializeField] private FloatGameEvent OnBirdRaiseCoin;
     [SerializeField] private GameEvent OnBirdDead;
     [SerializeField] private CineMachineImpulseSourceEvent OnBirdRaiseImpulseSource;
 
