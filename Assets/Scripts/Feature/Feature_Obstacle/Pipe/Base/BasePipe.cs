@@ -2,7 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEditor;
 
-public abstract class BasePipe : Obstacle
+public abstract class BasePipe : ObstacleService
 {
     [Header("Fields")]
     [SerializeField] protected float moveSpeed = 3;

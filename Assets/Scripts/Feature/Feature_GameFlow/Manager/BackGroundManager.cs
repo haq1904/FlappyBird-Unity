@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class BackGroundManager : MonoBehaviour
+public class BackGroundManager : MonoBehaviour, IBackgroundService
 {
     [SerializeField] private GameObject Vcam;
     [SerializeField] private float parallaxEffect =1;
@@ -9,6 +9,11 @@ public class BackGroundManager : MonoBehaviour
     [SerializeField] private float xCoordinateToReset = -24;
     private float startPosY;
     private float startPosX;
+
+    public void SetSpeed(float speed)
+    {
+        moveSpeed = speed;
+    }
 
     private void Awake()
     {

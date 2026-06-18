@@ -12,6 +12,6 @@ public class PacingScenario: ScriptableObject
     public float moveSpeed = 2;
     public float timeToSpawn = 2;
     public DifficultyTag difficultyTag;
-    public Obstacle[] allowedPipe;
+    public ObstacleService[] allowedPipe;
     
 }

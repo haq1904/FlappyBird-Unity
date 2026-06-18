@@ -102,7 +102,7 @@ public class PacingDesign : MonoBehaviour
     private Sequence BuildScenario(PacingScenario currScenario, float duration )
     {
         
-        Obstacle obstacle;
+        ObstacleService obstacle;
         int loopCount = Mathf.RoundToInt(duration / currScenario.timeToSpawn);//Get number of loop by separate time to spawn with duration
 
         Sequence childSequence = DOTween.Sequence();
@@ -121,7 +121,7 @@ public class PacingDesign : MonoBehaviour
 
     private void CreateFinalSequence()
     {
-        Obstacle obstacle;
+        ObstacleService obstacle;
         finalSequence = DOTween.Sequence();
         finalSequence.Pause();
         finalSequence.AppendCallback(() =>
@@ -135,9 +135,9 @@ public class PacingDesign : MonoBehaviour
         finalSequence.SetLoops(-1);
     }
 
-    private void SpawnPipe(Obstacle obstacle, Vector3 position, Quaternion quaternion, float moveSpeed)
+    private void SpawnPipe(ObstacleService obstacle, Vector3 position, Quaternion quaternion, float moveSpeed)
     {
-        Obstacle cloneObstacle = Instantiate(obstacle, position, quaternion);
+        ObstacleService cloneObstacle = Instantiate(obstacle, position, quaternion);
         cloneObstacle.SetSpeed(moveSpeed);
     }
 

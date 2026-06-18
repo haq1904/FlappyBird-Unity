@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Obstacle : MonoBehaviour, IObstacle
+public abstract class ObstacleService : MonoBehaviour, IObstacle
 {
     abstract public void SetSpeed(float moveSpeed);
 }

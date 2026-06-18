@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2877105303838020526}
   - component: {fileID: 8480699091978250223}
   m_Layer: 0
-  m_Name: Background1 (1)
+  m_Name: CloseTree(Sub)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 9046518218465245042}
   - component: {fileID: 761435059510349177}
   m_Layer: 0
-  m_Name: Background5 (1)
+  m_Name: Sky(Sub)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 813735872579008445}
   - component: {fileID: 182082122936572166}
   m_Layer: 0
-  m_Name: Background3
+  m_Name: Mountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 251508143283281948}
   - component: {fileID: 275567047746423453}
   m_Layer: 0
-  m_Name: Background4
+  m_Name: Fog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 618808203342089371}
   - component: {fileID: 4201027510459523564}
   m_Layer: 0
-  m_Name: Background1
+  m_Name: CloseTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 8855678025128986384}
   - component: {fileID: 3671189837453299079}
   m_Layer: 0
-  m_Name: Background3 (1)
+  m_Name: Mountain(Sub)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 6858046631427514910}
   - component: {fileID: 2165462205373373044}
   m_Layer: 0
-  m_Name: Background2 (1)
+  m_Name: FarTree(Sub)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -738,7 +738,7 @@ GameObject:
   - component: {fileID: 2379215232072856794}
   - component: {fileID: 4756417653141463444}
   m_Layer: 0
-  m_Name: Background4 (1)
+  m_Name: Fog(Sub)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -830,7 +830,7 @@ GameObject:
   - component: {fileID: 388279952431303975}
   - component: {fileID: 7610754873552023775}
   m_Layer: 0
-  m_Name: Background5
+  m_Name: Sky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -939,7 +939,7 @@ GameObject:
   - component: {fileID: 7770000603320204412}
   - component: {fileID: 5806065982989937341}
   m_Layer: 0
-  m_Name: Background2
+  m_Name: FarTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
