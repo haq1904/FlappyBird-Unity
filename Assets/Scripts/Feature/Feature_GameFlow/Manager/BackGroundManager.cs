@@ -60,6 +60,12 @@ public class BackGroundManager : MonoBehaviour
         HandleChangeMoveSpeed();
     }
 
+
+    public void HandleGameOver()
+    {
+        moveSpeed = 0;
+        mainSequence?.Kill();
+    }
     
     private void HandleChangeMoveSpeed()
     {
