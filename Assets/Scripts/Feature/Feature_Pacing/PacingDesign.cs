@@ -13,6 +13,7 @@ public class PacingDesign : MonoBehaviour
     [SerializeField] private PacingScenario[] hardScenario;
 
     [Header("Fields")]
+    [SerializeField] private ItemService _coinPrefab;
     [SerializeField] private Boolean isTest;
     [SerializeField] private Mode modeIsTest;
     [SerializeField] private TypeMode typeMode;
@@ -112,6 +113,7 @@ public class PacingDesign : MonoBehaviour
             //get random allowed pipe from scenario
             obstacle = currScenario.allowedPipe[UnityEngine.Random.Range(0, currScenario.allowedPipe.Count())];
             SpawnPipe(obstacle, transform.position, Quaternion.identity, currScenario.moveSpeed);
+            SpawnCoin(currScenario.moveSpeed);
         });
         //Set time to spawn
         childSequence.AppendInterval(currScenario.timeToSpawn);
@@ -140,6 +142,12 @@ public class PacingDesign : MonoBehaviour
     {
         ObstacleService cloneObstacle = Instantiate(obstacle, position, quaternion);
         cloneObstacle.SetSpeed(moveSpeed);
+    }
+
+    private void SpawnCoin(float speedToSet)
+    {
+        ItemService coinClone = Instantiate(_coinPrefab, transform.position, Quaternion.identity);
+        coinClone.SetSpeed(speedToSet);
     }
 
     
