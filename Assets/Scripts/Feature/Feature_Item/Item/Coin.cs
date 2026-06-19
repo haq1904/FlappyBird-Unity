@@ -1,10 +1,9 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class Coin : Item
+public class Coin : ItemService
 {
     [Header("Fields")]
-    [SerializeField] private ObstacleService pipe;
     [SerializeField] private float _force;
     [SerializeField] private float _timeToFade=1;
     [SerializeField] private Ease _easeToFade = Ease.OutElastic;
@@ -16,16 +15,14 @@ public class Coin : Item
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        float randSpawnY = UnityEngine.Random.Range(-5,5);
-        transform.position = new Vector2(transform.position.x, randSpawnY); 
     }
 
 
-    protected override void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
-        base.OnTriggerEnter2D(collision);
         if(collision.TryGetComponent<IReceivable>(out var gameObj) && !_IsTaken )
         {
+            ApplyEffect(gameObj);
             float finalX = UnityEngine.Random.Range(-0.5f, 0.25f);
             _rb.bodyType = RigidbodyType2D.Dynamic;
             _rb.AddForce(new Vector2(finalX, 1)*_force, ForceMode2D.Impulse);
@@ -34,4 +31,8 @@ public class Coin : Item
         }
     }
 
+    public override void ApplyEffect(IReceivable gameObj)
+    {
+        effect.ApplyEffect(gameObj);
+    }
 }
