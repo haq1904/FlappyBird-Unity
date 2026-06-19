@@ -15,6 +15,11 @@ public class Point : ItemService
 
     public override void ApplyEffect(IReceivable gameObj)
     {
-        effect.ApplyEffect(gameObj);
+        _effect.ApplyEffect(gameObj);
+    }
+
+    public override void SetSpeed(float speed)
+    {
+        _speed = speed; 
     }
 }

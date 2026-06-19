@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a015d99eef8868f48a1f2db73225fcd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::TwoWayMovePipe
+  _coinPrefab: {fileID: 2621817539927124065, guid: 08f5f848c2a1cc14c92728fc1dd90cab, type: 3}
   moveSpeed: 3
   timeToMove: 12
   unitYToMove: 6.12

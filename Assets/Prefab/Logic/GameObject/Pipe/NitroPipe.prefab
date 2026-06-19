@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274852f4b0edcd248a2781b3d0b9ee5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::NitroPipe
+  _coinPrefab: {fileID: 2621817539927124065, guid: 08f5f848c2a1cc14c92728fc1dd90cab, type: 3}
   moveSpeed: 3
   durationForBacking: 0.5
   timeSlowDown: 0.1

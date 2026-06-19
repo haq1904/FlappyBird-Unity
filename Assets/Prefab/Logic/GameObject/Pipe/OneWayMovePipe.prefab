@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5935a55cfcd6814997ef5b44355a31e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::OneWayMovePipe
+  _coinPrefab: {fileID: 2621817539927124065, guid: 08f5f848c2a1cc14c92728fc1dd90cab, type: 3}
   moveSpeed: 5.07
   child: {fileID: 5387277828867074470}
   unitToMove: 2

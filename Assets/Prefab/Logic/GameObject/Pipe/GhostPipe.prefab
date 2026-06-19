@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 729a0cd15c2492441b8b7cb5e228a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::GhostPipe
+  _coinPrefab: {fileID: 2621817539927124065, guid: 08f5f848c2a1cc14c92728fc1dd90cab, type: 3}
   moveSpeed: 3
   timeToFade: 1.2
   timeToAppear: 0.72

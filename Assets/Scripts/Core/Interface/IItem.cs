@@ -1,4 +1,8 @@
-﻿public interface IItem
+﻿using UnityEditor.VisionOS;
+
+public interface IItem
 {
     void ApplyEffect(IReceivable gameObj);
+
+    void SetSpeed(float speed);
 }

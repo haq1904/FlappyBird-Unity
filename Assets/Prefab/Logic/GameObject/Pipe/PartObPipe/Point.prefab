@@ -151,4 +151,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138a6802a9fa0374390541da4f5cc1b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Feature_Item::Point
-  effect: {fileID: 11400000, guid: f4f49c8232c24f44bb61a29ce47736a5, type: 2}
+  _effect: {fileID: 11400000, guid: f4f49c8232c24f44bb61a29ce47736a5, type: 2}
+  _speed: 0

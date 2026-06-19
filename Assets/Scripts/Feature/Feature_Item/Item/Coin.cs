@@ -24,6 +24,7 @@ public class Coin : ItemService
         {
             ApplyEffect(gameObj);
             float finalX = UnityEngine.Random.Range(-0.5f, 0.25f);
+            _rb.linearVelocity = Vector2.zero;
             _rb.bodyType = RigidbodyType2D.Dynamic;
             _rb.AddForce(new Vector2(finalX, 1)*_force, ForceMode2D.Impulse);
             spr.DOFade(0, _timeToFade).SetEase(_easeToFade).SetLink(gameObject);
@@ -31,8 +32,28 @@ public class Coin : ItemService
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (!_IsTaken)
+        {
+            _rb.linearVelocity = Vector2.left * _speed;
+        }
+    }
+
     public override void ApplyEffect(IReceivable gameObj)
     {
-        effect.ApplyEffect(gameObj);
+        _effect.ApplyEffect(gameObj);
     }
+
+    public override void SetSpeed(float speed)
+    {
+        _speed = speed;
+    }
+
+    public void HandleRestart()
+    {
+        Destroy(gameObject);
+    }
+
+    
 }
