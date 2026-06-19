@@ -57,6 +57,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 930d7c82907cb324aaa16ce2037c72e8, type: 2}
   - {fileID: 11400000, guid: a71793ef387cc0a45abe75b91f2e222c, type: 2}
   _coinPrefab: {fileID: 2621817539927124065, guid: 08f5f848c2a1cc14c92728fc1dd90cab, type: 3}
+  _delayTimeToSpawnCoin: 0.7
   isTest: 1
   modeIsTest: 0
   typeMode: 0

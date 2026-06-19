@@ -50,6 +50,12 @@ public class Coin : ItemService
         _speed = speed;
     }
 
+    public void HandleGameOver()
+    {
+        _speed = 0;
+        _rb.linearVelocity = Vector2.zero;
+    }
+
     public void HandleRestart()
     {
         Destroy(gameObject);

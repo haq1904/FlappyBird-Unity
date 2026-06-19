@@ -14,6 +14,7 @@ public class PacingDesign : MonoBehaviour
 
     [Header("Fields")]
     [SerializeField] private ItemService _coinPrefab;
+    [SerializeField] private float _delayTimeToSpawnCoin = 0.5f;
     [SerializeField] private Boolean isTest;
     [SerializeField] private Mode modeIsTest;
     [SerializeField] private TypeMode typeMode;
@@ -112,11 +113,13 @@ public class PacingDesign : MonoBehaviour
         {
             //get random allowed pipe from scenario
             obstacle = currScenario.allowedPipe[UnityEngine.Random.Range(0, currScenario.allowedPipe.Count())];
-            SpawnPipe(obstacle, transform.position, Quaternion.identity, currScenario.moveSpeed);
-            SpawnCoin(currScenario.moveSpeed);
+            SpawnPipe(obstacle, transform.position, Quaternion.identity, currScenario.moveSpeed);           
         });
+        childSequence.AppendInterval(_delayTimeToSpawnCoin);
+        childSequence.AppendCallback(() => SpawnCoin(currScenario.moveSpeed));
         //Set time to spawn
-        childSequence.AppendInterval(currScenario.timeToSpawn);
+        //// With currScenario.timeToSpawn - _delayTimeToSpawnCoin, we keep exactly the time to spawn the next pipe.
+        childSequence.AppendInterval(currScenario.timeToSpawn - _delayTimeToSpawnCoin); 
         childSequence.SetLoops(loopCount);
 
         return childSequence;
