@@ -711,6 +711,10 @@ MonoBehaviour:
   canvasGroupTimer: {fileID: 6630839025797463610}
   duration: 1.5
   timeToCountdown: 0.3
+  _durationForShake: 0.34
+  streght: {x: 29.5, y: 33.4}
+  vibrato: 10.29
+  randomness: 0
 --- !u!225 &6630839025797463610
 CanvasGroup:
   m_ObjectHideFlags: 0

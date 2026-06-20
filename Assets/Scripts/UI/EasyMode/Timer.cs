@@ -19,12 +19,16 @@ public class Timer : MonoBehaviour
     [Header("Fields")]
     [SerializeField] private float duration=1f;
     [SerializeField] private float timeToCountdown = 1;
-    
+
+    [Header("Shake")]
+    [SerializeField] float _durationForShake = 1;
+    [SerializeField] Vector2 streght = new Vector2(5,5);
+    [SerializeField] float vibrato = 10;
+    [SerializeField] int randomness = 90;
 
 
     private Ease moveEase = Ease.InOutBack;
     private List<Vector3> resetBirdsPos;
-    private Vector3 resetPanelPos;
     private Sequence mainSequence;
 
     private void Awake()
@@ -34,10 +38,8 @@ public class Timer : MonoBehaviour
         {
             resetBirdsPos.Add(birds[i].transform.localPosition);
         }
-        resetPanelPos = panel.transform.position;
     }
     
-
     public void TurnOn()
     {
         gameObject.SetActive(true);
@@ -71,7 +73,7 @@ public class Timer : MonoBehaviour
                 rb.bodyType = RigidbodyType2D.Dynamic;
                 rb.AddForce(new Vector2(randX, randY), ForceMode2D.Impulse);
                 rb.angularVelocity = 200f;
-
+                panel.DOShakeAnchorPos(_durationForShake, vibrato, randomness, snapping : false, fadeOut : true);
 
             });
             mainSequence.AppendInterval(timeToCountdown);
