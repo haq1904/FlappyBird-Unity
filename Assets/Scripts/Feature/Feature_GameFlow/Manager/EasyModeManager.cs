@@ -94,7 +94,9 @@ public class EasyModeManager : MonoBehaviour
         UpdateGameState(GameState.GameRestart);
         Vcam1.Follow = followTransform;
         currPoint = 0;
+        currCoin = 0;
         HandleChangePoint(0f);
+        HandleChangeCoin(0f);
         Time.timeScale = 1f;
     }
 
@@ -125,7 +127,7 @@ public class EasyModeManager : MonoBehaviour
     public void HandleChangeCoin(float coin)
     {
         currCoin += coin;
-        OnChangeCoin?.Raise(coin);
+        OnChangeCoin?.Raise(currCoin);
     }
 
    

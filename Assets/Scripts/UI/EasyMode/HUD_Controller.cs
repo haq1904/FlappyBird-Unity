@@ -13,7 +13,7 @@ public class HUD_Controller : MonoBehaviour
     [Header("Game objects")]
     [SerializeField] private Button pauseBtn;
     [SerializeField] private Pause_Panel pausePanel;
-    [SerializeField] private Score_Panel scorePanel;
+    [SerializeField] private PlayerStats_Controller stats;
     [SerializeField] private Timer timer;
     private void Start()
     {
@@ -36,7 +36,12 @@ public class HUD_Controller : MonoBehaviour
 
     public void HandleChangePoint(float point)
     {
-        scorePanel.HandleChangePoint(point);
+        stats.HandleChangePoint(point);
+    }
+
+    public void HandleChangeCoin(float coin) 
+    {
+        stats.HandleChangeCoin(coin);
     }
 
     public void HandleRestart()
