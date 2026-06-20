@@ -15,10 +15,13 @@ public class PacingDesign : MonoBehaviour
     [Header("Fields")]
     [SerializeField] private ItemService _coinPrefab;
     [SerializeField] private float _delayTimeToSpawnCoin = 0.5f;
+    [SerializeField] private float _distanceBetweenCoin = 0.5f;
     [SerializeField] private Boolean isTest;
     [SerializeField] private Mode modeIsTest;
     [SerializeField] private TypeMode typeMode;
 
+    //use for spawning coins close with the midle of the pipes
+    private float _currPipeHeight;
 
     public enum Mode
     {
@@ -145,12 +148,21 @@ public class PacingDesign : MonoBehaviour
     {
         ObstacleService cloneObstacle = Instantiate(obstacle, position, quaternion);
         cloneObstacle.SetSpeed(moveSpeed);
+        _currPipeHeight = cloneObstacle.GetSpawnHeight();
     }
 
     private void SpawnCoin(float speedToSet)
     {
-        ItemService coinClone = Instantiate(_coinPrefab, transform.position, Quaternion.identity);
-        coinClone.SetSpeed(speedToSet);
+        float randCoinHeight = UnityEngine.Random.Range(_currPipeHeight-2.6f,_currPipeHeight+2.6f);
+        int randQuantity = UnityEngine.Random.Range(0, 6);
+        for (int i = 0; i < randQuantity;i++) 
+        {
+            //use x value of PacingDesign to place coin with the same distance(by i).
+            float calculatedPosX = transform.position.x + i * _distanceBetweenCoin;
+            Vector3 finalEachCoinTrans = new Vector3(calculatedPosX + _distanceBetweenCoin, randCoinHeight, 0);
+            ItemService coinClone = Instantiate(_coinPrefab, finalEachCoinTrans, Quaternion.identity);
+            coinClone.SetSpeed(speedToSet);
+        }
     }
 
     

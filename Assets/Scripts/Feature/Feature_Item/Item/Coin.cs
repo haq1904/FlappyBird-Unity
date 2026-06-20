@@ -23,7 +23,7 @@ public class Coin : ItemService
         if(collision.TryGetComponent<IReceivable>(out var gameObj) && !_IsTaken )
         {
             ApplyEffect(gameObj);
-            float finalX = UnityEngine.Random.Range(-0.5f, 0.25f);
+            float finalX = UnityEngine.Random.Range(-1f, 0.25f);
             _rb.linearVelocity = Vector2.zero;
             _rb.bodyType = RigidbodyType2D.Dynamic;
             _rb.AddForce(new Vector2(finalX, 1)*_force, ForceMode2D.Impulse);

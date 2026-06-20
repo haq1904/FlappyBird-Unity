@@ -46,7 +46,7 @@ public abstract class BasePipe : ObstacleService
             Destroy(gameObject);
         }
     }
-    #endregion
+    #endregion 
 
     #region Implement interface IObstacle
     public override void SetSpeed(float moveSpeed = 0)//Implement interface IObstacle
