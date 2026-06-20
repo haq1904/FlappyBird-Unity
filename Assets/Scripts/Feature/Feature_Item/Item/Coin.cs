@@ -8,6 +8,7 @@ public class Coin : ItemService
     [SerializeField] private float _timeToFade=1;
     [SerializeField] private Ease _easeToFade = Ease.OutElastic;
     [SerializeField] private SpriteRenderer spr;
+    [SerializeField] private Animator _animator;
 
     private Rigidbody2D _rb;
     private bool _IsTaken=false;
@@ -17,6 +18,10 @@ public class Coin : ItemService
         _rb = GetComponent<Rigidbody2D>();
     }
 
+    private void OnEnable()
+    {
+        _animator.Play("Idle", -1, Random.Range(0f,1f));
+    }
 
     protected void OnTriggerEnter2D(Collider2D collision)
     {
