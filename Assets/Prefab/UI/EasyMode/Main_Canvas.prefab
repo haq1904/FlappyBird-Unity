@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 6756367351581811591}
   - component: {fileID: 8462483982623376143}
   - component: {fileID: 5995514855331905924}
+  - component: {fileID: 6007867400279691402}
   m_Layer: 5
   m_Name: CoinImg
   m_TagString: Untagged
@@ -171,7 +172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -61.68669, y: 14.02438}
+  m_AnchoredPosition: {x: -61.68669, y: 17}
   m_SizeDelta: {x: 47.520004, y: 54.61}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &8462483982623376143
@@ -212,6 +213,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &6007867400279691402
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457430354422599311}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bb3b93771792fba4f8cc2105132ad46d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &598552543078191882
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,10 +882,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9671c529ec208d049a040c91b111f480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.UI::Score_Panel
-  duration: 1
-  strength: {x: 0, y: 0, z: 0}
-  vibrato: 1
-  randomness: 90
+  duration: 0.52
+  strength: {x: 6.55, y: 5.9, z: 0}
+  vibrato: 15
+  randomness: 16.5
   snapping: 0
   fadeOut: 1
   _score: {fileID: 6269002125593470755}
@@ -2880,7 +2903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 23.010063, y: 44.6}
+  m_AnchoredPosition: {x: 23.010063, y: 38}
   m_SizeDelta: {x: 110.02, y: 53.949997}
   m_Pivot: {x: 0.5, y: 0.49999988}
 --- !u!222 &3987752486928889983
@@ -2913,8 +2936,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5c3b4b04f14e04e43bace804afadd395, type: 2}
+  m_sharedMaterial: {fileID: 7954021967992559140, guid: 5c3b4b04f14e04e43bace804afadd395, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2938,8 +2961,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 57.6
-  m_fontSizeBase: 57.6
+  m_fontSize: 44.6
+  m_fontSizeBase: 44.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3532,7 +3555,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.7901611, y: -15.006378}
+  m_AnchoredPosition: {x: 1.7901611, y: -20}
   m_SizeDelta: {x: -39.509995, y: 57.61}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3563178752454497712
@@ -3565,8 +3588,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5c3b4b04f14e04e43bace804afadd395, type: 2}
+  m_sharedMaterial: {fileID: 7954021967992559140, guid: 5c3b4b04f14e04e43bace804afadd395, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3590,15 +3613,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 71.2
-  m_fontSizeBase: 71.2
+  m_fontSize: 66.36
+  m_fontSizeBase: 66.36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
