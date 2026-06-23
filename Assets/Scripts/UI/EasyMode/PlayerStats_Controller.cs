@@ -42,6 +42,7 @@ public class PlayerStats_Controller : MonoBehaviour
 
     private void ShakeCoinText()
     {
+        //kill pre dotween and reset coin text anchored position to prevent drift from overflapping shakes
         _coin.rectTransform.DOKill();
         _coin.rectTransform.anchoredPosition = _coinResetAnchoredPos; 
         _coin.rectTransform.DOShakeAnchorPos(duration: duration, strength: strength, vibrato: vibrato, randomness: randomness, snapping: snapping, fadeOut: fadeOut).SetLink(gameObject);
