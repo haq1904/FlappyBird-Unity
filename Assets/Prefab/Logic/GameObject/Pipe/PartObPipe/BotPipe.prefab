@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6545050232666059898}
   - component: {fileID: 3518169815143146407}
-  - component: {fileID: 5364713261553677289}
   - component: {fileID: 7616020513092773260}
+  - component: {fileID: 5364713261553677289}
+  - component: {fileID: 4560945901093193425}
   m_Layer: 6
   m_Name: BotPipe
   m_TagString: Untagged
@@ -83,16 +84,30 @@ SpriteRenderer:
   m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 843629608526838009, guid: f60b1ca28020ceb4190783ca4ce4ab1b, type: 3}
+  m_Sprite: {fileID: -7487882560877789140, guid: b2db03421167a7b418b1d48eb33f3b9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 1.498619, y: 14.392075}
+  m_Size: {x: 3.2, y: 14.17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &7616020513092773260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6090679507648257271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc88eb6062e1d54cb57ae05b734b7bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Logic::PartOfPipe
+  impactForce: 4.1
+  gravityScale: 1
 --- !u!61 &5364713261553677289
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127,29 +142,61 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0046595335, y: -0.10343695}
+  m_Offset: {x: -0.1316356, y: -0.19408798}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 1}
+    border: {x: 0, y: 8.548388, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 1.498619, y: 14.392075}
+    oldSize: {x: 6.6129036, y: 19.193548}
+    newSize: {x: 3.2, y: 14.17}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1567862, y: 14.142861}
+  m_Size: {x: 1.0342599, y: 13.961559}
   m_EdgeRadius: 0
---- !u!114 &7616020513092773260
-MonoBehaviour:
+--- !u!61 &4560945901093193425
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6090679507648257271}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bc88eb6062e1d54cb57ae05b734b7bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FlappyBird.Logic::PartOfPipe
-  impactForce: 4.1
-  gravityScale: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -1.2130967, y: 4.6028233}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 8.548388, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.6129036, y: 19.193548}
+    newSize: {x: 3.2, y: 14.17}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 1
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.5362842, y: 2.5479412}
+  m_EdgeRadius: 0
