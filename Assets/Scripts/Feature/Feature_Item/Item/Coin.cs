@@ -1,4 +1,5 @@
 using DG.Tweening;
+using DG.Tweening.Core;
 using UnityEngine;
 
 public class Coin : ItemService
@@ -27,13 +28,22 @@ public class Coin : ItemService
     {
         if(collision.TryGetComponent<IReceivable>(out var gameObj) && !_IsTaken )
         {
-            ApplyEffect(gameObj);
-            float finalX = UnityEngine.Random.Range(-1f, 0.25f);
-            _rb.linearVelocity = Vector2.zero;
-            _rb.bodyType = RigidbodyType2D.Dynamic;
-            _rb.AddForce(new Vector2(finalX, 1)*_force, ForceMode2D.Impulse);
-            spr.DOFade(0, _timeToFade).SetEase(_easeToFade).SetLink(gameObject);
-            _IsTaken = true;
+            Sequence s = DOTween.Sequence();
+            s.AppendCallback(() =>
+            {
+                ApplyEffect(gameObj);
+                float finalX = UnityEngine.Random.Range(-1f, 0.25f);
+                _rb.linearVelocity = Vector2.zero;
+                _rb.bodyType = RigidbodyType2D.Dynamic;
+                _rb.AddForce(new Vector2(finalX, 1) * _force, ForceMode2D.Impulse);
+                _IsTaken = true;
+            });
+            s.Append(spr.DOFade(0, _timeToFade).SetEase(_easeToFade).SetLink(gameObject));
+            s.AppendCallback(()=>Destroy(gameObject));
+        }
+        else if (collision.CompareTag("PipeTrigger"))
+        {
+            Destroy(gameObject);
         }
     }
 
