@@ -7,5 +7,7 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Crack1Controller
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: f1136ec02cf8b8445afee7918aeabdb4, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 238ae9d9a09e90c4b83a01808273253f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 238ae9d9a09e90c4b83a01808273253f, type: 2}

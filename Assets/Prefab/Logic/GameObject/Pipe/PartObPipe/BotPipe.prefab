@@ -106,8 +106,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc88eb6062e1d54cb57ae05b734b7bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::PartOfPipe
-  impactForce: 4.1
-  gravityScale: 1
+  _impactForce: 1
+  _gravityScale: 1
+  _durationForShaking: 0.2
+  _strengForShaking: {x: 0.3, y: 0.3, z: 0}
+  _vibratoForShaking: 5
+  _randomnessForShaking: 90
 --- !u!61 &5364713261553677289
 BoxCollider2D:
   m_ObjectHideFlags: 0
