@@ -107,8 +107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc88eb6062e1d54cb57ae05b734b7bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::PartOfPipe
-  impactForce: 4.11
-  gravityScale: 1
+  _impactForce: 1
+  _gravityScale: 1
+  _durationForShaking: 1
+  _strengForShaking: {x: 0, y: 0, z: 0}
+  _vibratoForShaking: 10
+  _randomnessForShaking: 90
 --- !u!61 &6588724753634892023
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,17 +147,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0685949, y: 0.11108208}
+  m_Offset: {x: 0.004488319, y: 0.11108208}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 8.548388, z: 0, w: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.967742, y: 19.67742}
+    oldSize: {x: 1.15625, y: 3.8125}
     newSize: {x: 3.2, y: 14.17}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.0241013, y: 13.553612}
+  m_Size: {x: 1.1523144, y: 13.553612}
   m_EdgeRadius: 0
 --- !u!61 &4026847978426729144
 BoxCollider2D:
@@ -189,17 +193,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -1.2108009, y: -3.945179}
+  m_Offset: {x: -1.2424878, y: -2.8361404}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 8.548388, z: 0, w: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.967742, y: 19.67742}
+    oldSize: {x: 1.15625, y: 3.8125}
     newSize: {x: 3.2, y: 14.17}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.50662565, y: 2.584856}
+  m_Size: {x: 0.6967466, y: 3.3242145}
   m_EdgeRadius: 0
 --- !u!61 &1736672270088991917
 BoxCollider2D:
@@ -235,15 +239,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -1.0568916, y: -0.105100155}
+  m_Offset: {x: -1.0674539, y: 1.6904855}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 8.548388, z: 0, w: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.967742, y: 19.67742}
+    oldSize: {x: 1.15625, y: 3.8125}
     newSize: {x: 3.2, y: 14.17}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.639452, y: 3.523799}
+  m_Size: {x: 0.66057646, y: 2.8478136}
   m_EdgeRadius: 0

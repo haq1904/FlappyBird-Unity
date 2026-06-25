@@ -222,7 +222,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -313,9 +313,9 @@ TextureImporter:
       name: MainBird_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 169
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -335,9 +335,9 @@ TextureImporter:
       name: MainBird_1
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 169
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -357,9 +357,9 @@ TextureImporter:
       name: MainBird_2
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 169
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -423,9 +423,9 @@ TextureImporter:
       name: MainBird_8
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 148
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -445,9 +445,9 @@ TextureImporter:
       name: MainBird_9
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 148
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -467,9 +467,9 @@ TextureImporter:
       name: MainBird_10
       rect:
         serializedVersion: 2
-        x: 65
+        x: 63
         y: 148
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -599,9 +599,9 @@ TextureImporter:
       name: MainBird_17
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 127
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -621,9 +621,9 @@ TextureImporter:
       name: MainBird_18
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 127
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -643,9 +643,9 @@ TextureImporter:
       name: MainBird_19
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 127
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -667,7 +667,7 @@ TextureImporter:
         serializedVersion: 2
         x: 96
         y: 127
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -687,9 +687,9 @@ TextureImporter:
       name: MainBird_21
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 106
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -709,9 +709,9 @@ TextureImporter:
       name: MainBird_22
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 106
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -731,9 +731,9 @@ TextureImporter:
       name: MainBird_23
       rect:
         serializedVersion: 2
-        x: 66
+        x: 65
         y: 106
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -755,7 +755,7 @@ TextureImporter:
         serializedVersion: 2
         x: 96
         y: 106
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -775,9 +775,9 @@ TextureImporter:
       name: MainBird_25
       rect:
         serializedVersion: 2
-        x: 130
+        x: 129
         y: 106
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -799,7 +799,7 @@ TextureImporter:
         serializedVersion: 2
         x: 160
         y: 106
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -819,9 +819,9 @@ TextureImporter:
       name: MainBird_27
       rect:
         serializedVersion: 2
-        x: 194
+        x: 193
         y: 106
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -841,9 +841,9 @@ TextureImporter:
       name: MainBird_28
       rect:
         serializedVersion: 2
-        x: 225
+        x: 224
         y: 106
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -863,9 +863,9 @@ TextureImporter:
       name: MainBird_29
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 85
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -885,9 +885,9 @@ TextureImporter:
       name: MainBird_30
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 85
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -907,9 +907,9 @@ TextureImporter:
       name: MainBird_31
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 85
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -929,9 +929,9 @@ TextureImporter:
       name: MainBird_32
       rect:
         serializedVersion: 2
-        x: 97
+        x: 96
         y: 85
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -951,9 +951,9 @@ TextureImporter:
       name: MainBird_33
       rect:
         serializedVersion: 2
-        x: 129
+        x: 128
         y: 85
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -973,9 +973,9 @@ TextureImporter:
       name: MainBird_34
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 64
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -995,9 +995,9 @@ TextureImporter:
       name: MainBird_35
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 64
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1017,9 +1017,9 @@ TextureImporter:
       name: MainBird_36
       rect:
         serializedVersion: 2
-        x: 67
+        x: 65
         y: 64
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1039,9 +1039,9 @@ TextureImporter:
       name: MainBird_37
       rect:
         serializedVersion: 2
-        x: 102
+        x: 99
         y: 64
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1061,9 +1061,9 @@ TextureImporter:
       name: MainBird_38
       rect:
         serializedVersion: 2
-        x: 136
+        x: 133
         y: 64
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1083,9 +1083,9 @@ TextureImporter:
       name: MainBird_39
       rect:
         serializedVersion: 2
-        x: 168
+        x: 165
         y: 64
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1149,7 +1149,7 @@ TextureImporter:
       name: MainBird_42
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 43
         width: 30
         height: 21
@@ -1171,7 +1171,7 @@ TextureImporter:
       name: MainBird_43
       rect:
         serializedVersion: 2
-        x: 35
+        x: 34
         y: 43
         width: 30
         height: 21
@@ -1369,9 +1369,9 @@ TextureImporter:
       name: MainBird_52
       rect:
         serializedVersion: 2
-        x: 39
+        x: 34
         y: 1
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1545,7 +1545,7 @@ TextureImporter:
       name: MainBird_60
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 22
         width: 30
         height: 21
@@ -1567,9 +1567,9 @@ TextureImporter:
       name: MainBird_61
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 1
-        width: 27
+        width: 30
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
