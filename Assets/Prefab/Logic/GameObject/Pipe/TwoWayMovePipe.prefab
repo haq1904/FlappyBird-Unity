@@ -123,7 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a015d99eef8868f48a1f2db73225fcd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Logic::TwoWayMovePipe
-  _coinPrefab: {fileID: 2621817539927124065, guid: 08f5f848c2a1cc14c92728fc1dd90cab, type: 3}
   moveSpeed: 3
   timeToMove: 12
   unitYToMove: 6.12
@@ -198,11 +197,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4992283197324102199, guid: 8ef88750e715f984a977cdabb9dac820, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 4992283197324102199, guid: 8ef88750e715f984a977cdabb9dac820, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15
+      value: -0.14
       objectReference: {fileID: 0}
     - target: {fileID: 4992283197324102199, guid: 8ef88750e715f984a977cdabb9dac820, type: 3}
       propertyPath: m_LocalPosition.z
@@ -259,12 +258,20 @@ PrefabInstance:
       value: HeadTriggerPipe
       objectReference: {fileID: 0}
     - target: {fileID: 6941957694541713023, guid: 09d03e08fa4ff0f47aff2f43862fa60c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.74088764
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941957694541713023, guid: 09d03e08fa4ff0f47aff2f43862fa60c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.16213742
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941957694541713023, guid: 09d03e08fa4ff0f47aff2f43862fa60c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -0.13
       objectReference: {fileID: 0}
     - target: {fileID: 6941957694541713023, guid: 09d03e08fa4ff0f47aff2f43862fa60c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.01
+      value: 3.41
       objectReference: {fileID: 0}
     - target: {fileID: 6941957694541713023, guid: 09d03e08fa4ff0f47aff2f43862fa60c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -325,12 +332,16 @@ PrefabInstance:
       value: HeadTriggerPipe
       objectReference: {fileID: 0}
     - target: {fileID: 6941957694541713023, guid: 09d03e08fa4ff0f47aff2f43862fa60c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.83436877
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941957694541713023, guid: 09d03e08fa4ff0f47aff2f43862fa60c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.02
+      value: 0.0513
       objectReference: {fileID: 0}
     - target: {fileID: 6941957694541713023, guid: 09d03e08fa4ff0f47aff2f43862fa60c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.74
+      value: -3.58
       objectReference: {fileID: 0}
     - target: {fileID: 6941957694541713023, guid: 09d03e08fa4ff0f47aff2f43862fa60c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -396,7 +407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6545050232666059898, guid: 046137828d3d05b4ea9a35728f7e4695, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.14
+      value: -5.6
       objectReference: {fileID: 0}
     - target: {fileID: 6545050232666059898, guid: 046137828d3d05b4ea9a35728f7e4695, type: 3}
       propertyPath: m_LocalPosition.z
@@ -461,7 +472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7146091624475576625, guid: d5bb7adf46824c648ac53d7fbf0ac17d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.14
+      value: 5.6
       objectReference: {fileID: 0}
     - target: {fileID: 7146091624475576625, guid: d5bb7adf46824c648ac53d7fbf0ac17d, type: 3}
       propertyPath: m_LocalPosition.z
