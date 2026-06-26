@@ -7,17 +7,18 @@ public class PartOfPipe: MonoBehaviour
     [SerializeField] private float _impactForce = 1;
     [SerializeField] private float _gravityScale = 1;
 
-    [Header("Shake")]
-    [SerializeField] private float _durationForShaking = 1;
-    [SerializeField] private Vector3 _strengForShaking;
-    [SerializeField] private int _vibratoForShaking = 10;
-    [SerializeField] private float _randomnessForShaking = 90;
+    [Header("Punch")]
+    [SerializeField] private GameObject _visual;
+    [SerializeField] private float _duration = 1;
+    [SerializeField] private Vector3 _streng;
+    [SerializeField] private int _vibrato = 10;
+    [SerializeField,Range(0,1)] private float _elasticity  = 0;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.TryGetComponent<IDamageable>(out var damageableGameObject)) {
             damageableGameObject.TakeDamage(Vector2.left, _impactForce, _gravityScale);
-            transform.DOShakePosition(_durationForShaking, _strengForShaking, _vibratoForShaking, _randomnessForShaking,snapping : true,fadeOut : true);
+            _visual.transform.DOPunchPosition(_streng, _duration, _vibrato,_elasticity).SetLink(gameObject);
         }
     }
 }

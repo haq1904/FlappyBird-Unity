@@ -25,6 +25,7 @@ public class BirdFlyingState : BirdState
         bird.RB.bodyType = RigidbodyType2D.Dynamic;
         bird.RB.gravityScale = bird.resetGravity;
         bird.Controls.Bird.Jump.started += OnFlapStarted;
+        bird.COL.isTrigger = false;
     }
 
     

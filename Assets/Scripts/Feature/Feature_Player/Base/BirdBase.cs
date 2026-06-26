@@ -32,6 +32,8 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
 
     public Rigidbody2D RB { get; set; }
 
+    public CapsuleCollider2D COL { get; set; }
+
     public BirdControls Controls;
     
     
@@ -70,6 +72,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     private void Start()
     {
         RB = gameObject.GetComponent<Rigidbody2D>();
+        COL = gameObject.GetComponent<CapsuleCollider2D>();
         resetPos = transform.position;
         resetGravity = RB.gravityScale;
         StateMachine.Initialize(IdleState);

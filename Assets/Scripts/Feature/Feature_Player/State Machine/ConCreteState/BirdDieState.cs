@@ -17,6 +17,7 @@ public class BirdDieState : BirdState
         base.EnterState();
         GetState();
         bird.BirdDead();
+        bird.COL.isTrigger = true;
         bird.animator.Play("Die", -1, 0f);
     }
 
