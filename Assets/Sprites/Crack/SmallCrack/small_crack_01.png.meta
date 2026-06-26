@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: 27f5033bfe08a8647ba351ee6523c4f3
+guid: c3fc977178079f14fb86d9d52acc1867
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6860043218326929001
-    second: Crack1_0
+      213: 4679006908783580490
+    second: small_crack_01_0
   - first:
-      213: 8341136052248029929
-    second: Crack1_1
+      213: 3643670352735085523
+    second: small_crack_01_1
   - first:
-      213: 8606117951700041762
-    second: Crack1_2
+      213: -8392439930510681167
+    second: small_crack_01_2
   - first:
-      213: -7354070207384394443
-    second: Crack1_3
+      213: -2175940031745715152
+    second: small_crack_01_3
+  - first:
+      213: -8634795157355811147
+    second: small_crack_01_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -135,111 +138,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Crack1_0
+      name: small_crack_01_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 8
-        width: 11
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 0
+        width: 39
+        height: 54
+      alignment: 9
+      pivot: {x: 0.01, y: 0.41}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 96e343406f4c33f50800000000000000
-      internalID: 6860043218326929001
+      spriteID: a45d4ab3efb2fe040800000000000000
+      internalID: 4679006908783580490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crack1_1
+      name: small_crack_01_1
       rect:
         serializedVersion: 2
-        x: 74
-        y: 8
-        width: 11
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 39
+        y: 0
+        width: 39
+        height: 54
+      alignment: 9
+      pivot: {x: 0.01, y: 0.41}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9eaa279db0ba1c370800000000000000
-      internalID: 8341136052248029929
+      spriteID: 3d3a56d71eae09230800000000000000
+      internalID: 3643670352735085523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crack1_2
+      name: small_crack_01_2
       rect:
         serializedVersion: 2
-        x: 106
-        y: 8
-        width: 11
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 78
+        y: 0
+        width: 39
+        height: 54
+      alignment: 9
+      pivot: {x: 0.01, y: 0.41}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 220813e0ea21f6770800000000000000
-      internalID: 8606117951700041762
+      spriteID: 1bb5b172950188b80800000000000000
+      internalID: -8392439930510681167
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crack1_3
+      name: small_crack_01_3
       rect:
         serializedVersion: 2
-        x: 138
-        y: 8
-        width: 11
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 117
+        y: 0
+        width: 39
+        height: 54
+      alignment: 9
+      pivot: {x: 0.01, y: 0.41}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 535e1932c1811f990800000000000000
-      internalID: -7354070207384394443
+      spriteID: 0349e3bd1128dc1e0800000000000000
+      internalID: -2175940031745715152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crack1_4
+      name: small_crack_01_4
       rect:
         serializedVersion: 2
-        x: 42
-        y: 8
-        width: 11
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 156
+        y: 0
+        width: 39
+        height: 54
+      alignment: 9
+      pivot: {x: 0.01, y: 0.41}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2f5f67f9c83bbd34aa4704eb2bfaa98a
-      internalID: -1942174746
+      spriteID: 5be2b81bd8b0b2880800000000000000
+      internalID: -8634795157355811147
       vertices: []
       indices: 
       edges: []
@@ -248,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 820ed9ea60636c847bc18c6409e915d5
+    spriteID: 21c6132ad1aeb0a4b97bc6bbff607281
     internalID: 0
     vertices: []
     indices: 
@@ -256,13 +259,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":39.0,"y":54.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Crack1_0: 6860043218326929001
-      Crack1_1: 8341136052248029929
-      Crack1_2: 8606117951700041762
-      Crack1_3: -7354070207384394443
-      Crack1_4: -1942174746
+      small_crack_01_0: 4679006908783580490
+      small_crack_01_1: 3643670352735085523
+      small_crack_01_2: -8392439930510681167
+      small_crack_01_3: -2175940031745715152
+      small_crack_01_4: -8634795157355811147
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
