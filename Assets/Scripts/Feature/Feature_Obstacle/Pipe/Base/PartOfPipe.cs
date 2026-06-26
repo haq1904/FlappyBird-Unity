@@ -22,7 +22,7 @@ public class PartOfPipe: MonoBehaviour
             transform.DOPunchPosition(_streng, _duration, _vibrato, _elasticity).SetLink(gameObject);
             Vector2 directionOfCollision = collision.GetContact(0).normal;
             Debug.Log($"Direction : x: {directionOfCollision.x} y: {directionOfCollision.y} ");
-            if (directionOfCollision.x > 0.5f)
+            if (directionOfCollision.x > 0.5f) //This condition force cracks to be spawned at the left side of catus
             {
                 Vector2 collisionWorldPos = collision.GetContact(0).point;
                 Vector2 collisionLocalPos = transform.InverseTransformPoint(collisionWorldPos);

@@ -105,12 +105,12 @@ SpriteRenderer:
   m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4492092900499936376, guid: c332ced0209d8c542acfc59fd1783381, type: 3}
+  m_Sprite: {fileID: -2760250214011058450, guid: 7c2da52df5c8c08408de8df1d71d4c7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 0
-  m_Size: {x: 2.1, y: 9.6}
+  m_Size: {x: 2.1, y: 9.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -149,17 +149,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.05028236, y: 0.12931728}
+  m_Offset: {x: -0.02847895, y: 0.06047249}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1, y: 9.6}
-    newSize: {x: 2.1, y: 9.6}
+    oldSize: {x: 2.1, y: 9.59}
+    newSize: {x: 2.1, y: 9.59}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8687867, y: 9.341366}
+  m_Size: {x: 0.8251799, y: 9.479055}
   m_EdgeRadius: 0
 --- !u!61 &1673705217677598514
 BoxCollider2D:
@@ -195,17 +195,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.7678688, y: 1.0917687}
+  m_Offset: {x: -0.7585789, y: 1.0807295}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1, y: 9.6}
-    newSize: {x: 2.1, y: 9.6}
+    oldSize: {x: 2.1, y: 9.59}
+    newSize: {x: 2.1, y: 9.59}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5424017, y: 1.69415}
+  m_Size: {x: 0.52382183, y: 1.5277367}
   m_EdgeRadius: 0
 --- !u!61 &8745628704056378165
 BoxCollider2D:
@@ -241,17 +241,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.8824228, y: -1.8719807}
+  m_Offset: {x: -0.87968236, y: -1.899368}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1, y: 9.6}
-    newSize: {x: 2.1, y: 9.6}
+    oldSize: {x: 2.1, y: 9.59}
+    newSize: {x: 2.1, y: 9.59}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5661619, y: 2.2112656}
+  m_Size: {x: 0.560681, y: 1.9421382}
   m_EdgeRadius: 0
 --- !u!1001 &6777755659441925836
 PrefabInstance:
@@ -263,11 +263,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 44145299427765907, guid: 2fa719572741cc04dbd6d03849a3e688, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.31
+      value: -0.322
       objectReference: {fileID: 0}
     - target: {fileID: 44145299427765907, guid: 2fa719572741cc04dbd6d03849a3e688, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.95
+      value: -4.667
       objectReference: {fileID: 0}
     - target: {fileID: 44145299427765907, guid: 2fa719572741cc04dbd6d03849a3e688, type: 3}
       propertyPath: m_LocalPosition.z

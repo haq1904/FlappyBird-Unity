@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c332ced0209d8c542acfc59fd1783381
+guid: 7c2da52df5c8c08408de8df1d71d4c7c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4492092900499936376
-    second: Sprite-catus2_0
+      213: -2760250214011058450
+    second: Spritel_catus2_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite-catus2_0
+      name: Spritel_catus2_final_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 210
-        height: 960
+        height: 959
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8745a5061be175e30800000000000000
-      internalID: 4492092900499936376
+      spriteID: ee6cca60e0f91b9d0800000000000000
+      internalID: -2760250214011058450
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sprite-catus2_0: 4492092900499936376
+      Spritel_catus2_final_0: -2760250214011058450
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

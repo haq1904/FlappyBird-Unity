@@ -143,10 +143,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 39
-        height: 54
+        width: 29
+        height: 22
       alignment: 9
-      pivot: {x: 0.01, y: 0.41}
+      pivot: {x: 0.01, y: 0.71}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -163,12 +163,12 @@ TextureImporter:
       name: small_crack_01_1
       rect:
         serializedVersion: 2
-        x: 39
+        x: 29
         y: 0
-        width: 39
-        height: 54
+        width: 29
+        height: 22
       alignment: 9
-      pivot: {x: 0.01, y: 0.41}
+      pivot: {x: 0.01, y: 0.71}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -185,12 +185,12 @@ TextureImporter:
       name: small_crack_01_2
       rect:
         serializedVersion: 2
-        x: 78
+        x: 58
         y: 0
-        width: 39
-        height: 54
+        width: 29
+        height: 22
       alignment: 9
-      pivot: {x: 0.01, y: 0.41}
+      pivot: {x: 0.01, y: 0.71}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -207,12 +207,12 @@ TextureImporter:
       name: small_crack_01_3
       rect:
         serializedVersion: 2
-        x: 117
+        x: 87
         y: 0
-        width: 39
-        height: 54
+        width: 29
+        height: 22
       alignment: 9
-      pivot: {x: 0.01, y: 0.41}
+      pivot: {x: 0.01, y: 0.71}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -229,12 +229,12 @@ TextureImporter:
       name: small_crack_01_4
       rect:
         serializedVersion: 2
-        x: 156
+        x: 116
         y: 0
-        width: 39
-        height: 54
+        width: 29
+        height: 22
       alignment: 9
-      pivot: {x: 0.01, y: 0.41}
+      pivot: {x: 0.01, y: 0.71}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -251,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 21c6132ad1aeb0a4b97bc6bbff607281
+    spriteID: 32c2f18fdb04f984c9632303ace478c9
     internalID: 0
     vertices: []
     indices: 
@@ -261,7 +261,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":39.0,"y":54.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":29.0,"y":22.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       small_crack_01_0: 4679006908783580490
       small_crack_01_1: 3643670352735085523
