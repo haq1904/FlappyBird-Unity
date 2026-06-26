@@ -12,6 +12,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     [SerializeField] private CinemachineImpulseSource impulseSource;
     [SerializeField] public Animator animator;
     [SerializeField] private ParticleSystem dustPS;
+    [SerializeField] private ParticleSystem _explosionPS;
     [SerializeField] public float maxUpAngle = 18;
     [SerializeField] public float maxDownAngle = -40;
     [SerializeField] public float rotationSpeed = 15f;
@@ -161,12 +162,18 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     {
         OnBirdDead.Raise();
         OnBirdRaiseImpulseSource.Raise(impulseSource);
+        PlayExplosionPS();
     }
 
 
     public void PlayDustPS()
     {
         dustPS.Play();
+    }
+    
+    public void PlayExplosionPS()
+    {
+        _explosionPS.Play();
     }
 
     #endregion
