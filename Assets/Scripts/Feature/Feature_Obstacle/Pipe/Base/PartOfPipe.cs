@@ -4,11 +4,11 @@ using UnityEngine;
 public class PartOfPipe: MonoBehaviour
 {
     [Header("Fields")]
+    [SerializeField] private GameObject _smallCrack;
     [SerializeField] private float _impactForce = 1;
     [SerializeField] private float _gravityScale = 1;
 
     [Header("Punch")]
-    [SerializeField] private GameObject _visual;
     [SerializeField] private float _duration = 1;
     [SerializeField] private Vector3 _streng;
     [SerializeField] private int _vibrato = 10;
@@ -16,9 +16,25 @@ public class PartOfPipe: MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.TryGetComponent<IDamageable>(out var damageableGameObject)) {
+        if (collision.collider.TryGetComponent<IDamageable>(out var damageableGameObject))
+        {
             damageableGameObject.TakeDamage(Vector2.left, _impactForce, _gravityScale);
-            _visual.transform.DOPunchPosition(_streng, _duration, _vibrato,_elasticity).SetLink(gameObject);
+            transform.DOPunchPosition(_streng, _duration, _vibrato, _elasticity).SetLink(gameObject);
+            Vector2 directionOfCollision = collision.GetContact(0).normal;
+            Debug.Log($"Direction : x: {directionOfCollision.x} y: {directionOfCollision.y} ");
+            if (directionOfCollision.x > 0.5f)
+            {
+                Vector2 collisionWorldPos = collision.GetContact(0).point;
+                Vector2 collisionLocalPos = transform.InverseTransformPoint(collisionWorldPos);
+                _smallCrack.SetActive(true);
+                _smallCrack.transform.localPosition = collisionLocalPos;
+            }
         }
+        
+    }
+
+    private void OnDisable()
+    {
+        _smallCrack.SetActive(false);
     }
 }
