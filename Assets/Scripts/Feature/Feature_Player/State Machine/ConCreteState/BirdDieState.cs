@@ -16,6 +16,8 @@ public class BirdDieState : BirdState
     {
         base.EnterState();
         GetState();
+        bird.PlayCrashSmokePuffPS();
+        bird.PlayExplosionPS();
         bird.BirdDead();
         bird.COL.isTrigger = true;
         bird.animator.Play("Die", -1, 0f);
@@ -24,6 +26,7 @@ public class BirdDieState : BirdState
     public override void ExitState()  
     {
         base.ExitState();
+        bird.StopCrashSmokePuffPS();
     }
 
     public override void FrameUpdate()
