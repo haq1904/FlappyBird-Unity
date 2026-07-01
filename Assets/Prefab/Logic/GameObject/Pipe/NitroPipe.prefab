@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4817880157256923783}
   - component: {fileID: 98881001706760506}
   - component: {fileID: 7196121791136807898}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DustTop (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4905,7 +4905,7 @@ GameObject:
   - component: {fileID: 6226275448975031811}
   - component: {fileID: 1404496037714315573}
   - component: {fileID: 8069508102968494407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DustTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9799,7 +9799,7 @@ GameObject:
   - component: {fileID: 6486732528519439242}
   - component: {fileID: 4672746201714569482}
   - component: {fileID: 3509925234807317704}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DustTop (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19533,7 +19533,7 @@ GameObject:
   - component: {fileID: 8901402409773077511}
   - component: {fileID: 7839092784639397087}
   - component: {fileID: 1108521787711228918}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DustTop (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29266,7 +29266,7 @@ GameObject:
   - component: {fileID: 4135878799691295364}
   - component: {fileID: 390803929001434085}
   - component: {fileID: 4700497898064607302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DustBot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34160,7 +34160,7 @@ GameObject:
   - component: {fileID: 3506220171411010147}
   - component: {fileID: 3504268560126760473}
   - component: {fileID: 1726416939606183864}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DustBot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39054,7 +39054,7 @@ GameObject:
   - component: {fileID: 6871591150127196364}
   - component: {fileID: 8810866530431486109}
   - component: {fileID: 6054948617247123243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DustBot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43950,7 +43950,7 @@ GameObject:
   - component: {fileID: 8348489220079675091}
   - component: {fileID: -8984034839171074173}
   - component: {fileID: -356930570769652135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NitroPipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44097,6 +44097,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point
       objectReference: {fileID: 0}
+    - target: {fileID: 2343189041966178486, guid: 8ef88750e715f984a977cdabb9dac820, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4992283197324102199, guid: 8ef88750e715f984a977cdabb9dac820, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.84
@@ -44155,6 +44159,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8796278437174122646}
     m_Modifications:
+    - target: {fileID: 4247098836840318732, guid: 046137828d3d05b4ea9a35728f7e4695, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6090679507648257271, guid: 046137828d3d05b4ea9a35728f7e4695, type: 3}
       propertyPath: m_Name
       value: BotPipe
@@ -44234,6 +44242,10 @@ PrefabInstance:
     - target: {fileID: 3066438774772623074, guid: d5bb7adf46824c648ac53d7fbf0ac17d, type: 3}
       propertyPath: m_Name
       value: TopPipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995976450074734971, guid: d5bb7adf46824c648ac53d7fbf0ac17d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7146091624475576625, guid: d5bb7adf46824c648ac53d7fbf0ac17d, type: 3}
       propertyPath: m_LocalPosition.x

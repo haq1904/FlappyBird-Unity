@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1078811788383825029}
   - component: {fileID: 190131117362807445}
   - component: {fileID: 1160089786416237443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostPipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,6 +152,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point
       objectReference: {fileID: 0}
+    - target: {fileID: 2343189041966178486, guid: 8ef88750e715f984a977cdabb9dac820, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4992283197324102199, guid: 8ef88750e715f984a977cdabb9dac820, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.84
@@ -210,6 +214,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8796278437174122646}
     m_Modifications:
+    - target: {fileID: 4247098836840318732, guid: 046137828d3d05b4ea9a35728f7e4695, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6090679507648257271, guid: 046137828d3d05b4ea9a35728f7e4695, type: 3}
       propertyPath: m_Name
       value: BotPipe
@@ -280,6 +288,10 @@ PrefabInstance:
     - target: {fileID: 3066438774772623074, guid: d5bb7adf46824c648ac53d7fbf0ac17d, type: 3}
       propertyPath: m_Name
       value: TopPipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995976450074734971, guid: d5bb7adf46824c648ac53d7fbf0ac17d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7146091624475576625, guid: d5bb7adf46824c648ac53d7fbf0ac17d, type: 3}
       propertyPath: m_LocalPosition.x

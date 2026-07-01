@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5704001303543938416}
   - component: {fileID: 5542198786890474628}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ChildPipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 941618159654807742}
   - component: {fileID: 8570763931543351480}
   - component: {fileID: 1199852722694780279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TwoWayMovePipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point
       objectReference: {fileID: 0}
+    - target: {fileID: 2343189041966178486, guid: 8ef88750e715f984a977cdabb9dac820, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4992283197324102199, guid: 8ef88750e715f984a977cdabb9dac820, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.84
@@ -256,6 +260,10 @@ PrefabInstance:
     - target: {fileID: 5484344648967982094, guid: 09d03e08fa4ff0f47aff2f43862fa60c, type: 3}
       propertyPath: m_Name
       value: HeadTriggerPipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5484344648967982094, guid: 09d03e08fa4ff0f47aff2f43862fa60c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6941957694541713023, guid: 09d03e08fa4ff0f47aff2f43862fa60c, type: 3}
       propertyPath: m_LocalScale.x
@@ -331,6 +339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeadTriggerPipe
       objectReference: {fileID: 0}
+    - target: {fileID: 5484344648967982094, guid: 09d03e08fa4ff0f47aff2f43862fa60c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6941957694541713023, guid: 09d03e08fa4ff0f47aff2f43862fa60c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.83436877
@@ -397,6 +409,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5704001303543938416}
     m_Modifications:
+    - target: {fileID: 4247098836840318732, guid: 046137828d3d05b4ea9a35728f7e4695, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6090679507648257271, guid: 046137828d3d05b4ea9a35728f7e4695, type: 3}
       propertyPath: m_Name
       value: BotPipe
@@ -465,6 +481,10 @@ PrefabInstance:
     - target: {fileID: 3066438774772623074, guid: d5bb7adf46824c648ac53d7fbf0ac17d, type: 3}
       propertyPath: m_Name
       value: TopPipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995976450074734971, guid: d5bb7adf46824c648ac53d7fbf0ac17d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7146091624475576625, guid: d5bb7adf46824c648ac53d7fbf0ac17d, type: 3}
       propertyPath: m_LocalPosition.x

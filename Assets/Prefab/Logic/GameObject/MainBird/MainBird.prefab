@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2586526733699527020}
   - component: {fileID: 2996574241227128547}
   - component: {fileID: 5761854076782926411}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ExplosionPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4905,7 +4905,7 @@ GameObject:
   - component: {fileID: 1891379005801484289}
   - component: {fileID: 7311420460666136400}
   - component: {fileID: 569637942162941845}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DustPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9799,7 +9799,7 @@ GameObject:
   - component: {fileID: 8865052569232072590}
   - component: {fileID: 5724665763675024722}
   - component: {fileID: 4109554405812959477}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CrashSmokePuffPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14643,7 +14643,7 @@ GameObject:
   - component: {fileID: 3081084036069867358}
   - component: {fileID: 6847864192579687560}
   - component: {fileID: 8598911179858852808}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MainBird
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using JetBrains.Annotations;
 using System;
 using System.Linq;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class PacingDesign : MonoBehaviour
 
     [Header("Fields")]
     [SerializeField] private ItemService _coinPrefab;
+    [SerializeField] private GameObject _mainBird;
+    [SerializeField] private GameObject _attackingBird;
     [SerializeField] private float _delayTimeToSpawnCoin = 0.5f;
     [SerializeField] private float _distanceBetweenCoin = 0.5f;
     [SerializeField] private Boolean isTest;
@@ -111,21 +114,41 @@ public class PacingDesign : MonoBehaviour
         ObstacleService obstacle;
         int loopCount = Mathf.RoundToInt(duration / currScenario.timeToSpawn);//Get number of loop by separate time to spawn with duration
 
-        Sequence childSequence = DOTween.Sequence();
-        childSequence.AppendCallback(() =>
+        Sequence mainSequence = DOTween.Sequence();
+
+        Sequence pipeAndCoinSeq = DOTween.Sequence();
+
+        pipeAndCoinSeq.AppendCallback(() =>
         {
             //get random allowed pipe from scenario
             obstacle = currScenario.allowedPipe[UnityEngine.Random.Range(0, currScenario.allowedPipe.Count())];
             SpawnPipe(obstacle, transform.position, Quaternion.identity, currScenario.moveSpeed);           
         });
-        childSequence.AppendInterval(_delayTimeToSpawnCoin);
-        childSequence.AppendCallback(() => SpawnCoin(currScenario.moveSpeed));
+        pipeAndCoinSeq.AppendInterval(_delayTimeToSpawnCoin);
+        pipeAndCoinSeq.AppendCallback(() => SpawnCoin(currScenario.moveSpeed));
         //Set time to spawn
-        //// With currScenario.timeToSpawn - _delayTimeToSpawnCoin, we keep exactly the time to spawn the next pipe.
-        childSequence.AppendInterval(currScenario.timeToSpawn - _delayTimeToSpawnCoin); 
-        childSequence.SetLoops(loopCount);
+        // With currScenario.timeToSpawn - _delayTimeToSpawnCoin, we keep exactly the time to spawn the next pipe.
+        pipeAndCoinSeq.AppendInterval(currScenario.timeToSpawn - _delayTimeToSpawnCoin);
+        pipeAndCoinSeq.SetLoops(loopCount);
 
-        return childSequence;
+        mainSequence.Append(pipeAndCoinSeq);
+
+        if (duration >= 10 )//&& UnityEngine.Random.value < 0.5f)
+        {
+            Sequence AttackingBirdSeq = DOTween.Sequence();
+            float birdCount = UnityEngine.Random.Range(2, 5);
+            Debug.Log("Amount of bird : " + birdCount);
+            for (int i = 2; i <= birdCount; i++)
+            {
+                float randSpawnTime = UnityEngine.Random.Range(0f, duration);
+                mainSequence.InsertCallback(randSpawnTime, () =>
+                {
+                    SpawnAttackingBird(currScenario.moveSpeed + 2);
+                    Debug.Log("Bird is spawned");
+                });
+            }
+        }
+        return mainSequence;
     }
 
     private void CreateFinalSequence()
@@ -163,6 +186,13 @@ public class PacingDesign : MonoBehaviour
             ItemService coinClone = Instantiate(_coinPrefab, finalEachCoinTrans, Quaternion.identity);
             coinClone.SetSpeed(speedToSet);
         }
+    }
+
+    private void SpawnAttackingBird(float speedToSet)
+    {
+        Vector3 mainBirdPos = new Vector3(transform.position.x, _mainBird.transform.position.y, transform.position.z);
+        GameObject attackingBirdClone = Instantiate(_attackingBird, mainBirdPos, Quaternion.identity);
+        Debug.Log(attackingBirdClone.transform.position);  
     }
 
     
