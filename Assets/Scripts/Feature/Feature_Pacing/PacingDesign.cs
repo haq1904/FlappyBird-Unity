@@ -153,7 +153,7 @@ public class PacingDesign : MonoBehaviour
 
     private void SpawnCoin(float speedToSet)
     {
-        float randCoinHeight = UnityEngine.Random.Range(_currPipeHeight-2.6f,_currPipeHeight+2.6f);
+        float randCoinHeight = UnityEngine.Random.Range(_currPipeHeight - 1.6f, _currPipeHeight + 1.6f);
         int randQuantity = UnityEngine.Random.Range(0, 6);
         for (int i = 0; i < randQuantity;i++) 
         {
