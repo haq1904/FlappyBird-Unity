@@ -6,8 +6,8 @@ public abstract class BasePipe : ObstacleService
 {
     [Header("Fields")]
     [SerializeField] protected float moveSpeed = 3;
-    protected float heightRangeTop = 2.6f;
-    protected float heightRangeBot = -2.6f;
+    protected float heightRangeTop = 3f;
+    protected float heightRangeBot = -3f;
     protected float randSpawnHeight;
 
 
