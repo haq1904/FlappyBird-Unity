@@ -41,7 +41,7 @@ public abstract class BasePipe : ObstacleService
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("DestroyTrigger")) 
+        if (collision.CompareTag("PoolCollector")) 
         {
             Destroy(gameObject);
         }

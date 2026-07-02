@@ -41,7 +41,7 @@ public class Coin : ItemService
             s.Append(spr.DOFade(0, _timeToFade).SetEase(_easeToFade).SetLink(gameObject));
             s.AppendCallback(()=>Destroy(gameObject));
         }
-        else if (collision.CompareTag("DestroyTrigger"))
+        else if (collision.CompareTag("PoolCollector"))
         {
             Destroy(gameObject);
         }

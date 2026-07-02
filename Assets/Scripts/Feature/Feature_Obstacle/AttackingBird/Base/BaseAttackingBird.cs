@@ -61,7 +61,7 @@ public class BaseAttackingBird : ObstacleService
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("DestroyTrigger"))
+        if (collision.CompareTag("PoolCollector"))
         {
             Destroy(gameObject);
         }
