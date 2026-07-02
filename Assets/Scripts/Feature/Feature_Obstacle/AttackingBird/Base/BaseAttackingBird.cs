@@ -7,7 +7,7 @@ public class BaseAttackingBird : ObstacleService
     [SerializeField] private float _moveSpeed = 1;
     [SerializeField] private float _impactForce = 1;
     [SerializeField] private float _gravityScale = 1;
-    [SerializeField] private float _knockbackForce = 1;
+    [SerializeField] private float _knockbackForce;
     [SerializeField] private float _rotationSpeed = 50f;
 
 
@@ -36,8 +36,10 @@ public class BaseAttackingBird : ObstacleService
 
     public void HandleGameOver()
     {
-        _moveSpeed = 0;
-        _rb.linearVelocity = Vector2.zero;
+        if (!haveCollision)
+        {
+            _rb.linearVelocity = Vector2.zero;
+        }
     }
 
     #region Override ObstacleService
