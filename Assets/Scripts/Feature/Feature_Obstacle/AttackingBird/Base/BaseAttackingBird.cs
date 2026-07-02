@@ -34,6 +34,12 @@ public class BaseAttackingBird : ObstacleService
         Destroy(gameObject);
     }
 
+    public void HandleGameOver()
+    {
+        _moveSpeed = 0;
+        _rb.linearVelocity = Vector2.zero;
+    }
+
     #region Override ObstacleService
     public override void SetSpeed(float moveSpeed)
     {
