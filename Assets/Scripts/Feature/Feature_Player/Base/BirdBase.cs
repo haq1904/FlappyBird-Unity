@@ -118,6 +118,10 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
         StateMachine.CurrentBirdState.HandleCollision(direction, impactForce, gravityScale);
     }
 
+    public Vector2 GetPosition()
+    {
+        return transform.position;
+    }
     
 
     #endregion
