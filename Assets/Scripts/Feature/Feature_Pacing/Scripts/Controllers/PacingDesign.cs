@@ -2,6 +2,7 @@ using DG.Tweening;
 using JetBrains.Annotations;
 using System;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PacingDesign : MonoBehaviour
@@ -15,8 +16,9 @@ public class PacingDesign : MonoBehaviour
 
     [Header("Fields")]
     [SerializeField] private ItemService _coinPrefab;
-    [SerializeField] private GameObject _mainBird;
+    [SerializeField] private PlayerService _mainBird;
     [SerializeField] private GameObject _attackingBird;
+    [SerializeField] private Warning _warningSign;
     [SerializeField] private float _delayTimeToSpawnCoin = 0.5f;
     [SerializeField] private float _distanceBetweenCoin = 0.5f;
     [SerializeField] private Boolean isTest;
@@ -118,6 +120,8 @@ public class PacingDesign : MonoBehaviour
 
         Sequence pipeAndCoinSeq = DOTween.Sequence();
 
+
+        //Creat sequence for pipe and coin to append into main sequence
         pipeAndCoinSeq.AppendCallback(() =>
         {
             //get random allowed pipe from scenario
@@ -133,19 +137,31 @@ public class PacingDesign : MonoBehaviour
 
         mainSequence.Append(pipeAndCoinSeq);
 
+
+        //insert action(spawn Warning sign or AttakingBird) to main sequence by time( independ from spawning pipe and coin : easier to control)
         if (duration >= 10 )//&& UnityEngine.Random.value < 0.5f)
         {
-            Sequence AttackingBirdSeq = DOTween.Sequence();
-            float birdCount = UnityEngine.Random.Range(2, 5);
-            Debug.Log("Amount of bird : " + birdCount);
+            float birdCount = UnityEngine.Random.Range(2, 5); 
             for (int i = 2; i <= birdCount; i++)
             {
                 float randSpawnTime = UnityEngine.Random.Range(0f, duration);
-                mainSequence.InsertCallback(randSpawnTime, () =>
-                {
-                    SpawnAttackingBird(currScenario.moveSpeed + 2);
-                    Debug.Log("Bird is spawned");
+                mainSequence.InsertCallback(randSpawnTime, () => { 
+                    Warning signClone = SpawnWarningSign();
+                    if (signClone.DurationToFollow != 0)
+                    {
+                        float delayTimeToSpawnAttackingBird = signClone.DurationToFollow;
+                        DOVirtual.DelayedCall(delayTimeToSpawnAttackingBird + 0.1f, () =>//use DelayedCall of DOVirtual when i just want to have a time delay to do something. 
+                        {
+                            SpawnAttackingBird(currScenario.moveSpeed + 2, signClone);
+                        }).SetTarget(signClone);
+                    }
+                    else
+                    {
+                        Debug.Log("Pacing Design can not get delay time from sign clone.");
+                    }
+                    
                 });
+                
             }
         }
         return mainSequence;
@@ -188,13 +204,18 @@ public class PacingDesign : MonoBehaviour
         }
     }
 
-    private void SpawnAttackingBird(float speedToSet)
+    private void SpawnAttackingBird(float speedToSet,Warning signClone)
     {
-        Vector3 mainBirdPos = new Vector3(transform.position.x, _mainBird.transform.position.y, transform.position.z);
-        GameObject attackingBirdClone = Instantiate(_attackingBird, mainBirdPos, Quaternion.identity);
-        Debug.Log(attackingBirdClone.transform.position);  
+        Vector3 posToSpawn = new Vector3(transform.position.x, signClone.LastPosition.y, transform.position.z);
+        GameObject attackingBirdClone = Instantiate(_attackingBird, posToSpawn, Quaternion.identity);
     }
 
+    private Warning SpawnWarningSign()
+    {
+        Warning signClone = Instantiate(_warningSign, new Vector3(7, _mainBird.transform.position.y, 0), Quaternion.identity);
+        signClone.SetTarget(_mainBird);
+        return signClone;
+    }
     
 }
 

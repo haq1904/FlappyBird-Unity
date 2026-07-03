@@ -5,7 +5,7 @@ using System.Drawing;
 using UnityEngine;
 
 
-public class BirdBase : MonoBehaviour, IDamageable, IReceivable
+public class BirdBase : PlayerService, IDamageable, IReceivable
 {
     [Header("Fields")]
     [field:SerializeField] public float JumpForce { get; set; }
@@ -117,11 +117,6 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     {
         StateMachine.CurrentBirdState.HandleCollision(direction, impactForce, gravityScale);
     }
-
-    public Vector2 GetPosition()
-    {
-        return transform.position;
-    }
     
 
     #endregion
@@ -140,6 +135,13 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     public void AddCoin(float coin)
     {
         StateMachine.CurrentBirdState.HandleAddCoin(coin);
+    }
+    #endregion
+
+    #region PlayerService function
+    public override Transform GetTransform()
+    {
+        return transform;
     }
     #endregion
 
@@ -198,6 +200,7 @@ public class BirdBase : MonoBehaviour, IDamageable, IReceivable
     public void AnimationTriggerEvent(AnimationTriggerType triggerType) {
         StateMachine.CurrentBirdState.AnimationTriggerEvent(triggerType);
     }
+
 
     public enum AnimationTriggerType
     {
