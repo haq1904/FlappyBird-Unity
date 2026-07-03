@@ -212,7 +212,8 @@ public class PacingDesign : MonoBehaviour
 
     private Warning SpawnWarningSign()
     {
-        Warning signClone = Instantiate(_warningSign, new Vector3(7, _mainBird.transform.position.y, 0), Quaternion.identity);
+        float randSpawnHeight = UnityEngine.Random.Range(-4.2f, 4.2f);
+        Warning signClone = Instantiate(_warningSign, new Vector3(7, randSpawnHeight, 0), Quaternion.identity);
         signClone.SetTarget(_mainBird);
         return signClone;
     }
