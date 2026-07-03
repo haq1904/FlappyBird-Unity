@@ -8,6 +8,11 @@ public class Warning : MonoBehaviour
     [SerializeField] private float _followSpeed = 1;
     [SerializeField] private float _durationToFollow = 2f;
     [SerializeField] private float _timeToDisapear = 1f;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private Vector3 _shakeAngle;
+    [SerializeField] private int _vibrato = 10;
+    [SerializeField,Range(0,180)] private float _randomness = 90;
+    
 
     public Vector2 LastPosition { get; private set; }
     public float DurationToFollow { get; private set; } = 0;
@@ -18,6 +23,8 @@ public class Warning : MonoBehaviour
     private void OnEnable()
     {
         DurationToFollow = _durationToFollow;
+        _animator.Play("PlayWarning");
+        transform.DOShakeRotation(_durationToFollow+_timeToDisapear,_shakeAngle,_vibrato,_randomness,false).SetLink(gameObject);
         _mainSequence = DOTween.Sequence();
         _mainSequence.AppendInterval(_durationToFollow);
         _mainSequence.AppendCallback(() => {
@@ -33,11 +40,6 @@ public class Warning : MonoBehaviour
         _mainSequence.Kill();
     }
 
-    public void SetTarget(PlayerService target)
-    {
-        _targetGameObj = target;
-    }
-
     void Update()
     {
         if (_targetGameObj != null)
@@ -47,6 +49,12 @@ public class Warning : MonoBehaviour
         }
     }
 
+
+    public void SetTarget(PlayerService target)
+    {
+        _targetGameObj = target;
+    }
+
     public void HandleRestart()
     {
         Destroy(gameObject);
@@ -54,6 +62,6 @@ public class Warning : MonoBehaviour
 
     public void HandleGameOver()
     {
-        Destroy(gameObject);
+        _followSpeed = 0;
     }
 }
