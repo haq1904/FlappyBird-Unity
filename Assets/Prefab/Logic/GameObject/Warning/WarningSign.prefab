@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d68f1707ef4ed104782e62e18a36a9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Feature_Pacing::Warning
-  _followSpeed: 2.28
+  _followSpeed: 0.88
   _durationToFollow: 4
   _timeToDisapear: 1
   _animator: {fileID: 7642129923680786548}

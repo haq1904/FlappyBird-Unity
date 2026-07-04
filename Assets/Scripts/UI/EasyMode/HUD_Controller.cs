@@ -23,10 +23,8 @@ public class HUD_Controller : MonoBehaviour
 
     private void TogglePauseMenu()
     {
-        Sequence s = DOTween.Sequence();
-        s.AppendCallback(() => pausePanel.TurnOn());
-        s.AppendInterval(0.15f);
-        s.AppendCallback(()=>OnGamePause?.Invoke());
+        OnGamePause?.Invoke();
+        pausePanel.TurnOn();
     }
 
     public void HandleCountDown()
