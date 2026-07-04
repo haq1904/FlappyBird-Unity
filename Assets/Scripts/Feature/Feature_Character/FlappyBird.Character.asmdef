@@ -1,0 +1,16 @@
+{
+    "name": "FlappyBird.Character",
+    "rootNamespace": "",
+    "references": [
+        "GUID:bbaf12589dbb60f48b69d1e11616d28d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

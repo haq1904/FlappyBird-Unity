@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New character", menuName = "Scriptable Objects/Characters/New character")]
 
 [System.Serializable]
-public class Character : ScriptableObject
+public class Character : ScriptableObject, ICharacterData
 {
     [field: SerializeField] public int Id { get; private set; }
     [field: SerializeField] public Sprite DisplaySprite { get; private set; }
