@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Diagnostics.Contracts;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ public class BaseAttackingBird : ObstacleService
     [SerializeField] private float _rotationSpeed = 50f;
 
     [Header("Character Database")]
-    [SerializeField] CharacterDataBaseService characterDB;
+    [SerializeField] CharacterDataBaseService _characterDB;
 
 
 
@@ -22,9 +23,7 @@ public class BaseAttackingBird : ObstacleService
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _animator.runtimeAnimatorController = characterDB.GetCharacterById(0).AnimController;
-        if (_animator.runtimeAnimatorController == null) Debug.Log("Can not get animator controller from database");
-        _animator.Play("Flying");
+        PlayAnimation(); 
         
     }
     
@@ -81,5 +80,13 @@ public class BaseAttackingBird : ObstacleService
         {
             Destroy(gameObject);
         }
+    }
+
+    private void PlayAnimation()
+    {
+        int randIdCharacter = UnityEngine.Random.Range(0, _characterDB.CharacterCount);
+        _animator.runtimeAnimatorController = _characterDB.GetCharacterById(randIdCharacter).AnimController;
+        if (_animator.runtimeAnimatorController == null) Debug.Log("Can not get animator controller from database");
+        _animator.Play("Flying");
     }
 }
