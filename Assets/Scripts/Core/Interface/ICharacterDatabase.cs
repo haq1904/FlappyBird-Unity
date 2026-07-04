@@ -4,5 +4,5 @@ using UnityEngine;
 public interface ICharacterDatabase
 {
     int CharacterCount { get; }
-    ICharacterData GetCharacterById(int id);
+    CharacterService GetCharacterById(int id);
 }

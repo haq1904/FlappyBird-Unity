@@ -1259,12 +1259,12 @@ TextureImporter:
       name: MainBird_47
       rect:
         serializedVersion: 2
-        x: 229
+        x: 227
         y: 43
-        width: 29
+        width: 30
         height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4861562, y: 0.64832395}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1329,8 +1329,8 @@ TextureImporter:
         y: 22
         width: 30
         height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4861562, y: 0.648324}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1527,8 +1527,8 @@ TextureImporter:
         y: 43
         width: 30
         height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26268095}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1549,8 +1549,8 @@ TextureImporter:
         y: 22
         width: 30
         height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2626809}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

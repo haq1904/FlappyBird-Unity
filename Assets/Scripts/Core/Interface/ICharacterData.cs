@@ -2,8 +2,8 @@ using UnityEngine;
 
 public interface ICharacterData
 {
-    int Id { get;}
-    Sprite DisplaySprite { get;}
-    string DisplayName { get;}
-    RuntimeAnimatorController AnimController { get;}
+    int Id { get; set; }
+    Sprite DisplaySprite { get; set; }
+    string DisplayName { get; set; }
+    RuntimeAnimatorController AnimController { get; set; }
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New character", menuName = "Scriptable Objects/Characters/New character")]
 
 [System.Serializable]
-public class Character : ScriptableObject, ICharacterData
+public class Character : CharacterService
 {
-    [field: SerializeField] public int Id { get; private set; }
-    [field: SerializeField] public Sprite DisplaySprite { get; private set; }
-    [field: SerializeField] public string DisplayName { get; private set; }
-    [field: SerializeField] public RuntimeAnimatorController AnimController { get; private set; }
+    [field: SerializeField] public override int Id { get; set; }
+    [field: SerializeField] public override Sprite DisplaySprite { get; set; }
+    [field: SerializeField] public override string DisplayName { get; set; }
+    [field: SerializeField] public override RuntimeAnimatorController AnimController { get; set; }
 }

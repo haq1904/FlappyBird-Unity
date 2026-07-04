@@ -4,11 +4,15 @@ using UnityEngine;
 public class BaseAttackingBird : ObstacleService
 {
     [Header("Fields")]
+    [SerializeField] private Animator _animator;
     [SerializeField] private float _moveSpeed = 1;
     [SerializeField] private float _impactForce = 1;
     [SerializeField] private float _gravityScale = 1;
     [SerializeField] private float _knockbackForce;
     [SerializeField] private float _rotationSpeed = 50f;
+
+    [Header("Character Database")]
+    [SerializeField] CharacterDataBaseService characterDB;
 
 
 
@@ -18,6 +22,10 @@ public class BaseAttackingBird : ObstacleService
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _animator.runtimeAnimatorController = characterDB.GetCharacterById(0).AnimController;
+        if (_animator.runtimeAnimatorController == null) Debug.Log("Can not get animator controller from database");
+        _animator.Play("Flying");
+        
     }
     
     private void FixedUpdate()
