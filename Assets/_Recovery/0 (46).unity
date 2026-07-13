@@ -697,85 +697,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: ColorModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: NoiseModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: TrailModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: NoiseModule.separateAxes
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: ShapeModule.m_Rotation.z
-      value: 62.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: ColorBySpeedModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: ColorBySpeedModule.range.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: ColorBySpeedModule.range.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: NoiseModule.strength.scalar
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 29.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.atime1
-      value: 54163
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key1.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: ColorBySpeedModule.gradient.maxGradient.atime1
-      value: 36623
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872706522373528504, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: ColorBySpeedModule.gradient.maxGradient.key1.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5580428820024704612, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: 72076cd53286862418e17522f1c799be, type: 2}
     - target: {fileID: 5870534062538081571, guid: ccc0b06656259a645822016046e85c1a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.63
+      value: -2.774
       objectReference: {fileID: 0}
     - target: {fileID: 5870534062538081571, guid: ccc0b06656259a645822016046e85c1a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -812,30 +736,6 @@ PrefabInstance:
     - target: {fileID: 5870534062538081571, guid: ccc0b06656259a645822016046e85c1a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6015966773539656053, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: m_SortingLayer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6015966773539656053, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6015966773539656053, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -188435169
-      objectReference: {fileID: 0}
-    - target: {fileID: 6015966773539656053, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7830043821596646241, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 7830043821596646241, guid: ccc0b06656259a645822016046e85c1a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

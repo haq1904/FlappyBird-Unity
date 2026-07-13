@@ -207,7 +207,7 @@ public class PacingDesign : MonoBehaviour
     private void SpawnAttackingBird(float speedToSet,Warning signClone)
     {
         Vector3 posToSpawn = new Vector3(transform.position.x, signClone.LastPosition.y, transform.position.z);
-        GameObject attackingBirdClone = Instantiate(_attackingBird, posToSpawn, Quaternion.identity);
+        GameObject attackingBirdClone = Instantiate(_attackingBird, posToSpawn,Quaternion.Euler(0,0,20f));
     }
 
     private Warning SpawnWarningSign()

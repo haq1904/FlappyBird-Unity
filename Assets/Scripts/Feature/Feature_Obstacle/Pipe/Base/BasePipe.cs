@@ -70,6 +70,7 @@ public abstract class BasePipe : ObstacleService
     {
         Destroy(gameObject);
     }
+    
 
     
     #endregion

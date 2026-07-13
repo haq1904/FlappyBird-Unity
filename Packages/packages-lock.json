@@ -1,13 +1,11 @@
 {
   "dependencies": {
-    "com.boxqkrtm.ide.cursor": {
-      "version": "https://github.com/boxqkrtm/com.unity.ide.cursor.git",
+    "com.termway.ide.antigravity": {
+      "version": "https://github.com/TermWay/unity-ide-antigravity.git",
       "depth": 0,
       "source": "git",
-      "dependencies": {
-        "com.unity.test-framework": "1.1.9"
-      },
-      "hash": "fd8ff1fb700caf062eb5cce364c1d0a85f99ebe6"
+      "dependencies": {},
+      "hash": "e5e981edf16a5c85f2c1a00209deee6626544bc5"
     },
     "com.unity.2d.animation": {
       "version": "14.0.3",
