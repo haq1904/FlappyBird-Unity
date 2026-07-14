@@ -138,6 +138,7 @@ MonoBehaviour:
   _easeToFade: 29
   spr: {fileID: 8908479369780433490}
   _animator: {fileID: 51167833826299889}
+  _angularVelocity: 299.39
 --- !u!50 &7137103257297574625
 Rigidbody2D:
   serializedVersion: 5

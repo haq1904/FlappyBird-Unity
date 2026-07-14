@@ -113,8 +113,8 @@ MonoBehaviour:
   _animator: {fileID: 5580428820024704612}
   _moveSpeed: 10.21
   _impactForce: 1
-  _gravityScale: 2.02
-  _knockbackForce: 10
+  _gravityScale: 1.5
+  _knockbackForce: 8
   _rotationSpeed: -818.7
   _characterDB: {fileID: 11400000, guid: 15095ce6d7f02ee44aa9a038cfa63a2a, type: 2}
 --- !u!50 &9152986154645542154
@@ -2948,7 +2948,7 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
