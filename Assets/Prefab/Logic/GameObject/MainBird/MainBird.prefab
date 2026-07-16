@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2586526733699527020
 Transform:
   m_ObjectHideFlags: 0
@@ -4911,7 +4911,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1891379005801484289
 Transform:
   m_ObjectHideFlags: 0
@@ -9805,7 +9805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8865052569232072590
 Transform:
   m_ObjectHideFlags: 0
@@ -14892,7 +14892,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0068896906, y: 0.09376976}
+  m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.55172706, y: 0.31842452}
   m_Direction: 1
 --- !u!114 &-4750665944483461942

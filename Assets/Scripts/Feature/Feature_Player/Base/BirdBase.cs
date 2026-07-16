@@ -1,14 +1,14 @@
 
-using Cinemachine;
 using System.Collections;
 using System.Drawing;
+using Cinemachine;
 using UnityEngine;
 
 
 public class BirdBase : PlayerService, IDamageable, IReceivable
 {
     [Header("Fields")]
-    [field:SerializeField] public float JumpForce { get; set; }
+    [field: SerializeField] public float JumpForce { get; set; }
     [SerializeField] private CinemachineImpulseSource impulseSource;
     [SerializeField] public Animator animator;
     [SerializeField] private ParticleSystem dustPS;
@@ -17,10 +17,10 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     [SerializeField] public float maxUpAngle = 18;
     [SerializeField] public float maxDownAngle = -40;
     [SerializeField] public float rotationSpeed = 15f;
-    
+
 
     [Header("Events")]
-    [SerializeField] private SoundTypeGameEvent OnBirdRaiseSoundEvent; 
+    [SerializeField] private SoundTypeGameEvent OnBirdRaiseSoundEvent;
     [SerializeField] private FloatGameEvent OnBirdRaisePoint;
     [SerializeField] private FloatGameEvent OnBirdRaiseCoin;
     [SerializeField] private GameEvent OnBirdDead;
@@ -36,13 +36,16 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
 
     public CapsuleCollider2D COL { get; set; }
 
+    public SpriteRenderer SPRITE { get; set; }
+
     public BirdControls Controls;
-    
-    
+
+
 
     #region State Machine Variables
     public BirdStateMachine StateMachine { get; set; }
     public BirdIdleState IdleState { get; set; }
+    public BirdResetState ResetState { get; set; }
     public BirdFlyingState FlyingState { get; set; }
     public BirdPauseState PauseState { get; set; }
     public BirdDieState DieState { get; set; }
@@ -53,12 +56,11 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     {
         StateMachine = new BirdStateMachine();
         IdleState = new BirdIdleState(this, StateMachine);
+        ResetState = new BirdResetState(this, StateMachine);
         FlyingState = new BirdFlyingState(this, StateMachine);
         PauseState = new BirdPauseState(this, StateMachine);
         DieState = new BirdDieState(this, StateMachine);
         Controls = new BirdControls();
-
-
     }
 
     private void OnEnable()
@@ -75,6 +77,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     {
         RB = gameObject.GetComponent<Rigidbody2D>();
         COL = gameObject.GetComponent<CapsuleCollider2D>();
+        SPRITE = gameObject.GetComponent<SpriteRenderer>();
         resetPos = transform.position;
         resetGravity = RB.gravityScale;
         StateMachine.Initialize(IdleState);
@@ -92,7 +95,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     #region Received Event Function
     public void HandleReset()//Receive OnRestart event from EasyModeManager
     {
-        StateMachine.ChangeState(IdleState);
+        StateMachine.ChangeState(ResetState);
     }
 
     public void HandleFlying() //Receive OnStartFlying event from EasyModeManager
@@ -110,21 +113,21 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     #region IDamageable function 
     public void PlayAnimation(DamageableAnimationStandard animation)
     {
-        
+
     }
 
-    public void TakeDamage(Vector2 direction,float impactForce, float gravityScale)
+    public void TakeDamage(Vector2 direction, float impactForce, float gravityScale)
     {
         StateMachine.CurrentBirdState.HandleCollision(direction, impactForce, gravityScale);
     }
-    
+
 
     #endregion
 
     #region IReceivable function
     public void PlayAnimation(ReceivableAnimationStandard animationName)
     {
-        
+
     }
 
     public void AddPoint(float point)
@@ -158,7 +161,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
         OnBirdRaiseSoundEvent.Raise(SoundType.TakePoint);
         OnBirdRaisePoint.Raise(point);
     }
-    
+
     public void RaiseAddCoinEvent(float coin)
     {
         OnBirdRaiseSoundEvent.Raise(SoundType.TakePoint);
@@ -178,7 +181,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     {
         dustPS.Play();
     }
-    
+
     public void PlayExplosionPS()
     {
         _explosionPS.Play();
@@ -197,7 +200,8 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     #endregion
 
     #region Animation Trigger
-    public void AnimationTriggerEvent(AnimationTriggerType triggerType) {
+    public void AnimationTriggerEvent(AnimationTriggerType triggerType)
+    {
         StateMachine.CurrentBirdState.AnimationTriggerEvent(triggerType);
     }
 
@@ -208,5 +212,5 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     }
     #endregion
 
-    
+
 }
