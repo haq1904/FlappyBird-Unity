@@ -30,6 +30,7 @@ public class Coin : ItemService
         if (collision.TryGetComponent<IReceivable>(out var gameObj) && !_IsTaken)
         {
             Sequence s = DOTween.Sequence();
+            s.SetLink(gameObject);
             s.AppendCallback(() =>
             {
                 ApplyEffect(gameObj);
@@ -40,18 +41,13 @@ public class Coin : ItemService
                 _rb.angularVelocity = Random.Range(-_angularVelocity, _angularVelocity);
                 _IsTaken = true;
             });
-            s.Append(spr.DOFade(0, _timeToFade).SetEase(_easeToFade).SetLink(gameObject));
+            s.Append(spr.DOFade(0, _timeToFade).SetEase(_easeToFade));
             s.AppendCallback(() => Destroy(gameObject));
         }
         else if (collision.CompareTag("PoolCollector"))
         {
             Destroy(gameObject);
         }
-    }
-
-    private void OnDisable()
-    {
-        spr.DOKill();
     }
 
 
