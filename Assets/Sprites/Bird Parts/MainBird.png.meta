@@ -1523,12 +1523,12 @@ TextureImporter:
       name: MainBird_59
       rect:
         serializedVersion: 2
-        x: 160
+        x: 161
         y: 43
         width: 30
         height: 21
       alignment: 9
-      pivot: {x: 0.5, y: 0.26268095}
+      pivot: {x: 0.5055588, y: 0.20708592}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
