@@ -34,6 +34,6 @@ public class BirdResetState : BirdState
         bird.RB.angularVelocity = 0f;
         bird.transform.rotation = Quaternion.identity;
         bird.RB.bodyType = RigidbodyType2D.Kinematic;
-        bird.transform.DOMove(bird.resetPos, 4f).SetEase(Ease.OutBack, 2f).SetLink(bird.gameObject);
+        bird.transform.DOMove(bird.resetPos, 3f).SetEase(Ease.OutBack, 2f).SetLink(bird.gameObject);
     }
 }

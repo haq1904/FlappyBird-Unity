@@ -1,5 +1,5 @@
-using Cinemachine;
 using System.Collections;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 public class EasyModeManager : MonoBehaviour
@@ -17,7 +17,8 @@ public class EasyModeManager : MonoBehaviour
     [Header("Fields")]
     [SerializeField] private float currPoint = 0;
     [SerializeField] private float currCoin = 0;
-    [SerializeField] private float timeForHitStop=1;
+    [SerializeField] private float timeForHitStop = 1;
+    [SerializeField] private GameObject vcamTarget;
 
     [Header("Game State")]
     [SerializeField] private GameState gameState;
@@ -37,9 +38,10 @@ public class EasyModeManager : MonoBehaviour
 
     private Transform followTransform;
     public void Start()
-    { 
+    {
         UpdateGameState(GameState.GameStart);
         followTransform = Vcam1.Follow;
+        vcamTarget.transform.position = Vcam1.Follow.position;
     }
 
     public void UpdateGameState(GameState newState)
@@ -92,24 +94,25 @@ public class EasyModeManager : MonoBehaviour
     public void GameRestart()
     {
         UpdateGameState(GameState.GameRestart);
-        Vcam1.Follow = followTransform;
         currPoint = 0;
         currCoin = 0;
         HandleChangePoint(0f);
         HandleChangeCoin(0f);
         Time.timeScale = 1f;
+        Vcam1.Follow = vcamTarget.transform;
     }
 
     public void StartFlying()
     {
         OnStartFlying?.Invoke();
+        Vcam1.Follow = followTransform;
     }
 
     public void BackHome()
     {
         Debug.Log("Back to loppy");
     }
-    
+
     private IEnumerator HitStop(float duration)
     {
         Time.timeScale = 0f;
@@ -123,14 +126,14 @@ public class EasyModeManager : MonoBehaviour
         currPoint += point;
         OnChangePoint?.Raise(currPoint);
     }
-    
+
     public void HandleChangeCoin(float coin)
     {
         currCoin += coin;
         OnChangeCoin?.Raise(currCoin);
     }
 
-   
+
 
 
 
