@@ -49,6 +49,12 @@ public class Coin : ItemService
         }
     }
 
+    private void OnDisable()
+    {
+        spr.DOKill();
+    }
+
+
     private void FixedUpdate()
     {
         if (!_IsTaken)
