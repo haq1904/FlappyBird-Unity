@@ -1,5 +1,5 @@
-using GluonGui.WorkspaceWindow.Views;
 using System;
+using GluonGui.WorkspaceWindow.Views;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -28,7 +28,7 @@ public class BirdFlyingState : BirdState
         bird.COL.isTrigger = false;
     }
 
-    
+
 
     public override void ExitState()
     {
@@ -52,9 +52,9 @@ public class BirdFlyingState : BirdState
         base.GetState();
         bird.BirdState = name;
     }
-    public override void HandleCollision(Vector2 direction, float impactForce,float gravityScale)
+    public override void HandleCollision(Vector2 direction, float impactForce, float gravityScale)
     {
-        base.HandleCollision(direction,impactForce, gravityScale);
+        base.HandleCollision(direction, impactForce, gravityScale);
         bird.RB.AddForce(direction * impactForce, ForceMode2D.Impulse);
         bird.RB.gravityScale = gravityScale;
         birdStateMachine.ChangeState(bird.DieState);
@@ -74,8 +74,6 @@ public class BirdFlyingState : BirdState
 
     private void OnFlapStarted(InputAction.CallbackContext context)
     {
-        bird.PlayDustPS();
-        bird.animator.Play("Flap",-1,0f);
         bird.Flap();
         bird.RB.linearVelocity = Vector2.zero;
         bird.RB.AddForce(Vector2.up * bird.JumpForce, ForceMode2D.Impulse);

@@ -153,6 +153,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     public void Flap()
     {
         OnBirdRaiseSoundEvent.Raise(SoundType.Flap);
+        animator.Play("Flap", -1, 0f);
         PlayDustPS();
     }
 
