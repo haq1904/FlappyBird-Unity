@@ -1,10 +1,12 @@
-using JetBrains.Annotations;
 using System.Diagnostics.Contracts;
+using DG.Tweening;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class BaseAttackingBird : ObstacleService
 {
     [Header("Fields")]
+    [SerializeField] private SpriteRenderer _sprite;
     [SerializeField] private Animator _animator;
     [SerializeField] private float _moveSpeed = 1;
     [SerializeField] private float _impactForce = 1;
@@ -12,21 +14,31 @@ public class BaseAttackingBird : ObstacleService
     [SerializeField] private float _knockbackForce;
     [SerializeField] private float _rotationSpeed = 50f;
 
+    [Header("Shake fields")]
+    [SerializeField] private float _shakeDuration = 1;
+    [SerializeField] private Vector3 _shakeStrength;
+    [SerializeField] private int _shakeVibrato = 10;
+    [SerializeField] private float _shakeRandomness = 90;
+
+
     [Header("Character Database")]
     [SerializeField] CharacterDataBaseService _characterDB;
-
-
 
     private Rigidbody2D _rb;
     private bool haveCollision = false;
 
+    private void OnEnable()
+    {
+        _sprite.transform.DOShakePosition(_shakeDuration, _shakeStrength, _shakeVibrato, _shakeRandomness).SetLink(gameObject);
+    }
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        PlayAnimation(); 
-        
+        PlayAnimation();
+
     }
-    
+
     private void FixedUpdate()
     {
         if (!haveCollision)
@@ -63,14 +75,15 @@ public class BaseAttackingBird : ObstacleService
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.TryGetComponent<IDamageable>(out var gameObj)){
+        if (collision.gameObject.TryGetComponent<IDamageable>(out var gameObj))
+        {
             haveCollision = true;
             _rb.bodyType = RigidbodyType2D.Dynamic;
             _rb.linearVelocity = Vector2.zero;
             _rb.angularVelocity = _rotationSpeed;
             Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
             _rb.AddForce(knockbackDirection * _knockbackForce, ForceMode2D.Impulse);
-            gameObj.TakeDamage(Vector2.left,_impactForce,_gravityScale);
+            gameObj.TakeDamage(Vector2.left, _impactForce, _gravityScale);
         }
     }
 
