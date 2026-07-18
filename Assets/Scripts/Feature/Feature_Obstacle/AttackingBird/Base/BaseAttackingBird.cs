@@ -82,6 +82,7 @@ public class BaseAttackingBird : ObstacleService
             _rb.linearVelocity = Vector2.zero;
             _rb.angularVelocity = _rotationSpeed;
             Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
+            _sprite.transform.DOKill();
             _rb.AddForce(knockbackDirection * _knockbackForce, ForceMode2D.Impulse);
             gameObj.TakeDamage(Vector2.left, _impactForce, _gravityScale);
         }
