@@ -367,9 +367,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44505d8db4fb7af4c967263b805b0de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.UI::LobbyBird
-  _jumpPower: 1646
-  _numJumps: 1
-  _duration: 4
+  _localMoveYDuration: 3.86
+  _localMoveYEase: 11
+  _shakeDuration: 0.5
+  _shakeStrength: {x: 5.02, y: 4.92, z: 0}
+  _shakeVibrato: 17
+  _shakeRandomness: 90
   _animator: {fileID: 642121153}
 --- !u!1 &674639391
 GameObject:

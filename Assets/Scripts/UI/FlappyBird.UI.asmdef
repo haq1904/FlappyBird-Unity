@@ -2,11 +2,10 @@
     "name": "FlappyBird.UI",
     "rootNamespace": "",
     "references": [
-        "DOTween.Modules",
         "Unity.TextMeshPro",
         "FlappyBird.Core",
-        "FlappyBird.Logic",
-        "FlappyBird.Audio"
+        "FlappyBird.Audio",
+        "DOTween.Modules"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
