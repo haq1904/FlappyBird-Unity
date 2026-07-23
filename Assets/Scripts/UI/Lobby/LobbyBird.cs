@@ -27,7 +27,7 @@ public class LobbyBird : MonoBehaviour
     public void HandleCollision()
     {
         _animator.enabled = false;
-        _menu.DOShakePosition(_shakeDurationMenu, _shakeStrengthMenu, _shakeVibratoMenu, _shakeRandomnessMenu).SetLink(gameObject);
+        _menu.DOPunchPosition(_shakeStrengthMenu, _shakeDurationMenu, _shakeVibratoMenu);
         transform.DOShakePosition(_shakeDuration, _shakeStrength, _shakeVibrato, _shakeRandomness).SetLink(gameObject).OnComplete(() =>
         {
             transform.DOLocalMoveY(-2300, _localMoveYDuration).SetEase(_localMoveYEase).SetLink(gameObject);
