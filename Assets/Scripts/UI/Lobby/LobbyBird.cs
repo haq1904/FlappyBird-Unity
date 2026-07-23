@@ -41,9 +41,18 @@ public class LobbyBird : MonoBehaviour
         _menu.DOPunchPosition(_menuPunchStrength, _menuPunchDuration, _menuPunchVibrato).SetLink(gameObject);
         transform.DOShakePosition(_shakeDuration, _shakeStrength, _shakeVibrato, _shakeRandomness).SetLink(gameObject).OnComplete(() =>
         {
+            Tween spinTween = transform.DOLocalRotate(new Vector3(0, 0, 360), 4f, RotateMode.FastBeyond360)
+             .SetEase(Ease.Linear)
+             .SetLoops(-1, LoopType.Restart)
+             .SetLink(gameObject);
+            spinTween.timeScale = 0f;
+            DOTween.To(() => spinTween.timeScale, x => spinTween.timeScale = x, 5f, 3f)
+                   .SetEase(Ease.InQuad).SetLink(gameObject);
             transform.DOLocalMoveY(-2300, _localMoveYDuration).SetEase(_localMoveYEase).SetLink(gameObject)
             .OnComplete(() =>
             {
+                spinTween.Kill();
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
                 DOVirtual.DelayedCall(15f, () =>
                 {
                     _animator.enabled = true;
