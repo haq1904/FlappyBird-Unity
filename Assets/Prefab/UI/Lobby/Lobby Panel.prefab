@@ -782,6 +782,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6164237336789966759}
+  - component: {fileID: 9003907545469101846}
+  - component: {fileID: 863540388061060351}
   m_Layer: 5
   m_Name: Visual
   m_TagString: Untagged
@@ -808,9 +810,47 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0.00012207, y: 0}
+  m_AnchoredPosition: {x: 0.000030517578, y: -1.5}
+  m_SizeDelta: {x: 0.000061035, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &9003907545469101846
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043449946786282962}
+  m_CullTransparentMesh: 1
+--- !u!114 &863540388061060351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043449946786282962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 8118200262300106799, guid: b10579c8af857664ab3faf655cb4efa0, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 0.16
 --- !u!1 &2062122006578824873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,7 +2084,7 @@ GameObject:
   - component: {fileID: 4474565848670711153}
   - component: {fileID: 727890405539315002}
   m_Layer: 5
-  m_Name: BirdContainer
+  m_Name: Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2066,7 +2106,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -919.99994, y: 462}
+  m_AnchoredPosition: {x: -919.9999, y: 462}
   m_SizeDelta: {x: 120, y: 94}
   m_Pivot: {x: 0.5, y: 0.5000003}
 --- !u!222 &3929977064162627467
@@ -2144,15 +2184,14 @@ MonoBehaviour:
   _localMoveYDuration: 3.61
   _localMoveYEase: 11
   _shakeDuration: 1.08
-  _shakeStrength: {x: 6, y: 6.96, z: 0}
+  _shakeStrength: {x: 4.35, y: 3.42, z: 0}
   _shakeVibrato: 26
   _shakeRandomness: 90
-  _shakeDurationMenu: 1
-  _shakeStrengthMenu: {x: 0, y: 0, z: 0}
-  _shakeVibratoMenu: 10
-  _shakeRandomnessMenu: 90
+  _menuPunchDuration: 1
+  _menuPunchStrength: {x: 0, y: 0, z: 0}
+  _menuPunchVibrato: 10
   _animator: {fileID: 4474565848670711153}
-  _menu: {fileID: 817092793869642253}
+  _menu: {fileID: 6164237336789966759}
 --- !u!1 &4442816091893030077
 GameObject:
   m_ObjectHideFlags: 0
