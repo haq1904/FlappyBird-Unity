@@ -13,11 +13,10 @@ public class LobbyBird : MonoBehaviour
     [SerializeField] private int _shakeVibrato = 10;
     [SerializeField] private float _shakeRandomness = 90;
 
-    [Header("ShakePosition fields for menu")]
-    [SerializeField] private float _shakeDurationMenu = 1;
-    [SerializeField] private Vector3 _shakeStrengthMenu;
-    [SerializeField] private int _shakeVibratoMenu = 10;
-    [SerializeField] private float _shakeRandomnessMenu = 90;
+    [Header("Punch fields for menu")]
+    [SerializeField] private float _menuPunchDuration = 1;
+    [SerializeField] private Vector3 _menuPunchStrength;
+    [SerializeField] private int _menuPunchVibrato = 10;
 
 
     [Header("Fields")]
@@ -27,7 +26,7 @@ public class LobbyBird : MonoBehaviour
     public void HandleCollision()
     {
         _animator.enabled = false;
-        _menu.DOPunchPosition(_shakeStrengthMenu, _shakeDurationMenu, _shakeVibratoMenu);
+        _menu.DOPunchPosition(_menuPunchStrength, _menuPunchDuration, _menuPunchVibrato);
         transform.DOShakePosition(_shakeDuration, _shakeStrength, _shakeVibrato, _shakeRandomness).SetLink(gameObject).OnComplete(() =>
         {
             transform.DOLocalMoveY(-2300, _localMoveYDuration).SetEase(_localMoveYEase).SetLink(gameObject);
