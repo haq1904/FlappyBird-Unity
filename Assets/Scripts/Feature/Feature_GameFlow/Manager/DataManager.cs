@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class DataManager : DataManagerService
 {
-    // Đổi kiểu trả về của Instance thành DataManagerService để chuẩn Service Pattern
     public static DataManagerService Instance { get; private set; }
 
     private void Awake()
