@@ -641,14 +641,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a283b51dc72339419ea2573fa03b810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.UI::Custom
-  _skinDatabase: {fileID: 0}
-  _useBtn: {fileID: 0}
-  _buyBtn: {fileID: 0}
-  _leftBtn: {fileID: 0}
-  _rightBtn: {fileID: 0}
-  _birdAnimator: {fileID: 0}
-  _birdName: {fileID: 0}
-  _birdPrice: {fileID: 0}
+  _shopDatabase: {fileID: 11400000, guid: 38dc158a474f98742bf6b17440302505, type: 2}
+  _useBtn: {fileID: 1775130946}
+  _buyBtn: {fileID: 1405138162}
+  _leftBtn: {fileID: 85049867}
+  _rightBtn: {fileID: 550809815}
+  _bird: {fileID: 1586844926}
+  _birdName: {fileID: 834613276}
+  _birdPrice: {fileID: 1124777725}
 --- !u!1 &614644695
 GameObject:
   m_ObjectHideFlags: 0
