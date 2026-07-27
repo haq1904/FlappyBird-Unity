@@ -61,7 +61,7 @@ MonoBehaviour:
   _shakeStrength: {x: 0.06, y: 0.06, z: 0}
   _shakeVibrato: 10
   _shakeRandomness: 90
-  _characterDB: {fileID: 11400000, guid: 15095ce6d7f02ee44aa9a038cfa63a2a, type: 2}
+  _characterDB: {fileID: 11400000, guid: 37871b8b2fc5bb14a8643ec49e6dc889, type: 2}
 --- !u!50 &9152986154645542154
 Rigidbody2D:
   serializedVersion: 5

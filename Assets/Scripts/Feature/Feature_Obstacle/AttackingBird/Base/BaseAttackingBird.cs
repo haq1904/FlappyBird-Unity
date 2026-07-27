@@ -100,7 +100,12 @@ public class BaseAttackingBird : ObstacleService
     {
         int randIdCharacter = UnityEngine.Random.Range(0, _characterDB.CharacterCount);
         _animator.runtimeAnimatorController = _characterDB.GetCharacterById(randIdCharacter).AnimController;
-        if (_animator.runtimeAnimatorController == null) Debug.Log("Can not get animator controller from database");
+        if (_animator.runtimeAnimatorController == null)
+        {
+            Debug.Log("Can not get animator controller from database");
+            return;
+        }
+
         _animator.Play("Flying");
     }
 }
