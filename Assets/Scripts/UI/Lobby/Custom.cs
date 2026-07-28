@@ -1,3 +1,4 @@
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +21,16 @@ public class Custom : MonoBehaviour
 
     [Header("Fields")]
     [SerializeField] private GameObject _buyPanel;
+    [SerializeField] private RectTransform _messagePanel;
+    [SerializeField] private float _messagePanelDuration;
+    [SerializeField] private Ease _messagePanelMoveEase;
+    [SerializeField] private TextMeshProUGUI _messageText;
+
+    [Header("Buy button shake fields")]
+    [SerializeField] private float _buyButtonShakeDuration = 1;
+    [SerializeField] private Vector3 _buyButtonShakeStrength;
+    [SerializeField] private int _buyButtonShakeVibrato = 10;
+    [SerializeField] private float _buyButtonShakeRandomness = 90;
 
     private int _currShopItemIndex;
     private DataManagerService _dataManager;
@@ -119,7 +130,14 @@ public class Custom : MonoBehaviour
         }
         else
         {
-            Debug.Log("Dont have enough coins");
+            _buyBtn.interactable = false;
+            LoadMessage("Don't have enough coin");
+            _buyBtn.gameObject.transform.DOShakePosition(_buyButtonShakeDuration, _buyButtonShakeStrength, _buyButtonShakeVibrato, _buyButtonShakeRandomness)
+            .SetLink(gameObject)
+            .OnComplete(() =>
+            {
+                _buyBtn.interactable = true;
+            });
         }
     }
 
@@ -127,6 +145,24 @@ public class Custom : MonoBehaviour
     {
         _dataManager.SetSelectedSkin(_shopDatabase.ItemList[_currShopItemIndex].Id);
         Update_UI(_shopDatabase.ItemList[_currShopItemIndex].Id);
+    }
+
+    private void LoadMessage(string content)
+    {
+        _messagePanel.gameObject.SetActive(true);
+        _messagePanel.DOKill();
+        _messageText.DOKill();
+        _messagePanel.anchoredPosition = new Vector3(0, -80, 0);
+        _messageText.text = content;
+        _messageText.DOFade(1f, 0).SetLink(gameObject);
+        _messagePanel.DOAnchorPosY(170, _messagePanelDuration).SetEase(_messagePanelMoveEase).SetLink(gameObject);
+        _messageText.DOFade(0f, _messagePanelDuration)
+        .SetEase(Ease.Linear)
+        .SetLink(gameObject)
+        .OnComplete(() =>
+        {
+            _messagePanel.gameObject.SetActive(false);
+        });
     }
 
 
