@@ -18,27 +18,43 @@ public class Custom : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _birdName;
     [SerializeField] private TextMeshProUGUI _birdPrice;
 
+    [Header("Fields")]
+    [SerializeField] private GameObject _buyPanel;
+
     private int _currShopItemIndex;
-    private int _selectedSkinId = 0;
+    private DataManagerService _dataManager;
+
+    private void Awake()
+    {
+        _dataManager = FindAnyObjectByType<DataManagerService>();
+        //_dataManager.AddCoins(100);
+    }
 
     private void Start()
     {
-        _leftBtn.onClick.AddListener(() => ChangeShopItem(-1));
-        _rightBtn.onClick.AddListener(() => ChangeShopItem(1));
+        _leftBtn.onClick.AddListener(() => OnClickChangeItem(-1));
+        _rightBtn.onClick.AddListener(() => OnClickChangeItem(1));
+        _buyBtn.onClick.AddListener(() => OnClickBuy());
     }
 
     private void OnEnable()
     {
-        Update_UI(_selectedSkinId);
-        _currShopItemIndex = _shopDatabase.ItemList.FindIndex(x => x.Id == 0);
+        if (_dataManager == null)
+        {
+            Debug.Log("Can not get Data manager");
+            return;
+        }
+        Update_UI(_dataManager.GetSelectedSkin());
+        _currShopItemIndex = _shopDatabase.ItemList.FindIndex(x => x.Id == _dataManager.GetSelectedSkin());
     }
     private void OnDisable()
     {
         _leftBtn.onClick.RemoveAllListeners();
         _rightBtn.onClick.RemoveAllListeners();
+        _buyBtn.onClick.RemoveAllListeners();
     }
 
-    private void ChangeShopItem(int index)
+    private void OnClickChangeItem(int index)
     {
         _currShopItemIndex += index;
         if (_currShopItemIndex < 0)
@@ -58,15 +74,45 @@ public class Custom : MonoBehaviour
             _birdAnimator.runtimeAnimatorController = currItem.Character.AnimController;
             _birdAnimator.Play("Shop", -1, 0f);
             _birdName.text = currItem.Character.DisplayName;
-            _birdPrice.text = currItem.Price.ToString();
+            if (_dataManager.IsSkinUnlocked(currItem.Id))
+            {
+                _buyPanel.SetActive(false);
+                _useBtn.gameObject.SetActive(true);
+            }
+            else
+            {
+                _buyPanel.SetActive(true);
+                _useBtn.gameObject.SetActive(false);
+                _birdPrice.text = currItem.Price.ToString();
+            }
+
         }
         else
         {
             Debug.Log("Can not get item list with id : " + skinId);
             return;
         }
-
     }
+
+    private void OnClickBuy()
+    {
+        if (_dataManager == null)
+        {
+            Debug.Log("Can not get Data Manager!");
+            return;
+        }
+        ShopItemService currItem = _shopDatabase.ItemList[_currShopItemIndex];
+        if (_dataManager.SpendCoins(currItem.Price))
+        {
+            _dataManager.UnlockSkin(currItem.Id);
+            Update_UI(currItem.Id);
+        }
+        else
+        {
+            Debug.Log("Dont have enough coins");
+        }
+    }
+
 
 
 

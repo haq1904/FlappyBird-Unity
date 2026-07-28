@@ -2,16 +2,8 @@ using UnityEngine;
 
 public class DataManager : DataManagerService
 {
-    public static DataManagerService Instance { get; private set; }
-
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -29,23 +21,23 @@ public class DataManager : DataManagerService
         }
     }
 
-    public override int GetCoins()
+    public override float GetCoins()
     {
-        return PlayerPrefs.GetInt("Coins", 0);
+        return PlayerPrefs.GetFloat("Coins", 0);
     }
 
-    public override void AddCoins(int amount)
+    public override void AddCoins(float amount)
     {
-        PlayerPrefs.SetInt("Coins", GetCoins() + amount);
+        PlayerPrefs.SetFloat("Coins", GetCoins() + amount);
         PlayerPrefs.Save();
     }
 
-    public override bool SpendCoins(int amount)
+    public override bool SpendCoins(float amount)
     {
-        int currentCoins = GetCoins();
+        float currentCoins = GetCoins();
         if (currentCoins >= amount)
         {
-            PlayerPrefs.SetInt("Coins", currentCoins - amount);
+            PlayerPrefs.SetFloat("Coins", currentCoins - amount);
             PlayerPrefs.Save();
             return true;
         }

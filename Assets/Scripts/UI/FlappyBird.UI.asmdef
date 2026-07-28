@@ -5,7 +5,8 @@
         "Unity.TextMeshPro",
         "FlappyBird.Core",
         "FlappyBird.Audio",
-        "DOTween.Modules"
+        "DOTween.Modules",
+        "FlappyBird.GameFlow"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
