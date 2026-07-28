@@ -35,6 +35,7 @@ public class Custom : MonoBehaviour
         _leftBtn.onClick.AddListener(() => OnClickChangeItem(-1));
         _rightBtn.onClick.AddListener(() => OnClickChangeItem(1));
         _buyBtn.onClick.AddListener(() => OnClickBuy());
+        _useBtn.onClick.AddListener(() => OnClickUse());
     }
 
     private void OnEnable()
@@ -52,6 +53,7 @@ public class Custom : MonoBehaviour
         _leftBtn.onClick.RemoveAllListeners();
         _rightBtn.onClick.RemoveAllListeners();
         _buyBtn.onClick.RemoveAllListeners();
+        _useBtn.onClick.RemoveAllListeners();
     }
 
     private void OnClickChangeItem(int index)
@@ -78,6 +80,14 @@ public class Custom : MonoBehaviour
             {
                 _buyPanel.SetActive(false);
                 _useBtn.gameObject.SetActive(true);
+                if (currItem.Id == _dataManager.GetSelectedSkin())
+                {
+                    _useBtn.interactable = false;
+                }
+                else
+                {
+                    _useBtn.interactable = true;
+                }
             }
             else
             {
@@ -111,6 +121,12 @@ public class Custom : MonoBehaviour
         {
             Debug.Log("Dont have enough coins");
         }
+    }
+
+    private void OnClickUse()
+    {
+        _dataManager.SetSelectedSkin(_shopDatabase.ItemList[_currShopItemIndex].Id);
+        Update_UI(_shopDatabase.ItemList[_currShopItemIndex].Id);
     }
 
 
