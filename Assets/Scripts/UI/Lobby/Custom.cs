@@ -18,17 +18,57 @@ public class Custom : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _birdName;
     [SerializeField] private TextMeshProUGUI _birdPrice;
 
+    private int _currShopItemIndex;
+    private int _selectedSkinId = 0;
+
+    private void Start()
+    {
+        _leftBtn.onClick.AddListener(() => ChangeShopItem(-1));
+        _rightBtn.onClick.AddListener(() => ChangeShopItem(1));
+    }
+
     private void OnEnable()
     {
-        _birdAnimator.runtimeAnimatorController = _shopDatabase.GetShopItemById(2).Character.AnimController;
-        if (_birdAnimator != null)
-            _birdAnimator.Play("Shop");
+        Update_UI(_selectedSkinId);
+        _currShopItemIndex = _shopDatabase.ItemList.FindIndex(x => x.Id == 0);
+    }
+    private void OnDisable()
+    {
+        _leftBtn.onClick.RemoveAllListeners();
+        _rightBtn.onClick.RemoveAllListeners();
+    }
+
+    private void ChangeShopItem(int index)
+    {
+        _currShopItemIndex += index;
+        if (_currShopItemIndex < 0)
+            _currShopItemIndex = _shopDatabase.ItemList.Count - 1;
+        else if (_currShopItemIndex >= _shopDatabase.ItemList.Count)
+            _currShopItemIndex = 0;
+        Update_UI(_shopDatabase.ItemList[_currShopItemIndex].Id);
+    }
+
+    private void Update_UI(int skinId)
+    {
+        int itemIndexToUpdate = _shopDatabase.ItemList.FindIndex(x => x.Id == skinId);
+        if (itemIndexToUpdate >= 0)
+        {
+            _currShopItemIndex = itemIndexToUpdate;
+            ShopItemService currItem = _shopDatabase.ItemList[itemIndexToUpdate];
+            _birdAnimator.runtimeAnimatorController = currItem.Character.AnimController;
+            _birdAnimator.Play("Shop", -1, 0f);
+            _birdName.text = currItem.Character.DisplayName;
+            _birdPrice.text = currItem.Price.ToString();
+        }
         else
         {
-            Debug.Log("Can not get Animator");
+            Debug.Log("Can not get item list with id : " + skinId);
             return;
         }
-        _birdName.text = _shopDatabase.GetShopItemById(2).Character.DisplayName;
-        _birdPrice.text = _shopDatabase.GetShopItemById(2).Price.ToString();
+
     }
+
+
+
+
 }

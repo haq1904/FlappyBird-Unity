@@ -14,6 +14,14 @@ public class ShopDatabase : ShopDatabaseService
         }
     }
 
+    public override List<ShopItemService> ItemList
+    {
+        get
+        {
+            return _itemList;
+        }
+    }
+
     public override ShopItemService GetShopItemById(int id)
     {
         if (_itemList == null) return null;
