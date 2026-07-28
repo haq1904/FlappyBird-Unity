@@ -13,4 +13,5 @@
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="FlappyBird.Controls.csproj" />
   <Project Path="FlappyBird.Editor.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
 </Solution>

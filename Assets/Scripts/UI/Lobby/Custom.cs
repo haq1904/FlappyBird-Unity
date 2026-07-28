@@ -14,19 +14,21 @@ public class Custom : MonoBehaviour
     [SerializeField] private Button _rightBtn;
 
     [Header("Bird container")]
-    [SerializeField] private GameObject _bird;
+    [SerializeField] private Animator _birdAnimator;
     [SerializeField] private TextMeshProUGUI _birdName;
     [SerializeField] private TextMeshProUGUI _birdPrice;
 
     private void OnEnable()
     {
-        Animator animator = _bird.GetComponent<Animator>();
-        animator.runtimeAnimatorController = _shopDatabase.GetShopItemById(0).Character.AnimController;
-        if (animator != null)
+        _birdAnimator.runtimeAnimatorController = _shopDatabase.GetShopItemById(2).Character.AnimController;
+        if (_birdAnimator != null)
+            _birdAnimator.Play("Shop");
+        else
         {
-            animator.Play("Flying");
+            Debug.Log("Can not get Animator");
+            return;
         }
-        _birdName.text = _shopDatabase.GetShopItemById(0).Character.DisplayName;
-        _birdPrice.text = _shopDatabase.GetShopItemById(0).Price.ToString();
+        _birdName.text = _shopDatabase.GetShopItemById(2).Character.DisplayName;
+        _birdPrice.text = _shopDatabase.GetShopItemById(2).Price.ToString();
     }
 }

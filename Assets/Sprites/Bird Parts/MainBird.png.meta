@@ -246,7 +246,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1435,7 +1435,7 @@ TextureImporter:
       name: MainBird_55
       rect:
         serializedVersion: 2
-        x: 132
+        x: 133
         y: 1
         width: 30
         height: 21
@@ -1545,7 +1545,7 @@ TextureImporter:
       name: MainBird_60
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 22
         width: 30
         height: 21
