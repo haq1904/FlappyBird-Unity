@@ -41,16 +41,13 @@ public class Custom : MonoBehaviour
         //_dataManager.AddCoins(100);
     }
 
-    private void Start()
+
+    private void OnEnable()
     {
         _leftBtn.onClick.AddListener(() => OnClickChangeItem(-1));
         _rightBtn.onClick.AddListener(() => OnClickChangeItem(1));
         _buyBtn.onClick.AddListener(() => OnClickBuy());
         _useBtn.onClick.AddListener(() => OnClickUse());
-    }
-
-    private void OnEnable()
-    {
         if (_dataManager == null)
         {
             Debug.Log("Can not get Data manager");
