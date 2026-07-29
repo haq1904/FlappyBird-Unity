@@ -25,6 +25,7 @@ public class Custom : MonoBehaviour
     [SerializeField] private float _messagePanelDuration;
     [SerializeField] private Ease _messagePanelMoveEase;
     [SerializeField] private TextMeshProUGUI _messageText;
+    [SerializeField] private Statistic _statsPanel;
 
     [Header("Buy button shake fields")]
     [SerializeField] private float _buyButtonShakeDuration = 1;
@@ -124,6 +125,7 @@ public class Custom : MonoBehaviour
         {
             _dataManager.UnlockSkin(currItem.Id);
             Update_UI(currItem.Id);
+            _statsPanel.Update_UI();
         }
         else
         {
