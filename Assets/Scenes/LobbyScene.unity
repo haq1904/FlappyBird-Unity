@@ -256,6 +256,36 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!1 &635633499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6381863238455214328, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+  m_PrefabInstance: {fileID: 6173975220063264586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &635633503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635633499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a63269bf579254dbb8e10cb4071c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.UI::Border
+  _shakePositionDuration: 1
+  _shakePositionStrength: {x: 2, y: 2, z: 0}
+  _shakePositionVibrato: 1
+  _shakePositionRandomness: 180
+  _shakeRotationDuration: 1
+  _shakeRotationStrength: {x: 0, y: 0, z: 0}
+  _shakeRotationVibrato: 10
+  _shakeRotationRandomness: 90
+  isShakePosition: 1
+  isShakeRotation: 0
+  isShakeOnEnable: 1
+  isFadeOut: 0
+  isLoop: 1
 --- !u!1 &674639391
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,6 +374,36 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6880e86de1d140d438783fa782222808, type: 3}
+--- !u!1 &834613274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4546554761529812444, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+  m_PrefabInstance: {fileID: 6173975220063264586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &834613278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834613274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a63269bf579254dbb8e10cb4071c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.UI::UI_Shake
+  _shakePositionDuration: 1
+  _shakePositionStrength: {x: 3, y: 3, z: 0}
+  _shakePositionVibrato: 2
+  _shakePositionRandomness: 180
+  _shakeRotationDuration: 1
+  _shakeRotationStrength: {x: 0, y: 0, z: 3.56}
+  _shakeRotationVibrato: 2
+  _shakeRotationRandomness: 90
+  isShakePosition: 1
+  isShakeRotation: 1
+  isShakeOnEnable: 1
+  isFadeOut: 0
+  isLoop: 1
 --- !u!1 &1028559986
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +497,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1369734589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4928895401726783602, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+  m_PrefabInstance: {fileID: 6173975220063264586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1369734593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369734589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a63269bf579254dbb8e10cb4071c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.UI::Border
+  _shakePositionDuration: 1
+  _shakePositionStrength: {x: 2, y: 2, z: 0}
+  _shakePositionVibrato: 1
+  _shakePositionRandomness: 180
+  _shakeRotationDuration: 1
+  _shakeRotationStrength: {x: 0, y: 0, z: 0}
+  _shakeRotationVibrato: 10
+  _shakeRotationRandomness: 90
+  isShakePosition: 1
+  isShakeRotation: 0
+  isShakeOnEnable: 1
+  isFadeOut: 0
+  isLoop: 1
+--- !u!1 &1838497043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 976891051319064437, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+  m_PrefabInstance: {fileID: 6173975220063264586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1838497047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838497043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a63269bf579254dbb8e10cb4071c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.UI::Border
+  _shakePositionDuration: 1
+  _shakePositionStrength: {x: 2, y: 2, z: 0}
+  _shakePositionVibrato: 1
+  _shakePositionRandomness: 180
+  _shakeRotationDuration: 1
+  _shakeRotationStrength: {x: 0, y: 0, z: 0}
+  _shakeRotationVibrato: 10
+  _shakeRotationRandomness: 90
+  isShakePosition: 1
+  isShakeRotation: 0
+  isShakeOnEnable: 1
+  isFadeOut: 0
+  isLoop: 1
 --- !u!1 &1972866756
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,6 +853,36 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be26af27c9fb6f47bcec0ef263954c0, type: 3}
+--- !u!1 &2052362078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1208145201739362895, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+  m_PrefabInstance: {fileID: 6173975220063264586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2052362082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052362078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a63269bf579254dbb8e10cb4071c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.UI::Border
+  _shakePositionDuration: 1
+  _shakePositionStrength: {x: 2, y: 2, z: 0}
+  _shakePositionVibrato: 1
+  _shakePositionRandomness: 180
+  _shakeRotationDuration: 1
+  _shakeRotationStrength: {x: 0, y: 0, z: 0}
+  _shakeRotationVibrato: 10
+  _shakeRotationRandomness: 90
+  isShakePosition: 1
+  isShakeRotation: 0
+  isShakeOnEnable: 1
+  isFadeOut: 0
+  isLoop: 1
 --- !u!1001 &6173975220063264586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -752,6 +902,10 @@ PrefabInstance:
     - target: {fileID: 2062122006578824873, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_Name
       value: Lobby Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623483551611964176, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3657654623148082589, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_Pivot.x
@@ -869,6 +1023,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8173513822523926085, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357253139845463750, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6975191034426798775, guid: 54e154e92a090444e9b585f68f9016b4, type: 3}
     - target: {fileID: 8391670222576691645, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -892,7 +1054,22 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4928895401726783602, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1369734593}
+    - targetCorrespondingSourceObject: {fileID: 6381863238455214328, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 635633503}
+    - targetCorrespondingSourceObject: {fileID: 976891051319064437, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1838497047}
+    - targetCorrespondingSourceObject: {fileID: 1208145201739362895, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2052362082}
+    - targetCorrespondingSourceObject: {fileID: 4546554761529812444, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 834613278}
   m_SourcePrefab: {fileID: 100100000, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
 --- !u!1001 &6250344645956620882
 PrefabInstance:
