@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BirdIdleState : BirdState
 {
-    
+
     public BirdIdleState(BirdBase bird, BirdStateMachine birdStateMachine) : base(bird, birdStateMachine)
     {
         nameState = "Idle state";
@@ -23,8 +23,8 @@ public class BirdIdleState : BirdState
         bird.RB.linearVelocity = Vector2.zero;
         bird.transform.rotation = Quaternion.identity;
         bird.RB.angularVelocity = 0f;
-        bird.animator.Play("Idle",-1,0f);
-        
+        bird.Animator.Play("Idle", -1, 0f);
+
     }
 
     public override void ExitState()

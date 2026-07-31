@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Drawing;
 using Cinemachine;
+using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 
 
@@ -10,7 +11,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     [Header("Fields")]
     [field: SerializeField] public float JumpForce { get; set; }
     [SerializeField] private CinemachineImpulseSource impulseSource;
-    [SerializeField] public Animator animator;
+    [SerializeField] public Animator Animator;
     [SerializeField] private ParticleSystem dustPS;
     [SerializeField] private ParticleSystem _explosionPS;
     [SerializeField] private ParticleSystem _crashSmokePuffPS;
@@ -26,10 +27,10 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     [SerializeField] private GameEvent OnBirdDead;
     [SerializeField] private CineMachineImpulseSourceEvent OnBirdRaiseImpulseSource;
 
-    [HideInInspector]
-    public string BirdState;
-    public Vector3 resetPos;
-    public float resetGravity;
+
+    [HideInInspector] public string BirdState;
+    [HideInInspector] public Vector3 resetPos;
+    [HideInInspector] public float resetGravity;
 
 
     public Rigidbody2D RB { get; set; }
@@ -39,6 +40,8 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     public SpriteRenderer SPRITE { get; set; }
 
     public BirdControls Controls;
+
+    private DataManagerService _dataManager;
 
 
 
@@ -54,6 +57,12 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     #region Mono behavior function
     private void Awake()
     {
+        _dataManager = FindAnyObjectByType<DataManagerService>();
+        if (_dataManager == null)
+        {
+            Debug.Log("Can not get data manager.");
+            return;
+        }
         StateMachine = new BirdStateMachine();
         IdleState = new BirdIdleState(this, StateMachine);
         ResetState = new BirdResetState(this, StateMachine);
@@ -153,7 +162,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     public void Flap()
     {
         OnBirdRaiseSoundEvent.Raise(SoundType.Flap);
-        animator.Play("Flap", -1, 0f);
+        Animator.Play("Flap", -1, 0f);
         PlayDustPS();
     }
 

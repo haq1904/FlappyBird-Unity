@@ -21,7 +21,7 @@ public class BirdResetState : BirdState
 
     public override void ExitState()
     {
-        bird.animator.Rebind();
+        bird.Animator.Rebind();
         bird.SPRITE.color = Color.white;
         bird.transform.DOKill();
     }
@@ -29,7 +29,7 @@ public class BirdResetState : BirdState
     private void HandleReset()
     {
         bird.transform.DOKill();
-        bird.animator.Play("Revive");
+        bird.Animator.Play("Revive");
         bird.RB.linearVelocity = Vector2.zero;
         bird.RB.angularVelocity = 0f;
         bird.transform.rotation = Quaternion.identity;

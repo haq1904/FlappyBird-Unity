@@ -4,7 +4,7 @@ public class BirdDieState : BirdState
 {
     public BirdDieState(BirdBase bird, BirdStateMachine birdStateMachine) : base(bird, birdStateMachine)
     {
-        nameState="Die state";
+        nameState = "Die state";
     }
 
     public override void AnimationTriggerEvent(BirdBase.AnimationTriggerType triggerType)
@@ -20,10 +20,10 @@ public class BirdDieState : BirdState
         bird.PlayExplosionPS();
         bird.BirdDead();
         bird.COL.isTrigger = true;
-        bird.animator.Play("Die", -1, 0f);
+        bird.Animator.Play("Die", -1, 0f);
     }
 
-    public override void ExitState()  
+    public override void ExitState()
     {
         base.ExitState();
         bird.StopCrashSmokePuffPS();
@@ -34,12 +34,12 @@ public class BirdDieState : BirdState
         base.FrameUpdate();
         if (bird.transform.position.y < -15)
         {
-            bird.RB.bodyType =RigidbodyType2D.Kinematic;
+            bird.RB.bodyType = RigidbodyType2D.Kinematic;
             bird.transform.position = new Vector3(bird.transform.position.x, -14, bird.transform.position.z);
             bird.RB.linearVelocity = Vector2.zero;
             bird.RB.angularVelocity = 0f;
         }
-            
+
 
     }
 
