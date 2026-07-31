@@ -905,7 +905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2623483551611964176, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2773096188969994021, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_SizeDelta.x
@@ -998,7 +998,7 @@ PrefabInstance:
     - target: {fileID: 4135287423924792340, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 2bffb8d8559e1764899618469e86c99e, type: 2}
+      objectReference: {fileID: 22100000, guid: 02bb8e31a15ea224d8b1fea1f35ad541, type: 2}
     - target: {fileID: 5095092490317078830, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1037,7 +1037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173513822523926085, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_Alpha
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8357253139845463750, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_Sprite
