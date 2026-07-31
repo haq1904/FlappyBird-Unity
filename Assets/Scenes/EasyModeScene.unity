@@ -1310,7 +1310,7 @@ PrefabInstance:
     - target: {fileID: 4234967112153723315, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 9fd4d56552f2cd14e926b86543af7c68, type: 2}
+      objectReference: {fileID: 22100000, guid: 2bffb8d8559e1764899618469e86c99e, type: 2}
     - target: {fileID: 5483855226019530573, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
       propertyPath: m_Name
       value: MainBird
