@@ -14741,7 +14741,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: FlappyBird.Logic::MainBird
   <JumpForce>k__BackingField: 7
   impulseSource: {fileID: 4129600868175332928}
-  animator: {fileID: 4234967112153723315}
+  Animator: {fileID: 4234967112153723315}
+  _characterDB: {fileID: 11400000, guid: b7e5b7a0822802f4bb5e46b5b7b8ef0c, type: 2}
   dustPS: {fileID: 7311420460666136400}
   _explosionPS: {fileID: 2996574241227128547}
   _crashSmokePuffPS: {fileID: 5724665763675024722}

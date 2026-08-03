@@ -12,6 +12,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     [field: SerializeField] public float JumpForce { get; set; }
     [SerializeField] private CinemachineImpulseSource impulseSource;
     [SerializeField] public Animator Animator;
+    [SerializeField] private CharacterDataBaseService _characterDB;
     [SerializeField] private ParticleSystem dustPS;
     [SerializeField] private ParticleSystem _explosionPS;
     [SerializeField] private ParticleSystem _crashSmokePuffPS;
@@ -57,12 +58,6 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     #region Mono behavior function
     private void Awake()
     {
-        _dataManager = FindAnyObjectByType<DataManagerService>();
-        if (_dataManager == null)
-        {
-            Debug.Log("Can not get data manager.");
-            return;
-        }
         StateMachine = new BirdStateMachine();
         IdleState = new BirdIdleState(this, StateMachine);
         ResetState = new BirdResetState(this, StateMachine);
@@ -70,6 +65,19 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
         PauseState = new BirdPauseState(this, StateMachine);
         DieState = new BirdDieState(this, StateMachine);
         Controls = new BirdControls();
+        if (_characterDB == null)
+        {
+            Debug.Log("Can not get charater database.");
+            return;
+        }
+        _dataManager = FindAnyObjectByType<DataManagerService>();
+        if (_dataManager == null)
+        {
+            Debug.Log("Can not get data manager.");
+            return;
+        }
+        Animator.runtimeAnimatorController = _characterDB.GetCharacterById(_dataManager.GetSelectedSkinId()).AnimController;
+
     }
 
     private void OnEnable()
