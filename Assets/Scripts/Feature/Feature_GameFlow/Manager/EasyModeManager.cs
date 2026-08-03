@@ -37,6 +37,15 @@ public class EasyModeManager : MonoBehaviour
     [SerializeField] private FloatGameEvent OnChangeCoin;
 
     private Transform followTransform;
+    private DataManagerService _dataManager;
+
+    private void Awake()
+    {
+        _dataManager = FindAnyObjectByType<DataManagerService>();
+        if (_dataManager == null)
+            Debug.Log("Can not get data manager.");
+    }
+
     public void Start()
     {
         UpdateGameState(GameState.GameStart);
@@ -77,6 +86,9 @@ public class EasyModeManager : MonoBehaviour
         Vcam1.Follow = null;
         StartCoroutine(HitStop(timeForHitStop));
         UpdateGameState(GameState.GameOver);
+        _dataManager.SaveScore(currPoint);
+        _dataManager.AddCoins(currCoin);
+
     }
 
     public void GamePause()
@@ -94,6 +106,7 @@ public class EasyModeManager : MonoBehaviour
     public void GameRestart()
     {
         UpdateGameState(GameState.GameRestart);
+        _dataManager.SaveScore(currPoint);
         currPoint = 0;
         currCoin = 0;
         HandleChangePoint(0f);
