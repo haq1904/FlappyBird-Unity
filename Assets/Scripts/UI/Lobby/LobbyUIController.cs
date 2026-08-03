@@ -34,6 +34,24 @@ public class LobbyUIController : MonoBehaviour
 
     private void OnEnable()
     {
+        ButtonSubscribeListener();
+        _easyModeBtn.interactable = true;
+        _hardModeBtn.interactable = true;
+    }
+
+    private void OnDisable()
+    {
+        _playBtn.onClick.RemoveAllListeners();
+        _settingBtn.onClick.RemoveAllListeners();
+        _easyModeBtn.onClick.RemoveAllListeners();
+        _hardModeBtn.onClick.RemoveAllListeners();
+        _backSelectBtn.onClick.RemoveAllListeners();
+        _backSoundBtn.onClick.RemoveAllListeners();
+    }
+
+
+    private void ButtonSubscribeListener()
+    {
         //menu button
         _playBtn.onClick.AddListener(() => ChangeComponentPos(_menu, new Vector2(0, -1100), _duration, _moveEase));
         _playBtn.onClick.AddListener(() => ChangeComponentPos(_selectMode, new Vector2(0, -400), _duration, _moveEase));
@@ -61,18 +79,7 @@ public class LobbyUIController : MonoBehaviour
         });
     }
 
-    private void OnDisable()
-    {
-        _playBtn.onClick.RemoveAllListeners();
-        _settingBtn.onClick.RemoveAllListeners();
-        _easyModeBtn.onClick.RemoveAllListeners();
-        _hardModeBtn.onClick.RemoveAllListeners();
-        _backSelectBtn.onClick.RemoveAllListeners();
-        _backSoundBtn.onClick.RemoveAllListeners();
-    }
-
-
-    public void ChangeComponentPos(RectTransform currComponent, Vector2 endPos, float duration, Ease moveEase)
+    private void ChangeComponentPos(RectTransform currComponent, Vector2 endPos, float duration, Ease moveEase)
     {
         currComponent.DOAnchorPos(endPos, duration).SetEase(moveEase).SetLink(gameObject);
     }
@@ -80,6 +87,8 @@ public class LobbyUIController : MonoBehaviour
 
     private void SelectMode(int i)
     {
+        _easyModeBtn.interactable = false;
+        _hardModeBtn.interactable = false;
         if (i == 1)
         {
             LoadEasySceneEvent?.Invoke();
