@@ -54,8 +54,8 @@ public class Custom : MonoBehaviour
             Debug.Log("Can not get Data manager");
             return;
         }
-        Update_UI(_dataManager.GetSelectedSkin());
-        _currShopItemIndex = _shopDatabase.ItemList.FindIndex(x => x.Id == _dataManager.GetSelectedSkin());
+        Update_UI(_dataManager.GetSelectedShopItemId());
+        _currShopItemIndex = _shopDatabase.ItemList.FindIndex(x => x.Id == _dataManager.GetSelectedShopItemId());
     }
     private void OnDisable()
     {
@@ -85,11 +85,11 @@ public class Custom : MonoBehaviour
             _birdAnimator.runtimeAnimatorController = currItem.Character.AnimController;
             _birdAnimator.Play("Shop", -1, 0f);
             _birdName.text = currItem.Character.DisplayName;
-            if (_dataManager.IsSkinUnlocked(currItem.Id))
+            if (_dataManager.IsItemIdUnlocked(currItem.Id))
             {
                 _buyPanel.SetActive(false);
                 _useBtn.gameObject.SetActive(true);
-                if (currItem.Id == _dataManager.GetSelectedSkin())
+                if (currItem.Id == _dataManager.GetSelectedShopItemId())
                 {
                     _useBtn.interactable = false;
                 }
@@ -123,7 +123,7 @@ public class Custom : MonoBehaviour
         ShopItemService currItem = _shopDatabase.ItemList[_currShopItemIndex];
         if (_dataManager.SpendCoins(currItem.Price))
         {
-            _dataManager.UnlockSkin(currItem.Id);
+            _dataManager.UnlockItemId(currItem.Id);
             Update_UI(currItem.Id);
             _statsPanel.Update_UI();
         }
@@ -142,7 +142,8 @@ public class Custom : MonoBehaviour
 
     private void OnClickUse()
     {
-        _dataManager.SetSelectedSkin(_shopDatabase.ItemList[_currShopItemIndex].Id);
+        _dataManager.SetSelectedSkinId(_shopDatabase.ItemList[_currShopItemIndex].Character.Id);
+        _dataManager.SetSelectedShopItemId(_shopDatabase.ItemList[_currShopItemIndex].Id);
         Update_UI(_shopDatabase.ItemList[_currShopItemIndex].Id);
     }
 

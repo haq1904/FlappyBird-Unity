@@ -11,12 +11,14 @@ public abstract class DataManagerService : MonoBehaviour
     public abstract bool SpendCoins(float amount);
 
 
-    public abstract int GetSelectedSkin();
-    public abstract void SetSelectedSkin(int skinID);
+    public abstract int GetSelectedSkinId();
+    public abstract void SetSelectedSkinId(int skinID);
 
+    public abstract int GetSelectedShopItemId();
+    public abstract void SetSelectedShopItemId(int itemID);
 
-    public abstract bool IsSkinUnlocked(int skinID);
-    public abstract void UnlockSkin(int skinID);
+    public abstract bool IsItemIdUnlocked(int skinID);
+    public abstract void UnlockItemId(int skinID);
 
 
     public abstract float GetVolume();
