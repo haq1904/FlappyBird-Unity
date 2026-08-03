@@ -2,8 +2,8 @@ using UnityEngine;
 
 public abstract class DataManagerService : MonoBehaviour
 {
-    public abstract int GetBestScore();
-    public abstract void SaveScore(int currentScore);
+    public abstract float GetBestScore();
+    public abstract void SaveScore(float currentScore);
 
 
     public abstract float GetCoins();

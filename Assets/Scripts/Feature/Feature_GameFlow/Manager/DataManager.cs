@@ -7,16 +7,16 @@ public class DataManager : DataManagerService
         DontDestroyOnLoad(gameObject);
     }
 
-    public override int GetBestScore()
+    public override float GetBestScore()
     {
-        return PlayerPrefs.GetInt("BestScore", 0);
+        return PlayerPrefs.GetFloat("BestScore", 0);
     }
 
-    public override void SaveScore(int currentScore)
+    public override void SaveScore(float currentScore)
     {
         if (currentScore > GetBestScore())
         {
-            PlayerPrefs.SetInt("BestScore", currentScore);
+            PlayerPrefs.SetFloat("BestScore", currentScore);
             PlayerPrefs.Save();
         }
     }
