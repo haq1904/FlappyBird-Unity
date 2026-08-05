@@ -63,8 +63,8 @@ public class LoadingScreenController : MonoBehaviour
                 _scrollUp.SetActive(false);
                 _scrollDown.GetComponent<RectTransform>().anchoredPosition = _resetPos;
                 _scrollUp.GetComponent<RectTransform>().anchoredPosition = _resetPos;
-            });
-        });
+            }).SetUpdate(true);
+        }).SetUpdate(true);
     }
 
     public void LoadingScrollDown(bool isAutoOff)
@@ -91,7 +91,7 @@ public class LoadingScreenController : MonoBehaviour
             if (isAutoOff)
                 scrollType.GetComponent<RectTransform>().anchoredPosition = _resetPos;
 
-        });
+        }).SetUpdate(true);
     }
 
     public float GetMinimumMoveDuration()
