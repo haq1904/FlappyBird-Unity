@@ -1,5 +1,7 @@
 using System.Collections;
 using Cinemachine;
+using DG.DOTweenEditor;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 public class EasyModeManager : MonoBehaviour
@@ -105,14 +107,19 @@ public class EasyModeManager : MonoBehaviour
 
     public void GameRestart()
     {
-        UpdateGameState(GameState.GameRestart);
-        _dataManager.SaveScore(currPoint);
-        currPoint = 0;
-        currCoin = 0;
-        HandleChangePoint(0f);
-        HandleChangeCoin(0f);
-        Time.timeScale = 1f;
-        Vcam1.Follow = vcamTarget.transform;
+        LoadingScreenController.Instance.LoadingBoth();
+        DOVirtual.DelayedCall(LoadingScreenController.Instance.GetMinimumMoveDuration(), () =>
+        {
+            UpdateGameState(GameState.GameRestart);
+            Time.timeScale = 1;
+            _dataManager.SaveScore(currPoint);
+            currPoint = 0;
+            currCoin = 0;
+            HandleChangePoint(0f);
+            HandleChangeCoin(0f);
+            Vcam1.Follow = vcamTarget.transform;
+        });
+
     }
 
     public void StartFlying()
@@ -123,7 +130,8 @@ public class EasyModeManager : MonoBehaviour
 
     public void BackHome()
     {
-        Debug.Log("Back to loppy");
+        SceneController.Instance.LoadScene(1);
+        Time.timeScale = 1;
     }
 
     private IEnumerator HitStop(float duration)
