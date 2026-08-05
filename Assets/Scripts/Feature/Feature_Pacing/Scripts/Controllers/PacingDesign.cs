@@ -1,8 +1,8 @@
-using DG.Tweening;
-using JetBrains.Annotations;
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using DG.Tweening;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class PacingDesign : MonoBehaviour
@@ -41,8 +41,14 @@ public class PacingDesign : MonoBehaviour
         Two
     }
 
-    private Sequence mainSequence,finalSequence;
-   
+    private void OnDisable()
+    {
+        mainSequence?.Kill();
+        finalSequence?.Kill();
+    }
+
+    private Sequence mainSequence, finalSequence;
+
     public void StartGame()//Receives event from EasyModeManager
     {
         PlayScenarios();
@@ -63,11 +69,11 @@ public class PacingDesign : MonoBehaviour
     {
         mainSequence = DOTween.Sequence();
         CreateFinalSequence();
-       
-        
+
+
         if (!isTest)
         {   //Main scenario
-            mainSequence.Append(BuildScenario(easyScenario[0],15));
+            mainSequence.Append(BuildScenario(easyScenario[0], 15));
             mainSequence.AppendInterval(3.5f);
             mainSequence.Append(BuildScenario(normalScenario[0], 25));
             mainSequence.AppendInterval(1f);
@@ -85,9 +91,9 @@ public class PacingDesign : MonoBehaviour
         }
         else
         {
-            switch (modeIsTest,typeMode)
+            switch (modeIsTest, typeMode)
             {
-                case (Mode.Easy,TypeMode.One):
+                case (Mode.Easy, TypeMode.One):
                     mainSequence.Append(BuildScenario(easyScenario[0], 30));
                     break;
                 case (Mode.Easy, TypeMode.Two):
@@ -110,14 +116,13 @@ public class PacingDesign : MonoBehaviour
 
     }
 
-    private Sequence BuildScenario(PacingScenario currScenario, float duration )
+    private Sequence BuildScenario(PacingScenario currScenario, float duration)
     {
-        
+
         ObstacleService obstacle;
         int loopCount = Mathf.RoundToInt(duration / currScenario.timeToSpawn);//Get number of loop by separate time to spawn with duration
 
         Sequence mainSequence = DOTween.Sequence();
-
         Sequence pipeAndCoinSeq = DOTween.Sequence();
 
 
@@ -126,7 +131,7 @@ public class PacingDesign : MonoBehaviour
         {
             //get random allowed pipe from scenario
             obstacle = currScenario.allowedPipe[UnityEngine.Random.Range(0, currScenario.allowedPipe.Count())];
-            SpawnPipe(obstacle, transform.position, Quaternion.identity, currScenario.moveSpeed);           
+            SpawnPipe(obstacle, transform.position, Quaternion.identity, currScenario.moveSpeed);
         });
         pipeAndCoinSeq.AppendInterval(_delayTimeToSpawnCoin);
         pipeAndCoinSeq.AppendCallback(() => SpawnCoin(currScenario.moveSpeed));
@@ -139,13 +144,14 @@ public class PacingDesign : MonoBehaviour
 
 
         //insert action(spawn Warning sign or AttakingBird) to main sequence by time( independ from spawning pipe and coin : easier to control)
-        if (duration >= 10 )//&& UnityEngine.Random.value < 0.5f)
+        if (duration >= 10)//&& UnityEngine.Random.value < 0.5f)
         {
-            float birdCount = UnityEngine.Random.Range(2, 5); 
+            float birdCount = UnityEngine.Random.Range(2, 5);
             for (int i = 2; i <= birdCount; i++)
             {
                 float randSpawnTime = UnityEngine.Random.Range(0f, duration);
-                mainSequence.InsertCallback(randSpawnTime, () => { 
+                mainSequence.InsertCallback(randSpawnTime, () =>
+                {
                     Warning signClone = SpawnWarningSign();
                     if (signClone.DurationToFollow != 0)
                     {
@@ -159,9 +165,9 @@ public class PacingDesign : MonoBehaviour
                     {
                         Debug.Log("Pacing Design can not get delay time from sign clone.");
                     }
-                    
+
                 });
-                
+
             }
         }
         return mainSequence;
@@ -194,7 +200,7 @@ public class PacingDesign : MonoBehaviour
     {
         float randCoinHeight = UnityEngine.Random.Range(_currPipeHeight - 1.6f, _currPipeHeight + 1.6f);
         int randQuantity = UnityEngine.Random.Range(0, 6);
-        for (int i = 0; i < randQuantity;i++) 
+        for (int i = 0; i < randQuantity; i++)
         {
             //use x value of PacingDesign to place coin with the same distance(by i).
             float calculatedPosX = transform.position.x + i * _distanceBetweenCoin;
@@ -204,10 +210,10 @@ public class PacingDesign : MonoBehaviour
         }
     }
 
-    private void SpawnAttackingBird(float speedToSet,Warning signClone)
+    private void SpawnAttackingBird(float speedToSet, Warning signClone)
     {
         Vector3 posToSpawn = new Vector3(transform.position.x, signClone.LastPosition.y, transform.position.z);
-        GameObject attackingBirdClone = Instantiate(_attackingBird, posToSpawn,Quaternion.Euler(0,0,20f));
+        GameObject attackingBirdClone = Instantiate(_attackingBird, posToSpawn, Quaternion.Euler(0, 0, 20f));
     }
 
     private Warning SpawnWarningSign()
@@ -217,7 +223,7 @@ public class PacingDesign : MonoBehaviour
         signClone.SetTarget(_mainBird);
         return signClone;
     }
-    
+
 }
 
 
