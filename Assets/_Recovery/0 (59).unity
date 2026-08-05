@@ -7186,10 +7186,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main_Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2365192245365824532, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3176583055682235241, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7269,22 +7265,6 @@ PrefabInstance:
     - target: {fileID: 3176583055682235241, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3679188088546822771, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 0.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 3843843626879296293, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4717855120118330475, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 0.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907972548604354870, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6184677052186162658, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
       propertyPath: m_Camera
