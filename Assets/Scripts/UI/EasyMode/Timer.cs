@@ -1,6 +1,7 @@
+using System.Collections.Generic;
+using System.Linq;
 using Codice.Client.Common.GameUI;
 using DG.Tweening;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,99 +10,86 @@ using UnityEngine.Events;
 public class Timer : MonoBehaviour
 {
     [Header("Events")]
-    [SerializeField] private UnityEvent OnTimerDoneEvent; 
+    [SerializeField] private UnityEvent OnTimerDoneEvent;
 
     [Header("Game objects")]
-    [SerializeField] private RectTransform panel;
-    [SerializeField] private GameObject[] birds;
-    [SerializeField] private CanvasGroup canvasGroupTimer;
+    [SerializeField] private RectTransform _panel;
+    [SerializeField] private GameObject[] _birds;
 
     [Header("Fields")]
-    [SerializeField] private float duration=1f;
-    [SerializeField] private float timeToCountdown = 1;
+    [SerializeField] private float _duration = 1f;
+    [SerializeField] private float _timeToCountdown = 1;
+    [SerializeField] private GameObject _botMarker;
 
     [Header("Shake")]
     [SerializeField] float _durationForShake = 1;
-    [SerializeField] Vector2 streght = new Vector2(5,5);
-    [SerializeField] float vibrato = 10;
-    [SerializeField] int randomness = 90;
+    [SerializeField] Vector2 _streght = new Vector2(5, 5);
+    [SerializeField] int _vibrato = 10;
+    [SerializeField] int _randomness = 90;
+
+    [Header("Jump fields")]
+    [SerializeField] private int _numJump;
+    [SerializeField] private float _jumpDuration;
 
 
-    private Ease moveEase = Ease.InOutBack;
-    private List<Vector3> resetBirdsPos;
-    private Sequence mainSequence;
+    private Ease _moveEase = Ease.InOutBack;
+    private List<Vector3> _resetBirdsPos;
+    private Sequence _mainSequence;
+    private Vector3 _panelResetPos;
 
     private void Awake()
     {
-        resetBirdsPos = new List<Vector3>();
-        for(int i = 0; i < birds.Length; i++)
+        _resetBirdsPos = new List<Vector3>();
+        _panelResetPos = _panel.anchoredPosition;
+        for (int i = 0; i < _birds.Length; i++)
         {
-            resetBirdsPos.Add(birds[i].transform.localPosition);
+            _resetBirdsPos.Add(_birds[i].GetComponent<RectTransform>().anchoredPosition);
         }
+
     }
-    
-    public void TurnOn()
+
+    private void OnEnable()
     {
-        gameObject.SetActive(true);
         Play();
     }
 
-    public void TurnOff()
+    private void OnDisable()
     {
-        panel.anchoredPosition = new Vector3(0, 200, 0);
-        mainSequence.Kill();
-        gameObject.SetActive(false);
-    }
+        _mainSequence.Kill();
+        HandleResetBird();
+        _panel.anchoredPosition = _panelResetPos;
 
+    }
 
     private void Play()
     {
-        canvasGroupTimer.alpha = 1;
-        ResetBirds();
-        mainSequence = DOTween.Sequence();
-        mainSequence.Append(panel.DOAnchorPos(new Vector2(0, -248), duration).SetEase(moveEase));
-
-
-        for (int i = 0; i < birds.Length; i++)
+        _mainSequence = DOTween.Sequence();
+        _mainSequence.Append(_panel.DOAnchorPosY(-200f, _duration).SetEase(_moveEase));
+        float jumpTime = _duration;
+        for (int i = 0; i < _birds.Count(); i++)
         {
-            int index = i;
-            mainSequence.AppendCallback(() =>
-            {
-                float randX = UnityEngine.Random.Range(-2, 2);
-                float randY = UnityEngine.Random.Range(2, 4);
-                Rigidbody2D rb = birds[index].GetComponent<Rigidbody2D>();
-                rb.bodyType = RigidbodyType2D.Dynamic;
-                rb.AddForce(new Vector2(randX, randY), ForceMode2D.Impulse);
-                rb.angularVelocity = 200f;
-                panel.DOShakeAnchorPos(_durationForShake, vibrato, randomness, snapping : false, fadeOut : true);
 
-            });
-            mainSequence.AppendInterval(timeToCountdown);
+            RectTransform birdRect = _birds[i].GetComponent<RectTransform>();
+            Vector2 randEndValue = new Vector2(Random.Range(-3f, 3f), _botMarker.transform.position.y);
+            float randJumPower = Random.Range(9f, 11f);
+            _mainSequence.Insert(jumpTime, birdRect.DOJump(randEndValue, randJumPower, 1, _jumpDuration));
+            _mainSequence.Insert(jumpTime, _panel.DOShakeAnchorPos(_durationForShake, _streght, _vibrato, _randomness));
+            jumpTime += _timeToCountdown;
+
         }
-        mainSequence.AppendCallback(() => {
-            OnTimerDoneEvent?.Invoke();
-        }
-        );
-        mainSequence.AppendInterval(0.8f);
-
-        mainSequence.Append(panel.DOAnchorPos(new Vector2(0, 184), duration).SetEase(moveEase));
-
-        mainSequence.AppendCallback(() => {
-            canvasGroupTimer.alpha = 0;
-            TurnOff();
-            });
+        _mainSequence.Append(_panel.DOAnchorPos(_panelResetPos, _duration).SetEase(_moveEase));
+        _mainSequence.AppendCallback(() =>
+        {
+            HandleResetBird();
+        });
     }
 
-    private void ResetBirds()
+    private void HandleResetBird()
     {
-        for (int i = 0; i < birds.Length; i++)
+        for (int i = 0; i < _birds.Count(); i++)
         {
-            birds[i].transform.localPosition = resetBirdsPos[i];
-            Rigidbody2D rb = birds[i].GetComponent<Rigidbody2D>();
-            birds[i].transform.eulerAngles = Vector3.zero;
-            rb.angularVelocity = 0f;
-            rb.bodyType = RigidbodyType2D.Kinematic;
-            rb.linearVelocity = Vector2.zero;
+            RectTransform birdRect = _birds[i].GetComponent<RectTransform>();
+            birdRect.anchoredPosition = _resetBirdsPos[i];
         }
     }
 }

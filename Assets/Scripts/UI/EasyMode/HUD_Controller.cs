@@ -14,7 +14,7 @@ public class HUD_Controller : MonoBehaviour
     [SerializeField] private Button pauseBtn;
     [SerializeField] private Pause_Panel pausePanel;
     [SerializeField] private PlayerStats_Controller stats;
-    [SerializeField] private Timer timer;
+    [SerializeField] private GameObject timer;
     private void Start()
     {
         pauseBtn.onClick.AddListener(TogglePauseMenu);
@@ -29,7 +29,7 @@ public class HUD_Controller : MonoBehaviour
 
     public void HandleCountDown()
     {
-        timer.TurnOn();
+        timer.SetActive(true);
     }
 
     public void HandleChangePoint(float point)
@@ -37,14 +37,14 @@ public class HUD_Controller : MonoBehaviour
         stats.HandleChangePoint(point);
     }
 
-    public void HandleChangeCoin(float coin) 
+    public void HandleChangeCoin(float coin)
     {
         stats.HandleChangeCoin(coin);
     }
 
     public void HandleRestart()
     {
-        timer.TurnOff();
+        timer.SetActive(false);
         HandleCountDown();
     }
 }

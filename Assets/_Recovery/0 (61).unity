@@ -7393,7 +7393,7 @@ PrefabInstance:
       objectReference: {fileID: 1655599177}
     - target: {fileID: 6225225335150245931, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
       propertyPath: _endXValue
-      value: 5.55
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6225225335150245931, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
       propertyPath: _jumpPower
@@ -7409,7 +7409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6225225335150245931, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
       propertyPath: _timeToCountdown
-      value: 0.4
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 6225225335150245931, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
       propertyPath: _birds.Array.size
