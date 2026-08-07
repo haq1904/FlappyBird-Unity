@@ -40,6 +40,7 @@ public class LoadingScreenController : MonoBehaviour
     //use this function for receiving event from scene manager(belong to unity)
     private void HandleLoadScene(Scene scene, LoadSceneMode loadSceneMode)
     {
+        _scrollDown.transform.DOKill();
         _scrollDown.SetActive(false);
         _scrollDown.GetComponent<RectTransform>().anchoredPosition = _resetPos;
         LoadingScrollUp();
