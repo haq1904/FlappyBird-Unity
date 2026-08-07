@@ -1,6 +1,5 @@
 using System.Collections;
 using Cinemachine;
-using DG.DOTweenEditor;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;

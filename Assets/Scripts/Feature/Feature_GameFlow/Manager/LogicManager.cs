@@ -1,6 +1,5 @@
-using UnityEngine;
 using System;
-
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LogicManager : MonoBehaviour
@@ -10,11 +9,11 @@ public class LogicManager : MonoBehaviour
     public static LogicManager Instance;
     public GameState State;
 
-    
+
 
     private void Awake()
     {
-        
+        Application.targetFrameRate = 60;
         if (Instance == null)
         {
             Instance = this;
@@ -38,14 +37,15 @@ public class LogicManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            
+
         }
-        
+
     }
 
-    
 
-    private void OnEnable(){        
+
+    private void OnEnable()
+    {
     }
 
     private void OnDisable()
@@ -53,8 +53,9 @@ public class LogicManager : MonoBehaviour
     }
 
 
-    
-    public void Lobby(){
+
+    public void Lobby()
+    {
         UpdateGameState(GameState.Lobby);
     }
 
@@ -67,7 +68,7 @@ public class LogicManager : MonoBehaviour
     {
         UpdateGameState(GameState.HardMode);
     }
-    
+
 
     public void UpdateGameState(GameState newState)
     {
@@ -76,14 +77,14 @@ public class LogicManager : MonoBehaviour
         {
             case GameState.Lobby:
                 SceneController.Instance.LoadScene(1);
-                break; 
+                break;
             case GameState.EasyMode:
                 SceneController.Instance.LoadScene(2);
                 break;
             case GameState.HardMode:
                 SceneController.Instance.LoadScene(3);
                 break;
-            
+
         }
 
     }

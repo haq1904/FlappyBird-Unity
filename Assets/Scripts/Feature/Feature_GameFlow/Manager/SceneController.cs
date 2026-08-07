@@ -1,7 +1,6 @@
 ﻿
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
-using Codice.Client.Common.GameUI;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;

@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Drawing;
 using Cinemachine;
-using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 
 

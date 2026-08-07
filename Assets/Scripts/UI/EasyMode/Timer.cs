@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Codice.Client.Common.GameUI;
 using DG.Tweening;
 using UnityEditor;
 using UnityEngine;

@@ -1,13 +1,12 @@
-    
-using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine.Pool;
-using UnityEditor;
+
 using System;
+using System.Collections.Generic;
 using NUnit.Framework.Api;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using Unity.VisualScripting;
-using UnityEditor.Animations;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.Pool;
 
 
 public class ObjectPoolingManager : MonoBehaviour
@@ -115,14 +114,14 @@ public class ObjectPoolingManager : MonoBehaviour
         }
     }
 
-    private static T SpawnObject<T>(GameObject objToSpawn, Vector3 spawnPos, Quaternion spawnRot, PoolType poolType = PoolType.GameObject ) where T : UnityEngine.Object
+    private static T SpawnObject<T>(GameObject objToSpawn, Vector3 spawnPos, Quaternion spawnRot, PoolType poolType = PoolType.GameObject) where T : UnityEngine.Object
     {
         if (!_objectPools.ContainsKey(objToSpawn))
             CreatePool(objToSpawn, spawnPos, spawnRot, poolType);
 
         GameObject obj = _objectPools[objToSpawn].Get();
 
-        if(obj != null)
+        if (obj != null)
         {
             if (!_cloneToPrefabMap.ContainsKey(obj))
                 _cloneToPrefabMap.Add(obj, objToSpawn);
@@ -135,7 +134,7 @@ public class ObjectPoolingManager : MonoBehaviour
                 return obj as T;
 
             T component = obj.GetComponent<T>();
-            if( component == null)
+            if (component == null)
             {
                 Debug.LogError($"The object {objToSpawn.name} doesn't have component type of {typeof(T)} ");
                 return null;
@@ -151,21 +150,21 @@ public class ObjectPoolingManager : MonoBehaviour
         return SpawnObject<T>(typePrefab, spawnPos, spawnRot, poolType);
     }
 
-    public static GameObject SpawnObject(GameObject typePrefab, Vector3 spawnPos, Quaternion spawnRot, PoolType poolType = PoolType.GameObject) 
+    public static GameObject SpawnObject(GameObject typePrefab, Vector3 spawnPos, Quaternion spawnRot, PoolType poolType = PoolType.GameObject)
     {
         return SpawnObject<GameObject>(typePrefab, spawnPos, spawnRot, poolType);
     }
 
-    public static void ReturnObjectToPool(GameObject obj , PoolType poolType = PoolType.GameObject)
+    public static void ReturnObjectToPool(GameObject obj, PoolType poolType = PoolType.GameObject)
     {
-        if(_cloneToPrefabMap.TryGetValue(obj,out GameObject prefab))
+        if (_cloneToPrefabMap.TryGetValue(obj, out GameObject prefab))
         {
             GameObject parentObject = SetParentObject(poolType);
-            if(obj.transform.parent != parentObject)
+            if (obj.transform.parent != parentObject)
             {
                 obj.transform.SetParent(parentObject.transform);
             }
-            if(_objectPools.TryGetValue(prefab, out ObjectPool<GameObject> pool))
+            if (_objectPools.TryGetValue(prefab, out ObjectPool<GameObject> pool))
             {
                 pool.Release(obj);
             }
