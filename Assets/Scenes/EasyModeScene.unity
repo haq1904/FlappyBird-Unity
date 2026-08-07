@@ -1337,7 +1337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5483855226019530573, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6633233432709129290, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
       propertyPath: m_Size.x
@@ -1520,7 +1520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -677.46204}
+  m_AnchoredPosition: {x: 0, y: -579.563}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &1691810338 stripped
@@ -2091,7 +2091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1122600913447070357, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4375144097674066273, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
       propertyPath: _mainBird
@@ -7413,7 +7413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6225225335150245931, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
       propertyPath: _jumpDuration
-      value: 1.8
+      value: 2.69
       objectReference: {fileID: 0}
     - target: {fileID: 6225225335150245931, guid: ec0b6ea73f8e8324d938686fad311be0, type: 3}
       propertyPath: _timeToCountdown
