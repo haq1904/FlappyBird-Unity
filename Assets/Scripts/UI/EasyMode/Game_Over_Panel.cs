@@ -59,7 +59,7 @@ public class Game_Over_Panel : MonoBehaviour
         s.AppendInterval(1f);
         s.AppendCallback(() =>
         {
-            gameOverMenu.DOAnchorPos(new Vector2(0, 500), 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
+            gameOverMenu.DOLocalMove(Vector2.zero, 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
             ButtonInteractable(true);
         });
     }

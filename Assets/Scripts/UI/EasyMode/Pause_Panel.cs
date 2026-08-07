@@ -71,7 +71,7 @@ public class Pause_Panel : MonoBehaviour
     public void TurnOn()
     {
         gameObject.SetActive(true);
-        pauseMenu.DOAnchorPos(new Vector2(0, 500), 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
+        pauseMenu.DOLocalMove(Vector2.zero, 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
         blocker.SetActive(true);
         ButtonInteractable(true);
     }
