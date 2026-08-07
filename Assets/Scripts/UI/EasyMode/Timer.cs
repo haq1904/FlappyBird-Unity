@@ -65,13 +65,15 @@ public class Timer : MonoBehaviour
     {
         _mainSequence = DOTween.Sequence();
         _mainSequence.Append(_panel.DOAnchorPosY(-200f, _duration).SetEase(_moveEase));
+
         float jumpTime = _duration;
         for (int i = 0; i < _birds.Count(); i++)
         {
-
             RectTransform birdRect = _birds[i].GetComponent<RectTransform>();
+            float randRotateZValue = Random.Range(Random.Range(-1080, -360), Random.Range(360, 1080));
             Vector2 randEndValue = new Vector2(Random.Range(-3f, 3f), _botMarker.transform.position.y);
             float randJumPower = Random.Range(9f, 11f);
+            _mainSequence.Insert(jumpTime, birdRect.DOLocalRotate(new Vector3(0, 0, randRotateZValue), _jumpDuration, RotateMode.FastBeyond360).SetEase(Ease.InQuad));
             _mainSequence.Insert(jumpTime, birdRect.DOJump(randEndValue, randJumPower, 1, _jumpDuration));
             _mainSequence.Insert(jumpTime, _panel.DOShakeAnchorPos(_durationForShake, _streght, _vibrato, _randomness));
             jumpTime += _timeToCountdown;
@@ -90,6 +92,7 @@ public class Timer : MonoBehaviour
         {
             RectTransform birdRect = _birds[i].GetComponent<RectTransform>();
             birdRect.anchoredPosition = _resetBirdsPos[i];
+            birdRect.rotation = Quaternion.identity;
         }
     }
 }
