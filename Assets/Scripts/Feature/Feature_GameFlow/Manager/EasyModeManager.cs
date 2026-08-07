@@ -131,7 +131,6 @@ public class EasyModeManager : MonoBehaviour
     public void BackHome()
     {
         SceneController.Instance.LoadScene(1);
-        Time.timeScale = 1;
     }
 
     private IEnumerator HitStop(float duration)

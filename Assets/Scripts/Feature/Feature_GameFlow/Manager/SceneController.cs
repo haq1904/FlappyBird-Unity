@@ -38,6 +38,7 @@ public class SceneController : MonoBehaviour
         await Task.Delay((int)LoadingScreenController.Instance.GetMinimumMoveDuration() * 1000);
 
         scene.allowSceneActivation = true;
+        Time.timeScale = 1;
 
 
     }
