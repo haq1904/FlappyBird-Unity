@@ -54,9 +54,9 @@ public class LobbyUIController : MonoBehaviour
     {
         //menu button
         _playBtn.onClick.AddListener(() => ChangeComponentPos(_menu, new Vector2(0, -1100), _duration, _moveEase));
-        _playBtn.onClick.AddListener(() => ChangeComponentPos(_selectMode, new Vector2(0, -400), _duration, _moveEase));
+        _playBtn.onClick.AddListener(() => MoveToCenter(_selectMode, _duration, _moveEase));
         _settingBtn.onClick.AddListener(() => ChangeComponentPos(_menu, new Vector2(0, 1100), _duration, _moveEase));
-        _settingBtn.onClick.AddListener(() => ChangeComponentPos(_soundMenu, new Vector2(0, 550), _duration, _moveEase));
+        _settingBtn.onClick.AddListener(() => MoveToCenter(_soundMenu, _duration, _moveEase));
         _customBtn.onClick.AddListener(() =>
         {
             _custom.gameObject.SetActive(true);
@@ -66,11 +66,11 @@ public class LobbyUIController : MonoBehaviour
         //select mode button
         _easyModeBtn.onClick.AddListener(() => SelectMode(1));
         _hardModeBtn.onClick.AddListener(() => SelectMode(2));
-        _backSelectBtn.onClick.AddListener(() => ChangeComponentPos(_selectMode, new Vector2(0, 796), _duration, _moveEase));
-        _backSelectBtn.onClick.AddListener(() => ChangeComponentPos(_menu, Vector2.zero, _duration, _moveEase));
+        _backSelectBtn.onClick.AddListener(() => ChangeComponentPos(_selectMode, new Vector2(0, 250), _duration, _moveEase));
+        _backSelectBtn.onClick.AddListener(() => MoveToCenter(_menu, _duration, _moveEase));
         //sound menu button
         _backSoundBtn.onClick.AddListener(() => ChangeComponentPos(_soundMenu, new Vector2(0, -400), _duration, _moveEase));
-        _backSoundBtn.onClick.AddListener(() => ChangeComponentPos(_menu, Vector2.zero, _duration, _moveEase));
+        _backSoundBtn.onClick.AddListener(() => MoveToCenter(_menu, _duration, _moveEase));
         //custom button
         _backCustomBtn.onClick.AddListener(() =>
         {
@@ -82,6 +82,11 @@ public class LobbyUIController : MonoBehaviour
     private void ChangeComponentPos(RectTransform currComponent, Vector2 endPos, float duration, Ease moveEase)
     {
         currComponent.DOAnchorPos(endPos, duration).SetEase(moveEase).SetLink(gameObject);
+    }
+
+    private void MoveToCenter(RectTransform currComponent, float duration, Ease moveEase)
+    {
+        currComponent.DOLocalMove(Vector2.zero, duration).SetEase(moveEase).SetLink(gameObject);
     }
 
 
