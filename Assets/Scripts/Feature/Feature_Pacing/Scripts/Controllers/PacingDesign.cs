@@ -45,6 +45,7 @@ public class PacingDesign : MonoBehaviour
     {
         mainSequence?.Kill();
         finalSequence?.Kill();
+        DOTween.Kill("SpawningBird");
     }
 
     private Sequence mainSequence, finalSequence;
@@ -159,7 +160,7 @@ public class PacingDesign : MonoBehaviour
                         DOVirtual.DelayedCall(delayTimeToSpawnAttackingBird + 0.1f, () =>//use DelayedCall of DOVirtual when i just want to have a time delay to do something. 
                         {
                             SpawnAttackingBird(currScenario.moveSpeed + 2, signClone);
-                        }).SetTarget(signClone);
+                        }).SetId("SpawningBird").SetLink(gameObject);
                     }
                     else
                     {
