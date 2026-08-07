@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Game_Over_Panel : MonoBehaviour
 {
@@ -16,20 +16,25 @@ public class Game_Over_Panel : MonoBehaviour
     [SerializeField] private Button restart;
     [SerializeField] private Button backHome;
 
-    private void Start()
+    private void OnEnable()
     {
-
         restart.onClick.AddListener(Restart);
         backHome.onClick.AddListener(BackHome);
     }
 
+    private void OnDisable()
+    {
+        restart.onClick.RemoveAllListeners();
+        backHome.onClick.RemoveAllListeners();
+    }
 
     public void Restart()
     {
         Sequence s = DOTween.Sequence();
         s.SetUpdate(true);
         s.AppendInterval(0.15f);
-        s.AppendCallback(() => {
+        s.AppendCallback(() =>
+        {
             TurnOff();
             OnRestart?.Invoke();
         }
@@ -54,13 +59,21 @@ public class Game_Over_Panel : MonoBehaviour
         s.AppendInterval(1f);
         s.AppendCallback(() =>
         {
-            gameOverMenu.DOAnchorPos(new Vector2(0,500), 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
+            gameOverMenu.DOAnchorPos(new Vector2(0, 500), 1f).SetEase(Ease.OutCirc).SetLink(gameObject).SetUpdate(true);
+            ButtonInteractable(true);
         });
     }
 
     public void TurnOff()
     {
         gameOverMenu.anchoredPosition = new Vector3(0, -500, 0);
+        ButtonInteractable(false);
         gameObject.SetActive(false);
+    }
+
+    private void ButtonInteractable(bool isInteractable)
+    {
+        restart.interactable = isInteractable;
+        backHome.interactable = isInteractable;
     }
 }
