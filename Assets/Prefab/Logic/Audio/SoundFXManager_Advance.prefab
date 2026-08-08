@@ -182,3 +182,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 036f1e052b3b5ea489ad0ebf0f16e97b, type: 3}
     - {fileID: 8300000, guid: 11aacce835e37ec408c6605158970df2, type: 3}
     - {fileID: 8300000, guid: f91d4d5b41b3f324abe6c832d9bf0601, type: 3}
+  - name: TakeCoin
+    sounds: []
+  - name: Click
+    sounds:
+    - {fileID: 8300000, guid: 75388801b1f01f44bbe8e5912e3d9b28, type: 3}

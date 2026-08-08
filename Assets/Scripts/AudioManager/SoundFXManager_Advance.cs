@@ -5,9 +5,11 @@ public enum SoundType
 {
     Flap,
     TakePoint,
+    TakeCoin,
+    Click
 }
 
-[RequireComponent(typeof(AudioSource)),ExecuteInEditMode]
+[RequireComponent(typeof(AudioSource)), ExecuteInEditMode]
 public class SoundFXManager_Advance : MonoBehaviour
 {
     public static SoundFXManager_Advance Instance;
@@ -31,10 +33,19 @@ public class SoundFXManager_Advance : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-    private void OnEnable()
+    private void OnValidate()
     {
         string[] name = Enum.GetNames(typeof(SoundType));
-        Array.Resize(ref soundList, name.Length);
+
+        if (soundList == null)
+        {
+            soundList = new SoundList[name.Length];
+        }
+        else if (soundList.Length != name.Length)
+        {
+            Array.Resize(ref soundList, name.Length);
+        }
+
         for (int i = 0; i < name.Length; i++)
         {
             soundList[i].name = name[i];
