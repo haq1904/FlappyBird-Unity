@@ -4,6 +4,7 @@ using DG.Tweening;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 
 public class Timer : MonoBehaviour
@@ -19,6 +20,8 @@ public class Timer : MonoBehaviour
     [SerializeField] private float _duration = 1f;
     [SerializeField] private float _timeToCountdown = 1;
     [SerializeField] private GameObject _botMarker;
+    [SerializeField] private CharacterDataBaseService _characterDB;
+
 
     [Header("Shake")]
     [SerializeField] float _durationForShake = 1;
@@ -36,13 +39,18 @@ public class Timer : MonoBehaviour
     private Sequence _mainSequence;
     private Vector3 _panelResetPos;
 
+    private DataManager _dataManager;
+
     private void Awake()
     {
+        _dataManager = FindAnyObjectByType<DataManager>();
         _resetBirdsPos = new List<Vector3>();
         _panelResetPos = _panel.anchoredPosition;
         for (int i = 0; i < _birds.Length; i++)
         {
             _resetBirdsPos.Add(_birds[i].GetComponent<RectTransform>().anchoredPosition);
+            Image birdImage = _birds[i].GetComponent<Image>();
+            birdImage.sprite = _characterDB.GetCharacterById(_dataManager.GetSelectedSkinId()).DisplaySprite;
         }
 
     }

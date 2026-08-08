@@ -1307,6 +1307,10 @@ PrefabInstance:
       propertyPath: Animator
       value: 
       objectReference: {fileID: 1432277166}
+    - target: {fileID: 1894527559215218651, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
+      propertyPath: _whiteMaterial
+      value: 
+      objectReference: {fileID: 8944772768456356939, guid: a1425c7ec7088e9418ae5fe0efbcfcbb, type: 2}
     - target: {fileID: 4234967112153723315, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1331,6 +1335,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6633233432709129290, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2164,7 +2172,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 88
+      scalar: 3.53
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2217,8 +2225,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.43
-      minScalar: 0.4
+      scalar: 4.91
+      minScalar: 10.06
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2918,7 +2926,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.5
+      scalar: 64.7
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -3539,7 +3547,7 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
