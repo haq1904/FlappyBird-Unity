@@ -70,7 +70,7 @@ public class Timer : MonoBehaviour
         {
             _birds[i].SetActive(true);
             RectTransform birdRect = _birds[i].GetComponent<RectTransform>();
-            float randRotateZValue = Random.value > 0.5f ? Random.Range(-1080, 360) : Random.Range(360, 1080);
+            float randRotateZValue = Random.value > 0.5f ? Random.Range(-1080, -360) : Random.Range(360, 1080);
             Vector2 randEndValue = new Vector2(Random.Range(-3f, 3f), _botMarker.transform.position.y);
             float randJumPower = Random.Range(9f, 11f);
             _mainSequence.Insert(jumpTime, birdRect.DOLocalRotate(new Vector3(0, 0, randRotateZValue), _jumpDuration, RotateMode.FastBeyond360).SetEase(Ease.InQuad));
@@ -82,6 +82,7 @@ public class Timer : MonoBehaviour
                 _mainSequence.InsertCallback(jumpTime, () =>
                 {
                     OnTimerDoneEvent?.Invoke();
+                    _panel.DOAnchorPos(_panelResetPos, _duration).SetEase(_moveEase).SetLink(gameObject);
                 });
             }
 
@@ -90,7 +91,6 @@ public class Timer : MonoBehaviour
         {
             HandleResetBird();
         });
-        _mainSequence.Append(_panel.DOAnchorPos(_panelResetPos, _duration).SetEase(_moveEase));
 
     }
 
