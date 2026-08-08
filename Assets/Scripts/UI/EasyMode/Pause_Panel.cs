@@ -18,21 +18,9 @@ public class Pause_Panel : MonoBehaviour
 
     private void Start()
     {
-
-    }
-
-    private void OnEnable()
-    {
         resume.onClick.AddListener(Resume);
         restart.onClick.AddListener(Restart);
         backHome.onClick.AddListener(BackHome);
-    }
-
-    private void OnDisable()
-    {
-        resume.onClick.RemoveAllListeners();
-        restart.onClick.RemoveAllListeners();
-        backHome.onClick.RemoveAllListeners();
     }
 
     public void Resume()

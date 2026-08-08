@@ -15,7 +15,6 @@ public class LobbyUIController : MonoBehaviour
     [SerializeField] private Button _customBtn;
     [SerializeField] private Button _backCustomBtn;
 
-
     [Header("Panels")]
     [SerializeField] private RectTransform _soundMenu;
     [SerializeField] private RectTransform _menu;
@@ -26,29 +25,27 @@ public class LobbyUIController : MonoBehaviour
     [Header("Event")]
     [SerializeField] private UnityEvent LoadEasySceneEvent;
     [SerializeField] private UnityEvent LoadHardSceneEvent;
+    [SerializeField] private SoundTypeGameEvent _soundTypeGameEvent;
+
 
     [Header("Move")]
     public float _duration = 1;
     private Ease _moveEase = Ease.OutQuart;
 
+    private Button[] _allButton;
 
-    private void OnEnable()
+
+    private void Start()
     {
         ButtonSubscribeListener();
         _easyModeBtn.interactable = true;
         _hardModeBtn.interactable = true;
+        _allButton = GetComponentsInChildren<Button>(true);
+        foreach (Button btn in _allButton)
+        {
+            btn.onClick.AddListener(() => PlaySound(SoundType.Click));
+        }
     }
-
-    private void OnDisable()
-    {
-        _playBtn.onClick.RemoveAllListeners();
-        _settingBtn.onClick.RemoveAllListeners();
-        _easyModeBtn.onClick.RemoveAllListeners();
-        _hardModeBtn.onClick.RemoveAllListeners();
-        _backSelectBtn.onClick.RemoveAllListeners();
-        _backSoundBtn.onClick.RemoveAllListeners();
-    }
-
 
     private void ButtonSubscribeListener()
     {
@@ -111,6 +108,11 @@ public class LobbyUIController : MonoBehaviour
         .SetLink(gameObject)
         .OnComplete(() => { componentCavasGroup.gameObject.SetActive(isEnable); });
 
+    }
+
+    private void PlaySound(SoundType soundType)
+    {
+        _soundTypeGameEvent?.Raise(soundType);
     }
 
 

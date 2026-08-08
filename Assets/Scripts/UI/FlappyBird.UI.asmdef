@@ -6,7 +6,8 @@
         "FlappyBird.Core",
         "FlappyBird.Audio",
         "DOTween.Modules",
-        "FlappyBird.GameFlow"
+        "FlappyBird.GameFlow",
+        "FlappyBird.Event"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

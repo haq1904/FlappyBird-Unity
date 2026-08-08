@@ -16,16 +16,10 @@ public class Game_Over_Panel : MonoBehaviour
     [SerializeField] private Button restart;
     [SerializeField] private Button backHome;
 
-    private void OnEnable()
+    private void Start()
     {
         restart.onClick.AddListener(Restart);
         backHome.onClick.AddListener(BackHome);
-    }
-
-    private void OnDisable()
-    {
-        restart.onClick.RemoveAllListeners();
-        backHome.onClick.RemoveAllListeners();
     }
 
     public void Restart()

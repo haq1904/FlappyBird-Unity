@@ -1451,6 +1451,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _soundTypeGameEvent: {fileID: 11400000, guid: 57592ef266f661549af639484d543369, type: 2}
   _duration: 1
 --- !u!1 &2315242008129660383
 GameObject:

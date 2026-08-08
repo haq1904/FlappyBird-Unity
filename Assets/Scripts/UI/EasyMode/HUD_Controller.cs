@@ -9,15 +9,24 @@ public class HUD_Controller : MonoBehaviour
 {
     [Header("Events")]
     [SerializeField] private UnityEvent OnGamePause;
+    [SerializeField] private SoundTypeGameEvent OnRaiseSound;
 
     [Header("Game objects")]
     [SerializeField] private Button pauseBtn;
     [SerializeField] private Pause_Panel pausePanel;
     [SerializeField] private PlayerStats_Controller stats;
     [SerializeField] private GameObject timer;
+
+    private Button[] _allButton;
+
     private void Start()
     {
         pauseBtn.onClick.AddListener(TogglePauseMenu);
+        _allButton = GetComponentsInChildren<Button>(true);
+        foreach (Button btn in _allButton)
+        {
+            btn.onClick.AddListener(() => PlaySound(SoundType.Click));
+        }
 
     }
 
@@ -46,5 +55,10 @@ public class HUD_Controller : MonoBehaviour
     {
         timer.SetActive(false);
         HandleCountDown();
+    }
+
+    private void PlaySound(SoundType soundType)
+    {
+        OnRaiseSound?.Raise(soundType);
     }
 }
