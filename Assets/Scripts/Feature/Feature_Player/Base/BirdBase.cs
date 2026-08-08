@@ -181,7 +181,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
 
     public void RaiseAddCoinEvent(float coin)
     {
-        OnBirdRaiseSoundEvent.Raise(SoundType.TakePoint);
+        OnBirdRaiseSoundEvent.Raise(SoundType.TakeCoin);
         OnBirdRaiseCoin.Raise(coin);
     }
 

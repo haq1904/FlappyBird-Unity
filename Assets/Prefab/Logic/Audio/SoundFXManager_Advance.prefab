@@ -177,13 +177,14 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 9718499e197a83048b34c7cb7bd2df50, type: 3}
   - name: TakePoint
     sounds:
-    - {fileID: 8300000, guid: 21659c1c9e921844da759d202de9c55a, type: 3}
-    - {fileID: 8300000, guid: 71725387dfdc52d42957d6d0da519241, type: 3}
-    - {fileID: 8300000, guid: 036f1e052b3b5ea489ad0ebf0f16e97b, type: 3}
-    - {fileID: 8300000, guid: 11aacce835e37ec408c6605158970df2, type: 3}
-    - {fileID: 8300000, guid: f91d4d5b41b3f324abe6c832d9bf0601, type: 3}
+    - {fileID: 8300000, guid: 7ca734bad16a3eb4e962323ff61b73bd, type: 3}
   - name: TakeCoin
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: 9b9ffd65c28569c49b2ce0246419742c, type: 3}
+    - {fileID: 8300000, guid: 49a3eea52d1e38242a0025e083ac5c5e, type: 3}
+    - {fileID: 8300000, guid: db0d9dc7fcfef9a4e993a9af48d4d176, type: 3}
+    - {fileID: 8300000, guid: 123f124e6da1994408bd811e1a651bc7, type: 3}
+    - {fileID: 8300000, guid: f1324d2c052dd724ebc11473de042b25, type: 3}
   - name: Click
     sounds:
     - {fileID: 8300000, guid: 75388801b1f01f44bbe8e5912e3d9b28, type: 3}
