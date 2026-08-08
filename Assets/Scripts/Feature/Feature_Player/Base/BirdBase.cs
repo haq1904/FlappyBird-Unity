@@ -18,6 +18,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     [SerializeField] public float maxUpAngle = 18;
     [SerializeField] public float maxDownAngle = -40;
     [SerializeField] public float rotationSpeed = 15f;
+    [SerializeField] private Material _whiteMaterial;
 
 
     [Header("Events")]
@@ -42,6 +43,8 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     public BirdControls Controls;
 
     private DataManagerService _dataManager;
+
+    private Material _resetMaterial;
 
 
 
@@ -94,6 +97,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
         RB = gameObject.GetComponent<Rigidbody2D>();
         COL = gameObject.GetComponent<CapsuleCollider2D>();
         SPRITE = gameObject.GetComponent<SpriteRenderer>();
+        _resetMaterial = SPRITE.material;
         resetPos = transform.position;
         resetGravity = RB.gravityScale;
         StateMachine.Initialize(IdleState);
@@ -111,6 +115,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     #region Received Event Function
     public void HandleReset()//Receive OnRestart event from EasyModeManager
     {
+        SPRITE.material = _resetMaterial;
         StateMachine.ChangeState(ResetState);
     }
 
@@ -187,6 +192,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
 
     public void BirdDead()
     {
+        SPRITE.material = _whiteMaterial;
         OnBirdDead.Raise();
         OnBirdRaiseImpulseSource.Raise(impulseSource);
         PlayExplosionPS();
