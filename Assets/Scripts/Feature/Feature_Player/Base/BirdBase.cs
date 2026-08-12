@@ -192,6 +192,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
 
     public void BirdDead()
     {
+        OnBirdRaiseSoundEvent.Raise(SoundType.GameOver);
         SPRITE.material = _whiteMaterial;
         OnBirdDead.Raise();
         OnBirdRaiseImpulseSource.Raise(impulseSource);

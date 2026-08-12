@@ -188,3 +188,6 @@ MonoBehaviour:
   - name: Click
     sounds:
     - {fileID: 8300000, guid: 75388801b1f01f44bbe8e5912e3d9b28, type: 3}
+  - name: GameOver
+    sounds:
+    - {fileID: 8300000, guid: 15cdbdbe332ad88498151ffd3d66742d, type: 3}

@@ -6,7 +6,8 @@ public enum SoundType
     Flap,
     TakePoint,
     TakeCoin,
-    Click
+    Click,
+    GameOver
 }
 
 [RequireComponent(typeof(AudioSource)), ExecuteInEditMode]
