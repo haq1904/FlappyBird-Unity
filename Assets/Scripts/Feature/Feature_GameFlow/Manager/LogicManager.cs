@@ -18,28 +18,32 @@ public class LogicManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            if (SceneManager.GetActiveScene().buildIndex == 0)
-            {
-                if (!MoveToEasyMode)
-                {
-                    SceneManager.LoadScene("LobbyScene");
-                    State = GameState.Lobby;
-                }
-                else if (MoveToEasyMode)
-                {
-                    SceneManager.LoadScene("EasyModeScene");
-                    State = GameState.EasyMode;
-                }
-
-            }
-
         }
         else
         {
             Destroy(gameObject);
-
         }
+    }
 
+    private void Start()
+    {
+        // Chỉ chạy logic chuyển scene nếu đây là bản thể chính (không bị Destroy)
+        if (Instance == this)
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                if (!MoveToEasyMode)
+                {
+                    SceneController.Instance.LoadScene(1);
+                    State = GameState.Lobby;
+                }
+                else
+                {
+                    SceneController.Instance.LoadScene(2);
+                    State = GameState.EasyMode;
+                }
+            }
+        }
     }
 
 

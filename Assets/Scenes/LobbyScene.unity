@@ -119,6 +119,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &100576438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4768963074799637589, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+  m_PrefabInstance: {fileID: 6173975220063264586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &100576444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100576438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faff278aeda4a8f4d8f8d73063b77965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.UI::UIPrewarmFix
+  prewarmTime: 50
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +855,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 5252677528910450812, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6119230734107044687, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -881,6 +903,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8252184274826761254, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3683
+      objectReference: {fileID: 0}
     - target: {fileID: 8391670222576691645, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -919,7 +945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8508097053200459290, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 311.5
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8508097053200459290, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: InitialModule.startSpeed.minScalar
@@ -937,7 +963,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 4971773989208279086, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4768963074799637589, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 100576444}
   m_SourcePrefab: {fileID: 100100000, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
