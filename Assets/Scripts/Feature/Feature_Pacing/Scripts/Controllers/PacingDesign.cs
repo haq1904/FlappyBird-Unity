@@ -17,7 +17,7 @@ public class PacingDesign : MonoBehaviour
     [Header("Fields")]
     [SerializeField] private ItemService _coinPrefab;
     [SerializeField] private PlayerService _mainBird;
-    [SerializeField] private GameObject _attackingBird;
+    [SerializeField] private ObstacleService _attackingBird;
     [SerializeField] private Warning _warningSign;
     [SerializeField] private float _delayTimeToSpawnCoin = 0.5f;
     [SerializeField] private float _distanceBetweenCoin = 0.5f;
@@ -145,7 +145,7 @@ public class PacingDesign : MonoBehaviour
 
 
         //insert action(spawn Warning sign or AttakingBird) to main sequence by time( independ from spawning pipe and coin : easier to control)
-        if (duration >= 10)//&& UnityEngine.Random.value < 0.5f)
+        if (duration > 15)//&& UnityEngine.Random.value < 0.5f)
         {
             float birdCount = UnityEngine.Random.Range(2, 5);
             for (int i = 2; i <= birdCount; i++)
@@ -153,13 +153,13 @@ public class PacingDesign : MonoBehaviour
                 float randSpawnTime = UnityEngine.Random.Range(0f, duration);
                 mainSequence.InsertCallback(randSpawnTime, () =>
                 {
-                    Warning signClone = SpawnWarningSign();
+                    Warning signClone = SpawnWarningSign(currScenario.moveSpeed - 5);
                     if (signClone.DurationToFollow != 0)
                     {
                         float delayTimeToSpawnAttackingBird = signClone.DurationToFollow;
                         DOVirtual.DelayedCall(delayTimeToSpawnAttackingBird + 0.1f, () =>//use DelayedCall of DOVirtual when i just want to have a time delay to do something. 
                         {
-                            SpawnAttackingBird(currScenario.moveSpeed + 2, signClone);
+                            SpawnAttackingBird(currScenario.moveSpeed + 6, signClone);
                         }).SetId("SpawningBird").SetLink(gameObject);
                     }
                     else
@@ -214,14 +214,16 @@ public class PacingDesign : MonoBehaviour
     private void SpawnAttackingBird(float speedToSet, Warning signClone)
     {
         Vector3 posToSpawn = new Vector3(transform.position.x, signClone.LastPosition.y, transform.position.z);
-        GameObject attackingBirdClone = Instantiate(_attackingBird, posToSpawn, Quaternion.Euler(0, 0, 20f));
+        ObstacleService attackingBirdClone = Instantiate(_attackingBird, posToSpawn, Quaternion.Euler(0, 0, 20f));
+        attackingBirdClone.SetSpeed(speedToSet);
     }
 
-    private Warning SpawnWarningSign()
+    private Warning SpawnWarningSign(float followSpeed)
     {
         float randSpawnHeight = UnityEngine.Random.Range(-4.2f, 4.2f);
         Warning signClone = Instantiate(_warningSign, new Vector3(7, randSpawnHeight, 0), Quaternion.identity);
         signClone.SetTarget(_mainBird);
+        signClone.SetFollowSpeed(followSpeed);
         return signClone;
     }
 

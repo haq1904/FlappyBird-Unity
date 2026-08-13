@@ -673,6 +673,7 @@ MonoBehaviour:
   _duration: 1
   _timeToCountdown: 0.4
   _botMarker: {fileID: 8970367497787492861}
+  _characterDB: {fileID: 0}
   _durationForShake: 0.34
   _streght: {x: 5, y: 5}
   _vibrato: 10

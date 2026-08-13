@@ -58,7 +58,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a71793ef387cc0a45abe75b91f2e222c, type: 2}
   _coinPrefab: {fileID: 2621817539927124065, guid: 08f5f848c2a1cc14c92728fc1dd90cab, type: 3}
   _mainBird: {fileID: 0}
-  _attackingBird: {fileID: 2842570475708119339, guid: ccc0b06656259a645822016046e85c1a, type: 3}
+  _attackingBird: {fileID: 414019649603327911, guid: ccc0b06656259a645822016046e85c1a, type: 3}
   _warningSign: {fileID: 188966500624870708, guid: fcf86233436b11345ad69f4e7c349dde, type: 3}
   _delayTimeToSpawnCoin: 0.7
   _distanceBetweenCoin: 1

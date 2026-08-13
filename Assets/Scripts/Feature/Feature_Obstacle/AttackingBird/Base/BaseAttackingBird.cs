@@ -67,10 +67,6 @@ public class BaseAttackingBird : ObstacleService
         _moveSpeed = moveSpeed;
     }
 
-    public override float GetSpawnHeight()
-    {
-        return transform.position.y;
-    }
     #endregion
 
     private void OnCollisionEnter2D(Collision2D collision)

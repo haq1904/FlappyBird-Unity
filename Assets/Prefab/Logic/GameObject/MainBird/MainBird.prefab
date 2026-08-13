@@ -14749,6 +14749,7 @@ MonoBehaviour:
   maxUpAngle: 18
   maxDownAngle: -40
   rotationSpeed: 79.4
+  _whiteMaterial: {fileID: 0}
   OnBirdRaiseSoundEvent: {fileID: 11400000, guid: 57592ef266f661549af639484d543369, type: 2}
   OnBirdRaisePoint: {fileID: 11400000, guid: b461976d6d02e434fbee207c841b57b0, type: 2}
   OnBirdRaiseCoin: {fileID: 11400000, guid: f7d069be9e8ad8045b016f0244ac5712, type: 2}
