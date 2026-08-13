@@ -899,7 +899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8508097053200459290, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: prewarm
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8508097053200459290, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: lengthInSec

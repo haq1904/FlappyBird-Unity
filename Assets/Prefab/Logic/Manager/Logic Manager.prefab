@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa436629bc1da241860ee7584ef9dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  MoveToEasyMode: 1
+  MoveToEasyMode: 0
   State: 0
 --- !u!114 &1339051749549764878
 MonoBehaviour:
