@@ -73,10 +73,45 @@ public class BirdFlyingState : BirdState
 
     private void OnFlapStarted(InputAction.CallbackContext context)
     {
-        bird.Flap();
-        bird.RB.linearVelocity = Vector2.zero;
-        bird.RB.AddForce(Vector2.up * bird.JumpForce, ForceMode2D.Impulse);
-        bird.transform.rotation = Quaternion.Euler(0, 0, bird.maxUpAngle);
+        bool isUp = true; // Mặc định là bay Lên
+
+        // 1. Kiểm tra xem người dùng đang xài Bàn phím hay Cảm ứng/Chuột
+        if (context.control.device is Keyboard)
+        {
+            // Nếu xài Bàn Phím: Bấm mũi tên xuống (hoặc chữ S) thì bay Xuống
+            if (context.control.name == "downArrow" || context.control.name == "s")
+            {
+                isUp = false;
+            }
+        }
+        else
+        {
+            // Nếu xài Cảm ứng/Chuột: Kiểm tra tọa độ màn hình
+            if (Pointer.current != null)
+            {
+                Vector2 tapPosition = Pointer.current.position.ReadValue();
+                if (tapPosition.x >= Screen.width / 2f)
+                {
+                    isUp = false; // Bấm Nửa Phải -> Bay Xuống
+                }
+            }
+        }
+
+        // 2. Thực hiện bay Lên hoặc Xuống
+        bird.RB.linearVelocity = Vector2.zero; // Trả vận tốc về 0 trước
+
+        if (isUp)
+        {
+            bird.Flap();
+            bird.RB.AddForce(Vector2.up * bird.JumpForce, ForceMode2D.Impulse);
+            bird.transform.rotation = Quaternion.Euler(0, 0, bird.maxUpAngle);
+        }
+        else
+        {
+            bird.Flap();
+            bird.RB.AddForce(Vector2.down * (bird.JumpForce - 3), ForceMode2D.Impulse);
+            bird.transform.rotation = Quaternion.Euler(0, 0, bird.maxDownAngle);
+        }
     }
 
     private void HandleRotation()

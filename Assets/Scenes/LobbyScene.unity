@@ -741,34 +741,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 39967854683268299, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 0.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 1175311243414755617, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakePositionVibrato
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1175311243414755617, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakeRotationVibrato
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1175311243414755617, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakePositionDuration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1175311243414755617, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakeRotationDuration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1175311243414755617, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakePositionRandomness
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1175311243414755617, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakeRotationRandomness
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 1882928122307995210, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -780,14 +752,6 @@ PrefabInstance:
     - target: {fileID: 2062122006578824873, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_Name
       value: Lobby Panel
-      objectReference: {fileID: 0}
-    - target: {fileID: 2623483551611964176, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3173160254641056545, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 3657654623148082589, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_Pivot.x
@@ -869,34 +833,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4135287423924792340, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4476552400833036828, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakePositionRandomness
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4476552400833036828, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakePositionStrength.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4476552400833036828, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakePositionStrength.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886609340562805088, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakePositionRandomness
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886609340562805088, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakePositionStrength.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886609340562805088, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakePositionStrength.y
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 5095092490317078830, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_Camera
       value: 
@@ -933,34 +869,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7084057521485639314, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 0.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 7398495466176335494, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 22.120003
-      objectReference: {fileID: 0}
-    - target: {fileID: 7398495466176335494, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -22.599998
-      objectReference: {fileID: 0}
-    - target: {fileID: 8173513822523926085, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8346979220754857377, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakePositionRandomness
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8346979220754857377, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakePositionStrength.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8346979220754857377, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakePositionStrength.y
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8391670222576691645, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -973,18 +881,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8865669931235899686, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakePositionRandomness
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8865669931235899686, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakePositionStrength.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8865669931235899686, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: _shakePositionStrength.y
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 9102674803483570261, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -994,7 +890,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4971773989208279086, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}

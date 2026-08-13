@@ -443,9 +443,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.UI::Border
   _shakePositionDuration: 1
-  _shakePositionStrength: {x: 2, y: 2, z: 0}
+  _shakePositionStrength: {x: 4, y: 4, z: 0}
   _shakePositionVibrato: 1
-  _shakePositionRandomness: 180
+  _shakePositionRandomness: 90
   _shakeRotationDuration: 1
   _shakeRotationStrength: {x: 0, y: 0, z: 0}
   _shakeRotationVibrato: 10
@@ -544,9 +544,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.UI::Border
   _shakePositionDuration: 1
-  _shakePositionStrength: {x: 2, y: 2, z: 0}
+  _shakePositionStrength: {x: 4, y: 4, z: 0}
   _shakePositionVibrato: 1
-  _shakePositionRandomness: 180
+  _shakePositionRandomness: 90
   _shakeRotationDuration: 1
   _shakeRotationStrength: {x: 0, y: 0, z: 0}
   _shakeRotationVibrato: 10
@@ -678,7 +678,7 @@ Animator:
   m_GameObject: {fileID: 1423209350581890685}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 870e311fe9fb3394cb732d35d232acf0, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -941,7 +941,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.41
+  m_PixelsPerUnitMultiplier: 0.48
 --- !u!1 &1958542463677705433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,7 +1817,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.05
+  m_PixelsPerUnitMultiplier: 0.16
 --- !u!114 &7085690064427582331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1856,7 +1856,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2623483551611964176}
   m_Enabled: 1
-  m_Alpha: 0.31
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -3356,11 +3356,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: FlappyBird.UI::UI_Shake
   _shakePositionDuration: 1
   _shakePositionStrength: {x: 3, y: 3, z: 0}
-  _shakePositionVibrato: 4
-  _shakePositionRandomness: 180
+  _shakePositionVibrato: 3
+  _shakePositionRandomness: 90
   _shakeRotationDuration: 1
   _shakeRotationStrength: {x: 0, y: 0, z: 3.56}
-  _shakeRotationVibrato: 2
+  _shakeRotationVibrato: 1
   _shakeRotationRandomness: 90
   isShakePosition: 1
   isShakeRotation: 1
@@ -3963,9 +3963,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.UI::Border
   _shakePositionDuration: 1
-  _shakePositionStrength: {x: 2, y: 2, z: 0}
+  _shakePositionStrength: {x: 4, y: 4, z: 0}
   _shakePositionVibrato: 1
-  _shakePositionRandomness: 180
+  _shakePositionRandomness: 90
   _shakeRotationDuration: 1
   _shakeRotationStrength: {x: 0, y: 0, z: 0}
   _shakeRotationVibrato: 10
@@ -4052,7 +4052,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.06
+  m_PixelsPerUnitMultiplier: 0.18
 --- !u!1 &5327201841607468815
 GameObject:
   m_ObjectHideFlags: 0
@@ -4973,9 +4973,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.UI::Border
   _shakePositionDuration: 1
-  _shakePositionStrength: {x: 2, y: 2, z: 0}
+  _shakePositionStrength: {x: 4, y: 4, z: 0}
   _shakePositionVibrato: 1
-  _shakePositionRandomness: 180
+  _shakePositionRandomness: 90
   _shakeRotationDuration: 1
   _shakeRotationStrength: {x: 0, y: 0, z: 0}
   _shakeRotationVibrato: 10
@@ -5796,7 +5796,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 14.199997, y: -13.5}
+  m_AnchoredPosition: {x: 22.120003, y: -22.599998}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.49999988, y: 0.49999934}
 --- !u!222 &5208741515367974680

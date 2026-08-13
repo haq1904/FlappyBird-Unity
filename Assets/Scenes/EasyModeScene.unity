@@ -1135,7 +1135,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4985468846451972267, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: isTest
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4985468846451972267, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: pipeToTest
@@ -2044,6 +2044,10 @@ PrefabInstance:
       propertyPath: _mainBird
       value: 
       objectReference: {fileID: 1432277160}
+    - target: {fileID: 4375144097674066273, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
+      propertyPath: _attackingBird
+      value: 
+      objectReference: {fileID: 414019649603327911, guid: ccc0b06656259a645822016046e85c1a, type: 3}
     - target: {fileID: 6540389588206286636, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.62

@@ -50,7 +50,7 @@ public class LobbyUIController : MonoBehaviour
     private void ButtonSubscribeListener()
     {
         //menu button
-        _playBtn.onClick.AddListener(() => SceneController.Instance.LoadScene(2));
+        _playBtn.onClick.AddListener(() => PlayGame());
         _settingBtn.onClick.AddListener(() => ChangeComponentPos(_menu, new Vector2(0, 1100), _duration, _moveEase));
         _settingBtn.onClick.AddListener(() => MoveToCenter(_soundMenu, _duration, _moveEase));
         _customBtn.onClick.AddListener(() =>
