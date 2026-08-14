@@ -14694,7 +14694,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14722,7 +14722,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9375, y: 0.65625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -14747,9 +14747,9 @@ MonoBehaviour:
   _explosionPS: {fileID: 2996574241227128547}
   _crashSmokePuffPS: {fileID: 5724665763675024722}
   maxUpAngle: 18
-  maxDownAngle: -40
+  maxDownAngle: -10
   rotationSpeed: 79.4
-  _whiteMaterial: {fileID: 0}
+  _whiteMaterial: {fileID: 8944772768456356939, guid: a1425c7ec7088e9418ae5fe0efbcfcbb, type: 2}
   OnBirdRaiseSoundEvent: {fileID: 11400000, guid: 57592ef266f661549af639484d543369, type: 2}
   OnBirdRaisePoint: {fileID: 11400000, guid: b461976d6d02e434fbee207c841b57b0, type: 2}
   OnBirdRaiseCoin: {fileID: 11400000, guid: f7d069be9e8ad8045b016f0244ac5712, type: 2}
@@ -14848,7 +14848,7 @@ Animator:
   m_GameObject: {fileID: 5483855226019530573}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d03f643c2b2c89a4f83789694b580c08, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
