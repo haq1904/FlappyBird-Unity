@@ -80,7 +80,7 @@ public class PacingDesign : MonoBehaviour
             mainSequence.AppendInterval(1f);
             mainSequence.Append(BuildScenario(easyScenario[1], 15));
             mainSequence.AppendInterval(3.5f);
-            mainSequence.Append(BuildScenario(hardScenario[0], 30));
+            mainSequence.Append(BuildScenario(hardScenario[0], 20));
             mainSequence.AppendInterval(1f);
             mainSequence.Append(BuildScenario(normalScenario[1], 10));
             mainSequence.AppendInterval(3.5f);
