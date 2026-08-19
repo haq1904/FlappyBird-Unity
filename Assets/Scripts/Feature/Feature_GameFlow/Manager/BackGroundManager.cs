@@ -6,8 +6,8 @@ public class BackGroundManager : MonoBehaviour
 {
     [Header("Fields")]
     [SerializeField] private GameObject Vcam;
-    [SerializeField] private float parallaxEffect =1;
-    [SerializeField] private float moveSpeed=1;
+    [SerializeField] private float parallaxEffect = 1;
+    [SerializeField] private float moveSpeed = 1;
     [SerializeField] private float xCoordinateToReset = -24;
 
     [Header("Move speed follows pacing")]
@@ -56,7 +56,7 @@ public class BackGroundManager : MonoBehaviour
     }
 
     public void HandleRestart()
-    {      
+    {
         HandleChangeMoveSpeed();
     }
 
@@ -66,21 +66,21 @@ public class BackGroundManager : MonoBehaviour
         moveSpeed = 0;
         mainSequence?.Kill();
     }
-    
+
     private void HandleChangeMoveSpeed()
     {
         mainSequence?.Kill();
         mainSequence = DOTween.Sequence();
-        mainSequence.AppendCallback(() =>moveSpeed = speed1);
+        mainSequence.AppendCallback(() => moveSpeed = speed1);
         mainSequence.AppendInterval(15f);
         mainSequence.AppendCallback(() => moveSpeed = speed2);
-        mainSequence.AppendInterval(28.5f);
+        mainSequence.AppendInterval(18.5f);
         mainSequence.AppendCallback(() => moveSpeed = speed3);
-        mainSequence.AppendInterval(16f);
+        mainSequence.AppendInterval(12f);
         mainSequence.AppendCallback(() => moveSpeed = speed4);
-        mainSequence.AppendInterval(33.5f);
+        mainSequence.AppendInterval(18.5f);
         mainSequence.AppendCallback(() => moveSpeed = speed5);
-        mainSequence.AppendInterval(11f);
+        mainSequence.AppendInterval(12f);
         mainSequence.AppendCallback(() => moveSpeed = speed6);
 
     }
