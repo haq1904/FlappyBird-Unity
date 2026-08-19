@@ -5,6 +5,6 @@ public class NormalScenario : PacingScenario
 {
     private void OnEnable()
     {
-        difficultyTag = DifficultyTag.Normal;
+        DifficultyTag = DifficultyTag.Normal;
     }
 }

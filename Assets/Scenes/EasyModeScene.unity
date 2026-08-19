@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Core::WorldAnchor
   _anchorType: 3
-  _offset: {x: -5, y: 0, z: 0}
+  _offset: {x: -9, y: 0, z: 0}
 --- !u!1 &1010163453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,6 +1651,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainBird
       objectReference: {fileID: 0}
+    - target: {fileID: 5483855226019530573, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1800,7 +1804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Core::WorldAnchor
   _anchorType: 1
-  _offset: {x: 0, y: 10, z: 0}
+  _offset: {x: 0, y: 13, z: 0}
 --- !u!1 &1736838606
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,7 +2201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Core::WorldAnchor
   _anchorType: 2
-  _offset: {x: 0, y: -10, z: 0}
+  _offset: {x: 0, y: -13, z: 0}
 --- !u!1001 &2359601034613749063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2208,7 +2212,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1721847584768427319, guid: eea157c52f05af04fb3bd214316461bf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.84
+      value: -20.09
       objectReference: {fileID: 0}
     - target: {fileID: 1721847584768427319, guid: eea157c52f05af04fb3bd214316461bf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2329,7 +2333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1721847584768427319, guid: eea157c52f05af04fb3bd214316461bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.78
+      value: -18.029999
       objectReference: {fileID: 0}
     - target: {fileID: 1721847584768427319, guid: eea157c52f05af04fb3bd214316461bf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7386,7 +7390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1721847584768427319, guid: eea157c52f05af04fb3bd214316461bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.53
+      value: 18.279999
       objectReference: {fileID: 0}
     - target: {fileID: 1721847584768427319, guid: eea157c52f05af04fb3bd214316461bf, type: 3}
       propertyPath: m_LocalPosition.z
