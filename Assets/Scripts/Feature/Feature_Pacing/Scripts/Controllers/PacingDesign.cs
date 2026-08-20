@@ -127,30 +127,58 @@ public class PacingDesign : MonoBehaviour
             loopCount = 9999;
 
         Sequence mainSequence = DOTween.Sequence();
+
+        SchedulePipeAndCoin(mainSequence, currScenario, loopCount);
+        ScheduleAttackingBird(mainSequence, currScenario, duration);
+
+        return mainSequence;
+    }
+
+    private void SchedulePipeAndCoin(Sequence mainSequence, PacingScenario currScenario, int loopCount)
+    {
         Sequence pipeAndCoinSeq = DOTween.Sequence();
 
-
-        //Creat sequence for pipe and coin to append into main sequence
         pipeAndCoinSeq.AppendCallback(() =>
         {
-            //get random allowed pipe from scenario
             if (currScenario.TryGetObstacleList("Pipe", out ObstacleService[] pipeList))
             {
                 ObstacleService pipe = pipeList[UnityEngine.Random.Range(0, pipeList.Length)];
                 SpawnPipe(pipe, transform.position, Quaternion.identity, currScenario.moveSpeed);
             }
         });
+
         pipeAndCoinSeq.AppendInterval(_delayTimeToSpawnCoin);
         pipeAndCoinSeq.AppendCallback(() => SpawnCoin(currScenario.moveSpeed));
-        //Set time to spawn
-        // With currScenario.timeToSpawn - _delayTimeToSpawnCoin, we keep exactly the time to spawn the next pipe.
+
         pipeAndCoinSeq.AppendInterval(currScenario.timeToSpawn - _delayTimeToSpawnCoin);
         pipeAndCoinSeq.SetLoops(loopCount);
 
         mainSequence.Append(pipeAndCoinSeq);
+    }
 
+    private void SpawnPipe(ObstacleService pipe, Vector3 position, Quaternion quaternion, float moveSpeed)
+    {
+        ObstacleService pipeClone = Instantiate(pipe, position, quaternion);
+        pipeClone.SetSpeed(moveSpeed);
+        _currPipeHeight = pipeClone.GetSpawnHeight();
+    }
 
-        //insert action(spawn Warning sign or AttakingBird) to main sequence
+    private void SpawnCoin(float speedToSet)
+    {
+        float randCoinHeight = UnityEngine.Random.Range(_currPipeHeight - 1.6f, _currPipeHeight + 1.6f);
+        int randQuantity = UnityEngine.Random.Range(0, 6);
+        for (int i = 0; i < randQuantity; i++)
+        {
+            //use x value of PacingDesign to place coin with the same distance(by i).
+            float calculatedPosX = transform.position.x + i * _distanceBetweenCoin;
+            Vector3 finalEachCoinTrans = new Vector3(calculatedPosX + _distanceBetweenCoin, randCoinHeight, 0);
+            ItemService coinClone = Instantiate(_coinPrefab, finalEachCoinTrans, Quaternion.identity);
+            coinClone.SetSpeed(speedToSet);
+        }
+    }
+
+    private void ScheduleAttackingBird(Sequence mainSequence, PacingScenario currScenario, float duration)
+    {
         if (currScenario.TryGetObstacleList("AttackingBird", out ObstacleService[] attackingBirdList))
         {
             if (duration < 0)
@@ -207,28 +235,6 @@ public class PacingDesign : MonoBehaviour
                 }
             }
         }
-        return mainSequence;
-    }
-
-    private void SpawnPipe(ObstacleService pipe, Vector3 position, Quaternion quaternion, float moveSpeed)
-    {
-        ObstacleService pipeClone = Instantiate(pipe, position, quaternion);
-        pipeClone.SetSpeed(moveSpeed);
-        _currPipeHeight = pipeClone.GetSpawnHeight();
-    }
-
-    private void SpawnCoin(float speedToSet)
-    {
-        float randCoinHeight = UnityEngine.Random.Range(_currPipeHeight - 1.6f, _currPipeHeight + 1.6f);
-        int randQuantity = UnityEngine.Random.Range(0, 6);
-        for (int i = 0; i < randQuantity; i++)
-        {
-            //use x value of PacingDesign to place coin with the same distance(by i).
-            float calculatedPosX = transform.position.x + i * _distanceBetweenCoin;
-            Vector3 finalEachCoinTrans = new Vector3(calculatedPosX + _distanceBetweenCoin, randCoinHeight, 0);
-            ItemService coinClone = Instantiate(_coinPrefab, finalEachCoinTrans, Quaternion.identity);
-            coinClone.SetSpeed(speedToSet);
-        }
     }
 
     private void SpawnAttackingBird(ObstacleService attackingBird, float speedToSet, Warning signClone)
@@ -241,7 +247,14 @@ public class PacingDesign : MonoBehaviour
     private Warning SpawnWarningSign(float followSpeed)
     {
         float randSpawnHeight = UnityEngine.Random.Range(-4.2f, 4.2f);
-        Warning signClone = Instantiate(_warningSign, new Vector3(7, randSpawnHeight, 0), Quaternion.identity);
+
+        // Lấy tọa độ trục X của mép Phải màn hình (Viewport x = 1)
+        float rightEdgeX = Camera.main.ViewportToWorldPoint(new Vector3(1f, 0f, 0f)).x;
+
+        // Neo vào mép phải và thụt lùi vào trong màn hình 2 unit (rightEdgeX - 2f)
+        Vector3 spawnPos = new Vector3(rightEdgeX - 2f, randSpawnHeight, 0);
+
+        Warning signClone = Instantiate(_warningSign, spawnPos, Quaternion.identity);
         signClone.SetTarget(_mainBird);
         signClone.SetFollowSpeed(followSpeed);
         return signClone;
