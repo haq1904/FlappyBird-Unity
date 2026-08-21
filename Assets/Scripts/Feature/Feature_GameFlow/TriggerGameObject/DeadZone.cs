@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CeilingWall : MonoBehaviour
+public class DeadZone : MonoBehaviour
 {
     [SerializeField] Vector2 _directionImpact;
     [SerializeField] float _force = 1;

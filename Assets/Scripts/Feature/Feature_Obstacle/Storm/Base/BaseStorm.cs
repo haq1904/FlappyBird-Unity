@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class Storm : ObstacleService
+public class BaseStorm : ObstacleService
 {
     [Header("Fields")]
     [SerializeField] private Transform _visual;
@@ -13,15 +13,18 @@ public class Storm : ObstacleService
     [SerializeField] private int _shakeVibrato = 10;
     [SerializeField] private float _shakeRandomness = 90f;
 
-    private Rigidbody2D _rb;
-    private float _moveSpeed = 0;
+    protected Rigidbody2D _rb;
+    protected PointEffector2D _pointEffector;
+    [SerializeField] protected float _moveSpeed = 0;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _pointEffector = GetComponent<PointEffector2D>();
+
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         _rb.linearVelocity = Vector2.left * _moveSpeed;
     }
@@ -46,11 +49,25 @@ public class Storm : ObstacleService
 
     public void HandleGameOver()
     {
+        _pointEffector.linearDamping = 0;
         _moveSpeed = 0;
     }
 
     public override void SetSpeed(float moveSpeed)
     {
         _moveSpeed = moveSpeed;
+    }
+
+    public override void SetForceMagnitude(float force)
+    {
+        _pointEffector.forceMagnitude = force;
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PoolCollector"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
