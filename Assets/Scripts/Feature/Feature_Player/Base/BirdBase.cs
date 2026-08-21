@@ -110,6 +110,12 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
         StateMachine.CurrentBirdState.FrameUpdate();
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        StateMachine.CurrentBirdState.HandleTrigger(other);
+    }
+
+
     #endregion
 
     #region Received Event Function

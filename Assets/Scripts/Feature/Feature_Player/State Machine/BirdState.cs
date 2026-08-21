@@ -46,7 +46,7 @@ public class BirdState
 
     }
 
-    public virtual void HandleTrigger()
+    public virtual void HandleTrigger(Collider2D other)
     {
 
     }

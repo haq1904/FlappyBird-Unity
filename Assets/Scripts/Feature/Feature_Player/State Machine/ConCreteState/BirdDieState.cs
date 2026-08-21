@@ -54,11 +54,5 @@ public class BirdDieState : BirdState
         base.PhysicUpdate();
     }
 
-    public override void HandleTrigger()
-    {
-        base.HandleTrigger();
-        bird.gameObject.SetActive(false);
-    }
-
 
 }
