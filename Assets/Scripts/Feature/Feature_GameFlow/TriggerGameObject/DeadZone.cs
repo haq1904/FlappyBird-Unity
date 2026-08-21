@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class CeilingWall : MonoBehaviour
 {
-    [SerializeField] float force = 1;
-    [SerializeField] float gravity = 1;
-    
+    [SerializeField] Vector2 _directionImpact;
+    [SerializeField] float _force = 1;
+    [SerializeField] float _gravity = 1;
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent<IDamageable>(out var gameObject))
         {
-            gameObject.TakeDamage(Vector2.down, force, gravity);
+            gameObject.TakeDamage(_directionImpact, _force, _gravity);
         }
     }
 
