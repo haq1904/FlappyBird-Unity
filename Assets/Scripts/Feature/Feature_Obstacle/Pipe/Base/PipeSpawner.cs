@@ -1,45 +1,53 @@
- using System;
 using UnityEngine;
 
 public class PipeSpawner : MonoBehaviour
 {
-    [SerializeField] private BasePipe basicPipe;   
-    [SerializeField] private BasePipe pipeToTest;
-    [SerializeField] private bool isTest = true; 
-    [SerializeField] private float timeToSpawn=2;
+    [Header("Spawner Settings")]
+    [SerializeField] private ObstacleService _obstaclePrefab;
+    [SerializeField] private float _timeToSpawn = 2f;
 
-    private float remainingTime=0;
-    private BasePipe currPipe;
+    [Header("Test Settings")]
+    [SerializeField] private float _moveSpeedToTest = 5f;
+    [SerializeField] private float _forceMagnitudeToTest = -100f;
+
+    private float _remainingTime = 0f;
 
     private void OnEnable()
     {
-        if (isTest)
-            currPipe = pipeToTest;
-        else 
-            currPipe = basicPipe;
-        SpawnPipe();
-
+        SpawnObstacle();
     }
+
     private void Update()
     {
-        if (remainingTime < timeToSpawn)
+        if (_remainingTime < _timeToSpawn)
         {
-            remainingTime += Time.deltaTime;
+            _remainingTime += Time.deltaTime;
         }
         else
         {
-            SpawnPipe();
-            remainingTime = 0;
+            SpawnObstacle();
+            _remainingTime = 0f;
         }
     }
 
-    private void SpawnPipe()
+    private void SpawnObstacle()
     {
-        Instantiate(currPipe, transform.position,Quaternion.identity);
+        if (_obstaclePrefab != null)
+        {
+            ObstacleService obstacle = Instantiate(_obstaclePrefab, transform.position, Quaternion.identity);
+            obstacle.SetSpeed(_moveSpeedToTest);
+            obstacle.SetForceMagnitude(_forceMagnitudeToTest);
+        }
     }
 
     public void StopSpawning()
     {
         enabled = false;
+    }
+
+    public void HandleRestart()
+    {
+        _remainingTime = 0f;
+        SpawnObstacle(); // Đẻ ra chướng ngại vật đầu tiên luôn cho nóng
     }
 }
