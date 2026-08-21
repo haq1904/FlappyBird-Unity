@@ -320,23 +320,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7523375236255919846, guid: 82e2e215de9e6884a959209f21b7ac95, type: 3}
       propertyPath: _moveSpeed
-      value: 19.39
+      value: 20.5
       objectReference: {fileID: 0}
     - target: {fileID: 2467146604392187424, guid: 82e2e215de9e6884a959209f21b7ac95, type: 3}
       propertyPath: m_Name
       value: BasicStorm
       objectReference: {fileID: 0}
-    - target: {fileID: 2467146604392187424, guid: 82e2e215de9e6884a959209f21b7ac95, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6147679041429572374, guid: 82e2e215de9e6884a959209f21b7ac95, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 62.04453
+      value: 57.79453
       objectReference: {fileID: 0}
     - target: {fileID: 6147679041429572374, guid: 82e2e215de9e6884a959209f21b7ac95, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.29244
+      value: -1.2924399
       objectReference: {fileID: 0}
     - target: {fileID: 6147679041429572374, guid: 82e2e215de9e6884a959209f21b7ac95, type: 3}
       propertyPath: m_LocalPosition.z
@@ -371,8 +367,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8373035013762183068, guid: 82e2e215de9e6884a959209f21b7ac95, type: 3}
+      propertyPath: m_ForceMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373035013762183068, guid: 82e2e215de9e6884a959209f21b7ac95, type: 3}
+      propertyPath: m_LinearDamping
+      value: 333.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373035013762183068, guid: 82e2e215de9e6884a959209f21b7ac95, type: 3}
       propertyPath: m_ForceMagnitude
-      value: -1224.2
+      value: -457.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1231,7 +1235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1952360119979876434, guid: 1e219f09f57710647b5db04191127662, type: 3}
       propertyPath: _force
-      value: 11.91
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 1952360119979876434, guid: 1e219f09f57710647b5db04191127662, type: 3}
       propertyPath: _gravity
@@ -1558,10 +1562,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8431380129262701022, guid: 24755a85b94568a439716d19825914c1, type: 3}
-      propertyPath: m_ForceMagnitude
-      value: -111.94
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1622,6 +1622,10 @@ PrefabInstance:
     - target: {fileID: 5483855226019530573, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5483855226019530573, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7036,13 +7040,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseStorm
       objectReference: {fileID: 0}
-    - target: {fileID: 1263622519134467014, guid: 70ec2327cd07b4e439861f90b9ce4324, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7414236410442170096, guid: 70ec2327cd07b4e439861f90b9ce4324, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.32701
+      value: 18.077011
       objectReference: {fileID: 0}
     - target: {fileID: 7414236410442170096, guid: 70ec2327cd07b4e439861f90b9ce4324, type: 3}
       propertyPath: m_LocalPosition.y
