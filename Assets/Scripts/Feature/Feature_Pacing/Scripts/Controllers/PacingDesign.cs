@@ -17,7 +17,6 @@ public class PacingDesign : MonoBehaviour
     [Header("Fields")]
     [SerializeField] private ItemService _coinPrefab;
     [SerializeField] private PlayerService _mainBird;
-    [SerializeField] private ObstacleService _attackingBird;
     [SerializeField] private Warning _warningSign;
     [SerializeField] private float _delayTimeToSpawnCoin = 0.5f;
     [SerializeField] private float _distanceBetweenCoin = 0.5f;
@@ -47,7 +46,7 @@ public class PacingDesign : MonoBehaviour
     {
         mainSequence?.Kill();
         _lastSequence?.Kill();
-        DOTween.Kill("SpawningBird");
+        DOTween.Kill("SpawningWarningObstacle");
     }
 
     private Sequence mainSequence;
@@ -61,7 +60,7 @@ public class PacingDesign : MonoBehaviour
     {
         mainSequence?.Kill();
         _lastSequence?.Kill();
-        DOTween.Kill("SpawningBird");
+        DOTween.Kill("SpawningWarningObstacle");
     }
 
     public void GameRestart()
@@ -97,22 +96,22 @@ public class PacingDesign : MonoBehaviour
             switch (modeIsTest, typeMode)
             {
                 case (Mode.Easy, TypeMode.One):
-                    mainSequence.Append(BuildScenario(easyScenario[0], 30));
+                    mainSequence.Append(BuildScenario(easyScenario[0], -1));
                     break;
                 case (Mode.Easy, TypeMode.Two):
-                    mainSequence.Append(BuildScenario(easyScenario[1], 30));
+                    mainSequence.Append(BuildScenario(easyScenario[1], -1));
                     break;
                 case (Mode.Normal, TypeMode.One):
-                    mainSequence.Append(BuildScenario(normalScenario[0], 30));
+                    mainSequence.Append(BuildScenario(normalScenario[0], -1));
                     break;
                 case (Mode.Normal, TypeMode.Two):
-                    mainSequence.Append(BuildScenario(normalScenario[1], 30));
+                    mainSequence.Append(BuildScenario(normalScenario[1], -1));
                     break;
                 case (Mode.Hard, TypeMode.One):
-                    mainSequence.Append(BuildScenario(hardScenario[0], 30));
+                    mainSequence.Append(BuildScenario(hardScenario[0], -1));
                     break;
                 case (Mode.Hard, TypeMode.Two):
-                    mainSequence.Append(BuildScenario(hardScenario[1], 30));
+                    mainSequence.Append(BuildScenario(hardScenario[1], -1));
                     break;
             }
         }
@@ -121,6 +120,7 @@ public class PacingDesign : MonoBehaviour
 
     private Sequence BuildScenario(PacingScenario currScenario, float duration)
     {
+        Debug.Log($"[PacingDesign] Building Scenario: {currScenario.name} | Duration: {duration}");
 
         int loopCount = Mathf.RoundToInt(duration / currScenario.timeToSpawn);//Get number of loop by separate time to spawn with duration
         if (duration < 0)
@@ -129,7 +129,8 @@ public class PacingDesign : MonoBehaviour
         Sequence mainSequence = DOTween.Sequence();
 
         SchedulePipeAndCoin(mainSequence, currScenario, loopCount);
-        ScheduleAttackingBird(mainSequence, currScenario, duration);
+        ScheduleWarningObstacle(mainSequence, currScenario, duration, "AttackingBird");
+        ScheduleWarningObstacle(mainSequence, currScenario, duration, "Storm");
 
         return mainSequence;
     }
@@ -137,18 +138,24 @@ public class PacingDesign : MonoBehaviour
     private void SchedulePipeAndCoin(Sequence mainSequence, PacingScenario currScenario, int loopCount)
     {
         Sequence pipeAndCoinSeq = DOTween.Sequence();
+        float currentPipeSpeed = 2f; // Fallback cho Coin nếu Pipe chưa spawn được
 
         pipeAndCoinSeq.AppendCallback(() =>
         {
-            if (currScenario.TryGetObstacleList("Pipe", out ObstacleService[] pipeList))
+            if (currScenario.TryGetObstacleGroup("Pipe", out ObstacleGroup pipeGroup))
             {
+                ObstacleService[] pipeList = pipeGroup.Obstacles;
                 ObstacleService pipe = pipeList[UnityEngine.Random.Range(0, pipeList.Length)];
-                SpawnPipe(pipe, transform.position, Quaternion.identity, currScenario.moveSpeed);
+
+                float speedToSet = pipeGroup.MoveSpeed;
+                currentPipeSpeed = speedToSet; // Lưu lại final speed để Coin bay cùng tốc độ với Pipe
+
+                SpawnPipe(pipe, transform.position, Quaternion.identity, speedToSet);
             }
         });
 
         pipeAndCoinSeq.AppendInterval(_delayTimeToSpawnCoin);
-        pipeAndCoinSeq.AppendCallback(() => SpawnCoin(currScenario.moveSpeed));
+        pipeAndCoinSeq.AppendCallback(() => SpawnCoin(currentPipeSpeed));
 
         pipeAndCoinSeq.AppendInterval(currScenario.timeToSpawn - _delayTimeToSpawnCoin);
         pipeAndCoinSeq.SetLoops(loopCount);
@@ -177,55 +184,62 @@ public class PacingDesign : MonoBehaviour
         }
     }
 
-    private void ScheduleAttackingBird(Sequence mainSequence, PacingScenario currScenario, float duration)
+    private void ScheduleWarningObstacle(Sequence mainSequence, PacingScenario currScenario, float duration, string groupName)
     {
-        if (currScenario.TryGetObstacleList("AttackingBird", out ObstacleService[] attackingBirdList))
+        if (currScenario.TryGetObstacleGroup(groupName, out ObstacleGroup obstacleGroup))
         {
+            ObstacleService[] obstacleList = obstacleGroup.Obstacles;
+            float baseSpeed = obstacleGroup.MoveSpeed;
+            float forceToSet = obstacleGroup.ForceMagnitude;
+            float warningSignSpeed = baseSpeed - 5f;
+
             if (duration < 0)
             {
-                // Chế độ Vô Hạn: Cứ mỗi 6 giây, chọn một thời điểm random trong 0-3 giây để đẻ chim
-                Sequence attackingBirdSeq = DOTween.Sequence();
-                attackingBirdSeq.AppendCallback(() =>
+                // Chế độ Vô Hạn: Cứ mỗi 6 giây, chọn một thời điểm random trong 0-3 giây để đẻ chướng ngại vật
+                Sequence warningObstacleSeq = DOTween.Sequence();
+                warningObstacleSeq.AppendCallback(() =>
                 {
                     float randDelay = UnityEngine.Random.Range(0f, 3f);
                     DOVirtual.DelayedCall(randDelay, () =>
                     {
-                        Warning signClone = SpawnWarningSign(currScenario.moveSpeed - 5);
+                        Warning signClone = SpawnWarningSign(warningSignSpeed);
                         if (signClone.DurationToFollow != 0)
                         {
                             float delay = signClone.DurationToFollow;
                             DOVirtual.DelayedCall(delay + 0.1f, () =>
                             {
-                                ObstacleService randBird = attackingBirdList[UnityEngine.Random.Range(0, attackingBirdList.Length)];
-                                SpawnAttackingBird(randBird, currScenario.moveSpeed + 6, signClone);
-                            }).SetId("SpawningBird").SetLink(gameObject);
+                                ObstacleService randObstacle = obstacleList[UnityEngine.Random.Range(0, obstacleList.Length)];
+                                float finalSpeedToSet = UnityEngine.Random.Range(baseSpeed, baseSpeed + 2f);
+                                SpawnSpecialObstacle(randObstacle, finalSpeedToSet, forceToSet, signClone);
+                            }).SetId("SpawningWarningObstacle").SetLink(gameObject);
                         }
-                    }).SetId("SpawningBird").SetLink(gameObject);
+                    }).SetId("SpawningWarningObstacle").SetLink(gameObject);
                 });
-                attackingBirdSeq.AppendInterval(6f); // Chu kỳ mỗi 6 giây
-                attackingBirdSeq.SetLoops(9999);
+                warningObstacleSeq.AppendInterval(6f); // Chu kỳ mỗi 6 giây
+                warningObstacleSeq.SetLoops(9999);
 
-                // Chèn sequence đẻ chim chạy song song từ giây thứ 0 của mainSequence
-                mainSequence.Insert(0, attackingBirdSeq);
+                // Chèn sequence đẻ chướng ngại vật chạy song song từ giây thứ 0 của mainSequence
+                mainSequence.Insert(0, warningObstacleSeq);
             }
             else
             {
-                // Chế độ Hữu Hạn: Rải đều 2-5 con chim ngẫu nhiên trong khoảng thời gian duration
-                float birdCount = UnityEngine.Random.Range(2, 5);
-                for (int i = 2; i <= birdCount; i++)
+                // Chế độ Hữu Hạn: Rải đều 2-5 chướng ngại vật ngẫu nhiên trong khoảng thời gian duration
+                float obstacleCount = UnityEngine.Random.Range(2, 5);
+                for (int i = 2; i <= obstacleCount; i++)
                 {
                     float randSpawnTime = UnityEngine.Random.Range(0f, duration);
                     mainSequence.InsertCallback(randSpawnTime, () =>
                     {
-                        Warning signClone = SpawnWarningSign(currScenario.moveSpeed - 5);
+                        Warning signClone = SpawnWarningSign(warningSignSpeed);
                         if (signClone.DurationToFollow != 0)
                         {
-                            float delayTimeToSpawnAttackingBird = signClone.DurationToFollow;
-                            DOVirtual.DelayedCall(delayTimeToSpawnAttackingBird + 0.1f, () =>
+                            float delayTimeToSpawnObstacle = signClone.DurationToFollow;
+                            DOVirtual.DelayedCall(delayTimeToSpawnObstacle + 0.1f, () =>
                             {
-                                ObstacleService randAttackingBird = attackingBirdList[UnityEngine.Random.Range(0, attackingBirdList.Length)];
-                                SpawnAttackingBird(randAttackingBird, currScenario.moveSpeed + 6, signClone);
-                            }).SetId("SpawningBird").SetLink(gameObject);
+                                ObstacleService randObstacle = obstacleList[UnityEngine.Random.Range(0, obstacleList.Length)];
+                                float finalSpeedToSet = UnityEngine.Random.Range(baseSpeed, baseSpeed + 2f);
+                                SpawnSpecialObstacle(randObstacle, finalSpeedToSet, forceToSet, signClone);
+                            }).SetId("SpawningWarningObstacle").SetLink(gameObject);
                         }
                         else
                         {
@@ -237,11 +251,12 @@ public class PacingDesign : MonoBehaviour
         }
     }
 
-    private void SpawnAttackingBird(ObstacleService attackingBird, float speedToSet, Warning signClone)
+    private void SpawnSpecialObstacle(ObstacleService specialObstacle, float speedToSet, float forceToSet, Warning signClone)
     {
         Vector3 posToSpawn = new Vector3(transform.position.x, signClone.LastPosition.y, transform.position.z);
-        ObstacleService attackingBirdClone = Instantiate(attackingBird, posToSpawn, Quaternion.Euler(0, 0, 20f));
-        attackingBirdClone.SetSpeed(speedToSet);
+        ObstacleService specialObstacleClone = Instantiate(specialObstacle, posToSpawn, Quaternion.Euler(0, 0, 20f));
+        specialObstacleClone.SetSpeed(speedToSet);
+        specialObstacleClone.SetForceMagnitude(forceToSet);
     }
 
     private Warning SpawnWarningSign(float followSpeed)
