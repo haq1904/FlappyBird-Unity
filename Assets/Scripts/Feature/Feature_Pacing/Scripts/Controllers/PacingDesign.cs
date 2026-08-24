@@ -75,7 +75,7 @@ public class PacingDesign : MonoBehaviour
 
         if (!isTest)
         {   //Main scenario
-            mainSequence.Append(BuildScenario(easyScenario[0], 15));
+            mainSequence.Append(BuildScenario(easyScenario[0], 10));
             mainSequence.AppendInterval(3.5f);
             mainSequence.Append(BuildScenario(normalScenario[0], 15));
             mainSequence.AppendInterval(2f);
@@ -191,7 +191,8 @@ public class PacingDesign : MonoBehaviour
             ObstacleService[] obstacleList = obstacleGroup.Obstacles;
             float baseSpeed = obstacleGroup.MoveSpeed;
             float forceToSet = obstacleGroup.ForceMagnitude;
-            float warningSignSpeed = baseSpeed - 5f;
+            float radiusToSet = obstacleGroup.Radius;
+            float warningSignSpeed = 1;
 
             if (duration < 0)
             {
@@ -210,7 +211,7 @@ public class PacingDesign : MonoBehaviour
                             {
                                 ObstacleService randObstacle = obstacleList[UnityEngine.Random.Range(0, obstacleList.Length)];
                                 float finalSpeedToSet = UnityEngine.Random.Range(baseSpeed, baseSpeed + 2f);
-                                SpawnSpecialObstacle(randObstacle, finalSpeedToSet, forceToSet, signClone);
+                                SpawnSpecialObstacle(randObstacle, finalSpeedToSet, forceToSet, radiusToSet, signClone);
                             }).SetId("SpawningWarningObstacle").SetLink(gameObject);
                         }
                     }).SetId("SpawningWarningObstacle").SetLink(gameObject);
@@ -238,7 +239,7 @@ public class PacingDesign : MonoBehaviour
                             {
                                 ObstacleService randObstacle = obstacleList[UnityEngine.Random.Range(0, obstacleList.Length)];
                                 float finalSpeedToSet = UnityEngine.Random.Range(baseSpeed, baseSpeed + 2f);
-                                SpawnSpecialObstacle(randObstacle, finalSpeedToSet, forceToSet, signClone);
+                                SpawnSpecialObstacle(randObstacle, finalSpeedToSet, forceToSet, radiusToSet, signClone);
                             }).SetId("SpawningWarningObstacle").SetLink(gameObject);
                         }
                         else
@@ -251,12 +252,13 @@ public class PacingDesign : MonoBehaviour
         }
     }
 
-    private void SpawnSpecialObstacle(ObstacleService specialObstacle, float speedToSet, float forceToSet, Warning signClone)
+    private void SpawnSpecialObstacle(ObstacleService specialObstacle, float speedToSet, float forceToSet, float radiusToSet, Warning signClone)
     {
         Vector3 posToSpawn = new Vector3(transform.position.x, signClone.LastPosition.y, transform.position.z);
         ObstacleService specialObstacleClone = Instantiate(specialObstacle, posToSpawn, Quaternion.Euler(0, 0, 20f));
         specialObstacleClone.SetSpeed(speedToSet);
         specialObstacleClone.SetForceMagnitude(forceToSet);
+        specialObstacleClone.SetRadius(radiusToSet);
     }
 
     private Warning SpawnWarningSign(float followSpeed)
