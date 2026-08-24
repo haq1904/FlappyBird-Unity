@@ -93,7 +93,7 @@ PointEffector2D:
   m_ForceSource: 1
   m_ForceTarget: 0
   m_ForceMode: 2
-  m_LinearDamping: 0.68
+  m_LinearDamping: 10
   m_AngularDamping: 0
 --- !u!114 &2506678757038675749
 MonoBehaviour:
@@ -294,7 +294,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -188435169
   m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: -7266240951365542546, guid: 360124d355f9c5d41a8d12ebc5718088, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

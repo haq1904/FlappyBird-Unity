@@ -89,6 +89,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: -2429078760636345348}
   m_SourcePrefab: {fileID: 100100000, guid: 70ec2327cd07b4e439861f90b9ce4324, type: 3}
+--- !u!58 &146429020177947269 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3498408648515225889, guid: 70ec2327cd07b4e439861f90b9ce4324, type: 3}
+  m_PrefabInstance: {fileID: 3640281008888370084}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2525861565548585058 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1263622519134467014, guid: 70ec2327cd07b4e439861f90b9ce4324, type: 3}
@@ -108,12 +113,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: FlappyBird.Feature_Obstacle::ZigzagStorm
   _visual: {fileID: 4959487067539805513}
   _rotateDuration: 1
+  _suctionCollider: {fileID: 146429020177947269}
   _shakeDuration: 0.5
   _shakeStrength: {x: 0.05, y: 0.05, z: 0}
   _shakeVibrato: 10
   _shakeRandomness: 90
   _moveSpeed: 2.91
-  _verticalSpeed: 3
+  _verticalSpeed: 11.34
 --- !u!4 &4959487067539805513 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8527358620407351021, guid: 70ec2327cd07b4e439861f90b9ce4324, type: 3}

@@ -7,6 +7,8 @@ public abstract class ObstacleService : MonoBehaviour, IObstacle
 
     public virtual void SetForceMagnitude(float force) { }
 
+    public virtual void SetRadius(float value) { }
+
     public virtual float GetSpawnHeight() { return 0; }
 
 }

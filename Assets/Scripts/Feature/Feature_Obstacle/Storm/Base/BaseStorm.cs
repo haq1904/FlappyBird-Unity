@@ -6,6 +6,7 @@ public class BaseStorm : ObstacleService
     [Header("Fields")]
     [SerializeField] private Transform _visual;
     [SerializeField] private float _rotateDuration;
+    [SerializeField] private CircleCollider2D _suctionCollider;
 
     [Header("Shake fields")]
     [SerializeField] private float _shakeDuration = 1f;
@@ -57,6 +58,12 @@ public class BaseStorm : ObstacleService
     {
         _moveSpeed = moveSpeed;
     }
+
+    public override void SetRadius(float value)
+    {
+        _suctionCollider.radius = value;
+    }
+
 
     public override void SetForceMagnitude(float force)
     {

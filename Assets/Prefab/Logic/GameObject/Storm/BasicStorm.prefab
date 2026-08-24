@@ -96,6 +96,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: -7523375236255919846}
   m_SourcePrefab: {fileID: 100100000, guid: 70ec2327cd07b4e439861f90b9ce4324, type: 3}
+--- !u!58 &232077350706986183 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3498408648515225889, guid: 70ec2327cd07b4e439861f90b9ce4324, type: 3}
+  m_PrefabInstance: {fileID: 3725700921354237414}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2467146604392187424 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1263622519134467014, guid: 70ec2327cd07b4e439861f90b9ce4324, type: 3}
@@ -115,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: FlappyBird.Feature_Obstacle::BasicStorm
   _visual: {fileID: 5035897686970397451}
   _rotateDuration: 2
+  _suctionCollider: {fileID: 232077350706986183}
   _shakeDuration: 0.5
   _shakeStrength: {x: 0.05, y: 0.05, z: 0}
   _shakeVibrato: 10

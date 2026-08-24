@@ -18,6 +18,7 @@ public struct ObstacleGroup
     [Header("Custom Settings")]
     public float MoveSpeed;
     public float ForceMagnitude;
+    public float Radius;
 }
 
 public class PacingScenario : ScriptableObject

@@ -1191,11 +1191,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 184056810483459704, guid: 1e219f09f57710647b5db04191127662, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.599998
+      value: -14.849999
       objectReference: {fileID: 0}
     - target: {fileID: 184056810483459704, guid: 1e219f09f57710647b5db04191127662, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1999993
+      value: -1.1999996
       objectReference: {fileID: 0}
     - target: {fileID: 184056810483459704, guid: 1e219f09f57710647b5db04191127662, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1395,7 +1395,7 @@ PrefabInstance:
     - target: {fileID: 4985468846451972267, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: _obstaclePrefab
       value: 
-      objectReference: {fileID: -2429078760636345348, guid: 24755a85b94568a439716d19825914c1, type: 3}
+      objectReference: {fileID: -7523375236255919846, guid: 82e2e215de9e6884a959209f21b7ac95, type: 3}
     - target: {fileID: 4985468846451972267, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: _moveSpeedToTest
       value: 17
@@ -1410,11 +1410,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5111589854124849411, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6690994148383630866, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.349998
+      value: 56.35
       objectReference: {fileID: 0}
     - target: {fileID: 6690994148383630866, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2267,24 +2267,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1122600913447070357, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4375144097674066273, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
-      propertyPath: isTest
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4375144097674066273, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
-      propertyPath: typeMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4375144097674066273, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
       propertyPath: _mainBird
       value: 
       objectReference: {fileID: 1432277160}
-    - target: {fileID: 4375144097674066273, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
-      propertyPath: modeIsTest
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4375144097674066273, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
       propertyPath: _attackingBird
       value: 
@@ -7071,10 +7059,6 @@ PrefabInstance:
     - target: {fileID: 1263622519134467014, guid: 70ec2327cd07b4e439861f90b9ce4324, type: 3}
       propertyPath: m_Name
       value: BaseStorm
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263622519134467014, guid: 70ec2327cd07b4e439861f90b9ce4324, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7414236410442170096, guid: 70ec2327cd07b4e439861f90b9ce4324, type: 3}
       propertyPath: m_LocalPosition.x

@@ -3,7 +3,6 @@ using UnityEngine;
 public class ZigzagStorm : BaseStorm
 {
     [Header("Zigzag Settings")]
-    [Tooltip("Tốc độ bay lên/xuống")]
     [SerializeField] private float _verticalSpeed = 3f;
 
     private int _directionY = 1;
@@ -15,13 +14,13 @@ public class ZigzagStorm : BaseStorm
 
     protected override void FixedUpdate()
     {
-        _rb.linearVelocity = new Vector2(-1f, _verticalSpeed * _directionY)*_moveSpeed;
+        _rb.linearVelocity = new Vector2(_moveSpeed * -1, _verticalSpeed * _directionY);
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
-        
+
         if (collision.CompareTag("ActionTriggerRevert"))
         {
             _directionY *= -1;
