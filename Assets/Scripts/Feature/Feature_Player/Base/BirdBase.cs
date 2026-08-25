@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using Cinemachine;
+using DG.Tweening;
 using UnityEngine;
 
 
@@ -11,7 +12,6 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     [Header("Fields")]
     [field: SerializeField] public float JumpForce { get; set; }
     [SerializeField] private CinemachineImpulseSource impulseSource;
-    [SerializeField] public Animator Animator;
     [SerializeField] private CharacterDataBaseService _characterDB;
     [SerializeField] private ParticleSystem dustPS;
     [SerializeField] private ParticleSystem _explosionPS;
@@ -20,6 +20,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     [SerializeField] public float maxDownAngle = -40;
     [SerializeField] public float rotationSpeed = 15f;
     [SerializeField] private Material _whiteMaterial;
+
 
 
     [Header("Events")]
@@ -42,11 +43,13 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
 
     public SpriteRenderer SPRITE { get; set; }
 
+    public Animator BIRDANIMATOR { get; set; }
+
     public BirdControls Controls;
 
     private DataManagerService _dataManager;
 
-    private Material _resetMaterial;
+    public Material ResetMaterial { get; set; }
 
 
 
@@ -80,7 +83,6 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
             Debug.Log("Can not get data manager.");
             return;
         }
-        Animator.runtimeAnimatorController = _characterDB.GetCharacterById(_dataManager.GetSelectedSkinId()).AnimController;
 
     }
 
@@ -98,8 +100,10 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     {
         RB = gameObject.GetComponent<Rigidbody2D>();
         COL = gameObject.GetComponent<CapsuleCollider2D>();
-        SPRITE = gameObject.GetComponent<SpriteRenderer>();
-        _resetMaterial = SPRITE.material;
+        SPRITE = gameObject.GetComponentInChildren<SpriteRenderer>();
+        BIRDANIMATOR = gameObject.GetComponentInChildren<Animator>();
+        BIRDANIMATOR.runtimeAnimatorController = _characterDB.GetCharacterById(_dataManager.GetSelectedSkinId()).AnimController;
+        ResetMaterial = SPRITE.material;
         resetPos = transform.position;
         resetGravity = RB.gravityScale;
         StateMachine.Initialize(IdleState);
@@ -136,7 +140,6 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     #region Received Event Function
     public void HandleReset()//Receive OnRestart event from EasyModeManager
     {
-        SPRITE.material = _resetMaterial;
         StateMachine.ChangeState(ResetState);
     }
 
@@ -195,8 +198,8 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     public void Flap()
     {
         OnBirdRaiseSoundEvent.Raise(SoundType.Flap);
-        Animator.Play("Flap", -1, 0f);
-        PlayDustPS();
+        BIRDANIMATOR.Play("Flap", -1, 0f);
+        dustPS.Play();
     }
 
     public void RaiseAddPointEvent(float point)
@@ -211,31 +214,23 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
         OnBirdRaiseCoin.Raise(coin);
     }
 
+
     public void BirdDead()
     {
         OnBirdRaiseSoundEvent.Raise(SoundType.GameOver);
         SPRITE.material = _whiteMaterial;
         OnBirdDead.Raise();
         OnBirdRaiseImpulseSource.Raise(impulseSource);
-        PlayExplosionPS();
-        PlayCrashSmokePuffPS();
-    }
-
-
-    public void PlayDustPS()
-    {
-        dustPS.Play();
-    }
-
-    public void PlayExplosionPS()
-    {
         _explosionPS.Play();
+        _crashSmokePuffPS.Play();
+
     }
 
-    public void PlayCrashSmokePuffPS()
+    public void PlayAnimationClip(string animationClipName)
     {
-        _crashSmokePuffPS.Play();
+        BIRDANIMATOR.Play(animationClipName, -1, 0f);
     }
+
 
     public void StopCrashSmokePuffPS()
     {

@@ -19,11 +19,10 @@ public class BirdIdleState : BirdState
         base.EnterState();
         GetState();
         bird.RB.bodyType = RigidbodyType2D.Kinematic;
-        bird.transform.position = bird.resetPos;
         bird.RB.linearVelocity = Vector2.zero;
         bird.transform.rotation = Quaternion.identity;
         bird.RB.angularVelocity = 0f;
-        bird.Animator.Play("Idle", -1, 0f);
+        bird.PlayAnimationClip("Idle");
 
     }
 
