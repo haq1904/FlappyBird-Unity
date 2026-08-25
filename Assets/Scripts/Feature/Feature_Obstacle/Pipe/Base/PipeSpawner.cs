@@ -11,6 +11,14 @@ public class PipeSpawner : MonoBehaviour
     [SerializeField] private float _forceMagnitudeToTest = -100f;
 
     private float _remainingTime = 0f;
+    private ObjectPoolingService _poolService;
+
+    private void Awake()
+    {
+        _poolService = FindAnyObjectByType<ObjectPoolingService>();
+        if (_poolService == null)
+            Debug.Log("Can not get pool service");
+    }
 
     private void OnEnable()
     {
@@ -32,9 +40,9 @@ public class PipeSpawner : MonoBehaviour
 
     private void SpawnObstacle()
     {
-        if (_obstaclePrefab != null)
+        if (_obstaclePrefab != null && _poolService != null)
         {
-            ObstacleService obstacle = Instantiate(_obstaclePrefab, transform.position, Quaternion.identity);
+            ObstacleService obstacle = _poolService.SpawnObject<ObstacleService>(_obstaclePrefab, transform.position, Quaternion.identity);
             obstacle.SetSpeed(_moveSpeedToTest);
             obstacle.SetForceMagnitude(_forceMagnitudeToTest);
         }

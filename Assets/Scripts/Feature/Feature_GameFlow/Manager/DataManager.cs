@@ -4,6 +4,7 @@ public class DataManager : DataManagerService
 {
     private void Awake()
     {
+
         DontDestroyOnLoad(gameObject);
     }
 

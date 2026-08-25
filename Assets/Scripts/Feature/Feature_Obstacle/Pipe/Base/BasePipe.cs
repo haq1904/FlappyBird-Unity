@@ -1,6 +1,6 @@
-using UnityEngine;
 using DG.Tweening;
 using UnityEditor;
+using UnityEngine;
 
 public abstract class BasePipe : ObstacleService
 {
@@ -12,21 +12,25 @@ public abstract class BasePipe : ObstacleService
 
 
     public float GetHeightRange { get => heightRangeTop; }
-    
+
     protected Rigidbody2D rb;
 
     protected float currSpeed;
+    protected ObjectPoolingService _poolService;
 
     #region MonoBehavior function
-    private void Awake()
+    protected virtual void Awake()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();       
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        _poolService = FindAnyObjectByType<ObjectPoolingService>();
+        if (_poolService == null)
+            Debug.Log("Can not get pool service");
     }
 
     protected virtual void OnEnable()
     {
         randSpawnHeight = UnityEngine.Random.Range(heightRangeBot, heightRangeTop);
-        transform.position = new Vector3(transform.position.x, randSpawnHeight, transform.position.z);   
+        transform.position = new Vector3(transform.position.x, randSpawnHeight, transform.position.z);
     }
 
     protected virtual void OnDisable()
@@ -41,9 +45,12 @@ public abstract class BasePipe : ObstacleService
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("PoolCollector")) 
+        if (collision.CompareTag("PoolCollector") && gameObject.activeSelf)
         {
-            Destroy(gameObject);
+            if (_poolService != null)
+                _poolService.ReturnObjectToPool(gameObject);
+            else
+                Destroy(gameObject);
         }
     }
     #endregion 
@@ -68,10 +75,15 @@ public abstract class BasePipe : ObstacleService
 
     public virtual void GameRestart()
     {
-        Destroy(gameObject);
-    }
-    
+        if (!gameObject.activeSelf) return;
 
-    
+        if (_poolService != null)
+            _poolService.ReturnObjectToPool(gameObject);
+        else
+            Destroy(gameObject);
+    }
+
+
+
     #endregion
 }

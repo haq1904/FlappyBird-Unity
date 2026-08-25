@@ -1,5 +1,5 @@
-using UnityEngine;
 using DG.Tweening;
+using UnityEngine;
 
 
 public class NitroPipe : BasePipe
@@ -26,6 +26,22 @@ public class NitroPipe : BasePipe
 
     private Sequence s;
     private bool isTrigger = false;
+    private Quaternion _resetRotation;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        _resetRotation = _topPipe.transform.rotation;
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        _topPipe.transform.rotation = _resetRotation;
+        _botPipe.transform.rotation = _resetRotation;
+        isTrigger = false;
+
+    }
 
     protected override void OnDisable()
     {
@@ -48,7 +64,7 @@ public class NitroPipe : BasePipe
         {
             isTrigger = true;
             s = DOTween.Sequence();
-            s.AppendCallback(()=>{moveSpeed = 2.5f;});
+            s.AppendCallback(() => { moveSpeed = 2.5f; });
             s.AppendInterval(timeSlowDown);
             s.AppendCallback(() => { moveSpeed = 2; });
             s.AppendInterval(timeSlowDown);
@@ -60,14 +76,14 @@ public class NitroPipe : BasePipe
             s.AppendInterval(timeSlowDown);
             s.AppendCallback(() => { moveSpeed = 0; });
             s.Append(rb.DOMoveX((transform.position.x + backDistance), durationForBacking).SetEase(easeForBacking).SetUpdate(UpdateType.Fixed).SetLink(gameObject));
-            s.AppendCallback(() => 
+            s.AppendCallback(() =>
             {
-                _topPipe.transform.DORotate(_desToRotate, _durationForRotating).SetEase(_easeForRotating,_amplitudeForRotating,_periodForRotating).SetLink(gameObject);
+                _topPipe.transform.DORotate(_desToRotate, _durationForRotating).SetEase(_easeForRotating, _amplitudeForRotating, _periodForRotating).SetLink(gameObject);
                 _botPipe.transform.DORotate(new Vector3(_desToRotate.x, _desToRotate.y, -_desToRotate.z), _durationForRotating).SetEase(_easeForRotating, _amplitudeForRotating, _periodForRotating).SetLink(gameObject);
                 moveSpeed = takeCurrSpeed + speedForBooting;
                 _dustTop.Play();
                 _dustBot.Play();
-                
+
             });
             s.SetLink(gameObject, LinkBehaviour.KillOnDisable);
         }

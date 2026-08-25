@@ -23,9 +23,10 @@ public class PacingDesign : MonoBehaviour
     [SerializeField] private Boolean isTest;
     [SerializeField] private Mode modeIsTest;
     [SerializeField] private TypeMode typeMode;
-
     //use for spawning coins close with the midle of the pipes
     private float _currPipeHeight;
+
+    private ObjectPoolingService _poolService;
 
     private Sequence _lastSequence;
     private Sequence _infiniteSpeedSeq;
@@ -42,6 +43,13 @@ public class PacingDesign : MonoBehaviour
     {
         One,
         Two
+    }
+
+    private void Awake()
+    {
+        _poolService = FindAnyObjectByType<ObjectPoolingService>();
+        if (_poolService == null)
+            Debug.Log("Can not get pool service");
     }
 
     private void OnDisable()
@@ -134,7 +142,7 @@ public class PacingDesign : MonoBehaviour
             _infiniteSpeedSeq.AppendInterval(10f);
             _infiniteSpeedSeq.AppendCallback(() =>
             {
-                _infiniteSpeedOffset += 1f;
+                _infiniteSpeedOffset += 2f;
                 Debug.Log($"[PacingDesign] Infinite Speed increased! Current offset: {_infiniteSpeedOffset}");
             });
             _infiniteSpeedSeq.SetLoops(-1);
@@ -179,7 +187,7 @@ public class PacingDesign : MonoBehaviour
 
     private void SpawnPipe(ObstacleService pipe, Vector3 position, Quaternion quaternion, float moveSpeed)
     {
-        ObstacleService pipeClone = Instantiate(pipe, position, quaternion);
+        ObstacleService pipeClone = _poolService.SpawnObject<ObstacleService>(pipe, position, quaternion);
         pipeClone.SetSpeed(moveSpeed);
         _currPipeHeight = pipeClone.GetSpawnHeight();
     }

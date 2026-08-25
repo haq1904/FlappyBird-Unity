@@ -7,13 +7,20 @@ public class ChildOneWay : MonoBehaviour
     [SerializeField] private OneWayMovePipe parentPipe;
     [SerializeField] private float timeToMove = 1f;
     private float targetY;
+    private Vector2 _resetLocalPos;
+
+    private void Awake()
+    {
+        _resetLocalPos = transform.localPosition;
+    }
 
     private void OnEnable()
     {
+        transform.localPosition = _resetLocalPos;
         float startRange = 0;
         float endRange = 0;
 
-        if (parentPipe.GetSpawnHeight()>=0)
+        if (parentPipe.GetSpawnHeight() >= 0)
         {
             startRange = -parentPipe.GetHeightRange - parentPipe.GetSpawnHeight();
             endRange = parentPipe.GetSpawnHeight() - parentPipe.GetUnitToMove;
@@ -23,7 +30,7 @@ public class ChildOneWay : MonoBehaviour
             startRange = parentPipe.GetSpawnHeight() + parentPipe.GetUnitToMove;
             endRange = parentPipe.GetHeightRange - parentPipe.GetSpawnHeight();
         }
-        
+
         targetY = UnityEngine.Random.Range(startRange, endRange);
     }
 
