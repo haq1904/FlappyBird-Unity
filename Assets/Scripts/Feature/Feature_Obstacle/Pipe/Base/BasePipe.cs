@@ -17,6 +17,7 @@ public abstract class BasePipe : ObstacleService
 
     protected float currSpeed;
     protected ObjectPoolingService _poolService;
+    protected bool _isGameOver = false;
 
     #region MonoBehavior function
     protected virtual void Awake()
@@ -29,6 +30,7 @@ public abstract class BasePipe : ObstacleService
 
     protected virtual void OnEnable()
     {
+        _isGameOver = false;
         randSpawnHeight = UnityEngine.Random.Range(heightRangeBot, heightRangeTop);
         transform.position = new Vector3(transform.position.x, randSpawnHeight, transform.position.z);
     }
@@ -40,7 +42,8 @@ public abstract class BasePipe : ObstacleService
 
     protected virtual void FixedUpdate()
     {
-        rb.linearVelocity = Vector2.left * moveSpeed;
+        if (!_isGameOver)
+            rb.linearVelocity = Vector2.left * moveSpeed;
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -69,8 +72,8 @@ public abstract class BasePipe : ObstacleService
     #region State
     public virtual void GameOver()
     {
+        _isGameOver = true;
         rb.linearVelocity = Vector2.zero;
-        this.enabled = false;
     }
 
     public virtual void GameRestart()

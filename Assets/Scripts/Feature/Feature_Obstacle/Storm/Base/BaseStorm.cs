@@ -17,12 +17,14 @@ public class BaseStorm : ObstacleService
     protected Rigidbody2D _rb;
     protected PointEffector2D _pointEffector;
     [SerializeField] protected float _moveSpeed = 0;
+    protected ObjectPoolingService _poolService;
+    protected bool _isGameOver = false;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _pointEffector = GetComponent<PointEffector2D>();
-
+        _poolService = FindAnyObjectByType<ObjectPoolingService>();
     }
 
     protected virtual void FixedUpdate()
@@ -32,6 +34,8 @@ public class BaseStorm : ObstacleService
 
     private void OnEnable()
     {
+        _isGameOver = false;
+
         _visual.DORotate(new Vector3(0, 0, 360), _rotateDuration, RotateMode.FastBeyond360)
         .SetLink(gameObject)
         .SetLoops(-1, LoopType.Restart)
@@ -45,7 +49,15 @@ public class BaseStorm : ObstacleService
 
     public void HandleRestart()
     {
-        Destroy(gameObject);
+        if (!gameObject.activeSelf) return;
+
+        if (_poolService != null)
+            _poolService.ReturnObjectToPool(gameObject);
+    }
+
+    public void HandleGameOver()
+    {
+        _isGameOver = true;
     }
 
 
@@ -67,9 +79,10 @@ public class BaseStorm : ObstacleService
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("PoolCollector"))
+        if (collision.CompareTag("PoolCollector") && gameObject.activeSelf)
         {
-            Destroy(gameObject);
+            if (_poolService != null)
+                _poolService.ReturnObjectToPool(gameObject);
         }
     }
 }

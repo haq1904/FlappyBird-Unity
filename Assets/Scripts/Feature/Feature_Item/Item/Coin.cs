@@ -13,21 +13,39 @@ public class Coin : ItemService
     [SerializeField] private float _angularVelocity = 10;
 
     private Rigidbody2D _rb;
-    private bool _IsTaken = false;
+    private bool _isTaken = false;
+    private bool _isGameOver = false;
+    private ObjectPoolingService _poolService;
 
-    private void Start()
+    private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _poolService = FindAnyObjectByType<ObjectPoolingService>();
     }
 
     private void OnEnable()
     {
+        _isTaken = false;
+        _isGameOver = false;
+        if (_rb != null)
+        {
+            _rb.bodyType = RigidbodyType2D.Kinematic;
+            _rb.linearVelocity = Vector2.zero;
+            _rb.angularVelocity = 0f;
+        }
+        transform.rotation = Quaternion.identity;
+        if (spr != null)
+        {
+            spr.color = Color.white;
+            spr.DOKill();
+        }
+
         _animator.Play("Idle", -1, Random.Range(0f, 1f));
     }
 
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<IReceivable>(out var gameObj) && !_IsTaken)
+        if (collision.TryGetComponent<IReceivable>(out var gameObj) && !_isTaken && !_isGameOver)
         {
             Sequence s = DOTween.Sequence();
             s.SetLink(gameObject);
@@ -39,21 +57,27 @@ public class Coin : ItemService
                 _rb.bodyType = RigidbodyType2D.Dynamic;
                 _rb.AddForce(new Vector2(finalX, 1) * _force, ForceMode2D.Impulse);
                 _rb.angularVelocity = Random.Range(-_angularVelocity, _angularVelocity);
-                _IsTaken = true;
+                _isTaken = true;
             });
             s.Append(spr.DOFade(0, _timeToFade).SetEase(_easeToFade));
-            s.AppendCallback(() => Destroy(gameObject));
+            s.AppendCallback(() =>
+            {
+                if (gameObject.activeSelf)
+                {
+                    if (_poolService != null) _poolService.ReturnObjectToPool(gameObject);
+                }
+            });
         }
-        else if (collision.CompareTag("PoolCollector"))
+        else if (collision.CompareTag("PoolCollector") && gameObject.activeSelf)
         {
-            Destroy(gameObject);
+            if (_poolService != null) _poolService.ReturnObjectToPool(gameObject);
         }
     }
 
 
     private void FixedUpdate()
     {
-        if (!_IsTaken)
+        if (!_isTaken)
         {
             _rb.linearVelocity = Vector2.left * _speed;
         }
@@ -73,11 +97,15 @@ public class Coin : ItemService
     {
         _speed = 0;
         _rb.linearVelocity = Vector2.zero;
+        _isGameOver = true;
     }
 
     public void HandleRestart()
     {
-        Destroy(gameObject);
+        if (!gameObject.activeSelf) return;
+
+        if (_poolService != null)
+            _poolService.ReturnObjectToPool(gameObject);
     }
 
 

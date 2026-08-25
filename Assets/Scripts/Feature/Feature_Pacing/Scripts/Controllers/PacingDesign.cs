@@ -201,7 +201,7 @@ public class PacingDesign : MonoBehaviour
             //use x value of PacingDesign to place coin with the same distance(by i).
             float calculatedPosX = transform.position.x + i * _distanceBetweenCoin;
             Vector3 finalEachCoinTrans = new Vector3(calculatedPosX + _distanceBetweenCoin, randCoinHeight, 0);
-            ItemService coinClone = Instantiate(_coinPrefab, finalEachCoinTrans, Quaternion.identity);
+            ItemService coinClone = _poolService.SpawnObject<ItemService>(_coinPrefab, finalEachCoinTrans, Quaternion.identity);
             coinClone.SetSpeed(speedToSet);
         }
     }
@@ -277,7 +277,7 @@ public class PacingDesign : MonoBehaviour
     private void SpawnSpecialObstacle(ObstacleService specialObstacle, float speedToSet, float forceToSet, float radiusToSet, Warning signClone)
     {
         Vector3 posToSpawn = new Vector3(transform.position.x, signClone.LastPosition.y, transform.position.z);
-        ObstacleService specialObstacleClone = Instantiate(specialObstacle, posToSpawn, Quaternion.Euler(0, 0, 20f));
+        ObstacleService specialObstacleClone = _poolService.SpawnObject<ObstacleService>(specialObstacle, posToSpawn, Quaternion.Euler(0, 0, 20f));
         specialObstacleClone.SetSpeed(speedToSet);
         specialObstacleClone.SetForceMagnitude(forceToSet);
         specialObstacleClone.SetRadius(radiusToSet);

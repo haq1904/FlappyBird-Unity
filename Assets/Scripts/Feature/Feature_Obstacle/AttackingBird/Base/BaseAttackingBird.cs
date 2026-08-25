@@ -26,17 +26,26 @@ public class BaseAttackingBird : ObstacleService
 
     private Rigidbody2D _rb;
     private bool haveCollision = false;
+    private ObjectPoolingService _poolService;
 
     private void OnEnable()
     {
+        haveCollision = false;
+        if (_rb != null)
+        {
+            _rb.bodyType = RigidbodyType2D.Kinematic;
+            _rb.linearVelocity = Vector2.zero;
+            _rb.angularVelocity = 0f;
+        }
+        transform.rotation = Quaternion.identity;
         _sprite.transform.DOShakePosition(_shakeDuration, _shakeStrength, _shakeVibrato, _shakeRandomness).SetLink(gameObject);
+        PlayAnimation();
     }
 
-    private void Start()
+    private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        PlayAnimation();
-
+        _poolService = FindAnyObjectByType<ObjectPoolingService>();
     }
 
     private void FixedUpdate()
@@ -50,7 +59,10 @@ public class BaseAttackingBird : ObstacleService
 
     public void HandleRestart()
     {
-        Destroy(gameObject);
+        if (!gameObject.activeSelf) return;
+
+        if (_poolService != null)
+            _poolService.ReturnObjectToPool(gameObject);
     }
 
     public void HandleGameOver()
@@ -86,9 +98,10 @@ public class BaseAttackingBird : ObstacleService
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("PoolCollector"))
+        if (collision.CompareTag("PoolCollector") && gameObject.activeSelf)
         {
-            Destroy(gameObject);
+            if (_poolService != null)
+                _poolService.ReturnObjectToPool(gameObject);
         }
     }
 
