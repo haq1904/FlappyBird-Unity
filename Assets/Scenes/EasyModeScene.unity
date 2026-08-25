@@ -1393,9 +1393,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8348489220079675091, guid: bec8c622f762e2746beaa1b61446aff2, type: 3}
     - target: {fileID: 4985468846451972267, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
+      propertyPath: _timeToSpawn
+      value: 4.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985468846451972267, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: _obstaclePrefab
       value: 
-      objectReference: {fileID: -2429078760636345348, guid: 24755a85b94568a439716d19825914c1, type: 3}
+      objectReference: {fileID: -7523375236255919846, guid: 82e2e215de9e6884a959209f21b7ac95, type: 3}
     - target: {fileID: 4985468846451972267, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: _moveSpeedToTest
       value: 17
@@ -2283,7 +2287,7 @@ PrefabInstance:
       objectReference: {fileID: 1432277160}
     - target: {fileID: 4375144097674066273, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
       propertyPath: modeIsTest
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4375144097674066273, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
       propertyPath: _attackingBird

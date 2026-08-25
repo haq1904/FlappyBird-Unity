@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class BirdFlyingState : BirdState
 {
     private string name = "Flying state";
+    private float _timeSinceLastStorm = 0f;
     public BirdFlyingState(BirdBase bird, BirdStateMachine birdStateMachine) : base(bird, birdStateMachine)
     {
         nameState = "Flying state";
@@ -25,6 +26,9 @@ public class BirdFlyingState : BirdState
         bird.RB.gravityScale = bird.resetGravity;
         bird.Controls.Bird.Jump.started += OnFlapStarted;
         bird.COL.isTrigger = false;
+
+        _timeSinceLastStorm = 0f;
+        bird.stormCount = 0;
     }
 
 
@@ -45,6 +49,25 @@ public class BirdFlyingState : BirdState
     public override void PhysicUpdate()
     {
         base.PhysicUpdate();
+
+        if (bird.stormCount == 0)
+        {
+            _timeSinceLastStorm += Time.fixedDeltaTime;
+            if (_timeSinceLastStorm >= 1f)
+            {
+                // Smoothly return to resetPos.x
+                Vector3 currentPos = bird.transform.position;
+                if (Mathf.Abs(currentPos.x - bird.resetPos.x) > 0.01f)
+                {
+                    currentPos.x = Mathf.Lerp(currentPos.x, bird.resetPos.x, Time.fixedDeltaTime);
+                    bird.transform.position = currentPos;
+                }
+            }
+        }
+        else
+        {
+            _timeSinceLastStorm = 0f;
+        }
     }
     public override void GetState()
     {
@@ -57,6 +80,25 @@ public class BirdFlyingState : BirdState
         bird.RB.AddForce(direction * impactForce, ForceMode2D.Impulse);
         bird.RB.gravityScale = gravityScale;
         birdStateMachine.ChangeState(bird.DieState);
+    }
+
+    public override void HandleTrigger(Collider2D other)
+    {
+        base.HandleTrigger(other);
+        if (other.CompareTag("Storm"))
+        {
+            bird.stormCount++;
+        }
+    }
+
+    public override void HandleTriggerExit(Collider2D other)
+    {
+        base.HandleTriggerExit(other);
+        if (other.CompareTag("Storm"))
+        {
+            bird.stormCount--;
+            if (bird.stormCount < 0) bird.stormCount = 0;
+        }
     }
 
     public override void HandleAddPoint(float point)

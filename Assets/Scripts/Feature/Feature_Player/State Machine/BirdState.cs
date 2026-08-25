@@ -51,6 +51,11 @@ public class BirdState
 
     }
 
+    public virtual void HandleTriggerExit(Collider2D other)
+    {
+
+    }
+
     public virtual void HandleAddPoint(float point)
     {
 

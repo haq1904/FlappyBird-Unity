@@ -1,5 +1,6 @@
 
 using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using Cinemachine;
 using UnityEngine;
@@ -32,6 +33,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     [HideInInspector] public string BirdState;
     [HideInInspector] public Vector3 resetPos;
     [HideInInspector] public float resetGravity;
+    [HideInInspector] public int stormCount = 0;
 
 
     public Rigidbody2D RB { get; set; }
@@ -110,9 +112,22 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
         StateMachine.CurrentBirdState.FrameUpdate();
     }
 
+    private void FixedUpdate()
+    {
+        StateMachine.CurrentBirdState.PhysicUpdate();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         StateMachine.CurrentBirdState.HandleTrigger(other);
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (StateMachine != null && StateMachine.CurrentBirdState != null)
+        {
+            StateMachine.CurrentBirdState.HandleTriggerExit(other);
+        }
     }
 
 
