@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9093124991161230979}
   - component: {fileID: 5153991283887954554}
   - component: {fileID: 2506678757038675749}
-  - component: {fileID: 4349204445559980796}
   - component: {fileID: 2240609222825223438}
   - component: {fileID: 3498408648515225889}
   m_Layer: 0
@@ -114,34 +113,6 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Storm, FlappyBird.Feature_Obstacle
         m_MethodName: HandleRestart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4349204445559980796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263622519134467014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
-  Event: {fileID: 11400000, guid: 88c3eb58560e7dd459408714edf28dd5, type: 2}
-  Respond:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Storm, FlappyBird.Feature_Obstacle
-        m_MethodName: HandleGameOver
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

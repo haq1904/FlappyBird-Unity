@@ -48,11 +48,6 @@ public class BaseStorm : ObstacleService
         Destroy(gameObject);
     }
 
-    public void HandleGameOver()
-    {
-        _pointEffector.linearDamping = 0;
-        _moveSpeed = 0;
-    }
 
     public override void SetSpeed(float moveSpeed)
     {
