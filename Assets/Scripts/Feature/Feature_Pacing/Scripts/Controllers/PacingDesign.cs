@@ -162,10 +162,9 @@ public class PacingDesign : MonoBehaviour
                 ObstacleService pipe = pipeList[UnityEngine.Random.Range(0, pipeList.Length)];
 
                 float baseSpeed = pipeGroup.MoveSpeed + _infiniteSpeedOffset;
-                float finalSpeedToSet = UnityEngine.Random.Range(baseSpeed, baseSpeed + 2f);
-                currentPipeSpeed = finalSpeedToSet; // Lưu lại final speed để Coin bay cùng tốc độ với Pipe
+                currentPipeSpeed = baseSpeed; // Lưu lại final speed để Coin bay cùng tốc độ với Pipe
 
-                SpawnPipe(pipe, transform.position, Quaternion.identity, finalSpeedToSet);
+                SpawnPipe(pipe, transform.position, Quaternion.identity, baseSpeed);
             }
         });
 
