@@ -28,6 +28,8 @@ public class PacingDesign : MonoBehaviour
     private float _currPipeHeight;
 
     private Sequence _lastSequence;
+    private Sequence _infiniteSpeedSeq;
+    private float _infiniteSpeedOffset = 0f;
 
     public enum Mode
     {
@@ -46,6 +48,7 @@ public class PacingDesign : MonoBehaviour
     {
         mainSequence?.Kill();
         _lastSequence?.Kill();
+        _infiniteSpeedSeq?.Kill();
         DOTween.Kill("SpawningWarningObstacle");
     }
 
@@ -60,6 +63,7 @@ public class PacingDesign : MonoBehaviour
     {
         mainSequence?.Kill();
         _lastSequence?.Kill();
+        _infiniteSpeedSeq?.Kill();
         DOTween.Kill("SpawningWarningObstacle");
     }
 
@@ -70,6 +74,7 @@ public class PacingDesign : MonoBehaviour
 
     private void PlayScenarios()
     {
+        _infiniteSpeedOffset = 0f;
         mainSequence = DOTween.Sequence();
 
 
@@ -120,11 +125,20 @@ public class PacingDesign : MonoBehaviour
 
     private Sequence BuildScenario(PacingScenario currScenario, float duration)
     {
-        Debug.Log($"[PacingDesign] Building Scenario: {currScenario.name} | Duration: {duration}");
-
         int loopCount = Mathf.RoundToInt(duration / currScenario.timeToSpawn);//Get number of loop by separate time to spawn with duration
         if (duration < 0)
+        {
             loopCount = 9999;
+            _infiniteSpeedSeq?.Kill();
+            _infiniteSpeedSeq = DOTween.Sequence();
+            _infiniteSpeedSeq.AppendInterval(10f);
+            _infiniteSpeedSeq.AppendCallback(() =>
+            {
+                _infiniteSpeedOffset += 1f;
+                Debug.Log($"[PacingDesign] Infinite Speed increased! Current offset: {_infiniteSpeedOffset}");
+            });
+            _infiniteSpeedSeq.SetLoops(-1);
+        }
 
         Sequence mainSequence = DOTween.Sequence();
 
@@ -147,10 +161,11 @@ public class PacingDesign : MonoBehaviour
                 ObstacleService[] pipeList = pipeGroup.Obstacles;
                 ObstacleService pipe = pipeList[UnityEngine.Random.Range(0, pipeList.Length)];
 
-                float speedToSet = pipeGroup.MoveSpeed;
-                currentPipeSpeed = speedToSet; // Lưu lại final speed để Coin bay cùng tốc độ với Pipe
+                float baseSpeed = pipeGroup.MoveSpeed + _infiniteSpeedOffset;
+                float finalSpeedToSet = UnityEngine.Random.Range(baseSpeed, baseSpeed + 2f);
+                currentPipeSpeed = finalSpeedToSet; // Lưu lại final speed để Coin bay cùng tốc độ với Pipe
 
-                SpawnPipe(pipe, transform.position, Quaternion.identity, speedToSet);
+                SpawnPipe(pipe, transform.position, Quaternion.identity, finalSpeedToSet);
             }
         });
 
@@ -189,10 +204,8 @@ public class PacingDesign : MonoBehaviour
         if (currScenario.TryGetObstacleGroup(groupName, out ObstacleGroup obstacleGroup))
         {
             ObstacleService[] obstacleList = obstacleGroup.Obstacles;
-            float baseSpeed = obstacleGroup.MoveSpeed;
             float forceToSet = obstacleGroup.ForceMagnitude;
             float radiusToSet = obstacleGroup.Radius;
-            float warningSignSpeed = 1;
 
             if (duration < 0)
             {
@@ -203,14 +216,15 @@ public class PacingDesign : MonoBehaviour
                     float randDelay = UnityEngine.Random.Range(0f, 3f);
                     DOVirtual.DelayedCall(randDelay, () =>
                     {
-                        Warning signClone = SpawnWarningSign(warningSignSpeed);
+                        float currentBaseSpeed = obstacleGroup.MoveSpeed + _infiniteSpeedOffset;
+                        Warning signClone = SpawnWarningSign(1);
                         if (signClone.DurationToFollow != 0)
                         {
                             float delay = signClone.DurationToFollow;
                             DOVirtual.DelayedCall(delay + 0.1f, () =>
                             {
                                 ObstacleService randObstacle = obstacleList[UnityEngine.Random.Range(0, obstacleList.Length)];
-                                float finalSpeedToSet = UnityEngine.Random.Range(baseSpeed, baseSpeed + 2f);
+                                float finalSpeedToSet = UnityEngine.Random.Range(currentBaseSpeed, currentBaseSpeed + 2f);
                                 SpawnSpecialObstacle(randObstacle, finalSpeedToSet, forceToSet, radiusToSet, signClone);
                             }).SetId("SpawningWarningObstacle").SetLink(gameObject);
                         }
@@ -231,14 +245,15 @@ public class PacingDesign : MonoBehaviour
                     float randSpawnTime = UnityEngine.Random.Range(0f, duration);
                     mainSequence.InsertCallback(randSpawnTime, () =>
                     {
-                        Warning signClone = SpawnWarningSign(warningSignSpeed);
+                        float currentBaseSpeed = obstacleGroup.MoveSpeed + _infiniteSpeedOffset;
+                        Warning signClone = SpawnWarningSign(1);
                         if (signClone.DurationToFollow != 0)
                         {
                             float delayTimeToSpawnObstacle = signClone.DurationToFollow;
                             DOVirtual.DelayedCall(delayTimeToSpawnObstacle + 0.1f, () =>
                             {
                                 ObstacleService randObstacle = obstacleList[UnityEngine.Random.Range(0, obstacleList.Length)];
-                                float finalSpeedToSet = UnityEngine.Random.Range(baseSpeed, baseSpeed + 2f);
+                                float finalSpeedToSet = UnityEngine.Random.Range(currentBaseSpeed, currentBaseSpeed + 2f);
                                 SpawnSpecialObstacle(randObstacle, finalSpeedToSet, forceToSet, radiusToSet, signClone);
                             }).SetId("SpawningWarningObstacle").SetLink(gameObject);
                         }
