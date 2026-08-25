@@ -1,47 +1,32 @@
-
 using System;
 using System.Collections.Generic;
-using NUnit.Framework.Api;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Pool;
 
-
-public class ObjectPoolingManager : MonoBehaviour
+public class ObjectPoolingManager : ObjectPoolingService
 {
 
-    [SerializeField] private bool _addToDontDestroyOnLoad = false;
-
     private GameObject _emptyHolder;
-    private static GameObject _particleSystemEmpty;
-    private static GameObject _gameObjectEmpty;
-    private static GameObject _soundFXEmpty;
+    private GameObject _particleSystemEmpty;
+    private GameObject _gameObjectEmpty;
+    private GameObject _soundFXEmpty;
 
-    private static Dictionary<GameObject, ObjectPool<GameObject>> _objectPools;
-    private static Dictionary<GameObject, GameObject> _cloneToPrefabMap;
+    private Dictionary<GameObject, ObjectPool<GameObject>> _objectPools;
+    private Dictionary<GameObject, GameObject> _cloneToPrefabMap;
 
-    private void Awake()
+    protected void Awake()
     {
         _objectPools = new Dictionary<GameObject, ObjectPool<GameObject>>();
         _cloneToPrefabMap = new Dictionary<GameObject, GameObject>();
+        DontDestroyOnLoad(gameObject);
 
         SetupEmpties();
     }
 
-    public enum PoolType
-    {
-        ParticleSystem,
-        GameObject,
-        SoundFX
-    }
-
-    public static PoolType poolType;
-
     private void SetupEmpties()
     {
         _emptyHolder = new GameObject("Object Pools");
+        _emptyHolder.transform.SetParent(transform);
 
         _particleSystemEmpty = new GameObject("Particle Systems");
         _particleSystemEmpty.transform.SetParent(_emptyHolder.transform);
@@ -51,12 +36,9 @@ public class ObjectPoolingManager : MonoBehaviour
 
         _soundFXEmpty = new GameObject("Sound Effects");
         _soundFXEmpty.transform.SetParent(_emptyHolder.transform);
-
-        if (_addToDontDestroyOnLoad)
-            DontDestroyOnLoad(_particleSystemEmpty.transform.root);
     }
 
-    private static void CreatePool(GameObject prefab, Vector3 pos, Quaternion rot, PoolType poolType = PoolType.GameObject)
+    private void CreatePool(GameObject prefab, Vector3 pos, Quaternion rot, PoolType poolType = PoolType.GameObject)
     {
         ObjectPool<GameObject> pool = new ObjectPool<GameObject>(
             createFunc: () => CreateObject(prefab, pos, rot, poolType),
@@ -68,7 +50,7 @@ public class ObjectPoolingManager : MonoBehaviour
         _objectPools.Add(prefab, pool);
     }
 
-    private static GameObject CreateObject(GameObject prefab, Vector3 pos, Quaternion rot, PoolType poolType = PoolType.GameObject)
+    private GameObject CreateObject(GameObject prefab, Vector3 pos, Quaternion rot, PoolType poolType = PoolType.GameObject)
     {
         prefab.SetActive(false);
 
@@ -82,24 +64,23 @@ public class ObjectPoolingManager : MonoBehaviour
         return obj;
     }
 
-    private static void OnGetObject(GameObject obj)
+    private void OnGetObject(GameObject obj)
     {
         //optional get
     }
 
-    private static void OnReleaseObject(GameObject obj)
+    private void OnReleaseObject(GameObject obj)
     {
         obj.SetActive(false);
-
     }
 
-    private static void OnDestroyObject(GameObject obj)
+    private void OnDestroyObject(GameObject obj)
     {
         if (_cloneToPrefabMap.ContainsKey(obj))
             _cloneToPrefabMap.Remove(obj);
     }
 
-    private static GameObject SetParentObject(PoolType poolType)
+    private GameObject SetParentObject(PoolType poolType)
     {
         switch (poolType)
         {
@@ -114,7 +95,7 @@ public class ObjectPoolingManager : MonoBehaviour
         }
     }
 
-    private static T SpawnObject<T>(GameObject objToSpawn, Vector3 spawnPos, Quaternion spawnRot, PoolType poolType = PoolType.GameObject) where T : UnityEngine.Object
+    private T SpawnObject<T>(GameObject objToSpawn, Vector3 spawnPos, Quaternion spawnRot, PoolType poolType = PoolType.GameObject) where T : UnityEngine.Object
     {
         if (!_objectPools.ContainsKey(objToSpawn))
             CreatePool(objToSpawn, spawnPos, spawnRot, poolType);
@@ -142,20 +123,19 @@ public class ObjectPoolingManager : MonoBehaviour
             return component;
         }
         return null;
-
     }
 
-    public static T SpawnObject<T>(T typePrefab, Vector3 spawnPos, Quaternion spawnRot, PoolType poolType = PoolType.GameObject) where T : Component
+    public override T SpawnObject<T>(T typePrefab, Vector3 spawnPos, Quaternion spawnRot, PoolType poolType = PoolType.GameObject)
     {
-        return SpawnObject<T>(typePrefab, spawnPos, spawnRot, poolType);
+        return SpawnObject<T>(typePrefab.gameObject, spawnPos, spawnRot, poolType);
     }
 
-    public static GameObject SpawnObject(GameObject typePrefab, Vector3 spawnPos, Quaternion spawnRot, PoolType poolType = PoolType.GameObject)
+    public override GameObject SpawnObject(GameObject typePrefab, Vector3 spawnPos, Quaternion spawnRot, PoolType poolType = PoolType.GameObject)
     {
         return SpawnObject<GameObject>(typePrefab, spawnPos, spawnRot, poolType);
     }
 
-    public static void ReturnObjectToPool(GameObject obj, PoolType poolType = PoolType.GameObject)
+    public override void ReturnObjectToPool(GameObject obj, PoolType poolType = PoolType.GameObject)
     {
         if (_cloneToPrefabMap.TryGetValue(obj, out GameObject prefab))
         {
