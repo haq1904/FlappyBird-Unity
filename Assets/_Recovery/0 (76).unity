@@ -1467,42 +1467,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1563714227133267037, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
-      propertyPath: m_SortingLayer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563714227133267037, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563714227133267037, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -188435169
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608156138983738689, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
-      propertyPath: m_fontSize
-      value: 3.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608156138983738689, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 3.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894527559215218651, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
-      propertyPath: _punchVibrato
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894527559215218651, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
-      propertyPath: _punchDuration
-      value: 0.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894527559215218651, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
-      propertyPath: _punchScaleVector.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894527559215218651, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
-      propertyPath: _punchScaleVector.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5483855226019530573, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
       propertyPath: m_Name
       value: MainBird
@@ -1514,22 +1478,6 @@ PrefabInstance:
     - target: {fileID: 5483855226019530573, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
       propertyPath: m_TagString
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5504695868668263340, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 6242906184917758131, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6242906184917758131, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6242906184917758131, guid: 6b02bf06ac312ff46bf964e120d1a85a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
