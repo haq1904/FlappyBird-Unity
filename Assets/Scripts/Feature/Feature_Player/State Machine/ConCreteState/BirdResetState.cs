@@ -29,6 +29,8 @@ public class BirdResetState : BirdState
     private void HandleReset()
     {
         bird.transform.DOKill();
+        bird.SPRITE.transform.DOKill();
+        bird.SPRITE.transform.localScale = Vector3.one;
         bird.SPRITE.material = bird.ResetMaterial;
         bird.PlayAnimationClip("Revive");
         bird.RB.linearVelocity = Vector2.zero;

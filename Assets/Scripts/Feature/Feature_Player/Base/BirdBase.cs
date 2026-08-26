@@ -20,8 +20,13 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     [SerializeField] public float maxDownAngle = -40;
     [SerializeField] public float rotationSpeed = 15f;
     [SerializeField] private Material _whiteMaterial;
+    [SerializeField] private CrashText _juiceTextPrefab;
 
-
+    [Header("Punch scale fields")]
+    [SerializeField] private Vector3 _punchScaleVector = new Vector3(0.5f, 0.5f, 0f);
+    [SerializeField] private float _punchDuration = 0.4f;
+    [SerializeField] private int _punchVibrato = 5;
+    [SerializeField] private float _punchElasticity = 1f;
 
     [Header("Events")]
     [SerializeField] private SoundTypeGameEvent OnBirdRaiseSoundEvent;
@@ -198,7 +203,7 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
     public void Flap()
     {
         OnBirdRaiseSoundEvent.Raise(SoundType.Flap);
-        BIRDANIMATOR.Play("Flap", -1, 0f);
+        PlayAnimationClip("Flap");
         dustPS.Play();
     }
 
@@ -223,7 +228,8 @@ public class BirdBase : PlayerService, IDamageable, IReceivable
         OnBirdRaiseImpulseSource.Raise(impulseSource);
         _explosionPS.Play();
         _crashSmokePuffPS.Play();
-
+        SPRITE.transform.DOPunchScale(_punchScaleVector, _punchDuration, _punchVibrato, _punchElasticity).SetLink(gameObject);
+        Instantiate(_juiceTextPrefab, transform.position, Quaternion.identity);
     }
 
     public void PlayAnimationClip(string animationClipName)
