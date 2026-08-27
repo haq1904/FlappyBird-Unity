@@ -51,10 +51,10 @@ MonoBehaviour:
   _smallCrack: {fileID: 4247098836840318732}
   _impactForce: 1
   _gravityScale: 1
-  _duration: 0.4
-  _streng: {x: 0.15, y: 0, z: 0}
-  _vibrato: 5
-  _elasticity: 0
+  _duration: 0.6
+  _streng: {x: 0.1, y: 0.1, z: 0}
+  _vibrato: 22
+  _randomness: 90
 --- !u!212 &8445127003883079128
 SpriteRenderer:
   serializedVersion: 2
