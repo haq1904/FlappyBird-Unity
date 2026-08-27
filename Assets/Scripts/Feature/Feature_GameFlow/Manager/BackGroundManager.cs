@@ -72,7 +72,7 @@ public class BackGroundManager : MonoBehaviour
         mainSequence?.Kill();
         mainSequence = DOTween.Sequence();
         mainSequence.AppendCallback(() => moveSpeed = speed1);
-        mainSequence.AppendInterval(15f);
+        mainSequence.AppendInterval(10f);
         mainSequence.AppendCallback(() => moveSpeed = speed2);
         mainSequence.AppendInterval(18.5f);
         mainSequence.AppendCallback(() => moveSpeed = speed3);
