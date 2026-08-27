@@ -54,7 +54,7 @@ MonoBehaviour:
   - Oops
   - Ohhh
   _moveY: 1
-  _moveDuration: 0.5
+  _moveDuration: 0.3
   _moveEase: 12
   _minRotation: -30
   _maxRotation: 30

@@ -1283,7 +1283,7 @@ PrefabInstance:
       objectReference: {fileID: 8348489220079675091, guid: bec8c622f762e2746beaa1b61446aff2, type: 3}
     - target: {fileID: 4985468846451972267, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: _timeToSpawn
-      value: 0.5
+      value: 2.55
       objectReference: {fileID: 0}
     - target: {fileID: 4985468846451972267, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: _obstaclePrefab
@@ -1291,7 +1291,7 @@ PrefabInstance:
       objectReference: {fileID: 5507098311790331017, guid: e39f16a4503814d4c9f15e385f73824a, type: 3}
     - target: {fileID: 4985468846451972267, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: _moveSpeedToTest
-      value: 13.7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4985468846451972267, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: _forceMagnitudeToTest
@@ -1303,7 +1303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5111589854124849411, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6690994148383630866, guid: 9f0a174a760677d4e91ec7a20d45f76c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2151,11 +2151,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1122600913447070357, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4375144097674066273, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
       propertyPath: isTest
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4375144097674066273, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
       propertyPath: typeMode
@@ -2167,7 +2167,7 @@ PrefabInstance:
       objectReference: {fileID: 1432277160}
     - target: {fileID: 4375144097674066273, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
       propertyPath: modeIsTest
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4375144097674066273, guid: cd82c35e633ee7841b799abba58b7cf5, type: 3}
       propertyPath: _attackingBird
