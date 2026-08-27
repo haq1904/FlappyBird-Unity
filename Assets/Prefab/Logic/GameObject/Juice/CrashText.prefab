@@ -46,6 +46,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Feature_Player::CrashText
   _textMesh: {fileID: 3795516362637006705}
+  _crashWords:
+  - Ouch
+  - BAM
+  - Bonk
+  - Smash
+  - Oops
+  - Ohhh
   _moveY: 1
   _moveDuration: 0.5
   _moveEase: 12
@@ -88,7 +95,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -0.000000014901161}
-  m_SizeDelta: {x: 1.5, y: 0.57}
+  m_SizeDelta: {x: 2.25, y: 0.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &3985226850272323181
 MeshRenderer:

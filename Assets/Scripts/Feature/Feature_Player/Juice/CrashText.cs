@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -6,6 +7,9 @@ public class CrashText : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private TextMeshPro _textMesh;
+
+    [Header("Text Settings")]
+    [SerializeField] private List<string> _crashWords;
 
     [Header("Movement Settings")]
     [SerializeField] private float _moveY = 2f;
@@ -25,6 +29,12 @@ public class CrashText : MonoBehaviour
     private void OnEnable()
     {
         if (_textMesh == null) return;
+
+        // Lấy từ ngẫu nhiên trong list gán vào Text
+        if (_crashWords != null && _crashWords.Count > 0)
+        {
+            _textMesh.text = _crashWords[Random.Range(0, _crashWords.Count)];
+        }
 
         // Reset màu về trong suốt (alpha = 0)
         Color c = _textMesh.color;
