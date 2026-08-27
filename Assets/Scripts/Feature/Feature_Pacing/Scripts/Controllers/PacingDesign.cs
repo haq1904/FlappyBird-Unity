@@ -233,6 +233,7 @@ public class PacingDesign : MonoBehaviour
                                 ObstacleService randObstacle = obstacleList[UnityEngine.Random.Range(0, obstacleList.Length)];
                                 float finalSpeedToSet = UnityEngine.Random.Range(currentBaseSpeed, currentBaseSpeed + 2f);
                                 SpawnSpecialObstacle(randObstacle, finalSpeedToSet, forceToSet, radiusToSet, signClone);
+                                signClone.ReturnToPool();
                             }).SetId("SpawningWarningObstacle").SetLink(gameObject);
                         }
                     }).SetId("SpawningWarningObstacle").SetLink(gameObject);
@@ -262,6 +263,7 @@ public class PacingDesign : MonoBehaviour
                                 ObstacleService randObstacle = obstacleList[UnityEngine.Random.Range(0, obstacleList.Length)];
                                 float finalSpeedToSet = UnityEngine.Random.Range(currentBaseSpeed, currentBaseSpeed + 2f);
                                 SpawnSpecialObstacle(randObstacle, finalSpeedToSet, forceToSet, radiusToSet, signClone);
+                                if (signClone.gameObject.activeSelf) signClone.ReturnToPool();
                             }).SetId("SpawningWarningObstacle").SetLink(gameObject);
                         }
                         else
@@ -293,12 +295,11 @@ public class PacingDesign : MonoBehaviour
         // Neo vào mép phải và thụt lùi vào trong màn hình 2 unit (rightEdgeX - 2f)
         Vector3 spawnPos = new Vector3(rightEdgeX - 2f, randSpawnHeight, 0);
 
-        Warning signClone = Instantiate(_warningSign, spawnPos, Quaternion.identity);
+        Warning signClone = _poolService.SpawnObject<Warning>(_warningSign, spawnPos, Quaternion.identity);
         signClone.SetTarget(_mainBird);
         signClone.SetFollowSpeed(followSpeed);
         return signClone;
     }
-
 }
 
 

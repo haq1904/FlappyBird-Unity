@@ -108,7 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FlappyBird.Feature_Pacing::Warning
   _followSpeed: 0.88
-  _durationToFollow: 2
+  _minDurationToFollow: 1
+  _maxDurationToFollow: 4
   _timeToDisapear: 1
   _animator: {fileID: 7642129923680786548}
   _shakeAngle: {x: 0, y: 0, z: 10}

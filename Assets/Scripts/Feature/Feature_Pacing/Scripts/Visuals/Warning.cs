@@ -6,7 +6,8 @@ public class Warning : MonoBehaviour
 {
     [Header("Fields")]
     [SerializeField] private float _followSpeed = 1;
-    [SerializeField] private float _durationToFollow = 2f;
+    [SerializeField] private float _minDurationToFollow = 2f;
+    [SerializeField] private float _maxDurationToFollow = 4f;
     [SerializeField] private float _timeToDisapear = 1f;
     [SerializeField] private Animator _animator;
     [SerializeField] private Vector3 _shakeAngle;
@@ -19,26 +20,45 @@ public class Warning : MonoBehaviour
 
     private PlayerService _targetGameObj;
     private Sequence _mainSequence;
+    private ObjectPoolingService _poolService;
+
+    private void Awake()
+    {
+        _poolService = FindAnyObjectByType<ObjectPoolingService>();
+    }
 
     private void OnEnable()
     {
-        DurationToFollow = _durationToFollow;
+        DurationToFollow = UnityEngine.Random.Range(_minDurationToFollow, _maxDurationToFollow);
         _animator.Play("PlayWarning");
-        transform.DOShakeRotation(_durationToFollow + _timeToDisapear, _shakeAngle, _vibrato, _randomness, false).SetLink(gameObject);
+
+        // Cần xài DOKill ở OnDisable vì SetLink không tự hủy khi OnDisable (nó chỉ hủy khi OnDestroy)
+        transform.DOShakeRotation(DurationToFollow + _timeToDisapear, _shakeAngle, _vibrato, _randomness, false).SetLink(gameObject);
+
         _mainSequence = DOTween.Sequence();
-        _mainSequence.AppendInterval(_durationToFollow);
+        _mainSequence.SetLink(gameObject);
+        _mainSequence.AppendInterval(DurationToFollow);
         _mainSequence.AppendCallback(() =>
         {
             LastPosition = transform.position;
             _followSpeed = 0;
         });
         _mainSequence.AppendInterval(_timeToDisapear);
-        _mainSequence.AppendCallback(() => Destroy(gameObject));
+        _mainSequence.AppendCallback(() => ReturnToPool());
+    }
+
+    public void ReturnToPool()
+    {
+        if (gameObject.activeSelf && _poolService != null)
+        {
+            _poolService.ReturnObjectToPool(gameObject);
+        }
     }
 
     private void OnDisable()
     {
-        _mainSequence.Kill();
+        _mainSequence?.Kill();
+        transform.DOKill();
     }
 
     void Update()
@@ -63,7 +83,7 @@ public class Warning : MonoBehaviour
 
     public void HandleRestart()
     {
-        Destroy(gameObject);
+        ReturnToPool();
     }
 
     public void HandleGameOver()
