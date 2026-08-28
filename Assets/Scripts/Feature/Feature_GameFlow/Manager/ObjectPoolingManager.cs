@@ -18,8 +18,6 @@ public class ObjectPoolingManager : ObjectPoolingService
     {
         _objectPools = new Dictionary<GameObject, ObjectPool<GameObject>>();
         _cloneToPrefabMap = new Dictionary<GameObject, GameObject>();
-        DontDestroyOnLoad(gameObject);
-
         SetupEmpties();
     }
 
