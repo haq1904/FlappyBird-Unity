@@ -2944,6 +2944,7 @@ GameObject:
   - component: {fileID: 6181050313884163868}
   - component: {fileID: 3710892458169694263}
   - component: {fileID: 8740133588337756218}
+  - component: {fileID: 8594712987672491486}
   m_Layer: 5
   m_Name: Name game text
   m_TagString: Untagged
@@ -3072,6 +3073,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8594712987672491486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4620490221497935409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97c29b2a38e3a740a4f0b30639199a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.UI::TMPWaveEffect
+  waveSpeed: 2.62
+  waveHeight: 2.04
+  waveFrequency: 1
 --- !u!1 &4735898647707631492
 GameObject:
   m_ObjectHideFlags: 0
@@ -3160,6 +3176,7 @@ GameObject:
   - component: {fileID: 8501296424354065075}
   - component: {fileID: 4591357297868872120}
   - component: {fileID: 5252677528910450812}
+  - component: {fileID: 5734835531967697784}
   m_Layer: 5
   m_Name: Cloud
   m_TagString: Untagged
@@ -3183,7 +3200,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 4493, y: 0}
+  m_AnchoredPosition: {x: 3683, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!198 &8508097053200459290
@@ -3194,8 +3211,8 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4768963074799637589}
   serializedVersion: 8
-  lengthInSec: 5
-  simulationSpeed: 0.1
+  lengthInSec: 50
+  simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -3269,7 +3286,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 47.1
+      scalar: 300
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3322,8 +3339,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.06
-      minScalar: 0.02
+      scalar: 0.006
+      minScalar: 0.002
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4023,7 +4040,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -8042,6 +8059,19 @@ MonoBehaviour:
   m_UseCustomView: 0
   m_CustomViewSize: 10
   m_TimeScaleMultiplier: 1
+--- !u!114 &5734835531967697784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768963074799637589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faff278aeda4a8f4d8f8d73063b77965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.UI::UIPrewarmFix
+  prewarmTime: 50
 --- !u!1 &4789485332645320480
 GameObject:
   m_ObjectHideFlags: 0
@@ -8053,6 +8083,7 @@ GameObject:
   - component: {fileID: 5067631391852618236}
   - component: {fileID: 4335481966732694738}
   - component: {fileID: 397095726993351864}
+  - component: {fileID: 1744290934940481770}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -8179,6 +8210,28 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!95 &1744290934940481770
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4789485332645320480}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c0f591126ea7014abdbe79c22302eb7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4860749849512894815
 GameObject:
   m_ObjectHideFlags: 0
