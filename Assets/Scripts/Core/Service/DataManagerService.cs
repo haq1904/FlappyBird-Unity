@@ -23,4 +23,7 @@ public abstract class DataManagerService : MonoBehaviour
 
     public abstract float GetVolume();
     public abstract void SetVolume(float volume);
+
+    public abstract bool HasSeenTutorial();
+    public abstract void SetHasSeenTutorial(bool hasSeen);
 }

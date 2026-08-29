@@ -90,4 +90,15 @@ public class DataManager : DataManagerService
         PlayerPrefs.SetFloat("Volume", volume);
         PlayerPrefs.Save();
     }
+
+    public override bool HasSeenTutorial()
+    {
+        return PlayerPrefs.GetInt("HasSeenTutorial", 0) == 1;
+    }
+
+    public override void SetHasSeenTutorial(bool hasSeen)
+    {
+        PlayerPrefs.SetInt("HasSeenTutorial", hasSeen ? 1 : 0);
+        PlayerPrefs.Save();
+    }
 }
