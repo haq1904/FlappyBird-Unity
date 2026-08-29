@@ -119,24 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &100576438 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4768963074799637589, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-  m_PrefabInstance: {fileID: 6173975220063264586}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &100576444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100576438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faff278aeda4a8f4d8f8d73063b77965, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FlappyBird.UI::UIPrewarmFix
-  prewarmTime: 50
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,33 +437,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1527227178 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4789485332645320480, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-  m_PrefabInstance: {fileID: 6173975220063264586}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1527227182
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1527227178}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9c0f591126ea7014abdbe79c22302eb7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1972866756
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,10 +837,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 5252677528910450812, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: m_Maskable
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6119230734107044687, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -930,10 +881,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8252184274826761254, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 3683
-      objectReference: {fileID: 0}
     - target: {fileID: 8391670222576691645, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -946,38 +893,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8508097053200459290, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8508097053200459290, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: prewarm
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8508097053200459290, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: lengthInSec
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 8508097053200459290, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: simulationSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8508097053200459290, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 0.006
-      objectReference: {fileID: 0}
-    - target: {fileID: 8508097053200459290, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8508097053200459290, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 8508097053200459290, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      propertyPath: InitialModule.startSpeed.minScalar
-      value: 0.002
-      objectReference: {fileID: 0}
     - target: {fileID: 9102674803483570261, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -987,16 +902,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 4971773989208279086, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4789485332645320480, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1527227182}
-    - targetCorrespondingSourceObject: {fileID: 4768963074799637589, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 100576444}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f85c706eaf29db43bbfe300bcef4a62, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

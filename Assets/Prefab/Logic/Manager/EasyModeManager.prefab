@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3964030392228590086}
   - component: {fileID: 2160982898336625554}
   - component: {fileID: 474270410949529375}
+  - component: {fileID: -8571236513588062869}
   m_Layer: 0
   m_Name: EasyModeManager
   m_TagString: Untagged
@@ -55,6 +56,7 @@ MonoBehaviour:
   currPoint: 0
   currCoin: 0
   timeForHitStop: 0.2
+  vcamTarget: {fileID: 0}
   gameState: 0
   Vcam1: {fileID: 0}
   OnStartGame:
@@ -365,6 +367,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: EasyModeManager, FlappyBird.GameFlow
         m_MethodName: HandleChangeCoin
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-8571236513588062869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2890179471789161231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78458a76a093a5946b72f4d020ec304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FlappyBird.Event::GameEventListener
+  Event: {fileID: 11400000, guid: 6f87e5b94978f184495eb0fa39eeed4e, type: 2}
+  Respond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8309657924885880509}
+        m_TargetAssemblyTypeName: EasyModeManager, FlappyBird.GameFlow
+        m_MethodName: StartGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
